@@ -9,6 +9,7 @@
 
 # vscode files
 .editorconfig
+.vscode
 
 # Vim swap files
 *.swp
