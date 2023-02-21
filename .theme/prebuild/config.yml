@@ -1,0 +1,17 @@
+# Project root relative to this config file
+projectRoot: ../../
+
+# Log settings
+log:
+  debug: false # Enable debug logs
+  quiet: false # Disable logs completely
+
+# Tasks to run in given order
+tasks:
+  - clean:
+      directories:
+        - ./.theme/content
+  - copy:
+      extension: .md
+      source: ./
+      target: ./.theme/content
