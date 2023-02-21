@@ -1,0 +1,22 @@
+{
+  "name": "learn-nuxt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "npx eslint . && node prebuild && nuxt build",
+    "dev": "nuxt dev",
+    "pregenerate": "npx eslint . && node prebuild && nuxt build",
+    "generate": "nuxt generate",
+    "postinstall": "nuxt prepare",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@nuxt/content": "^2.4.3",
+    "eslint": "^8.34.0",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "nuxt": "^3.2.2",
+    "yaml": "^2.2.1"
+  }
+}

@@ -1,0 +1,15 @@
+# Dependency directories
+.theme/node_modules/
+
+# Nuxt build
+.theme/.nuxt
+
+# Nuxt generate
+.theme/dist
+
+# vscode files
+.editorconfig
+.vscode
+
+# Vim swap files
+*.swp
