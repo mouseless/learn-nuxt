@@ -41,7 +41,9 @@ To create a dynamic page you need to surround the page with '[]' e.g.
 
 ## Public Assets
 
-To serve static assets simply put any file under `.theme/public` folder.
+To serve static assets simply put any file under `.theme/public` folder. It
+will be served at the root path e.g. `.theme/public/logo.png` will be at
+`/logo.png`.
 
 Demo is at [/public-asset](/public-asset).
 
