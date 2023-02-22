@@ -61,3 +61,16 @@ To escape curly braces use `v-pre` as shown in
 `.theme/pages/escape-curly-braces.vue`.
 
 Demo is at [/escape-curly-braces](/escape-curly-braces).
+
+## Preprocessing Markdown Files
+
+We've built a task based `prebuild` mechanism to preprocess markdown files
+before nuxt build. This was needed to have pure markdown content at the root of
+the repository without the boilerplate code of a nuxt project.
+
+### Fix Links
+
+This task (`.theme/prebuild/tasks/fixLinks.js`) demonstrates how you can
+manipulate markdown files befor building. It removes `.md` extension from links
+in markdown files so that they both work in markdown and published web site
+correctly.
