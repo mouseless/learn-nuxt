@@ -39,6 +39,12 @@ To create a dynamic page you need to surround the page with '[]' e.g.
   - [/optional](/optional)
   - [/optional/dynamic](/optional/dynamic)
 
+## Public Assets
+
+To serve static assets simply put any file under `.theme/public` folder.
+
+Demo is at [/public-asset](/public-asset).
+
 ## Component
 
 To create a component, create a vue file in `.theme/components` directory e.g.
