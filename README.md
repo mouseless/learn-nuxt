@@ -125,3 +125,56 @@ useHead({
 ```
 
 Demo is at [/open-graph](/open-graph).
+
+## Nuxt Content Plugin
+
+[Nuxt Content](https://content.nuxtjs.org/) plugin, you can read your markdown
+files from  content folder in root and shows the content of the appropriate
+markdown according to your route.
+
+You must add it to `nuxt.config.ts` to use the module.
+
+```ts
+modules: ["@nuxt/content"]
+```
+
+There are 2 ways to read markdowns.
+
+### Using `queryContent()`
+
+`queryContent()` reads all your markdowns in the content folder. You can give a
+path with the parameter. Root is content directory.
+
+```js
+queryContent("/")
+```
+
+You can use `<ContentRenderer :value="yourdata">` to print the read data.
+
+### Using `<ContentDoc />`
+
+`<ContentDoc/>` reads the content directory and renders the index.md it finds
+by route.
+
+```vue
+<template>
+  <main>
+    <ContentDoc />
+  </main>
+</template>
+```
+
+### Using `<ContentQuery />`
+
+The fastest way to query and display your content and gives access to it via
+a scoped slot.
+
+```vue
+<template>
+  <main>
+    <ContentQuery :path="$route.path" v-slot="{ data }">
+      <ContentRenderer :value="data" />
+    </ContentQuery>
+  </main>
+</template>
+```
