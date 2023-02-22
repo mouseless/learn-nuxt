@@ -70,50 +70,54 @@ image and url for the preview in your meta.
 
 We can give meta in 2 ways in nuxt.
 
-- In your `nuxt.config`, you can give the head of your page by default.
+### In `nuxt.config.ts`
 
-  ```ts
-  export default defineNuxtConfig({
-    ...
-    app: {
-      head: {
-        meta:[
-          {
-            hid: "og:url",
-            property: "og:url",
-            content: "your-website.com",
-          },
-          {
-            hid: "og:image",
-            property: "og:image",
-            content: "your-website.com/image-path.png",
-          },
-          {
-            hid: "og:title",
-            property: "og:title",
-            content: "title",
-          },
-          {
-            hid: "og:description",
-            property: "og:description",
-            content: "your description",
-          },
-        ]
-      }
+In your `nuxt.config.ts`, you can give the head of your page by default.
+
+```ts
+export default defineNuxtConfig({
+  ...
+  app: {
+    head: {
+      meta:[
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: "your-website.com",
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: "your-website.com/image-path.png",
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: "title",
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: "your description",
+        },
+      ]
     }
-  })
-  ```
+  }
+})
+```
 
-- You can access the head from your `.vue` files. By importing `useHead`,
-  you can access your meta and manage it from your page.
+### Using `useHead()`
 
-  ```ts
-  import { useHead } from "#head";
+You can access the head from your `.vue` files. By importing `useHead`,
+you can access your meta and manage it from your page.
 
-  useHead({
-      meta: [
-        { hid: "og:title", property: "og:title", content: title},
-        { hid: "og:description", property: "og:description", content: description },
-      ],
-    });
-  ```
+```ts
+import { useHead } from "#head";
+
+useHead({
+    meta: [
+      { hid: "og:title", property: "og:title", content: title},
+      { hid: "og:description", property: "og:description", content: description },
+    ],
+  });
+```
