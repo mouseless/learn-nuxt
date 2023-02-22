@@ -124,4 +124,4 @@ useHead({
   });
 ```
 
-Demo is at [/open-graph](/open-graph.vue).
+Demo is at [/open-graph](/open-graph).

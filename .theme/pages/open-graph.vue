@@ -1,6 +1,8 @@
 <template>
   <div>
     {{ description }}
+    <br>
+    Open the page source code and look at the meta to see the result
   </div>
 </template>
 
