@@ -1,5 +1,5 @@
 <template>
   <div>
-    This is a sample component
+    Index under <code>index-page</code>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
   <div>
-    This is a sample component
+    Static page
   </div>
 </template>

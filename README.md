@@ -2,39 +2,54 @@
 
 Here you can find how we use nuxt to create static web pages.
 
+To contribute please read [Contribution Guide](./contribution-guide.md).
+
 ## Pages Directory
 
-You can create vue files under the [pages folder](./.theme/pages/) to create
-your pages.
+You can create pages under `.theme/pages/`.
 
-To create a dynamic page you need to surround the page with double '[]'.
-Example `[[page]].vue`.
+### Index Pages
+
+Index pages are named `index.vue` and can be accessed without a route. For
+example; `.theme/index.vue` is at `/` and `.theme/index-page/index.vue` is at
+`/index-page`.
+
+- Index page demo:
+  - [/](/)
+  - [/index-page](/index-page)
+
+### Static Routes
+
+File name is automatically the route name e.g. `.theme/static.vue` is at
+`/static`
+
+- Static page demo:
+  - [/static](/static)
+
+### Dynamic Routes
+
+To create a dynamic page you need to surround the page with '[]' e.g.
+`.theme/pages/[page].vue`. To make it optional surround it with `[[]]` e.g.
+`.theme/pages/optional/[[page]].vue`.
+
+- Dynamic page demo:
+  - [/dynamic-1](/dynamic-1)
+  - [/dynamic-2](/dynamic-2)
+- Optional route page demo:
+  - [/optional](/optional)
+  - [/optional/dynamic](/optional/dynamic)
 
 ## Component
 
-To create a component, create a vue file in `.theme/components` directory like
-[Sample Component](./theme/components/SampleComponent.vue)
+To create a component, create a vue file in `.theme/components` directory e.g.
+`.theme/components/SampleComponent.vue`. Then use this component in a page as
+shown in `./theme/pages/sample-component.vue`.
 
-## How to Contribute
+Demo is at [/sample-component](/sample-component).
 
-We do not accept direct commits to this repository, please use forks to make a
-contribution.
+## Escape Curly Braces
 
-### Epic contributions
+To escape curly braces use `v-pre` as shown in
+`.theme/pages/escape-curly-braces.vue`.
 
-If your work is under an epic like `epic/nuxt-3`, then you are making an epic
-contribution.
-
-Epics are created under `mouseless` in `epic/*` branches and these branches are
-protected. So to make a contribution create an issue branch in
-`issue/{epic-name}/{issue-name}` format on your fork, and create a pull request
-to `mouseless:epic/{epic-name}` branch __not__ to `mouseless:main` branch.
-
-After all work is done, epics will merge to main branch directly in original
-repository.
-
-### Other contributions
-
-If your work is independent from an epic, then create a branch in
-`issue/{issue-name}` format and create a pull request directly from this branch
-to `mouseless:main` branch.
+Demo is at [/escape-curly-braces](/escape-curly-braces).
