@@ -106,6 +106,8 @@ export default defineNuxtConfig({
 })
 ```
 
+Demo is at [nuxt.config.ts](https://github.com/mouseless/learn-nuxt/blob/main/.theme/nuxt.config.ts)
+
 ### Using `useHead()`
 
 You can access the head from your `.vue` files. By importing `useHead`,
@@ -121,3 +123,5 @@ useHead({
     ],
   });
 ```
+
+Demo is at [/open-graph](/open-graph.vue).
