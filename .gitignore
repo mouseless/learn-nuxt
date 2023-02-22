@@ -3,6 +3,9 @@
 
 # Nuxt build
 .theme/.nuxt
+.theme/.nitro
+.theme/.cache
+.theme/.output
 
 # Nuxt generate
 .theme/dist
@@ -13,3 +16,12 @@
 
 # Vim swap files
 *.swp
+
+# log file
+*.log*
+
+# env files
+.env
+
+# prebuild files
+.theme/content
