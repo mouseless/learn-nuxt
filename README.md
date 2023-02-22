@@ -68,7 +68,7 @@ With Open Graph, you can also offer a preview of your site with the link you
 share. All you need to do for this is to provide the title, description,
 image and url for the preview in your meta.
 
-We can give meta in 2 ways in nuxt.
+We can change meta in 2 ways in nuxt.
 
 ### In `nuxt.config.ts`
 
