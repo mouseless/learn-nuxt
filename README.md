@@ -80,7 +80,7 @@ You can find an example in `nuxt.config.ts`.
 You can access the head from your `.vue` files. By importing `useHead`,
 you can access your meta and manage it from your page.
 
-Demo is at [/open-graph](/open-graph).
+Go to [/open-graph](/open-graph) page and check the source code
 
 ## Nuxt Content Plugin
 
