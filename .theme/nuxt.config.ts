@@ -17,7 +17,7 @@ export default defineNuxtConfig({
         {
           hid: "og:description",
           property: "og:description",
-          content: "Welcome to >Mouseless_",
+          content: "Welcome to mouseless",
         },
         {
           hid: "og:image",

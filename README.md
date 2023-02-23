@@ -72,7 +72,7 @@ We can change meta in 2 ways in nuxt.
 ### In `nuxt.config.ts`
 
 You can give the head of your page by default. You can find an example
-in `nuxt.config.ts`.
+in `.theme/nuxt.config.ts`.
 
 ### Using `useHead()`
 
