@@ -12,26 +12,39 @@ tasks:
       directories:
         - ./.theme/.temp
         - ./.theme/content
+        - ./.theme/public
+
+  # process and move markdowns to content
   - extractDiagrams:
       source: ./
       target: ./.theme/.temp
-  - copy:
-      extension: .md
-      source: ./.theme/.temp
-      target: ./.theme/content
-  - move:
-      extension: .png
-      source: ./.theme/.temp
-      target: ./.theme/public
   - rename:
-      source: ./.theme/content
+      source: ./.theme/.temp
       find: README.md
       replace: index.md
   - replaceContent:
       extension: .md
-      source: ./.theme/content
+      source: ./.theme/.temp
       oldText: README.md
       newText: index.md
   - fixLinks:
-      source: ./.theme/content
+      source: ./.theme/.temp
       indexFile: index.md
+  - move:
+      extension: .md
+      source: ./.theme/.temp
+      target: ./.theme/content
+
+  # copy images to public
+  - copy:
+      extension: .ico
+      source: ./.theme/images
+      target: ./.theme/public
+  - copy:
+      extension: .png
+      source: ./.theme/images
+      target: ./.theme/public
+  - move:
+      extension: .png
+      source: ./.theme/.temp
+      target: ./.theme/public

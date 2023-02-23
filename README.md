@@ -53,13 +53,17 @@ to](other-file.md)` format as demonstrated below;
 
 - [Other Content](other-content.md)
 
-## Public Assets
+## Images
 
-To serve static assets simply put any file under `.theme/public` folder. It
-will be served at the root path e.g. `.theme/public/logo.png` will be at
-`/logo.png`.
+To serve static images simply put any `.ico` or `.png` file under
+`.theme/images` folder. It will be served at the root path e.g.
+`.theme/images/logo.png` will be at `/logo.png`.
 
-Demo is at [/demo/public-asset](/demo/public-asset).
+Nuxt provides `public` folder for this, but we added that folder to
+`.gitignore` because during preprocessing diagrams are copied to that folder as
+well.
+
+Demo is at [/demo/images](/demo/images).
 
 ## Mermaid Diagrams
 

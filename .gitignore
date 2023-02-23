@@ -26,3 +26,4 @@
 # prebuild files
 .theme/.temp
 .theme/content
+.theme/public
