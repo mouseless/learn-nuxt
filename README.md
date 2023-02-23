@@ -96,12 +96,23 @@ We've built a task based `prebuild` mechanism to preprocess markdown files
 before nuxt build. This was needed to have pure markdown content at the root of
 the repository without the boilerplate code of a nuxt project.
 
+### Extract Diagrams
+
+This task (`.theme/prebuild/tasks/extractDiagrams.js`) processes markdown files
+and extracts diagrams as `.png` files and modifies markdowns to replace
+markdown code with diagram images.
+
 ### Fix Links
 
 This task (`.theme/prebuild/tasks/fixLinks.js`) demonstrates how you can
 manipulate markdown files befor building. It removes `.md` extension from links
 in markdown files so that they both work in markdown and published web site
 correctly.
+
+### Move
+
+This task (`.theme/prebuild/tasks/move.js`) moves files with given extension
+from source directory to target directory.
 
 ### Replace Content
 
