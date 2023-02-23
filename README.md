@@ -46,6 +46,13 @@ Content page is a page that uses `<ContentDoc />` which renders given markdown
 content as html. It is at `.theme/pages/[[content-page]].vue` which has a
 dynamic route to handle any markdown file.
 
+### Nuxt Content Plugin
+
+With the [Nuxt Content](https://content.nuxtjs.org/) plugin you can read the
+content of your markdown files by taking the content folder as the root path.
+
+Don't forget to add `@nuxt/content` under modules in `nuxt.congfig.ts`
+
 ### Linking to Another Content Page
 
 To link to another page, simply link to its markdown file in `[Link
@@ -94,22 +101,7 @@ To update the metas with `useHead()` you can access the head content from
 your `.vue` files.
 
 Demo is at [/open-graph](/open-graph)
-To see the changes, go to [/open-graph](/open-graph) and view the source code
-
-## Nuxt Content Plugin
-
-[Nuxt Content](https://content.nuxtjs.org/) plugin, you can read your markdown
-files from  content folder in root and shows the content of the appropriate
-markdown according to your route.
-
-Don't forget to add `@nuxt/content` under modules in `nuxt.congfig.ts`
-
-### Using `<ContentDoc />`
-
-`<ContentDoc/>` reads the content directory and renders the `index.md` it finds
-by route.
-
-Demo is at [/](/)
+To see the changes, go to [/demo/open-graph](/demo/open-graph) and view the source code
 
 ## Preprocessing Markdown Files
 
