@@ -109,13 +109,17 @@ We can change meta in 2 ways in nuxt.
 You can give the head of your page by default. You can find an example
 in `.theme/nuxt.config.ts`.
 
+To see this metadata, view source of this page.
+
 ### Using `useHead()`
 
 To update the metas with `useHead()` you can access the head content from
 your `.vue` files.
 
 Demo is at [/demo/open-graph](/demo/open-graph)
-To see the changes, go to [/demo/open-graph](/demo/open-graph) and view the source code
+
+To see the changes, go to [/demo/open-graph](/demo/open-graph) and view the
+source code
 
 ## Preprocessing Markdown Files
 
