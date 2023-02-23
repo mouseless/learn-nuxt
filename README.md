@@ -61,3 +61,7 @@ To escape curly braces use `v-pre` as shown in
 `.theme/pages/escape-curly-braces.vue`.
 
 Demo is at [/escape-curly-braces](/escape-curly-braces).
+
+## Output Folder
+
+To change the output folder, add your configurations to `.theme/nuxt.config.ts`
