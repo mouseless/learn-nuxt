@@ -1,15 +1,13 @@
 <template>
   <div>
-    {{ sampleText("title") }}
-    <br>
-    {{ sampleText("description") }}
+    This is an example of using the Open Graph
   </div>
 </template>
 
 <script setup>
 import { useHead } from "#head";
 
-const sampleText = part => `Sample Open Graph ${part}`;
+const sampleText = part => `Open Graph - ${part}`;
 
 useHead({
   meta: [
