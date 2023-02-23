@@ -121,3 +121,14 @@ correctly.
 This task (`.theme/prebuild/tasks/replaceContent.js`) replaces given old text
 to new text in files with given extension. We used this one to replace
 `README.md` with `index.md` before fixing links.
+
+## Prebuild
+
+Prebuild process are scripts that are run before running nuxt. You can manage
+the scripts with `config.yml`.
+
+Look at the `prebuild` directory under .theme for examples.
+
+### Manage with `config.yml`
+
+### `tasks` directory
