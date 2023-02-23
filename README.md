@@ -64,9 +64,8 @@ Demo is at [/escape-curly-braces](/escape-curly-braces).
 
 ## Open Graph
 
-With Open Graph, you can also offer a preview of your site with the link you
-share. All you need to do for this is to provide the title, description,
-image and url for the preview in your meta.
+With Open Graph, you can offer a preview of your site with given title,
+description, image and url for the preview in your meta.
 
 We can change meta in 2 ways in nuxt.
 
@@ -74,55 +73,12 @@ We can change meta in 2 ways in nuxt.
 
 In your `nuxt.config.ts`, you can give the head of your page by default.
 
-```ts
-export default defineNuxtConfig({
-  ...
-  app: {
-    head: {
-      meta:[
-        {
-          hid: "og:url",
-          property: "og:url",
-          content: "your-website.com",
-        },
-        {
-          hid: "og:image",
-          property: "og:image",
-          content: "your-website.com/image-path.png",
-        },
-        {
-          hid: "og:title",
-          property: "og:title",
-          content: "title",
-        },
-        {
-          hid: "og:description",
-          property: "og:description",
-          content: "your description",
-        },
-      ]
-    }
-  }
-})
-```
-
-Demo is at [nuxt.config.ts](https://github.com/mouseless/learn-nuxt/blob/main/.theme/nuxt.config.ts)
+You can find an example in `nuxt.config.ts`.
 
 ### Using `useHead()`
 
 You can access the head from your `.vue` files. By importing `useHead`,
 you can access your meta and manage it from your page.
-
-```ts
-import { useHead } from "#head";
-
-useHead({
-    meta: [
-      { hid: "og:title", property: "og:title", content: title},
-      { hid: "og:description", property: "og:description", content: description },
-    ],
-  });
-```
 
 Demo is at [/open-graph](/open-graph).
 
@@ -134,47 +90,9 @@ markdown according to your route.
 
 You must add it to `nuxt.config.ts` to use the module.
 
-```ts
-modules: ["@nuxt/content"]
-```
-
-There are 2 ways to read markdowns.
-
-### Using `queryContent()`
-
-`queryContent()` reads all your markdowns in the content folder. You can give a
-path with the parameter. Root is content directory.
-
-```js
-queryContent("/")
-```
-
-You can use `<ContentRenderer :value="yourdata">` to print the read data.
-
 ### Using `<ContentDoc />`
 
-`<ContentDoc/>` reads the content directory and renders the index.md it finds
+`<ContentDoc/>` reads the content directory and renders the `index.md` it finds
 by route.
 
-```vue
-<template>
-  <main>
-    <ContentDoc />
-  </main>
-</template>
-```
-
-### Using `<ContentQuery />`
-
-The fastest way to query and display your content and gives access to it via
-a scoped slot.
-
-```vue
-<template>
-  <main>
-    <ContentQuery :path="$route.path" v-slot="{ data }">
-      <ContentRenderer :value="data" />
-    </ContentQuery>
-  </main>
-</template>
-```
+Demo is at [/](/)

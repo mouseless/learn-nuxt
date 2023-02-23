@@ -1,19 +1,20 @@
 <template>
   <div>
-    {{ description }}
+    {{ title }}
     <br>
-    Open the page source code and look at the meta to see the result
+    {{ description }}
   </div>
 </template>
 
 <script setup>
 import { useHead } from "#head";
 
-const description = "This is an example of accessing meta with 'useHead' for open graph.";
+const description = "Sample Open Graph description";
+const title = "Sample Open Graph title";
 
 useHead({
   meta: [
-    { hid: "og:title", property: "og:title", content: "title"},
+    { hid: "og:title", property: "og:title", content: title},
     { hid: "og:description", property: "og:description", content: description },
   ],
 });
