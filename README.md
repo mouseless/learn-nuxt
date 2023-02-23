@@ -69,6 +69,10 @@ shown in `./theme/pages/demo/basic-component.vue`.
 
 Demo is at [/demo/basic-component](/demo/basic-component).
 
+## Provide & Inject
+
+TBD
+
 ## Escape Curly Braces
 
 To escape curly braces use `v-pre` as shown in
