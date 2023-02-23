@@ -100,7 +100,7 @@ in `.theme/nuxt.config.ts`.
 To update the metas with `useHead()` you can access the head content from
 your `.vue` files.
 
-Demo is at [/open-graph](/open-graph)
+Demo is at [/demo/open-graph](/demo/open-graph)
 To see the changes, go to [/demo/open-graph](/demo/open-graph) and view the source code
 
 ## Preprocessing Markdown Files
@@ -114,6 +114,11 @@ the repository without the boilerplate code of a nuxt project.
 This task (`.theme/prebuild/tasks/clean.js`) deletes files with the given
 parameters, including subfolders.
 
+### Copy
+
+This task (`.theme/prebuild/tasks/copy.js`) copies files with the given
+extension to the desired location.
+
 ### Fix Links
 
 This task (`.theme/prebuild/tasks/fixLinks.js`) demonstrates how you can
@@ -121,29 +126,13 @@ manipulate markdown files befor building. It removes `.md` extension from links
 in markdown files so that they both work in markdown and published web site
 correctly.
 
-### Replace Content
-
-This task (`.theme/prebuild/tasks/replaceContent.js`) replaces given old text
-to new text in files with given extension. We used this one to replace
-`README.md` with `index.md` before fixing links.
-
-### Copy
-
-This task (`.theme/prebuild/tasks/copy.js`) copies files with the given
-extension to the desired location.
-
 ### Rename
 
 This task (`.theme/prebuild/tasks/rename.js`) renames files with the given
 name in the given location to the desired name in the same location.
 
-### Files
+### Replace Content
 
-This util (`.theme/prebuild/tasks/utils/files.js`) is a method that helps
-you navigate files.
-
-### Log
-
-This util (`.theme/prebuild/tasks/utils/log.js`) allows you to print debug,
-info, success, warning, error logs on the console screen while the script
-is running.
+This task (`.theme/prebuild/tasks/replaceContent.js`) replaces given old text
+to new text in files with given extension. We used this one to replace
+`README.md` with `index.md` before fixing links.
