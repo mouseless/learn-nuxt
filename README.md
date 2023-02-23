@@ -73,10 +73,21 @@ Demo is at [/demo/components/basic-component](/demo/components/basic-component).
 
 ### Defining Properties
 
-To add properties to a component, add 
+To add properties to a component, add the following script to the component.
+
 <script>
-// TODO: defineProps example.
+
+const props = defineProps({
+  propName: {
+    type: String,
+    default: null
+  }
+});
+
 <script/>
+
+Prop type and default value can be configured, also more properties can be
+added later on using this format.
 
 Demo is at [/demo/components/component-with-props](/demo/components/component-with-props)
 
