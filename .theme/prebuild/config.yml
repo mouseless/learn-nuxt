@@ -19,3 +19,11 @@ tasks:
       source: ./.theme/content
       find: README.md
       replace: index.md
+  - replaceContent:
+      extension: .md
+      source: ./.theme/content
+      oldText: README.md
+      newText: index.md
+  - fixLinks:
+      source: ./.theme/content
+      indexFile: index.md

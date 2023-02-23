@@ -1,5 +1,5 @@
 <template>
   <div>
-    <SampleComponent />
+    Index page
   </div>
 </template>
