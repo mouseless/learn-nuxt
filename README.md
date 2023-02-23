@@ -11,33 +11,47 @@ You can create pages under `.theme/pages/`.
 ### Index Pages
 
 Index pages are named `index.vue` and can be accessed without a route. For
-example; `.theme/index.vue` is at `/` and `.theme/index-page/index.vue` is at
-`/index-page`.
+example; `.theme/pages/demo/index.vue` is at `/demo`.
 
-- Index page demo:
-  - [/](/)
-  - [/index-page](/index-page)
+Demo is at [/demo](/demo).
 
 ### Static Routes
 
-File name is automatically the route name e.g. `.theme/static.vue` is at
-`/static`
+File name is automatically the route name e.g. `.theme/pages/demo/static.vue`
+is at `/demo/static`
 
-- Static page demo:
-  - [/static](/static)
+Demo is at [/demo/static](/demo/static).
 
 ### Dynamic Routes
 
 To create a dynamic page you need to surround the page with '[]' e.g.
-`.theme/pages/[page].vue`. To make it optional surround it with `[[]]` e.g.
-`.theme/pages/optional/[[page]].vue`.
+`.theme/pages/demo/[page].vue`. To make it optional surround it with `[[]]`
+e.g. `.theme/pages/demo/optional/[[page]].vue`.
 
 - Dynamic page demo:
-  - [/dynamic-1](/dynamic-1)
-  - [/dynamic-2](/dynamic-2)
+  - [/demo/dynamic-1](/demo/dynamic-1)
+  - [/demo/dynamic-2](/demo/dynamic-2)
 - Optional route page demo:
-  - [/optional](/optional)
-  - [/optional/dynamic](/optional/dynamic)
+  - [/demo/optional](/demo/optional)
+  - [/demo/optional/dynamic](/demo/optional/dynamic)
+
+## Content
+
+Content of a web site is markdown files that are placed at the root of to give
+focus on more to content than its theme layout.
+
+### Content Page
+
+Content page is a page that uses `<ContentDoc />` which renders given markdown
+content as html. It is at `.theme/pages/[[content-page]].vue` which has a
+dynamic route to handle any markdown file.
+
+### Linking to Another Content Page
+
+To link to another page, simply link to its markdown file in `[Link
+to](other-file.md)` format as demonstrated below;
+
+- [Other Content](other-content.md)
 
 ## Public Assets
 
@@ -45,22 +59,22 @@ To serve static assets simply put any file under `.theme/public` folder. It
 will be served at the root path e.g. `.theme/public/logo.png` will be at
 `/logo.png`.
 
-Demo is at [/public-asset](/public-asset).
+Demo is at [/demo/public-asset](/demo/public-asset).
 
 ## Component
 
 To create a component, create a vue file in `.theme/components` directory e.g.
-`.theme/components/SampleComponent.vue`. Then use this component in a page as
-shown in `./theme/pages/sample-component.vue`.
+`.theme/components/BasicComponent.vue`. Then use this component in a page as
+shown in `./theme/pages/demo/basic-component.vue`.
 
-Demo is at [/sample-component](/sample-component).
+Demo is at [/demo/basic-component](/demo/basic-component).
 
 ## Escape Curly Braces
 
 To escape curly braces use `v-pre` as shown in
-`.theme/pages/escape-curly-braces.vue`.
+`.theme/pages/demo/escape-curly-braces.vue`.
 
-Demo is at [/escape-curly-braces](/escape-curly-braces).
+Demo is at [/demo/escape-curly-braces](/demo/escape-curly-braces).
 
 ## Open Graph
 
@@ -96,3 +110,22 @@ Don't forget to add `@nuxt/content` under modules in `nuxt.congfig.ts`
 by route.
 
 Demo is at [/](/)
+
+## Preprocessing Markdown Files
+
+We've built a task based `prebuild` mechanism to preprocess markdown files
+before nuxt build. This was needed to have pure markdown content at the root of
+the repository without the boilerplate code of a nuxt project.
+
+### Fix Links
+
+This task (`.theme/prebuild/tasks/fixLinks.js`) demonstrates how you can
+manipulate markdown files befor building. It removes `.md` extension from links
+in markdown files so that they both work in markdown and published web site
+correctly.
+
+### Replace Content
+
+This task (`.theme/prebuild/tasks/replaceContent.js`) replaces given old text
+to new text in files with given extension. We used this one to replace
+`README.md` with `index.md` before fixing links.
