@@ -71,7 +71,28 @@ Demo is at [/demo/basic-component](/demo/basic-component).
 
 ## Provide & Inject
 
-TBD
+When you need to access a data that cannot be passed to a component (such as
+prose components), we use `provide` and `inject` functions. Basically you
+`provide` a value in a parent component to be `inject`ed in any child
+components.
+
+```mermaid
+flowchart TB
+    subgraph C[Components]
+        direction TB
+
+        C_P[Page]
+        C_CD[&ltContentDoc/&gt]
+        C_PA[ProseA]
+        C_P -- renders --> C_CD -- uses --> C_PA
+    end
+
+    D([data])
+
+    C_P -. provides .-> D -. injected to .-> C_PA
+```
+
+Demo is at [/demo/provide-and-inject](/demo/provide-and-inject)
 
 ## Escape Curly Braces
 
