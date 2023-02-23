@@ -71,16 +71,16 @@ We can change meta in 2 ways in nuxt.
 
 ### In `nuxt.config.ts`
 
-In your `nuxt.config.ts`, you can give the head of your page by default.
-
-You can find an example in `nuxt.config.ts`.
+You can give the head of your page by default. You can find an example
+in `nuxt.config.ts`.
 
 ### Using `useHead()`
 
-You can access the head from your `.vue` files. By importing `useHead`,
-you can access your meta and manage it from your page.
+To update the metas with `useHead()` you can access the head content from
+your `.vue` files.
 
-Go to [/open-graph](/open-graph) page and check the source code
+Demo is at [/open-graph](/open-graph)
+To see the changes, go to [/open-graph](/open-graph) and view the source code
 
 ## Nuxt Content Plugin
 
@@ -88,7 +88,7 @@ Go to [/open-graph](/open-graph) page and check the source code
 files from  content folder in root and shows the content of the appropriate
 markdown according to your route.
 
-You must add it to `nuxt.config.ts` to use the module.
+Don't forget to add `@nuxt/content` under modules in `nuxt.congfig.ts`
 
 ### Using `<ContentDoc />`
 
