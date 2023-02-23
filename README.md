@@ -61,6 +61,16 @@ will be served at the root path e.g. `.theme/public/logo.png` will be at
 
 Demo is at [/demo/public-asset](/demo/public-asset).
 
+## Mermaid Diagrams
+
+We use a preprocessor to generate mermaid diagram images from markdown files.
+Below is a demonstration of how to draw a diagram.
+
+```mermaid
+flowchart
+    A --> B
+```
+
 ## Component
 
 To create a component, create a vue file in `.theme/components` directory e.g.

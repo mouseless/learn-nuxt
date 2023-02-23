@@ -10,11 +10,19 @@ log:
 tasks:
   - clean:
       directories:
+        - ./.theme/.temp
         - ./.theme/content
+  - extractDiagrams:
+      source: ./
+      target: ./.theme/.temp
   - copy:
       extension: .md
-      source: ./
+      source: ./.theme/.temp
       target: ./.theme/content
+  - move:
+      extension: .png
+      source: ./.theme/.temp
+      target: ./.theme/public
   - rename:
       source: ./.theme/content
       find: README.md
