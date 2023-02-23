@@ -109,6 +109,11 @@ We've built a task based `prebuild` mechanism to preprocess markdown files
 before nuxt build. This was needed to have pure markdown content at the root of
 the repository without the boilerplate code of a nuxt project.
 
+### Clean
+
+This task (`.theme/prebuild/tasks/clean.js`) deletes files with the given
+parameters, including subfolders.
+
 ### Fix Links
 
 This task (`.theme/prebuild/tasks/fixLinks.js`) demonstrates how you can
@@ -122,13 +127,23 @@ This task (`.theme/prebuild/tasks/replaceContent.js`) replaces given old text
 to new text in files with given extension. We used this one to replace
 `README.md` with `index.md` before fixing links.
 
-## Prebuild
+### Copy
 
-Prebuild process are scripts that are run before running nuxt. You can manage
-the scripts with `config.yml`.
+This task (`.theme/prebuild/tasks/copy.js`) copies files with the given
+extension to the desired location.
 
-Look at the `prebuild` directory under .theme for examples.
+### Rename
 
-### Manage with `config.yml`
+This task (`.theme/prebuild/tasks/rename.js`) renames files with the given
+name in the given location to the desired name in the same location.
 
-### `tasks` directory
+### Files
+
+This util (`.theme/prebuild/tasks/utils/files.js`) is a method that helps
+you navigate files.
+
+### Log
+
+This util (`.theme/prebuild/tasks/utils/log.js`) allows you to print debug,
+info, success, warning, error logs on the console screen while the script
+is running.
