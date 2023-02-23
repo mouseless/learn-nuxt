@@ -46,10 +46,10 @@ Demo is at [/demo/public-asset](/demo/public-asset).
 ## Component
 
 To create a component, create a vue file in `.theme/components` directory e.g.
-`.theme/components/Component.vue`. Then use this component in a page as shown
-in `./theme/pages/demo/component.vue`.
+`.theme/components/BasicComponent.vue`. Then use this component in a page as
+shown in `./theme/pages/demo/basic-component.vue`.
 
-Demo is at [/demo/component](/demo/component).
+Demo is at [/demo/basic-component](/demo/basic-component).
 
 ## Escape Curly Braces
 

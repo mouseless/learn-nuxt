@@ -3,7 +3,7 @@ projectRoot: ../../
 
 # Log settings
 log:
-  debug: true # Enable debug logs
+  debug: false # Enable debug logs
   quiet: false # Disable logs completely
 
 # Tasks to run in given order

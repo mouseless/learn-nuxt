@@ -1,5 +1,5 @@
 <template>
   <div>
-    <Component />
+    Basic component
   </div>
 </template>
