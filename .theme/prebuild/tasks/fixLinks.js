@@ -8,10 +8,11 @@ import files from "./utils/files.js";
  * @async
  * @param {Object} parameters Task parameters
  * @param {String} parameters.source Source directory to process
+ * @param {String} parameters.indexFile Index file name
  *
  * @returns {Promise}
  */
-export default async function({ source }) {
+export default async function({ source, indexFile }) {
   log.info(`Fixing markdown links in '${source}'`);
 
   await files(source, ".md", async (dir, file) => {
@@ -39,7 +40,15 @@ export default async function({ source }) {
 
     links.forEach(link => {
       // don't include extension
-      const href = join(link.parsed.dir, link.parsed.name);
+      let href = join(link.parsed.dir, link.parsed.name);
+      if(link.original.endsWith(indexFile)) {
+        // dont put index file name in path
+        href = link.parsed.dir;
+
+        if(href === "") {
+          href = "/";
+        }
+      }
 
       data = data.replace(link.original, href);
       log.debug(`${sourceFile}: ${link.original} => ${href}`, 1);

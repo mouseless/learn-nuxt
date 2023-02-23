@@ -17,7 +17,7 @@ Demo is at [/demo](/demo).
 
 ### Static Routes
 
-File name is automatically the route name e.g.  `.theme/pages/demo/static.vue`
+File name is automatically the route name e.g. `.theme/pages/demo/static.vue`
 is at `/demo/static`
 
 Demo is at [/demo/static](/demo/static).
@@ -34,6 +34,24 @@ e.g. `.theme/pages/demo/optional/[[page]].vue`.
 - Optional route page demo:
   - [/demo/optional](/demo/optional)
   - [/demo/optional/dynamic](/demo/optional/dynamic)
+
+## Content
+
+Content of a web site is markdown files that are placed at the root of to give
+focus on more to content than its theme layout.
+
+### Content Page
+
+Content page is a page that uses `<ContentDoc />` which renders given markdown
+content as html. It is at `.theme/pages/[[content-page]].vue` which has a
+dynamic route to handle any markdown file.
+
+### Linking to Another Content Page
+
+To link to another page, simply link to its markdown file in `[Link
+to](other-file.md)` format as demonstrated below;
+
+- [Other Content](other-content.md)
 
 ## Public Assets
 
@@ -70,3 +88,9 @@ This task (`.theme/prebuild/tasks/fixLinks.js`) demonstrates how you can
 manipulate markdown files befor building. It removes `.md` extension from links
 in markdown files so that they both work in markdown and published web site
 correctly.
+
+### Replace Content
+
+This task (`.theme/prebuild/tasks/replaceContent.js`) replaces given old text
+to new text in files with given extension. We used this one to replace
+`README.md` with `index.md` before fixing links.
