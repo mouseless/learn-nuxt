@@ -11,33 +11,29 @@ You can create pages under `.theme/pages/`.
 ### Index Pages
 
 Index pages are named `index.vue` and can be accessed without a route. For
-example; `.theme/index.vue` is at `/` and `.theme/index-page/index.vue` is at
-`/index-page`.
+example; `.theme/pages/demo/index.vue` is at `/demo`.
 
-- Index page demo:
-  - [/](/)
-  - [/index-page](/index-page)
+Demo is at [/demo](/demo).
 
 ### Static Routes
 
-File name is automatically the route name e.g. `.theme/static.vue` is at
-`/static`
+File name is automatically the route name e.g.  `.theme/pages/demo/static.vue`
+is at `/demo/static`
 
-- Static page demo:
-  - [/static](/static)
+Demo is at [/demo/static](/demo/static).
 
 ### Dynamic Routes
 
 To create a dynamic page you need to surround the page with '[]' e.g.
-`.theme/pages/[page].vue`. To make it optional surround it with `[[]]` e.g.
-`.theme/pages/optional/[[page]].vue`.
+`.theme/pages/demo/[page].vue`. To make it optional surround it with `[[]]`
+e.g. `.theme/pages/demo/optional/[[page]].vue`.
 
 - Dynamic page demo:
-  - [/dynamic-1](/dynamic-1)
-  - [/dynamic-2](/dynamic-2)
+  - [/demo/dynamic-1](/demo/dynamic-1)
+  - [/demo/dynamic-2](/demo/dynamic-2)
 - Optional route page demo:
-  - [/optional](/optional)
-  - [/optional/dynamic](/optional/dynamic)
+  - [/demo/optional](/demo/optional)
+  - [/demo/optional/dynamic](/demo/optional/dynamic)
 
 ## Public Assets
 
@@ -45,22 +41,22 @@ To serve static assets simply put any file under `.theme/public` folder. It
 will be served at the root path e.g. `.theme/public/logo.png` will be at
 `/logo.png`.
 
-Demo is at [/public-asset](/public-asset).
+Demo is at [/demo/public-asset](/demo/public-asset).
 
 ## Component
 
 To create a component, create a vue file in `.theme/components` directory e.g.
-`.theme/components/SampleComponent.vue`. Then use this component in a page as
-shown in `./theme/pages/sample-component.vue`.
+`.theme/components/Component.vue`. Then use this component in a page as shown
+in `./theme/pages/demo/component.vue`.
 
-Demo is at [/sample-component](/sample-component).
+Demo is at [/demo/component](/demo/component).
 
 ## Escape Curly Braces
 
 To escape curly braces use `v-pre` as shown in
-`.theme/pages/escape-curly-braces.vue`.
+`.theme/pages/demo/escape-curly-braces.vue`.
 
-Demo is at [/escape-curly-braces](/escape-curly-braces).
+Demo is at [/demo/escape-curly-braces](/demo/escape-curly-braces).
 
 ## Preprocessing Markdown Files
 
