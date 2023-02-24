@@ -46,6 +46,13 @@ Content page is a page that uses `<ContentDoc />` which renders given markdown
 content as html. It is at `.theme/pages/[[content-page]].vue` which has a
 dynamic route to handle any markdown file.
 
+### Nuxt Content Plugin
+
+With the [Nuxt Content](https://content.nuxtjs.org/) plugin you can read the
+content of your markdown files by taking the content folder as the root path.
+
+Don't forget to add `@nuxt/content` under modules in `nuxt.congfig.ts`
+
 ### Linking to Another Content Page
 
 To link to another page, simply link to its markdown file in `[Link
@@ -53,13 +60,27 @@ to](other-file.md)` format as demonstrated below;
 
 - [Other Content](other-content.md)
 
-## Public Assets
+## Images
 
-To serve static assets simply put any file under `.theme/public` folder. It
-will be served at the root path e.g. `.theme/public/logo.png` will be at
-`/logo.png`.
+To serve static images simply put any `.ico` or `.png` file under
+`.theme/images` folder. It will be served at the root path e.g.
+`.theme/images/logo.png` will be at `/logo.png`.
 
-Demo is at [/demo/public-asset](/demo/public-asset).
+Nuxt provides `public` folder for this, but we added that folder to
+`.gitignore` because during preprocessing diagrams are copied to that folder as
+well.
+
+Demo is at [/demo/images](/demo/images).
+
+## Mermaid Diagrams
+
+We use a preprocessor to generate mermaid diagram images from markdown files.
+Below is a demonstration of how to draw a diagram.
+
+```mermaid
+flowchart
+    A --> B
+```
 
 ## Component
 
@@ -125,11 +146,51 @@ To escape curly braces use `v-pre` as shown in
 
 Demo is at [/demo/escape-curly-braces](/demo/escape-curly-braces).
 
+## Open Graph
+
+With Open Graph, you can offer a preview of your site with given title,
+description, image and url for the preview in your meta.
+
+We can change meta in 2 ways in nuxt.
+
+### In `nuxt.config.ts`
+
+You can give the head of your page by default. You can find an example
+in `.theme/nuxt.config.ts`.
+
+To see this metadata, view source of this page.
+
+### Using `useHead()`
+
+To update the metas with `useHead()` you can access the head content from
+your `.vue` files.
+
+Demo is at [/demo/open-graph](/demo/open-graph)
+
+To see the changes, go to [/demo/open-graph](/demo/open-graph) and view the
+source code
+
 ## Preprocessing Markdown Files
 
 We've built a task based `prebuild` mechanism to preprocess markdown files
 before nuxt build. This was needed to have pure markdown content at the root of
 the repository without the boilerplate code of a nuxt project.
+
+### Clean
+
+This task (`.theme/prebuild/tasks/clean.js`) deletes files with the given
+parameters, including subfolders.
+
+### Copy
+
+This task (`.theme/prebuild/tasks/copy.js`) copies files with the given
+extension to the desired location.
+
+### Extract Diagrams
+
+This task (`.theme/prebuild/tasks/extractDiagrams.js`) processes markdown files
+and extracts diagrams as `.png` files and modifies markdowns to replace
+markdown code with diagram images.
 
 ### Fix Links
 
@@ -137,6 +198,16 @@ This task (`.theme/prebuild/tasks/fixLinks.js`) demonstrates how you can
 manipulate markdown files befor building. It removes `.md` extension from links
 in markdown files so that they both work in markdown and published web site
 correctly.
+
+### Move
+
+This task (`.theme/prebuild/tasks/move.js`) moves files with given extension
+from source directory to target directory.
+
+### Rename
+
+This task (`.theme/prebuild/tasks/rename.js`) renames files with the given
+name in the given location to the desired name in the same location.
 
 ### Replace Content
 
