@@ -15,7 +15,9 @@ export default defineNuxtConfig({
     "@nuxt/content"
   ],
   components: {
-    global: true,
-    dirs: ["~/components"]
+    dirs: [
+      { global: true , path: "~/components/Prose" },
+      "~/components"
+    ]
   }
 });

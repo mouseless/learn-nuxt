@@ -88,6 +88,11 @@ Below is a demonstration of overriding `ProseTable.vue`;
 | Using    | Prose | Components |
 | To       | Add   | Border     |
 
+> :information_source:
+>
+> You need to configure `~/components/Prose` as a global directory to enable
+> this. See `.theme/nuxt.config.ts`.
+
 ## Provide & Inject
 
 When you need to access a data that cannot be passed to a component (such as
