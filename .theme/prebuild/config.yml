@@ -36,7 +36,14 @@ tasks:
       target: ./.theme/content
 
   # copy content images to public/images
+  - copy:
+      source: ./.theme/public
+      target: ./.theme/.public
+  - copy:
+      extension: .png
+      source: ./
+      target: ./.theme/.public
   - move:
       extension: .png
       source: ./.theme/.temp
-      target: ./.theme/public/images
+      target: ./.theme/.public

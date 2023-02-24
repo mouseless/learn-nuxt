@@ -45,5 +45,8 @@ export default defineNuxtConfig({
       { global: true , path: "~/components/Prose" },
       "~/components"
     ]
+  },
+  vite: {
+    publicDir: ".public"
   }
 });

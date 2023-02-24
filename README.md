@@ -4,7 +4,40 @@ Here you can find how we use nuxt to create static web pages.
 
 To contribute please read [Contribution Guide](./contribution-guide.md).
 
-## Pages Directory
+## Content
+
+We use [Nuxt Content](https://content.nuxtjs.org/) to render markdown content
+in a web page. Add `@nuxt/content` under modules in `.theme/nuxt.congfig.ts`
+
+Markdown files are placed at the root of to give focus on more to content than
+its theme layout.
+
+### Links
+
+To link to another page, simply link to its markdown file in `[Link
+to](other-file.md)` format as demonstrated below;
+
+- [Other Content](other-content.md)
+
+### Images
+
+To include an image in markdown, place image files in a folder named `-images`
+at the same path as that markdown file. For example; if you have a file
+`/demo/image-in-content.md`, place its images in `/demo/-images`.
+
+Demo is at [markdown/image.md](markdown/image.md)
+
+### Mermaid Diagrams
+
+We use a preprocessor to generate mermaid diagram images from markdown files.
+Below is a demonstration of how to draw a diagram.
+
+```mermaid
+flowchart
+    A --> B
+```
+
+## Pages
 
 You can create pages under `.theme/pages/`.
 
@@ -26,64 +59,43 @@ Demo is at [/demo/static](/demo/static).
 
 To create a dynamic page you need to surround the page with '[]' e.g.
 `.theme/pages/demo/[page].vue`. To make it optional surround it with `[[]]`
-e.g. `.theme/pages/demo/optional/[[page]].vue`.
+e.g. `.theme/pages/demo/optional/[[page]].vue`. To have a dynamic route that
+can handle any depth in a path we use catch all routes e.g.
+`.theme/pages/demo/catch-all/[...page].vue`.
 
-- Dynamic page demo:
+- Dynamic route:
   - [/demo/dynamic-1](/demo/dynamic-1)
   - [/demo/dynamic-2](/demo/dynamic-2)
-- Optional route page demo:
+- Dynamic route with optional parameter:
   - [/demo/optional](/demo/optional)
   - [/demo/optional/dynamic](/demo/optional/dynamic)
-
-## Content
-
-Content of a web site is markdown files that are placed at the root of to give
-focus on more to content than its theme layout.
+- Catch all route:
+  - [/demo/catch-all](/demo/catch-all)
+  - [/demo/catch-all/dynamic](/demo/catch-all/dynamic)
+  - [/demo/catch-all/with/a/sub/dir](/demo/catch-all/with/a/sub/dir)
 
 ### Content Page
 
 Content page is a page that uses `<ContentDoc />` which renders given markdown
-content as html. It is at `.theme/pages/[[content-page]].vue` which has a
-dynamic route to handle any markdown file.
+content as html. It is at `.theme/pages/[...content-page].vue` which has a
+catch all route to handle any markdown file in any directory.
 
-### Nuxt Content Plugin
+## Public Assets
 
-With the [Nuxt Content](https://content.nuxtjs.org/) plugin you can read the
-content of your markdown files by taking the content folder as the root path.
-
-Don't forget to add `@nuxt/content` under modules in `nuxt.congfig.ts`
-
-### Linking to Another Content Page
-
-To link to another page, simply link to its markdown file in `[Link
-to](other-file.md)` format as demonstrated below;
-
-- [Other Content](other-content.md)
-
-## Images
-
-To serve static images simply put any `.ico` or `.png` file under
-`.theme/public` folder. It will be served at the root path e.g.
+To serve static assets in a theme like `.css` or `.png` files simply put any
+file under `.theme/public` folder. It will be served at the root path. E.g.
 `.theme/public/logo.png` will be at `/logo.png`.
 
-Demo is at [/demo/images](/demo/images).
-
-## Mermaid Diagrams
-
-We use a preprocessor to generate mermaid diagram images from markdown files.
-Below is a demonstration of how to draw a diagram.
-
-```mermaid
-flowchart
-    A --> B
-```
+Demo is at [/demo/public-assets](/demo/public-assets).
 
 > :information_source:
 >
-> Generated `.png` files should be served under `.theme/public` but should not
-> be included in git. To achieve this, `.png` files will be copied to
-> `.theme/public/images` during preprocessing. We override `ProseImg.vue` to
-> place `/images` path between file path and base url.
+> `.png` from content images or generating diagrams should be served under
+> `.theme/public` but they shouldn't be included in git. To preserve the
+> default behaviour while solving this provlem we change public assets folder
+> from `.theme/public` to `.theme/.public` via `vite.publicDir` in
+> `.theme/nuxt.config.ts` and copy public assets, content images and generated
+> diagrams into `.public` during preprocessing.
 
 ## Component
 
@@ -93,7 +105,7 @@ shown in `./theme/pages/demo/basic-component.vue`.
 
 Demo is at [/demo/basic-component](/demo/basic-component).
 
-## Prose Components
+### Prose
 
 Prose components are wrappers of html tags that are used to render markdown
 content. When you want to change the way nuxt renders markdown you need to
