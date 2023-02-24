@@ -7,20 +7,12 @@
       LastName is a property: {{ lastName }}
     </p>
     <p>
-      FulName is a computed property: {{ fullName }}
+      FulName is: {{ firstName + " " + lastName }}
     </p>
   </div>
 </template>
 
 <script setup>
-import {computed} from "vue";
-
 const firstName = "John";
 const lastName = "Doe";
-
-const fullName = computed({
-  get() {
-    return this.firstName + " " + this.lastName;
-  }
-});
 </script>

@@ -2,6 +2,8 @@
 
 Here you can find how we use nuxt to create static web pages.
 
+In demos we use script setup instead of script.
+
 To contribute please read [Contribution Guide](./contribution-guide.md).
 
 ## Pages Directory
@@ -89,6 +91,12 @@ To create a component, create a vue file in `.theme/components` directory e.g.
 shown in `./theme/pages/demo/basic-component.vue`.
 
 Demo is at [/demo/basic-component](/demo/basic-component).
+
+## Const
+
+Const properties can be created as shown in `./theme/pages/
+
+Demo is at [/demo/const](/demo/const).
 
 ## Computed
 
