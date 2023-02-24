@@ -27,15 +27,12 @@ tasks:
       source: ./.theme/.temp
       oldText: README.md
       newText: index.md
-  - fixLinks:
-      source: ./.theme/.temp
-      indexFile: index.md
   - move:
       extension: .md
       source: ./.theme/.temp
       target: ./.theme/content
 
-  # copy content images to public/images
+  # copy all assets to .public
   - copy:
       source: ./.theme/public
       target: ./.theme/.public
