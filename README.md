@@ -63,33 +63,31 @@ will be served at the root path e.g. `.theme/public/logo.png` will be at
 
 Demo is at [/demo/public-asset](/demo/public-asset).
 
-## Component
+## Components
 
-To create a component, create a vue file in `.theme/components` directory e.g.
-`.theme/components/BasicComponent.vue`. Then use this component in a page as
-shown in `./theme/pages/demo/basic-component.vue`.
+Components are reusable pieces which can be created manually using built in
+components. Creating components gives you flexibility in designing your UI.
+To create a component, create a vue file in `.theme/components` directory.
 
-Demo is at [/demo/components/basic-component](/demo/components/basic-component).
+## Basic Component
+
+Basic component is our understanding of a component in its simplest form,
+to create a basic component create the vue file `BasicComponent.vue` in 
+`.theme/components` directory. To create more complex components this base
+component can be used as a starting point. Then use this component in a page
+as shown in `./theme/pages/demo/basic.vue`.
+
+Demo is at [/demo/components/basic](/demo/components/basic).
 
 ### Defining Properties
 
-To add properties to a component, add the following script to the component.
+To add properties to a component, defineProps can be used and type and default
+value can be set as shown in `./theme/components/ComponentWithProps.vue`. More
+properties can be added later on. Values of these properties can be assigned
+when using the component with properties as shown in
+`./theme/demo/defining-props.vue`
 
-<script>
-
-const props = defineProps({
-  propName: {
-    type: String,
-    default: null
-  }
-});
-
-<script/>
-
-Prop type and default value can be configured, also more properties can be
-added later on using this format.
-
-Demo is at [/demo/components/component-with-props](/demo/components/component-with-props)
+Demo is at [/demo/components/defining-props](/demo/components/defining-props)
 
 ## Escape Curly Braces
 
