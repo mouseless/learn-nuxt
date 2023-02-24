@@ -197,16 +197,16 @@ In nuxt, baseurl is the suffix you give to the end of your root url. For
 example, if your root url is `mouseless.com` and your baseurl is `learn`, your
 root url will be `mouseless.com/learn`.
 
-## Enviroment File
+## `.env` File
 
 It is usually a hidden file where we store our constant variables such as
 `BASE_URL` for system settings. It can be customized as `.env.{profile}`.
 
-### `.env.local`
+### `.env.local` File
 
 This is where we host the config settings for developer mode.
 
-### `.env.production`
+### `.env.production` File
 
 This is where we host the config settings for production mode. Settings in
 `.env.production` are used when deploying.
