@@ -10,9 +10,9 @@ log:
 tasks:
   - clean:
       directories:
+        - ./.theme/.public
         - ./.theme/.temp
         - ./.theme/content
-        - ./.theme/public/images
 
   # process and move markdowns to content
   - extractDiagrams:
