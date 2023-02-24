@@ -17,7 +17,7 @@ its theme layout.
 To link to another page, simply link to its markdown file in `[Link
 to](other-file.md)` format as demonstrated below;
 
-[content/links.md](content/links.md)
+[Content / Links](content/links.md)
 
 ### Images
 
@@ -25,7 +25,7 @@ To include an image in markdown, place image files in a folder named `-images`
 at the same path as that markdown file. For example; if you have a file
 `/demo/image-in-content.md`, place its images in `/demo/-images`.
 
-Demo is at [content/images.md](content/images.md)
+Demo is at [Content / Images](content/images.md)
 
 ### Mermaid Diagrams
 
