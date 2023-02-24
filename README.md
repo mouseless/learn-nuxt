@@ -69,6 +69,10 @@ shown in `./theme/pages/demo/basic-component.vue`.
 
 Demo is at [/demo/basic-component](/demo/basic-component).
 
+## Prose Components
+
+TBD
+
 ## Provide & Inject
 
 When you need to access a data that cannot be passed to a component (such as
