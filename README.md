@@ -92,6 +92,15 @@ Demo is at [/demo/basic-component](/demo/basic-component).
 
 ## Computed
 
+Computed properties are very similar with methods. When a computed property
+is created you can implement the logic like implementing a method and use
+that like a property. Computed properties are cached and only re-evaluated
+when their dependencies have changed. Computed properties can also have get
+and set methods, computed properties  have get method by default. Computed
+properties can be created as shown in `./theme/pages/demo/computed.vue`.
+
+Demo is at [/demo/computed](/demo/computed).
+
 ## Provide & Inject
 
 When you need to access a data that cannot be passed to a component (such as
