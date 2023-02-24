@@ -127,7 +127,10 @@ Demo is at [/demo/components/defining-props](/demo/components/defining-props)
 
 ### Emit & Ref
 
-TBD
+When you need a component to raise an event to its parent we use emit. And when
+we require a data to be updated we use `ref` function from `#imports`.
+
+Demo is at [/demo/components/emit-and-ref](/demo/components/emit-and-ref)
 
 ### Prose
 
