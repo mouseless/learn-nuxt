@@ -69,7 +69,7 @@ Components are reusable pieces which can be created manually using built in
 components. Creating components gives you flexibility in designing your UI.
 To create a component, create a vue file in `.theme/components` directory.
 
-## Basic Component
+### Basic Component
 
 Basic component is our understanding of a component in its simplest form,
 to create a basic component create the vue file `BasicComponent.vue` in 
@@ -81,7 +81,7 @@ Demo is at [/demo/components/basic](/demo/components/basic).
 
 ### Defining Properties
 
-To add properties to a component, defineProps can be used and type and default
+To add properties to a component, `defineProps` can be used and type and default
 value can be set as shown in `./theme/components/ComponentWithProps.vue`. More
 properties can be added later on. Values of these properties can be assigned
 when using the component with properties as shown in
