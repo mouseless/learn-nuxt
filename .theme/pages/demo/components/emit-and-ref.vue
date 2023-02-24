@@ -1,17 +1,23 @@
 <template>
   <div>
-    <ComponentThatEmits @sample-emit="handleEmit" />
-    <ComponentWithProps :message="`With ref => ${sampleRef}`" />
-    <ComponentWithProps :message="`Without ref => ${sampleLet}`" />
+    <div>
+      No ref: <ComponentThatEmits @sample-emit="increment" />  👉 {{ count }}
+    </div>
+    <div>
+      Ref: <ComponentThatEmits @sample-emit="incrementRef" /> 👉 {{ countRef }}
+    </div>
   </div>
 </template>
 <script setup>
 import { ref } from "#imports";
 
-let sampleLet = 0;
-const sampleRef = ref(0);
-function handleEmit() {
-  sampleRef.value++;
-  sampleLet++;
+let count = 0;
+function increment() {
+  count++;
+}
+
+const countRef = ref(0);
+function incrementRef() {
+  countRef.value++;
 }
 </script>

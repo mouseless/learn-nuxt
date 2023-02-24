@@ -127,8 +127,9 @@ Demo is at [/demo/components/defining-props](/demo/components/defining-props)
 
 ### Emit & Ref
 
-When you need a component to raise an event to its parent we use emit. And when
-we require a data to be updated we use `ref` function from `#imports`.
+Emit is the way to raise events from a component to its parent, like a click
+event. Ref is used for reactivity, so when a state is expected to change use
+`ref` for changes to apply to the template immediately.
 
 Demo is at [/demo/components/emit-and-ref](/demo/components/emit-and-ref)
 
