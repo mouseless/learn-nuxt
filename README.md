@@ -108,7 +108,7 @@ To create a component, create a vue file in `.theme/components` directory.
 ### Basic Component
 
 Basic component is our understanding of a component in its simplest form,
-to create a basic component create the vue file `BasicComponent.vue` in 
+to create a basic component create the vue file `BasicComponent.vue` in
 `.theme/components` directory. To create more complex components this base
 component can be used as a starting point. Then use this component in a page
 as shown in `./theme/pages/demo/basic.vue`.
@@ -253,8 +253,8 @@ to new text in files with given extension. We used this one to replace
 ## Base url
 
 In nuxt, baseurl is the suffix you give to the end of your root url. For
-example, if your root url is `mouseless.com` and your baseurl is `learn`, your
-root url will be `mouseless.com/learn`.
+example, if your root url is `mouseless.codes` and your baseurl is `learn`, your
+root url will be `mouseless.codes/learn`.
 
 ## `.env` File
 
