@@ -190,3 +190,23 @@ name in the given location to the desired name in the same location.
 This task (`.theme/prebuild/tasks/replaceContent.js`) replaces given old text
 to new text in files with given extension. We used this one to replace
 `README.md` with `index.md` before fixing links.
+
+## Base url
+
+In nuxt, baseurl is the suffix you give to the end of your root url. For
+example, if your root url is `mouseless.com` and your baseurl is `learn`, your
+root url will be `mouseless.com/learn`.
+
+## Enviroment File
+
+It is usually a hidden file where we store our constant variables such as
+`baseUrl` for system settings. It can be customized as `.env.{profile}`.
+
+### `.env.local`
+
+This is where we host the config settings for developer mode.
+
+### `.env.production`
+
+This is where we host the config settings for production mode. It is often used
+during generate.
