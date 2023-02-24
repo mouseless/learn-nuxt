@@ -40,4 +40,8 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/content"
   ],
+  components: {
+    global: true,
+    dirs: ["~/components"]
+  }
 });
