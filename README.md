@@ -71,7 +71,21 @@ Demo is at [/demo/basic-component](/demo/basic-component).
 
 ## Prose Components
 
-TBD
+Prose components are wrappers of html tags that are used to render markdown
+content. When you want to change the way nuxt renders markdown you need to
+override a prose component.
+
+To override a prose, let's say `<table>`, browse to [Nuxt Content /
+Prose](https://github.com/nuxt/content/blob/main/src/runtime/components/Prose/)
+and copy corresponding component, `ProseTable.vue` in this case, and place it
+under exactly the same path `.theme/components/Prose/`, and make any change you
+want.
+
+Below is a demonstration of overriding `ProseTable.vue`;
+
+| Override | This  | Table      |
+| ---      | ---   | ---        |
+| Using    | Prose | Components |
 
 ## Provide & Inject
 
