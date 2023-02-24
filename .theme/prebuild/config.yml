@@ -10,9 +10,9 @@ log:
 tasks:
   - clean:
       directories:
+        - ./.theme/.public
         - ./.theme/.temp
         - ./.theme/content
-        - ./.theme/public
 
   # process and move markdowns to content
   - extractDiagrams:
@@ -27,24 +27,20 @@ tasks:
       source: ./.theme/.temp
       oldText: README.md
       newText: index.md
-  - fixLinks:
-      source: ./.theme/.temp
-      indexFile: index.md
   - move:
       extension: .md
       source: ./.theme/.temp
       target: ./.theme/content
 
-  # copy images to public
+  # copy all assets to .public
   - copy:
-      extension: .ico
-      source: ./.theme/images
-      target: ./.theme/public
+      source: ./.theme/public
+      target: ./.theme/.public
   - copy:
       extension: .png
-      source: ./.theme/images
-      target: ./.theme/public
+      source: ./
+      target: ./.theme/.public
   - move:
       extension: .png
       source: ./.theme/.temp
-      target: ./.theme/public
+      target: ./.theme/.public
