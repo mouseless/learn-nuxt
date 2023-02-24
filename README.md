@@ -200,7 +200,7 @@ root url will be `mouseless.com/learn`.
 ## Enviroment File
 
 It is usually a hidden file where we store our constant variables such as
-`baseUrl` for system settings. It can be customized as `.env.{profile}`.
+`BASE_URL` for system settings. It can be customized as `.env.{profile}`.
 
 ### `.env.local`
 
@@ -208,5 +208,5 @@ This is where we host the config settings for developer mode.
 
 ### `.env.production`
 
-This is where we host the config settings for production mode. It is often used
-during generate.
+This is where we host the config settings for production mode. Settings in
+`.env.production` are used when deploying.
