@@ -53,6 +53,10 @@ content of your markdown files by taking the content folder as the root path.
 
 Don't forget to add `@nuxt/content` under modules in `nuxt.congfig.ts`
 
+### Querying with `queryContent`
+
+Retrieve content from the `/content` directory.
+
 ### Linking to Another Content Page
 
 To link to another page, simply link to its markdown file in `[Link
