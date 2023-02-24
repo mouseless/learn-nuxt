@@ -4,6 +4,8 @@ Here you can find how we use nuxt to create static web pages.
 
 To contribute please read [Contribution Guide](./contribution-guide.md).
 
+For demo links to work, run this project in your local machine.
+
 ## Pages Directory
 
 You can create pages under `.theme/pages/`.
@@ -82,13 +84,31 @@ flowchart
     A --> B
 ```
 
-## Component
+## Components
 
-To create a component, create a vue file in `.theme/components` directory e.g.
-`.theme/components/BasicComponent.vue`. Then use this component in a page as
-shown in `./theme/pages/demo/basic-component.vue`.
+Components are reusable pieces which can be created manually using built in
+components. Creating components gives you flexibility in designing your UI.
+To create a component, create a vue file in `.theme/components` directory.
 
-Demo is at [/demo/basic-component](/demo/basic-component).
+### Basic Component
+
+Basic component is our understanding of a component in its simplest form,
+to create a basic component create the vue file `BasicComponent.vue` in 
+`.theme/components` directory. To create more complex components this base
+component can be used as a starting point. Then use this component in a page
+as shown in `./theme/pages/demo/basic.vue`.
+
+Demo is at [/demo/components/basic](/demo/components/basic).
+
+### Defining Properties
+
+To add properties to a component, `defineProps` can be used and type and default
+value can be set as shown in `./theme/components/ComponentWithProps.vue`. More
+properties can be added later on. Values of these properties can be assigned
+when using the component with properties as shown in
+`./theme/demo/defining-props.vue`
+
+Demo is at [/demo/components/defining-props](/demo/components/defining-props)
 
 ## Provide & Inject
 
