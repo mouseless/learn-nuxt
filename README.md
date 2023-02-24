@@ -86,6 +86,7 @@ Below is a demonstration of overriding `ProseTable.vue`;
 | Override | This  | Table      |
 | ---      | ---   | ---        |
 | Using    | Prose | Components |
+| To       | Add   | Border     |
 
 ## Provide & Inject
 
