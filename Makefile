@@ -1,8 +1,6 @@
-.PHONY: run build prebuild
+.PHONY: run build
 
 run:
 	cd .theme ; npm run dev
 build:
 	cd .theme ; npm run generate
-prebuild:
-	cd .theme ; node prebuild

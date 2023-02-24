@@ -63,12 +63,8 @@ to](other-file.md)` format as demonstrated below;
 ## Images
 
 To serve static images simply put any `.ico` or `.png` file under
-`.theme/images` folder. It will be served at the root path e.g.
-`.theme/images/logo.png` will be at `/logo.png`.
-
-Nuxt provides `public` folder for this, but we added that folder to
-`.gitignore` because during preprocessing diagrams are copied to that folder as
-well.
+`.theme/public` folder. It will be served at the root path e.g.
+`.theme/public/logo.png` will be at `/logo.png`.
 
 Demo is at [/demo/images](/demo/images).
 
@@ -81,6 +77,13 @@ Below is a demonstration of how to draw a diagram.
 flowchart
     A --> B
 ```
+
+> :information_source:
+>
+> Generated `.png` files should be served under `.theme/public` but should not
+> be included in git. To achieve this, `.png` files will be copied to
+> `.theme/public/images` during preprocessing. We override `ProseImg.vue` to
+> place `/images` path between file path and base url.
 
 ## Component
 
