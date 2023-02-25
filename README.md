@@ -268,13 +268,6 @@ This task (`.theme/prebuild/tasks/extractDiagrams.js`) processes markdown files
 and extracts diagrams as `.png` files and modifies markdowns to replace
 markdown code with diagram images.
 
-### Fix Links
-
-This task (`.theme/prebuild/tasks/fixLinks.js`) demonstrates how you can
-manipulate markdown files befor building. It removes `.md` extension from links
-in markdown files so that they both work in markdown and published web site
-correctly.
-
 ### Move
 
 This task (`.theme/prebuild/tasks/move.js`) moves files with given extension
