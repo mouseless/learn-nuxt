@@ -41,6 +41,13 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/content"
   ],
+  content: {
+    markdown: {
+      remarkPlugins: {
+        "remark-emoji": false,
+      },
+    },
+  },
   components: {
     dirs: [
       { global: true , path: "~/components/Prose" },

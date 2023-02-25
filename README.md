@@ -125,6 +125,14 @@ when using the component with properties as shown in
 
 Demo is at [/demo/components/defining-props](/demo/components/defining-props)
 
+### Emit & Ref
+
+Emit is the way to raise events from a component to its parent, like a click
+event. Ref is used for reactivity, so when a state is expected to change use
+`ref` for changes to apply to the template immediately.
+
+Demo is at [/demo/components/emit-and-ref](/demo/components/emit-and-ref)
+
 ### Prose
 
 Prose components are wrappers of html tags that are used to render markdown
@@ -148,6 +156,39 @@ Below is a demonstration of overriding `ProseTable.vue`;
 >
 > You need to configure `~/components/Prose` as a global directory to enable
 > this. See `.theme/nuxt.config.ts`.
+
+### Slot Manipulation
+
+We need this one to create an alarm component out of a blockquote with an icon
+in its first line like below;
+
+> :warning:
+>
+> Demo warning message
+
+Content of this blockquote is passed to `ProseBlockquote` component in
+`<slot/>`. To parse the first line of this slot, we used `useSlots` in script
+where nuxt gives access to element tree of a markdown content.
+
+`<slot/>` does not allow to manipulate its content, so we used `<component
+:is="..."/>` instead. This is the way to render a slot that is programmatically
+changed or created.
+
+Other types demonstrated below;
+
+> :information_source:
+>
+> Demo info message
+
+> Demo default message
+
+### Disabling Emoji Conversion
+
+Nuxt content comes with a default setting that converts emoji texts into emoji
+icons. This is disabled in `.theme/nuxt.config.ts` under
+`content.markdown.remarkPlugins.remark-emoji`. This way a prose component gets
+original text instead of an emoji icon which is better because we don't want to
+place an emoji icon in code.
 
 ## Provide & Inject
 
