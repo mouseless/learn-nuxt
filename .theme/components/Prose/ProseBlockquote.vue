@@ -20,8 +20,7 @@ const firstLine = computed(() => {
 
 const types = {
   "ℹ️": "info",
-  "⚠️": "warning",
-  "❌": "danger"
+  "⚠️": "warning"
 };
 
 const type = computed(() => {
@@ -44,14 +43,11 @@ blockquote {
   padding-left: 10px;
   border-left: solid 10px lightgray;
 }
-.danger {
-  border-color: pink;
-}
 .info {
   border-color: lightblue;
 }
 .warning {
-  border-color: yellow;
+  border-color: orange;
 }
 .default {
   border-color: lightgray;

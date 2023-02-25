@@ -151,7 +151,28 @@ Below is a demonstration of overriding `ProseTable.vue`;
 
 ### Slot Manipulation
 
-TBD
+We need this one to create an alarm component out of a blockquote with an icon
+in its first line like below;
+
+> :warning:
+>
+> Demo warning message
+
+Content of this blockquote is passed to `ProseBlockquote` component in
+`<slot/>`. To parse the first line of this slot, we used `useSlots` in script
+where nuxt gives access to element tree of a markdown content.
+
+`<slot/>` does not allow to manipulate its content, so we used `<component
+:is="..."/>` instead. This is the way to render a slot that is programmatically
+changed or created.
+
+Other types demonstrated below;
+
+> :information_source:
+>
+> Demo info message
+
+> Demo default message
 
 ## Provide & Inject
 
