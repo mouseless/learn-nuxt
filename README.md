@@ -108,7 +108,7 @@ To create a component, create a vue file in `.theme/components` directory.
 ### Basic Component
 
 Basic component is our understanding of a component in its simplest form,
-to create a basic component create the vue file `BasicComponent.vue` in 
+to create a basic component create the vue file `BasicComponent.vue` in
 `.theme/components` directory. To create more complex components this base
 component can be used as a starting point. Then use this component in a page
 as shown in `./theme/pages/demo/basic.vue`.
@@ -148,6 +148,10 @@ Below is a demonstration of overriding `ProseTable.vue`;
 >
 > You need to configure `~/components/Prose` as a global directory to enable
 > this. See `.theme/nuxt.config.ts`.
+
+### Slot Manipulation
+
+TBD
 
 ## Provide & Inject
 
