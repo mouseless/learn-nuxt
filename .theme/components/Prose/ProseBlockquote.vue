@@ -19,8 +19,8 @@ const firstLine = computed(() => {
 });
 
 const types = {
-  "ℹ️": "info",
-  "⚠️": "warning"
+  ":information_source:": "info",
+  ":warning:": "warning"
 };
 
 const type = computed(() => {
@@ -40,8 +40,9 @@ const body = computed(() => {
 </script>
 <style scoped>
 blockquote {
-  padding-left: 10px;
-  border-left: solid 10px lightgray;
+  padding-left: 1em;
+  border-left: solid 5px;
+  margin-left: 1em;
 }
 .info {
   border-color: lightblue;

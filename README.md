@@ -174,6 +174,14 @@ Other types demonstrated below;
 
 > Demo default message
 
+### Disabling Emoji Conversion
+
+Nuxt content comes with a default setting that converts emoji texts into emoji
+icons. This is disabled in `.theme/nuxt.config.ts` under
+`content.markdown.remarkPlugins.remark-emoji`. This way a prose component gets
+original text instead of an emoji icon which is better because we don't want to
+place an emoji icon in code.
+
 ## Provide & Inject
 
 When you need to access a data that cannot be passed to a component (such as
