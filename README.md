@@ -95,7 +95,7 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 > `.png` from content images or generated diagrams should be served under
 > `.theme/public` but they shouldn't be included in git. To preserve the
 > default behaviour while solving this problem, we change public assets folder
-> from `.theme/public` to `.theme/.public` via `vite.publicDir` in
+> from `.theme/public` to `.theme/.public` via `dir.public` in
 > `.theme/nuxt.config.ts` and copy public assets, content images and generated
 > diagrams into `.public` during preprocessing.
 
