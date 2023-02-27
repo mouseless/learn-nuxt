@@ -4,7 +4,46 @@ Here you can find how we use nuxt to create static web pages.
 
 To contribute please read [Contribution Guide](./contribution-guide.md).
 
-## Pages Directory
+For demo links to work, run this project in your local machine.
+
+## Content
+
+We use [Nuxt Content](https://content.nuxtjs.org/) to render markdown content
+in a web page. Add `@nuxt/content` under modules in `.theme/nuxt.congfig.ts`
+
+Markdown files are placed at the root of to give focus on more to content than
+its theme layout.
+
+### Links
+
+To link to another page, simply link to its markdown file in `[Link
+to](other-file.md)` format as demonstrated below;
+
+[Content / Links](content/links.md)
+
+### Images
+
+To include an image in markdown, place image files in a folder named `-images`
+at the same path as that markdown file. For example; if you have a file
+`/demo/image-in-content.md`, place its images in `/demo/-images`.
+
+Demo is at [Content / Images](content/images.md)
+
+### Mermaid Diagrams
+
+We use a preprocessor to generate mermaid diagram images from markdown files.
+Below is a demonstration of how to draw a diagram;
+
+```mermaid
+flowchart
+    A --> B
+```
+
+## Querying with `queryContent`
+
+Retrieve content from the `/content` directory.
+
+## Pages
 
 You can create pages under `.theme/pages/`.
 
@@ -26,73 +65,134 @@ Demo is at [/demo/static](/demo/static).
 
 To create a dynamic page you need to surround the page with '[]' e.g.
 `.theme/pages/demo/[page].vue`. To make it optional surround it with `[[]]`
-e.g. `.theme/pages/demo/optional/[[page]].vue`.
+e.g. `.theme/pages/demo/optional/[[page]].vue`. To have a dynamic route that
+can handle any depth in a path we use catch all routes e.g.
+`.theme/pages/demo/catch-all/[...page].vue`.
 
-- Dynamic page demo:
+- Dynamic route:
   - [/demo/dynamic-1](/demo/dynamic-1)
   - [/demo/dynamic-2](/demo/dynamic-2)
-- Optional route page demo:
+- Dynamic route with optional parameter:
   - [/demo/optional](/demo/optional)
   - [/demo/optional/dynamic](/demo/optional/dynamic)
-
-## Content
-
-Content of a web site is markdown files that are placed at the root of to give
-focus on more to content than its theme layout.
+- Catch all route:
+  - [/demo/catch-all](/demo/catch-all)
+  - [/demo/catch-all/dynamic](/demo/catch-all/dynamic)
+  - [/demo/catch-all/with/a/sub/dir](/demo/catch-all/with/a/sub/dir)
 
 ### Content Page
 
 Content page is a page that uses `<ContentDoc />` which renders given markdown
-content as html. It is at `.theme/pages/[[content-page]].vue` which has a
-dynamic route to handle any markdown file.
+content as html. It is at `.theme/pages/[...content-page].vue` which has a
+catch all route to handle any markdown file in any directory.
 
-### Nuxt Content Plugin
+## Public Assets
 
-With the [Nuxt Content](https://content.nuxtjs.org/) plugin you can read the
-content of your markdown files by taking the content folder as the root path.
+To serve static assets in a theme like `.css` or `.png` files simply put any
+file under `.theme/public` folder. It will be served at the root path. E.g.
+`.theme/public/logo.png` will be at `/logo.png`.
 
-Don't forget to add `@nuxt/content` under modules in `nuxt.congfig.ts`
+Demo is at [/demo/public-assets](/demo/public-assets).
 
-### Querying with `queryContent`
+> :information_source:
+>
+> `.png` from content images or generated diagrams should be served under
+> `.theme/public` but they shouldn't be included in git. To preserve the
+> default behaviour while solving this problem, we change public assets folder
+> from `.theme/public` to `.theme/.public` via `vite.publicDir` in
+> `.theme/nuxt.config.ts` and copy public assets, content images and generated
+> diagrams into `.public` during preprocessing.
 
-Retrieve content from the `/content` directory.
+## Components
 
-### Linking to Another Content Page
+Components are reusable pieces which can be created manually using built in
+components. Creating components gives you flexibility in designing your UI.
+To create a component, create a vue file in `.theme/components` directory.
 
-To link to another page, simply link to its markdown file in `[Link
-to](other-file.md)` format as demonstrated below;
+### Basic Component
 
-- [Other Content](other-content.md)
+Basic component is our understanding of a component in its simplest form,
+to create a basic component create the vue file `BasicComponent.vue` in
+`.theme/components` directory. To create more complex components this base
+component can be used as a starting point. Then use this component in a page
+as shown in `./theme/pages/demo/basic.vue`.
 
-## Images
+Demo is at [/demo/components/basic](/demo/components/basic).
 
-To serve static images simply put any `.ico` or `.png` file under
-`.theme/images` folder. It will be served at the root path e.g.
-`.theme/images/logo.png` will be at `/logo.png`.
+### Defining Properties
 
-Nuxt provides `public` folder for this, but we added that folder to
-`.gitignore` because during preprocessing diagrams are copied to that folder as
-well.
+To add properties to a component, `defineProps` can be used and type and default
+value can be set as shown in `./theme/components/ComponentWithProps.vue`. More
+properties can be added later on. Values of these properties can be assigned
+when using the component with properties as shown in
+`./theme/demo/defining-props.vue`
 
-Demo is at [/demo/images](/demo/images).
+Demo is at [/demo/components/defining-props](/demo/components/defining-props)
 
-## Mermaid Diagrams
+### Emit & Ref
 
-We use a preprocessor to generate mermaid diagram images from markdown files.
-Below is a demonstration of how to draw a diagram.
+Emit is the way to raise events from a component to its parent, like a click
+event. Ref is used for reactivity, so when a state is expected to change use
+`ref` for changes to apply to the template immediately.
 
-```mermaid
-flowchart
-    A --> B
-```
+Demo is at [/demo/components/emit-and-ref](/demo/components/emit-and-ref)
 
-## Component
+### Prose
 
-To create a component, create a vue file in `.theme/components` directory e.g.
-`.theme/components/BasicComponent.vue`. Then use this component in a page as
-shown in `./theme/pages/demo/basic-component.vue`.
+Prose components are wrappers of html tags that are used to render markdown
+content. When you want to change the way nuxt renders markdown you need to
+override a prose component.
 
-Demo is at [/demo/basic-component](/demo/basic-component).
+To override a prose, let's say `<table>`, browse to [Nuxt Content /
+Prose](https://github.com/nuxt/content/blob/main/src/runtime/components/Prose/)
+and copy corresponding component, `ProseTable.vue` in this case, and place it
+under exactly the same path `.theme/components/Prose/`, and make any change you
+want.
+
+Below is a demonstration of overriding `ProseTable.vue`;
+
+| Override | This  | Table      |
+| ---      | ---   | ---        |
+| Using    | Prose | Components |
+| To       | Add   | Border     |
+
+> :information_source:
+>
+> You need to configure `~/components/Prose` as a global directory to enable
+> this. See `.theme/nuxt.config.ts`.
+
+### Slot Manipulation
+
+We need this one to create an alarm component out of a blockquote with an icon
+in its first line like below;
+
+> :warning:
+>
+> Demo warning message
+
+Content of this blockquote is passed to `ProseBlockquote` component in
+`<slot/>`. To parse the first line of this slot, we used `useSlots` in script
+where nuxt gives access to element tree of a markdown content.
+
+`<slot/>` does not allow to manipulate its content, so we used `<component
+:is="..."/>` instead. This is the way to render a slot that is programmatically
+changed or created.
+
+Other types demonstrated below;
+
+> :information_source:
+>
+> Demo info message
+
+> Demo default message
+
+### Disabling Emoji Conversion
+
+Nuxt content comes with a default setting that converts emoji texts into emoji
+icons. This is disabled in `.theme/nuxt.config.ts` under
+`content.markdown.remarkPlugins.remark-emoji`. This way a prose component gets
+original text instead of an emoji icon which is better because we don't want to
+place an emoji icon in code.
 
 ## Provide & Inject
 

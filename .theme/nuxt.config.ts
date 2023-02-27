@@ -40,8 +40,20 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/content"
   ],
+  content: {
+    markdown: {
+      remarkPlugins: {
+        "remark-emoji": false,
+      },
+    },
+  },
   components: {
-    global: true,
-    dirs: ["~/components"]
+    dirs: [
+      { global: true , path: "~/components/Prose" },
+      "~/components"
+    ]
+  },
+  vite: {
+    publicDir: ".public"
   }
 });

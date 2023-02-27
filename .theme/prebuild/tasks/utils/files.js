@@ -40,7 +40,7 @@ async function files(rootDir, extension, action, subDir) {
       if (isDirectory) {
         log.debug(`checking '${file}' under '${currentDir}'`, 1);
         await files(rootDir, extension, action, join(subDir, file));
-      } else if (extname(file) !== extension) {
+      } else if (extension && extname(file) !== extension) {
         log.debug(`skipped '${file}' under '${currentDir}'`, 1);
       } else {
         try {
