@@ -42,6 +42,13 @@ flowchart
 ## Querying with `queryContent`
 
 Retrieve content from the `/content` directory.
+`queryContent()` query döner. `find`, `findOne` gibi methodlar kullanarak content e erişilebilir.
+
+> :information_source:
+>
+> find, findone promise döner o yüzden await ile beklemek gerek
+
+Demo is at [/demo/querying/with-query-content](/demo/querying/with-query-content)
 
 ## Pages
 
