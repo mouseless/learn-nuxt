@@ -32,6 +32,10 @@
       "error",
       2
     ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
     "no-multi-spaces": "error",
     "no-multiple-empty-lines": "error",
     "no-trailing-spaces": "error",
