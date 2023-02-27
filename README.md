@@ -95,7 +95,7 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 > `.png` from content images or generated diagrams should be served under
 > `.theme/public` but they shouldn't be included in git. To preserve the
 > default behaviour while solving this problem, we change public assets folder
-> from `.theme/public` to `.theme/.public` via `vite.publicDir` in
+> from `.theme/public` to `.theme/.public` via `dir.public` in
 > `.theme/nuxt.config.ts` and copy public assets, content images and generated
 > diagrams into `.public` during preprocessing.
 
@@ -268,13 +268,6 @@ This task (`.theme/prebuild/tasks/extractDiagrams.js`) processes markdown files
 and extracts diagrams as `.png` files and modifies markdowns to replace
 markdown code with diagram images.
 
-### Fix Links
-
-This task (`.theme/prebuild/tasks/fixLinks.js`) demonstrates how you can
-manipulate markdown files befor building. It removes `.md` extension from links
-in markdown files so that they both work in markdown and published web site
-correctly.
-
 ### Move
 
 This task (`.theme/prebuild/tasks/move.js`) moves files with given extension
@@ -290,3 +283,27 @@ name in the given location to the desired name in the same location.
 This task (`.theme/prebuild/tasks/replaceContent.js`) replaces given old text
 to new text in files with given extension. We used this one to replace
 `README.md` with `index.md` before fixing links.
+
+## Base url
+
+In nuxt, baseurl is the suffix you give to the end of your root url. For
+example, if your root url is `mouseless.codes` and your baseurl is `learn`, your
+root url will be `mouseless.codes/learn`.
+
+Base url should be given to `app.baseURL` when using it in the nuxt project.
+Note that the base url must start with `/`. We always put `/` at the beginning
+to avoid this requirement. You can find an example in `.theme/nuxt.config.ts`.
+
+## `.env` File
+
+It is usually a hidden file where we store our constant variables such as
+`BASE_URL` for system settings. It can be customized as `.env.{profile}`.
+
+### `.env.local` File
+
+This is where we host the config settings for developer mode.
+
+### `.env.production` File
+
+This is where we host the config settings for production mode. Settings in
+`.env.production` are used when deploying.
