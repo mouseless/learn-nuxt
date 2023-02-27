@@ -41,13 +41,16 @@ flowchart
 
 ## Querying with `queryContent`
 
-Retrieve content from the `/content` directory.
-`queryContent()` ile bir query sorgusu oluşturursunuz. `find`, `findOne` gibi
-query methodlarını kullanarak content e erişilebilir. Yine nuxt contentin render elementleriyle okuduğunuz markdown/markdownları render edebilirsiniz.
+Retrieve content from the `/content` directory. With `queryContent()` you
+create a query query. You can access the content using query methods like
+`find`, `findOne`. You can render the markdown/markdowns you read with the
+markdown renderer elements of
+[nuxt content](https://content.nuxtjs.org/guide/displaying/rendering) such as
+`ContentRenderer`.
 
 > :information_source:
 >
-> find, findone promise döner o yüzden await ile beklemek gerek
+> `find`, `findOne` methods return `promise` so you need to wait with `await`.
 
 Demo is at [/demo/querying/with-query-content](/demo/querying/with-query-content)
 
