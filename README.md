@@ -42,7 +42,8 @@ flowchart
 ## Querying with `queryContent`
 
 Retrieve content from the `/content` directory.
-`queryContent()` query döner. `find`, `findOne` gibi methodlar kullanarak content e erişilebilir.
+`queryContent()` ile bir query sorgusu oluşturursunuz. `find`, `findOne` gibi
+query methodlarını kullanarak content e erişilebilir. Yine nuxt contentin render elementleriyle okuduğunuz markdown/markdownları render edebilirsiniz.
 
 > :information_source:
 >
