@@ -290,6 +290,10 @@ In nuxt, baseurl is the suffix you give to the end of your root url. For
 example, if your root url is `mouseless.codes` and your baseurl is `learn`, your
 root url will be `mouseless.codes/learn`.
 
+Base url should be given to `app.baseURL` when using it in the nuxt project.
+Note that the base url must start with `/`. We always put `/` at the beginning
+to avoid this requirement. You can find an example in `.theme/nuxt.config.ts`.
+
 ## `.env` File
 
 It is usually a hidden file where we store our constant variables such as
