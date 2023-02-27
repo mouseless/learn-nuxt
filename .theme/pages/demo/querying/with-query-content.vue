@@ -1,6 +1,5 @@
 <template>
   <div>
-    Hi query
     <ContentRenderer :value="data" />
   </div>
 </template>
