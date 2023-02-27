@@ -12,6 +12,9 @@ export default defineNuxtConfig({
     }
   },
   app: {
+    baseURL: process.env.BASE_URL?.startsWith("/")
+      ? process.env.BASE_URL
+      : `/${process.env.BASE_URL}`,
     head: {
       meta: [
         {
@@ -53,7 +56,7 @@ export default defineNuxtConfig({
       "~/components"
     ]
   },
-  vite: {
-    publicDir: ".public"
+  dir:{
+    public:".public"
   }
 });

@@ -4,9 +4,9 @@
   "type": "module",
   "scripts": {
     "predev": "npx eslint . && node prebuild && nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --dotenv .env.local",
     "pregenerate": "npx eslint . && node prebuild && nuxt build",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate --dotenv .env.production",
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview"
   },
