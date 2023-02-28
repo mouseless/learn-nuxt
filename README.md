@@ -151,6 +151,38 @@ event. Ref is used for reactivity, so when a state is expected to change use
 
 Demo is at [/demo/components/emit-and-ref](/demo/components/emit-and-ref)
 
+## Variable
+
+Variables can be created as shown in `./theme/pages/. We are using
+__Composition__ __API__ with setup in nuxt and in demos.
+
+Demo is at [/demo/variable](/demo/variable).
+
+## Computed
+
+Computed properties are very similar with functions. When a computed property
+is created you can implement the logic like implementing a method and use
+the reference like a regular property. Computed property can also have get and
+set methods like a normal property, computed properties have get method by
+default. Computed properties can be created as shown in
+`.theme/pages/demo/computed.vue`.
+
+Demo is at [/demo/computed](/demo/computed).
+
+### Computed vs Function
+
+Computed properties are cached and only re-evaluated when their dependencies
+have changed while functions will be re-evaluated every time it is called.
+
+### Computed with Ref
+
+Ref can be used with computed properties, this results in an automatic
+re-rendering after a single re-evaluation when dependencies have changed. Ref
+can be used in computed properties as shown in
+`.theme/pages/demo/computed-with-ref.vue`
+
+Demo is at [/demo/computed-with-ref](/demo/computed-with-ref)
+
 ### Prose
 
 Prose components are wrappers of html tags that are used to render markdown
@@ -201,47 +233,12 @@ Other types demonstrated below;
 > Demo default message
 
 ### Disabling Emoji Conversion
-To create a component, create a vue file in `.theme/components` directory e.g.
-`.theme/components/BasicComponent.vue`. Then use this component in a page as
-shown in `.theme/pages/demo/basic-component.vue`.
 
 Nuxt content comes with a default setting that converts emoji texts into emoji
 icons. This is disabled in `.theme/nuxt.config.ts` under
 `content.markdown.remarkPlugins.remark-emoji`. This way a prose component gets
 original text instead of an emoji icon which is better because we don't want to
 place an emoji icon in code.
-
-## Variable
-
-Variables can be created as shown in `./theme/pages/. We are using
-__Composition__ __API__ with setup in nuxt and in demos.
-
-Demo is at [/demo/variable](/demo/variable).
-
-## Computed
-
-Computed properties are very similar with functions. When a computed property
-is created you can implement the logic like implementing a method and use
-the reference like a regular property. Computed property can also have get and
-set methods like a normal property, computed properties have get method by
-default. Computed properties can be created as shown in
-`.theme/pages/demo/computed.vue`.
-
-Demo is at [/demo/computed](/demo/computed).
-
-### Computed vs Function
-
-Computed properties are cached and only re-evaluated when their dependencies
-have changed while functions will be re-evaluated every time it is called.
-
-### Computed with Ref
-
-Ref can be used with computed properties, this results in an automatic
-re-rendering after a single re-evaluation when dependencies have changed. Ref
-can be used in computed properties as shown in
-`.theme/pages/demo/computed-with-ref.vue`
-
-Demo is at [/demo/computed-with-ref](/demo/computed-with-ref)
 
 ## Provide & Inject
 
