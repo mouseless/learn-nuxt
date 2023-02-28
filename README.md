@@ -41,7 +41,12 @@ flowchart
 
 ## Querying with `<ContentQuery>`
 
-Burası content query elementinin dokumanı
+This element assigns a query to the content. It filters on itself with
+`:where`, `path`. v-slot retrieves the incoming data in the given parameter.
+It is possible to see that it is rendered with the given render elements.
+
+Demo is at
+[/demo/querying/content-query-element](/demo/querying/content-query-element)
 
 ## Pages
 
