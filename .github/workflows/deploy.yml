@@ -4,7 +4,9 @@ on:
     branches:
       - main
       - epic/nuxt-3
-      - issue/nuxt-3/deploy-via-github-pages
+  pull_request:
+    branches:
+      - epic/nuxt-3
 jobs:
   generate:
     name: Generate
