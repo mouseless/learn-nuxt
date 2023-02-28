@@ -28,7 +28,7 @@ export default async function({ source, target }) {
     mkdirSync(targetDir, { recursive: true });
 
     await run(sourceFile, targetFile, {
-      puppeteerConfig: [],
+      puppeteerConfig: { "executablePath" : process.env.CHROMIUM_EXECUTABLE_PATH },
       quiet: log.settings.quiet || !log.settings.debug,
       outputFormat: "png",
       parseMMDOptions: {
