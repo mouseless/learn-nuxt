@@ -22,7 +22,7 @@
 *.log*
 
 # env files
-.teheme/.env
+.theme/.env.local
 
 # prebuild files
 .theme/.public
