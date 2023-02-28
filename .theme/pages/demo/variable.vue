@@ -1,18 +1,8 @@
 <template>
   <div>
-    <p>
-      FirstName is a property: {{ firstName }}
-    </p>
-    <p>
-      LastName is a property: {{ lastName }}
-    </p>
-    <p>
-      FulName is: {{ firstName + " " + lastName }}
-    </p>
+    Name: {{ name }}
   </div>
 </template>
-
 <script setup>
-const firstName = "John";
-const lastName = "Doe";
+const name = "John";
 </script>
