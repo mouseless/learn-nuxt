@@ -23,17 +23,17 @@ export default defineNuxtConfig({
         {
           hid: "og:image",
           property: "og:image",
-          content: "http://localhost:3000/logo.png",
+          content: "https://mouseless.github.io/learn-nuxt/favicon.ico",
         },
         {
           hid: "og:image:width",
           property: "og:image:width",
-          content: "270",
+          content: "50",
         },
         {
           hid: "og:image:height",
           property: "og:image:height",
-          content: "64",
+          content: "50",
         }
       ]
     }
