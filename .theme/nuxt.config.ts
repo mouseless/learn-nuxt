@@ -12,6 +12,9 @@ export default defineNuxtConfig({
     }
   },
   app: {
+    baseURL: process.env.BASE_URL?.startsWith("/")
+      ? process.env.BASE_URL
+      : `/${process.env.BASE_URL}`,
     head: {
       meta: [
         {
@@ -40,8 +43,25 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/content"
   ],
+  content: {
+    markdown: {
+      remarkPlugins: {
+        "remark-emoji": false,
+      },
+    },
+    documentDriven: {
+      page: true,
+      navigation: false,
+      surround: false
+    },
+  },
   components: {
-    global: true,
-    dirs: ["~/components"]
+    dirs: [
+      { global: true , path: "~/components/Prose" },
+      "~/components"
+    ]
+  },
+  dir:{
+    public:".public"
   }
 });
