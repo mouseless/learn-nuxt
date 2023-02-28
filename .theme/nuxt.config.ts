@@ -49,6 +49,11 @@ export default defineNuxtConfig({
         "remark-emoji": false,
       },
     },
+    documentDriven: {
+      page: true,
+      navigation: false,
+      surround: false
+    },
   },
   components: {
     dirs: [
