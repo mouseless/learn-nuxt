@@ -2,7 +2,7 @@
 
 Here you can find how we use nuxt to create static web pages.
 
-To contribute please read [Contribution Guide](./contributing.md).
+To contribute please read [Contribution Guide](./CONTRIBUTING.md).
 
 For demo links to work, run this project in your local machine.
 
