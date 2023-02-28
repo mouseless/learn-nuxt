@@ -119,7 +119,7 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 
 ## Variable
 
-Variables can be created as shown in `.theme/pages/demo/variable`. 
+Variables can be created as shown in `.theme/pages/demo/variable`.
 
 Demo is at [/demo/variable](/demo/variable).
 

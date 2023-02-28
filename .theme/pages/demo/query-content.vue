@@ -10,14 +10,17 @@
 </template>
 
 <script setup>
-import { useContent, useRoute, queryContent } from "#imports";
+import { useRoute, queryContent } from "#imports";
 
 const route = useRoute();
 
-// useContent is available in documentDriven mode
-// it automatically loads index page etc
-const { page: index } = useContent();
+// query index page
+const index = await queryContent("/demo/query-content")
+  .where({ _path: { $eq: route.path }})
+  .findOne();
 
 // filter out index page to avoid rendering it twice
-const pages = await queryContent("/demo/query-content").where({ _path: { $ne: route.path }}).find();
+const pages = await queryContent("/demo/query-content")
+  .where({ _path: { $ne: route.path }})
+  .find();
 </script>

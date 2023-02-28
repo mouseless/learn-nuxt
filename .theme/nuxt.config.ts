@@ -6,15 +6,13 @@ export default defineNuxtConfig({
     public: {
       content: {
         anchorLinks: {
-          depth: 0
-        }
+          depth: 0,
+        },
       },
-    }
+    },
   },
   app: {
-    baseURL: process.env.BASE_URL?.startsWith("/")
-      ? process.env.BASE_URL
-      : `/${process.env.BASE_URL}`,
+    baseURL: process.env.BASE_URL,
     head: {
       meta: [
         {
@@ -49,19 +47,14 @@ export default defineNuxtConfig({
         "remark-emoji": false,
       },
     },
-    documentDriven: {
-      page: true,
-      navigation: false,
-      surround: false
-    },
   },
   components: {
     dirs: [
       { global: true , path: "~/components/Prose" },
-      "~/components"
+      "~/components",
     ]
   },
   dir: {
-    public: ".public"
-  }
+    public: ".public",
+  },
 });

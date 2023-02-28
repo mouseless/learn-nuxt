@@ -1,6 +1,6 @@
 <template>
   <div>
-    Message prop of this component: {{ message }}
+    Message: {{ message }}
   </div>
 </template>
 
