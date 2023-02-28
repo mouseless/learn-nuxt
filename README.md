@@ -82,6 +82,24 @@ Content page is a page that uses `<ContentDoc />` which renders given markdown
 content as html. It is at `.theme/pages/[...content-page].vue` which has a
 catch all route to handle any markdown file in any directory.
 
+### Querying with `queryContent`
+
+We needed to load all markdown content under a folder in one page. To achieve
+this we used `queryContent` by which you can retrieve content under `content/`
+folder.
+
+> :information_source:
+>
+> `find`, `findOne` methods return `promise` so you need to wait with `await`.
+
+Demo is at [/demo/query-content](/demo/query-content)
+
+> :warning:
+>
+> We've disabled `navigation` and `surround` options to avoid extra queries
+> when a page is loaded. You might reenable these depending on the theme you
+> are using.
+
 ## Public Assets
 
 To serve static assets in a theme like `.css` or `.png` files simply put any
