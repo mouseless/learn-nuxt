@@ -1,0 +1,1 @@
+import{o as t,f as o,V as a,a as c,R as n}from"./entry.dfce2b68.js";const _={__name:"ComponentWithProps",props:{message:{type:String,required:!0}},setup(s){return(r,e)=>(t(),o("div",null," Message: "+a(s.message),1))}},p={};function i(s,r){const e=_;return t(),o("div",null,[n(e,{message:"Hello"}),n(e,{message:"World"})])}const l=c(p,[["render",i]]);export{l as default};
