@@ -1,7 +1,7 @@
 <template>
   <ContentQuery
     v-slot="{ data: pages }"
-    path="/demo/querying"
+    path="/demo/content-query"
     :where="{ _path: { $ne: route.path }}"
   >
     <ContentRenderer

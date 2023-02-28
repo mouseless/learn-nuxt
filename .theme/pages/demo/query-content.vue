@@ -19,5 +19,5 @@ const route = useRoute();
 const { page: index } = useContent();
 
 // filter out index page to avoid rendering it twice
-const pages = await queryContent("/demo/querying").where({ _path: { $ne: route.path }}).find();
+const pages = await queryContent("/demo/query-content").where({ _path: { $ne: route.path }}).find();
 </script>
