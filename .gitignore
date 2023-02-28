@@ -25,6 +25,6 @@
 .teheme/.env
 
 # prebuild files
+.theme/.public
 .theme/.temp
 .theme/content
-.theme/public
