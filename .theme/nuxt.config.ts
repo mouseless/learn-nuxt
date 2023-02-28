@@ -53,7 +53,7 @@ export default defineNuxtConfig({
       "~/components"
     ]
   },
-  vite: {
-    publicDir: ".public"
+  dir: {
+    public: ".public"
   }
 });
