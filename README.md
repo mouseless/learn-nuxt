@@ -82,6 +82,24 @@ Content page is a page that uses `<ContentDoc />` which renders given markdown
 content as html. It is at `.theme/pages/[...content-page].vue` which has a
 catch all route to handle any markdown file in any directory.
 
+### Querying with `queryContent`
+
+We needed to load all markdown content under a folder in one page. To achieve
+this we used `queryContent` by which you can retrieve content under `content/`
+folder.
+
+> :information_source:
+>
+> `find`, `findOne` methods return `promise` so you need to wait with `await`.
+
+Demo is at [/demo/query-content](/demo/query-content)
+
+> :warning:
+>
+> We've disabled `navigation` and `surround` options to avoid extra queries
+> when a page is loaded. You might reenable these depending on the theme you
+> are using.
+
 ## Public Assets
 
 To serve static assets in a theme like `.css` or `.png` files simply put any
@@ -95,9 +113,40 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 > `.png` from content images or generated diagrams should be served under
 > `.theme/public` but they shouldn't be included in git. To preserve the
 > default behaviour while solving this problem, we change public assets folder
-> from `.theme/public` to `.theme/.public` via `vite.publicDir` in
+> from `.theme/public` to `.theme/.public` via `dir.public` in
 > `.theme/nuxt.config.ts` and copy public assets, content images and generated
 > diagrams into `.public` during preprocessing.
+
+## Variable
+
+Variables can be created as shown in `.theme/pages/demo/variable`. 
+
+Demo is at [/demo/variable](/demo/variable).
+
+> :information_source:
+>
+> We are using __Composition__ __API__ with setup in nuxt and in demos.
+
+## Computed
+
+Computed properties can be created as shown in
+`.theme/pages/demo/computed/index.vue`.
+
+Demo is at [/demo/computed](/demo/computed).
+
+> :information_source:
+>
+> Computed properties are evaluated only once while functions will be
+> re-evaluated every time they are called.
+
+### With Ref
+
+Ref can be used with computed properties, this results in an automatic
+re-rendering after a single re-evaluation when dependencies have changed. Ref
+can be used in computed properties as shown in
+`.theme/pages/demo/computed/with-ref.vue`
+
+Demo is at [/demo/computed/with-ref](/demo/computed/with-ref)
 
 ## Components
 
@@ -111,7 +160,7 @@ Basic component is our understanding of a component in its simplest form,
 to create a basic component create the vue file `BasicComponent.vue` in
 `.theme/components` directory. To create more complex components this base
 component can be used as a starting point. Then use this component in a page
-as shown in `./theme/pages/demo/basic.vue`.
+as shown in `.theme/pages/demo/basic.vue`.
 
 Demo is at [/demo/components/basic](/demo/components/basic).
 
@@ -121,7 +170,7 @@ To add properties to a component, `defineProps` can be used and type and default
 value can be set as shown in `./theme/components/ComponentWithProps.vue`. More
 properties can be added later on. Values of these properties can be assigned
 when using the component with properties as shown in
-`./theme/demo/defining-props.vue`
+`.theme/demo/defining-props.vue`
 
 Demo is at [/demo/components/defining-props](/demo/components/defining-props)
 
@@ -268,13 +317,6 @@ This task (`.theme/prebuild/tasks/extractDiagrams.js`) processes markdown files
 and extracts diagrams as `.png` files and modifies markdowns to replace
 markdown code with diagram images.
 
-### Fix Links
-
-This task (`.theme/prebuild/tasks/fixLinks.js`) demonstrates how you can
-manipulate markdown files befor building. It removes `.md` extension from links
-in markdown files so that they both work in markdown and published web site
-correctly.
-
 ### Move
 
 This task (`.theme/prebuild/tasks/move.js`) moves files with given extension
@@ -290,3 +332,27 @@ name in the given location to the desired name in the same location.
 This task (`.theme/prebuild/tasks/replaceContent.js`) replaces given old text
 to new text in files with given extension. We used this one to replace
 `README.md` with `index.md` before fixing links.
+
+## Base url
+
+In nuxt, baseurl is the suffix you give to the end of your root url. For
+example, if your root url is `mouseless.codes` and your baseurl is `learn`, your
+root url will be `mouseless.codes/learn`.
+
+Base url should be given to `app.baseURL` when using it in the nuxt project.
+Note that the base url must start with `/`. We always put `/` at the beginning
+to avoid this requirement. You can find an example in `.theme/nuxt.config.ts`.
+
+## `.env` File
+
+It is usually a hidden file where we store our constant variables such as
+`BASE_URL` for system settings. It can be customized as `.env.{profile}`.
+
+### `.env.local` File
+
+This is where we host the config settings for developer mode.
+
+### `.env.production` File
+
+This is where we host the config settings for production mode. Settings in
+`.env.production` are used when deploying.

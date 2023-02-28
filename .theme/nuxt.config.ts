@@ -12,6 +12,9 @@ export default defineNuxtConfig({
     }
   },
   app: {
+    baseURL: process.env.BASE_URL?.startsWith("/")
+      ? process.env.BASE_URL
+      : `/${process.env.BASE_URL}`,
     head: {
       meta: [
         {
@@ -45,6 +48,11 @@ export default defineNuxtConfig({
       remarkPlugins: {
         "remark-emoji": false,
       },
+    },
+    documentDriven: {
+      page: true,
+      navigation: false,
+      surround: false
     },
   },
   components: {
