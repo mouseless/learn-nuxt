@@ -39,20 +39,6 @@ flowchart
     A --> B
 ```
 
-## Querying with `queryContent`
-
-To retrieve the content from the `/content` directory, a query is created with
-`queryContent()`. Content is retrieved using query methods such as `find`,
-`findOne`. Elements of
-[nuxt content](https://content.nuxtjs.org/guide/displaying/rendering) such as
-`ContentRenderer` can be used to render the received markdowns.
-
-> :information_source:
->
-> `find`, `findOne` methods return `promise` so you need to wait with `await`.
-
-Demo is at [/demo/querying/with-query-content](/demo/querying/with-query-content)
-
 ## Pages
 
 You can create pages under `.theme/pages/`.
@@ -95,6 +81,24 @@ can handle any depth in a path we use catch all routes e.g.
 Content page is a page that uses `<ContentDoc />` which renders given markdown
 content as html. It is at `.theme/pages/[...content-page].vue` which has a
 catch all route to handle any markdown file in any directory.
+
+### Querying with `queryContent`
+
+We needed to load all markdown content under a folder in one page. To achieve
+this we used `queryContent` by which you can retrieve content under `content/`
+folder.
+
+> :information_source:
+>
+> `find`, `findOne` methods return `promise` so you need to wait with `await`.
+
+Demo is at [/demo/query-content](/demo/query-content)
+
+> :warning:
+>
+> We've disabled `navigation` and `surround` options to avoid extra queries
+> when a page is loaded. You might reenable these depending on the theme you
+> are using.
 
 ## Public Assets
 

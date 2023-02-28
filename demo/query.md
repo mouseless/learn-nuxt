@@ -1,3 +1,0 @@
-# Querying
-
-Query Content
