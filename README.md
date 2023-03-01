@@ -306,7 +306,11 @@ source code
 
 ## Nuxt Generate
 
-...nuxt generate ayarlarının anlatılacağı yer...
+In `nuxt generate` there are configuration settings for the output of the
+generated project in the desired settings and to the desired location. These
+settings are to use `.env.production` mode in generate in `package.json` and
+output it to the folder with the same name as the `baseURL` coming from there.
+For example, look at the `nitro.output` setting in `nuxt.config.ts`.
 
 ## Preprocessing Markdown Files
 
