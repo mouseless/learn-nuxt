@@ -1,1 +1,0 @@
-import{a as s,o as e,f as o,U as t}from"./entry.dfce2b68.js";const c=""+globalThis.__publicAssetsURL("logo.png"),n={},_=t("img",{src:c},null,-1),r=[_];function a(l,i){return e(),o("div",null,r)}const d=s(n,[["render",a]]);export{d as default};

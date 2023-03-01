@@ -1,0 +1,1 @@
+import{a as e,o as c,f as s,U as o}from"./entry.1171361d.js";const t={},a=o("code",null,'{{ "curly escaped" }}',-1),r=[a];function n(_,l){return c(),s("div",null,r)}const f=e(t,[["render",n]]);export{f as default};

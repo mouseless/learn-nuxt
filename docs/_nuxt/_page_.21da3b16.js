@@ -1,1 +1,0 @@
-import{a as t,o as r,f as s,S as e,U as a,V as c}from"./entry.dfce2b68.js";const n={},l=a("code",null,"{{ $route.params.page }}",-1);function d(o,i){return r(),s("div",null,[e(" Page with dynamic route "),a("div",null,[l,e(" is '"),a("code",null,c(o.$route.params.page),1),e("' ")])])}const p=t(n,[["render",d]]);export{p as default};
