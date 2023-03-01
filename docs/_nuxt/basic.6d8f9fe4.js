@@ -1,1 +1,0 @@
-import{a as n,o as c,f as e,R as r}from"./entry.1171361d.js";const s={};function a(o,t){return c(),e("div",null," Basic component ")}const f=n(s,[["render",a]]),i={};function m(o,t){const _=f;return c(),e("div",null,[r(_)])}const l=n(i,[["render",m]]);export{l as default};
