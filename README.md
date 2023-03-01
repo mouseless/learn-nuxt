@@ -25,7 +25,7 @@ to](other-file.md)` format as demonstrated below;
 
 To include an image in markdown, place image files in a folder named `-images`
 at the same path as that markdown file. For example; if you have a file
-`/demo/image-in-content.md`, place its images in `/demo/-images`.
+`/content/images.md`, place its images in `/content/-images`.
 
 Demo is at [Content / Images](content/images.md)
 
