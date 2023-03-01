@@ -329,14 +329,12 @@ source code
 We use `nuxt generate` to create a static web site.
 
 ```mermaid
-flowchart TB
-    subgraph C[Components]
-
-    end
-
-    D([data])
-
-    C_P -. provides .-> D -. injected to .-> C_PA
+flowchart TD
+    A[preprocessing markdown file]
+    A --> B(nuxt client build)
+    B --> C(nuxt server build)
+    C -->|nuxt generate| D[static web site]
+    C -->|nuxt run dev| E[running on server]
 ```
 
 ## Base url
