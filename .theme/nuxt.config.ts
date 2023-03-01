@@ -6,15 +6,13 @@ export default defineNuxtConfig({
     public: {
       content: {
         anchorLinks: {
-          depth: 0
-        }
+          depth: 0,
+        },
       },
-    }
+    },
   },
   app: {
-    baseURL: process.env.BASE_URL?.startsWith("/")
-      ? process.env.BASE_URL
-      : `/${process.env.BASE_URL}`,
+    baseURL: process.env.BASE_URL,
     head: {
       meta: [
         {
@@ -25,17 +23,17 @@ export default defineNuxtConfig({
         {
           hid: "og:image",
           property: "og:image",
-          content: "http://localhost:3000/logo.png",
+          content: "https://mouseless.github.io/learn-nuxt/favicon.ico",
         },
         {
           hid: "og:image:width",
           property: "og:image:width",
-          content: "270",
+          content: "50",
         },
         {
           hid: "og:image:height",
           property: "og:image:height",
-          content: "64",
+          content: "50",
         }
       ]
     }
@@ -49,19 +47,14 @@ export default defineNuxtConfig({
         "remark-emoji": false,
       },
     },
-    documentDriven: {
-      page: true,
-      navigation: false,
-      surround: false
-    },
   },
   components: {
     dirs: [
       { global: true , path: "~/components/Prose" },
-      "~/components"
+      "~/components",
     ]
   },
-  dir:{
-    public:".public"
-  }
+  dir: {
+    public: ".public",
+  },
 });
