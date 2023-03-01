@@ -48,6 +48,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  router: {
+    options: {
+      strict: true
+    }
+  },
   components: {
     dirs: [
       { global: true , path: "~/components/Prose" },
