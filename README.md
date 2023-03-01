@@ -109,6 +109,17 @@ reduce the crowd in the script.
 
 Demo is at [/demo/content-query](/demo/content-query)
 
+### Trailing Slash Problem Workaround
+
+Nuxt generates an `index.html` file under each route and this causes some
+static site hosting services, such as GitHub Pages, to add a trailing slash to
+urls. When this happens that page fails to load resources with a relative path.
+To workaround this we've added a client side script that checks if `route.path`
+has a trailing slash. We know that this is not the best solution, but for now
+this is the workaround we use.
+
+You can see this work around in `.theme/app.vue` file.
+
 ## Public Assets
 
 To serve static assets in a theme like `.css` or `.png` files simply put any
