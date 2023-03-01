@@ -13,7 +13,7 @@ tasks:
         - ./.theme/.public
         - ./.theme/.temp
         - ./.theme/content
-  - checkenv:
+  - checkenvlocal:
       directory: ./.theme
   # process and move markdowns to content
   - extractDiagrams:
