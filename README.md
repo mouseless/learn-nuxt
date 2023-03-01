@@ -326,7 +326,13 @@ source code
 
 ## Build Process
 
-We use `nuxt generate` to create a static web site.
+The build process proceeds in 3 stages. In the first stage, the preparation we
+made for markdowns before the prebuild is working. You can review
+[content / preprocessing-mardown-files](/content/preprocessing-mardown-files)
+for this stage. The second stage includes builds. The last stage is divided
+into two. In the last stage, if we want to deploy, we create a static site
+using `nuxt generate`. If we want to stand up in developer mode, the vite
+server stands up and launches the built page.
 
 ```mermaid
 flowchart TD
