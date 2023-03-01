@@ -100,6 +100,15 @@ Demo is at [/demo/query-content](/demo/query-content)
 > when a page is loaded. You might reenable these depending on the theme you
 > are using.
 
+### Querying with `<ContentQuery>`
+
+We needed to load all markdown content under a folder on a single page. When
+there is no need to change the data we receive with `queryContent` in the
+script block, the query sent to the content with `<ContentQuery>` was made to
+reduce the crowd in the script.
+
+Demo is at [/demo/content-query](/demo/content-query)
+
 ## Public Assets
 
 To serve static assets in a theme like `.css` or `.png` files simply put any
