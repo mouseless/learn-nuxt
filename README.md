@@ -25,7 +25,7 @@ to](other-file.md)` format as demonstrated below;
 
 To include an image in markdown, place image files in a folder named `-images`
 at the same path as that markdown file. For example; if you have a file
-`/demo/image-in-content.md`, place its images in `/demo/-images`.
+`/content/images.md`, place its images in `/content/-images`.
 
 Demo is at [Content / Images](content/images.md)
 
@@ -108,6 +108,26 @@ script block, the query sent to the content with `<ContentQuery>` was made to
 reduce the crowd in the script.
 
 Demo is at [/demo/content-query](/demo/content-query)
+
+### Trailing Slash Problem Workaround
+
+Nuxt generates an `index.html` file under each route and this causes some
+static site hosting services, such as GitHub Pages, to add a trailing slash to
+urls. When this happens that page fails to load resources with a relative path
+because a trailing slash would indicate another directory in a path.
+
+To workaround this, we've added a script that checks if `route.path` has a
+trailing slash upon mounting. We know that this is not the best solution, but
+for now this is the workaround we use.
+
+> :warning:
+>
+> For this solution to work correctly, you need to enable
+> `router.options.strict` in `.theme/nuxt.config.ts` so that a path with a
+> trailing slash is not treated as same as a path without a trailing slash.
+> Otherwise `navigateTo` does not redirect and throws an error.
+
+Solution is in `.theme/app.vue`.
 
 ## Public Assets
 
