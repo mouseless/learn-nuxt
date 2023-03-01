@@ -107,8 +107,7 @@ there is no need to change the data we receive with `queryContent` in the
 script block, the query sent to the content with `<ContentQuery>` was made to
 reduce the crowd in the script.
 
-Demo is at
-[/demo/content-query](/demo/content-query)
+Demo is at [/demo/content-query](/demo/content-query)
 
 ## Public Assets
 
