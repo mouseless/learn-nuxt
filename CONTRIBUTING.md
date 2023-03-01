@@ -74,7 +74,7 @@ because it expects `lf` line endings.
 There are several solutions to overcome this issue:
 
 - You can set `core.autoclrf` to false in your `git config` or provide setup for specific
-  repository. Visit [git documentation][1]
+  repository. Visit [Git Documentation][1]
   for further details.
 - You can use `eslint --fix` command to convert line endings to `lf`
 - You can modify `.eslintrc.json` to accept `windows` line endings or set 

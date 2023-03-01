@@ -11,7 +11,7 @@ export default async function({ directory }) {
   }
   else{
 
-    writeFile(join(directory,".env.local"),"BASE_URL=/\nCHROMIUM_EXECUTABLE_PATH",err => {
+    writeFile(join(directory,".env.local"),"BASE_URL=/\nCHROMIUM_EXECUTABLE_PATH=",err => {
       if (err){
 
         return log.info(err);
