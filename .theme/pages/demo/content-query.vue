@@ -1,19 +1,18 @@
 <template>
-  <ContentQuery
-    v-slot="{ data: pages }"
-    path="/demo/content-query"
-    :where="{ _path: { $ne: route.path }}"
-  >
-    <ContentRenderer
-      v-for="page in pages"
-      :key="page.path"
-      :value="page"
+  <div>
+    <ContentDoc />
+    <ContentQuery
+      v-slot="{ data: pages }"
+      path="/demo/content-query"
+      :where="{ _path: { $ne: $route.path }}"
     >
-      <ContentRendererMarkdown :value="page" />
-    </ContentRenderer>
-  </ContentQuery>
+      <ContentRenderer
+        v-for="page in pages"
+        :key="page.path"
+        :value="page"
+      >
+        <ContentRendererMarkdown :value="page" />
+      </ContentRenderer>
+    </ContentQuery>
+  </div>
 </template>
-
-<script setup>
-import { useRoute as route } from "#imports";
-</script>
