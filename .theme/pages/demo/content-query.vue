@@ -10,9 +10,7 @@
         v-for="page in pages"
         :key="page.path"
         :value="page"
-      >
-        <ContentRendererMarkdown :value="page" />
-      </ContentRenderer>
+      />
     </ContentQuery>
   </div>
 </template>
