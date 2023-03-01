@@ -295,6 +295,10 @@ Demo is at [/demo/open-graph](/demo/open-graph)
 To see the changes, go to [/demo/open-graph](/demo/open-graph) and view the
 source code
 
+## Nuxt Generate
+
+...nuxt generate ayarlarının anlatılacağı yer...
+
 ## Preprocessing Markdown Files
 
 We've built a task based `prebuild` mechanism to preprocess markdown files
