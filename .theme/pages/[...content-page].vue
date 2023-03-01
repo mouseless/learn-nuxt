@@ -1,9 +1,7 @@
 <template>
   <div>
     <div>
-      <v-app-bar dense fixed>
-        <Layout />
-      </v-app-bar>
+      <Layout />
     </div>
     <div>
       <ContentDoc />
