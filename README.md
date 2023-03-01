@@ -113,12 +113,21 @@ Demo is at [/demo/content-query](/demo/content-query)
 
 Nuxt generates an `index.html` file under each route and this causes some
 static site hosting services, such as GitHub Pages, to add a trailing slash to
-urls. When this happens that page fails to load resources with a relative path.
-To workaround this we've added a client side script that checks if `route.path`
-has a trailing slash. We know that this is not the best solution, but for now
-this is the workaround we use.
+urls. When this happens that page fails to load resources with a relative path
+because a trailing slash would indicate another directory in a path.
 
-You can see this work around in `.theme/app.vue` file.
+To workaround this, we've added a script that checks if `route.path` has a
+trailing slash upon mounting. We know that this is not the best solution, but
+for now this is the workaround we use.
+
+> :warning:
+>
+> For this solution to work correctly, you need to enable
+> `router.options.strict` in `.theme/nuxt.config.ts` so that a path with a
+> trailing slash is not treated as same as a path without a trailing slash.
+> Otherwise `navigateTo` does not redirect and throws an error.
+
+Solution is in `.theme/app.vue`.
 
 ## Public Assets
 

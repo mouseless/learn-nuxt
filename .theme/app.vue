@@ -1,16 +1,23 @@
 <template>
-  <!-- key is added to avoid multiple rendering after navigation -->
-  <NuxtPage :key="`nuxt-page:${$route.path}`" />
+  <div>
+    <!-- key is required to overcome hydration and multiple render issues -->
+    <NuxtPage :key="$route.path" />
+  </div>
 </template>
 <script setup>
 import { useRoute, navigateTo, onMounted } from "#imports";
 
 const route = useRoute();
 
-onMounted(() => {
-  if(route.path?.endsWith("/")) {
+onMounted(async () => {
+  if(route.path.endsWith("/")) {
+    const { path, query, hash } = route;
+    const nextPath = path.replace(/\/+$/, "") || "/";
+    const nextRoute = { path: nextPath, query, hash };
+
+    // works only if `router.options.strict` is enabled in `nuxt.config.ts`
     // replace prevents browser to record this navigation in its history
-    navigateTo(route.path.slice(0, -1), { replace: true });
+    await navigateTo(nextRoute, { replace: true });
   }
 });
 </script>
