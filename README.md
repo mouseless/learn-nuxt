@@ -326,11 +326,7 @@ source code
 
 ## Nuxt Generate
 
-In `nuxt generate` there are configuration settings for the output of the
-generated project in the desired settings and to the desired location. These
-settings are generated with production settings by adding the
-`--dotenv .env.production` option after the `nuxt generate` command in
-`package.json`. You can find the example in `.theme/package.json`.
+We use `nuxt generate` to create a static web site.
 
 ## Preprocessing Markdown Files
 
