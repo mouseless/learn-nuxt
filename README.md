@@ -12,7 +12,44 @@ We use [Nuxt Content](https://content.nuxtjs.org/) to render markdown content
 in a web page. Add `@nuxt/content` under modules in `.theme/nuxt.congfig.ts`
 
 Markdown files are placed at the root of to give focus on more to content than
-its theme layout.
+its theme layout. 
+
+### Conventions
+
+We are using our conventions when creating new or adding/editing content
+on existing markdown files. The aim of our conventions are keeping the markdown
+files consistent in itself. Links, images etc. should be working on any
+platform this markdown file is viewed such as github. Following are the
+conventions we are using, ones that require more explanation are explained in
+their own sections below.
+
+- Line lengths sould be less or equal to 80 characters
+- Indentantions are two space, don't use tab indentation
+- Empty line before and after every Code Block, Image, Link, Mermaid Diagram,
+ Alert/Info/Tip Boxes, Header etc.
+- Table rows should have the same width.
+
+### Code Blocks
+
+Code references are given in code block such as `const x = ref(5);`. To use
+code block wrap the code with "\`" character. This usage works for a single
+line, in order to have multiple lines of code block use "\`\`\`" instead of "\`".
+
+> :information_source:
+>
+> Code related terms and terms in general are not given in code block,
+> use "\_\_Term\_\_" for code related terms, and italic for terms in general.
+
+### Alert/Info/Tip Box
+
+We use these boxes to give information, warning or tips when it is related to
+the context but could not be included in the paragraph.
+
+| Box Type | Markdown Name        |
+| ---      | ---                  |
+| Alert    | :warning:            |
+| Info     | :information_source: |
+| Tip      | :bulb:               |
 
 ### Links
 
