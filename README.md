@@ -4,7 +4,7 @@ Here you can find how we use nuxt to create static web pages.
 
 To contribute please read [Contribution Guide](./CONTRIBUTING.md).
 
-For demo links to work, run this project in your local machine. Please read 
+For demo links to work, run this project in your local machine. Please read
 our [Setup Guide](./setup-guide.md) before running the application.
 
 ## Content
@@ -13,7 +13,7 @@ We use [Nuxt Content](https://content.nuxtjs.org/) to render markdown content
 in a web page. Add `@nuxt/content` under modules in `.theme/nuxt.congfig.ts`
 
 Markdown files are placed at the root of to give focus on more to content than
-its theme layout. 
+its theme layout.
 
 ### Conventions
 
@@ -118,6 +118,10 @@ can handle any depth in a path we use catch all routes e.g.
 Content page is a page that uses `<ContentDoc />` which renders given markdown
 content as html. It is at `.theme/pages/[...content-page].vue` which has a
 catch all route to handle any markdown file in any directory.
+
+#### `documentDriven` Flag
+
+TBD
 
 ### Querying with `queryContent`
 
