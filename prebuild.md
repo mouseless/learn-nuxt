@@ -1,4 +1,4 @@
-# Preprocessing Markdown Files
+# Prebuild
 
 We've built a task based `prebuild` mechanism to preprocess markdown files
 before nuxt build. This was needed to have pure markdown content at the root of
