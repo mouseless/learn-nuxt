@@ -1,73 +1,34 @@
 <template>
-  <div class="App">
+  <div>
     <header>
-      Logo here
+      <div
+        style="display: flex;"
+      >
+        <img
+          src="https://raw.githubusercontent.com/mouseless/brand/main/assets/logo/svg/logo-mark-primary.svg"
+          height="15"
+        > | <img
+          src="https://nuxt.com/assets/design-kit/logo/icon-green.svg"
+          height="15"
+        >
+        <nav>
+          <ContentQuery
+            v-slot="{ data: menus }"
+            path="/"
+            :where="{ _dir: { $eq: '' } }"
+          >
+            <NuxtLink
+              v-for="menu in menus"
+              :key="menu.path"
+              :to="menu._path"
+              style="margin: 5px;"
+            >
+              {{ menu.title }}
+            </NuxtLink>
+          </ContentQuery>
+        </nav>
+      </div>
     </header>
-    <nav class="menu">
-      <ul class="App__nav">
-        <li>
-          <router-link to="/">
-            Home
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/setup-guide">
-            Setup Guide
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/build-and-run">
-            Build &amp; Run
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/content">
-            Content
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/pages">
-            Pages
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/template-syntax">
-            Template Syntax
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/components">
-            Components
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/routing">
-            Routing
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/configuration">
-            Configuration
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/contributing">
-            Contribution Guide
-          </router-link>
-        </li>
-      </ul>
-    </nav>
-    <article>
-      <slot />
-    </article>
+    <slot />
   </div>
 </template>
-<style scoped>
-nav {
-  width: 250px;
-  position: fixed
-}
-article {
-  padding-left: 250px;
-}
-</style>
