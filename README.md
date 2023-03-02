@@ -4,7 +4,7 @@ Here you can find how we use nuxt to create static web pages.
 
 To contribute please read [Contribution Guide](./CONTRIBUTING.md).
 
-For demo links to work, run this project in your local machine. Please read 
+For demo links to work, run this project in your local machine. Please read
 our [Setup Guide](./setup-guide.md) before running the application.
 
 ## Content
@@ -13,7 +13,7 @@ We use [Nuxt Content](https://content.nuxtjs.org/) to render markdown content
 in a web page. Add `@nuxt/content` under modules in `.theme/nuxt.congfig.ts`
 
 Markdown files are placed at the root of to give focus on more to content than
-its theme layout. 
+its theme layout.
 
 ### Conventions
 
@@ -118,6 +118,20 @@ can handle any depth in a path we use catch all routes e.g.
 Content page is a page that uses `<ContentDoc />` which renders given markdown
 content as html. It is at `.theme/pages/[...content-page].vue` which has a
 catch all route to handle any markdown file in any directory.
+
+#### Document-Driven Mode
+
+We don't use document-driven mode in nuxt projects even if it's a website that
+contains only markdown content. This is because all it does is to register a
+page with catch-all route along with extra queries like `navigation`,
+`surround` which could be unncessary in your theme. If you need to render
+navigation menu etc., use `<ContentQuery>` or `queryContent()` queries.
+
+> :warning:
+>
+> This project contains pages without a corresponding markdown content under
+> `/demo` path. When you enable document-driven mode, dynamic pages under
+> `/demo` will not work.
 
 ### Querying with `queryContent`
 
