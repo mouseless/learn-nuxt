@@ -20,7 +20,7 @@ its theme layout.
 We follow certain guidelines when creating new or adding/editing content on
 existing markdown files. The aim is keeping the markdown files consistent in
 itself. Links, images etc. should be working on any platform this markdown file
-is viewed such as github. Below is the list of our conventions, the ones that
+is viewed, such as GitHub. Below is the list of our conventions, the ones that
 require more explanation are explained in their own sections below.
 
 - Line lengths sould be less or equal to 80 characters
