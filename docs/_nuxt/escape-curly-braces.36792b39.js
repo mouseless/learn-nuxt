@@ -1,1 +1,0 @@
-import{_ as e}from"./_plugin-vue_export-helper.c27b6911.js";import{o as c,e as o,R as s}from"./entry.817d9da9.js";const r={},t=s("code",null,'{{ "curly escaped" }}',-1),a=[t];function n(_,l){return c(),o("div",null,a)}const i=e(r,[["render",n]]);export{i as default};
