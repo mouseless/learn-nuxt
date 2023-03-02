@@ -35,3 +35,8 @@ name in the given location to the desired name in the same location.
 This task (`.theme/prebuild/tasks/replaceContent.js`) replaces given old text
 to new text in files with given extension. We used this one to replace
 `README.md` with `index.md` before fixing links.
+
+## Touch
+
+This task (`.theme/prebuild/tasks/touch.js`) checks whether file with a given 
+path exists, if not, it creates an empty file at the specified path.
