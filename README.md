@@ -129,6 +129,14 @@ for now this is the workaround we use.
 
 Solution is in `.theme/app.vue`.
 
+## Layout
+
+We used layout to seperate header and sidebar components from pages. For nuxt
+to recognize layouts, they should be implemented in `.theme/layout` folder. To
+create a layout create a `default.vue` in the layout folder. Our implementation
+is at `.theme/layout/default.vue`. For layout to be used in every page it needs
+to be added to `app.vue` as shown in `.theme/app.vue`.
+
 ## Public Assets
 
 To serve static assets in a theme like `.css` or `.png` files simply put any
