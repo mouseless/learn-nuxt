@@ -2,9 +2,10 @@
 
 Here you can find how we use nuxt to create static web pages.
 
-To contribute please read [Contribution Guide](./contribution-guide.md).
+To contribute please read [Contribution Guide](./CONTRIBUTING.md).
 
-For demo links to work, run this project in your local machine.
+For demo links to work, run this project in your local machine. Please read 
+our [Setup Guide](./setup-guide.md) before running the application.
 
 ## Content
 
@@ -365,17 +366,3 @@ root url will be `mouseless.codes/learn`.
 Base url should be given to `app.baseURL` when using it in the nuxt project.
 Note that the base url must start with `/`. We always put `/` at the beginning
 to avoid this requirement. You can find an example in `.theme/nuxt.config.ts`.
-
-## `.env` File
-
-It is usually a hidden file where we store our constant variables such as
-`BASE_URL` for system settings. It can be customized as `.env.{profile}`.
-
-### `.env.local` File
-
-This is where we host the config settings for developer mode.
-
-### `.env.production` File
-
-This is where we host the config settings for production mode. Settings in
-`.env.production` are used when deploying.
