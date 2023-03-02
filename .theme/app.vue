@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout :name = "layout">
+  <NuxtLayout :name="layout">
     <!-- key is required to overcome hydration and multiple render issues -->
     <NuxtPage :key="$route.path" />
   </NuxtLayout>
