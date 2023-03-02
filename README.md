@@ -336,12 +336,12 @@ server will run and the built page will be initialized.
 
 ```mermaid
 flowchart LR
-    subgraph nuxtbuild
+    subgraph nuxtbuild[nuxt build]
         direction LR
         CB(client build) --> SB(server build)
     end
     E(Eslint) --> P(prebuild)
-    P --> nuxtbuild(nuxt build)
+    P --> nuxtbuild
     nuxtbuild -->|nuxt generate| SWS(static web site)
     nuxtbuild -->|nuxt run dev| OS(running on server)
 ```
