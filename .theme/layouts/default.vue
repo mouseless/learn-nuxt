@@ -12,8 +12,7 @@
           Prebuild
         </router-link>
       </nav>
-      <slot />
-      <router-view />
     </header>
+    <slot />
   </div>
 </template>
