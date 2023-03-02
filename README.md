@@ -326,13 +326,13 @@ source code
 
 ## Build Process
 
-The building process proceeds in 4 stages. In the first stage we check the
-lint with eslint. In the second stage, the preparation for markdowns before
-the build is working. You can check the [prebuild](/prebuild) page for
-this stage. The third stage includes builds. The last stage is divided
-into two. In the last stage, if we want to deploy, we create a static site
-using `nuxt generate`. If we want to run it in development mode, the vite
-server will run and the built page will be initialized.
+The building process has 4 stages. The first stage is lint checking using
+eslint. Second stage is prebuild, markdowns are preprocessed in this stage.
+You can check the [prebuild](/prebuild). Third stage is build. Fourth stage
+is divided into two parts, creating a static site for deployement or running
+the built site from third stage in development mode. To create a static site
+we use `nuxt generate`, to run the project in development mode we use
+`npm run dev`.
 
 ```mermaid
 flowchart LR
@@ -342,7 +342,7 @@ flowchart LR
     end
     E(Eslint) --> P(prebuild)
     P --> nuxtbuild
-    nuxtbuild -->|nuxt generate| SWS(static web site)
+    nuxtbuild -->|nuxt run generate| SWS(static web site)
     nuxtbuild -->|nuxt run dev| OS(running on server)
 ```
 
