@@ -1,7 +1,7 @@
 <template>
-  <div class="App">
+  <div>
     <header>
-      <nav class="App__nav">
+      <nav>
         <router-link to="/">
           Home
         </router-link> |
