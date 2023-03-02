@@ -9,6 +9,7 @@ export default defineNuxtConfig({
           depth: 0,
         },
       },
+      baseURL: process.env.BASE_URL
     },
   },
   app: {
@@ -47,6 +48,11 @@ export default defineNuxtConfig({
         "remark-emoji": false,
       },
     },
+  },
+  router: {
+    options: {
+      strict: true
+    }
   },
   components: {
     dirs: [
