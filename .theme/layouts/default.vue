@@ -1,15 +1,14 @@
 <template>
-  <header
-    class="sticky-top"
-  >
-    <div class="App">
-       <nav class="App__nav">
+  <div class="App">
+    <header>
+      <nav class="App__nav">
         <router-link to="/">Home</router-link> |
         <router-link to="/contribution-guide">Contribution</router-link>
-        </nav>
+      </nav>
+      <slot/>
       <router-view/>
-    </div>
-  </header>
+    </header>
+  </div>
 </template>
 <style>
 

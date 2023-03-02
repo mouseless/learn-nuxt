@@ -1,10 +1,5 @@
 <template>
   <div>
-    <div>
-      <Layout />
-    </div>
-    <div>
-      <ContentDoc />
-    </div>
+    <ContentDoc />
   </div>
 </template>
