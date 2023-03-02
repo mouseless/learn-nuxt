@@ -1,4 +1,4 @@
-# Contribution
+# Contribution Guide
 
 We do not accept direct commits to this repository, please use forks to make a
 contribution.
