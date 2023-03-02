@@ -324,6 +324,14 @@ Demo is at [/demo/open-graph](/demo/open-graph)
 To see the changes, go to [/demo/open-graph](/demo/open-graph) and view the
 source code
 
+## Runtime Config
+
+Build sırasında runtime'a aktardığımız config ayarlarıdır. `nuxt-content`
+plugin'de anchor linklerinin depth'ini ayarlamak için ve `baseURL` gibi config
+ayarlarımıza page ve component'lerden erişmek için kullanıyoruz. Tanımlama
+örnekleri için `.theme/nuxt.config.ts`'e, kullanım örneği için
+[/demo/runtime-config](/demo/runtime-config) e bakınız.
+
 ## Preprocessing Markdown Files
 
 We've built a task based `prebuild` mechanism to preprocess markdown files

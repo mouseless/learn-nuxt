@@ -9,6 +9,7 @@ export default defineNuxtConfig({
           depth: 0,
         },
       },
+      baseURL: process.env.BASE_URL
     },
   },
   app: {
