@@ -25,7 +25,7 @@ to](other-file.md)` format as demonstrated below;
 
 To include an image in markdown, place image files in a folder named `-images`
 at the same path as that markdown file. For example; if you have a file
-`/demo/image-in-content.md`, place its images in `/demo/-images`.
+`/content/images.md`, place its images in `/content/-images`.
 
 Demo is at [Content / Images](content/images.md)
 
@@ -108,6 +108,26 @@ script block, the query sent to the content with `<ContentQuery>` was made to
 reduce the crowd in the script.
 
 Demo is at [/demo/content-query](/demo/content-query)
+
+### Trailing Slash Problem Workaround
+
+Nuxt generates an `index.html` file under each route and this causes some
+static site hosting services, such as GitHub Pages, to add a trailing slash to
+urls. When this happens that page fails to load resources with a relative path
+because a trailing slash would indicate another directory in a path.
+
+To workaround this, we've added a script that checks if `route.path` has a
+trailing slash upon mounting. We know that this is not the best solution, but
+for now this is the workaround we use.
+
+> :warning:
+>
+> For this solution to work correctly, you need to enable
+> `router.options.strict` in `.theme/nuxt.config.ts` so that a path with a
+> trailing slash is not treated as same as a path without a trailing slash.
+> Otherwise `navigateTo` does not redirect and throws an error.
+
+Solution is in `.theme/app.vue`.
 
 ## Public Assets
 
@@ -304,43 +324,27 @@ Demo is at [/demo/open-graph](/demo/open-graph)
 To see the changes, go to [/demo/open-graph](/demo/open-graph) and view the
 source code
 
-## Preprocessing Markdown Files
+## Build Process
 
-We've built a task based `prebuild` mechanism to preprocess markdown files
-before nuxt build. This was needed to have pure markdown content at the root of
-the repository without the boilerplate code of a nuxt project.
+The building process has 4 stages. The first stage is lint checking using
+eslint. Second stage is prebuild, markdowns are preprocessed in this stage.
+You can check the [prebuild](/prebuild). Third stage is build. Fourth stage
+is divided into two parts, creating a static site for deployement or running
+the built site from third stage in development mode. To create a static site
+we use `nuxt generate`, to run the project in development mode we use
+`nuxt dev`.
 
-### Clean
-
-This task (`.theme/prebuild/tasks/clean.js`) deletes files with the given
-parameters, including subfolders.
-
-### Copy
-
-This task (`.theme/prebuild/tasks/copy.js`) copies files with the given
-extension to the desired location.
-
-### Extract Diagrams
-
-This task (`.theme/prebuild/tasks/extractDiagrams.js`) processes markdown files
-and extracts diagrams as `.png` files and modifies markdowns to replace
-markdown code with diagram images.
-
-### Move
-
-This task (`.theme/prebuild/tasks/move.js`) moves files with given extension
-from source directory to target directory.
-
-### Rename
-
-This task (`.theme/prebuild/tasks/rename.js`) renames files with the given
-name in the given location to the desired name in the same location.
-
-### Replace Content
-
-This task (`.theme/prebuild/tasks/replaceContent.js`) replaces given old text
-to new text in files with given extension. We used this one to replace
-`README.md` with `index.md` before fixing links.
+```mermaid
+flowchart LR
+    subgraph nuxtbuild[nuxt build]
+        direction LR
+        CB(client build) --> SB(server build)
+    end
+    E(Eslint) --> P(prebuild)
+    P --> nuxtbuild
+    nuxtbuild -->|nuxt generate| SWS(static web site)
+    nuxtbuild -->|nuxt dev| OS(running on server)
+```
 
 ## Base url
 
