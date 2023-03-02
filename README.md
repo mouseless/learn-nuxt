@@ -326,12 +326,13 @@ source code
 
 ## Build Process
 
-The build process proceeds in 3 stages. In the first stage, the preparation we
-made for markdowns before the prebuild is working. You can review
-[prebuild](/prebuild) for this stage. The second stage includes builds. The
-last stage is divided into two. In the last stage, if we want to deploy, we
-create a static site using `nuxt generate`. If we want to run it in development
-mode, vite server run and launches the built page.
+The building process proceeds in 4 stages. In the first stage, we define a
+joint format with eslint. In the second stage, the preparation for markdowns
+before prebuild is working. You can check the [prebuild](/prebuild) page for
+this stage. The third stage includes builds. The last stage is divided
+into two. In the last stage, if we want to deploy, we create a static site
+using `nuxt generate`. If we want to run it in development mode, the vite
+server will run and the built page will be initialized.
 
 ```mermaid
 flowchart TD
