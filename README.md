@@ -326,11 +326,13 @@ source code
 
 ## Runtime Config
 
-Build sırasında runtime'a aktardığımız config ayarlarıdır. `nuxt-content`
-plugin'de anchor linklerinin depth'ini ayarlamak için ve `baseURL` gibi config
-ayarlarımıza page ve component'lerden erişmek için kullanıyoruz. Tanımlama
-örnekleri için `.theme/nuxt.config.ts`'e, kullanım örneği için
-[/demo/runtime-config](/demo/runtime-config) e bakınız.
+These are the config settings passed to runtime during build.
+In the 'nuxt-content' plugin we use it to set the depth of anchor links
+and to access our config settings like 'baseURL' from pages and components.
+See '.theme/nuxt.config.ts' for definition examples and
+'.theme/pages/demo/runtime-config.vue' for usage example.
+
+Demo is at [/demo/runtime-config](/demo/runtime-config)
 
 ## Preprocessing Markdown Files
 
