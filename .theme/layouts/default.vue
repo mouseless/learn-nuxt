@@ -1,33 +1,35 @@
 <template>
   <div>
     <header>
-      <img
-        src="https://raw.githubusercontent.com/mouseless/brand/main/assets/logo/svg/logo-mark-primary.svg"
-        height="10"
-      > | <img
-        src="https://nuxt.com/assets/design-kit/logo/icon-green.svg"
-        height="10"
+      <div
+        style="
+          display: flex;
+          align-items: center;
+        "
       >
-      <nav>
-        <ContentQuery
-          v-slot="{ data: menus }"
-          path="/"
-          :where="{ _dir: { $eq: '' } }"
+        <img
+          src="https://raw.githubusercontent.com/mouseless/brand/main/assets/logo/svg/logo-mark-primary.svg"
+          height="15"
+        > | <img
+          src="https://nuxt.com/assets/design-kit/logo/icon-green.svg"
+          height="15"
         >
-          <ul>
-            <li
+        <nav>
+          <ContentQuery
+            v-slot="{ data: menus }"
+            path="/"
+            :where="{ _dir: { $eq: '' } }"
+          >
+            <NuxtLink
               v-for="menu in menus"
               :key="menu.path"
+              :to="menu._path"
             >
-              <NuxtLink
-                :to="menu._path"
-              >
-                | {{ menu.title }} |
-              </NuxtLink>
-            </li>
-          </ul>
-        </ContentQuery>
-      </nav>
+              {{ menu.title }}
+            </NuxtLink>
+          </ContentQuery>
+        </nav>
+      </div>
     </header>
     <slot />
   </div>
