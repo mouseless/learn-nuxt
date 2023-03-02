@@ -119,9 +119,19 @@ Content page is a page that uses `<ContentDoc />` which renders given markdown
 content as html. It is at `.theme/pages/[...content-page].vue` which has a
 catch all route to handle any markdown file in any directory.
 
-#### `documentDriven` Flag
+#### Document-Driven Mode
 
-TBD
+We don't use document-driven mode in nuxt projects even if it's a website that
+contains only markdown content. This is because all it does is to register a
+page with catch-all route along with extra queries like `navigation`,
+`surround` which could be unncessary in your theme. If you need to render
+navigation menu etc., use `<ContentQuery>` or `queryContent()` queries.
+
+> :warning:
+>
+> This project contains pages without a corresponding markdown content under
+> `/demo` path. When you enable document-driven mode, dynamic pages under
+> `/demo` will not work.
 
 ### Querying with `queryContent`
 
