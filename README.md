@@ -328,19 +328,18 @@ source code
 
 The build process proceeds in 3 stages. In the first stage, the preparation we
 made for markdowns before the prebuild is working. You can review
-[content / preprocessing-mardown-files](/content/preprocessing-mardown-files)
-for this stage. The second stage includes builds. The last stage is divided
-into two. In the last stage, if we want to deploy, we create a static site
-using `nuxt generate`. If we want to stand up in developer mode, the vite
-server stands up and launches the built page.
+[prebuild](/prebuild) for this stage. The second stage includes builds. The
+last stage is divided into two. In the last stage, if we want to deploy, we
+create a static site using `nuxt generate`. If we want to run it in development
+mode, vite server run and launches the built page.
 
 ```mermaid
 flowchart TD
-    A[preprocessing markdown file]
-    A --> B(nuxt client build)
-    B --> C(nuxt server build)
-    C -->|nuxt generate| D[static web site]
-    C -->|nuxt run dev| E[running on server]
+    E(Eslint) --> P(prebuild)
+    P --> CB(nuxt client build)
+    CB --> SB(nuxt server build)
+    SB -->|nuxt generate| SWS[static web site]
+    SB -->|nuxt run dev| OS[running on server]
 ```
 
 ## Base url
