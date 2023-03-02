@@ -2,10 +2,7 @@
   <div>
     <header>
       <div
-        style="
-          display: flex;
-          align-items: center;
-        "
+        style="display: flex;"
       >
         <img
           src="https://raw.githubusercontent.com/mouseless/brand/main/assets/logo/svg/logo-mark-primary.svg"
@@ -24,6 +21,7 @@
               v-for="menu in menus"
               :key="menu.path"
               :to="menu._path"
+              style="margin: 5px;"
             >
               {{ menu.title }}
             </NuxtLink>
