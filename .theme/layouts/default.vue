@@ -1,18 +1,73 @@
 <template>
   <div class="App">
     <header>
-      <nav class="App__nav">
-        <router-link to="/">
-          Home
-        </router-link> |
-        <router-link to="/contribution-guide">
-          Contribution
-        </router-link> |
-        <router-link to="/prebuild">
-          Prebuild
-        </router-link>
-      </nav>
+      Logo here
     </header>
-    <slot />
+    <nav class="menu">
+      <ul class="App__nav">
+        <li>
+          <router-link to="/">
+            Home
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/setup-guide">
+            Setup Guide
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/build-and-run">
+            Build &amp; Run
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/content">
+            Content
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/pages">
+            Pages
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/template-syntax">
+            Template Syntax
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/components">
+            Components
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/routing">
+            Routing
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/configuration">
+            Configuration
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/contributing">
+            Contribution Guide
+          </router-link>
+        </li>
+      </ul>
+    </nav>
+    <article>
+      <slot />
+    </article>
   </div>
 </template>
+<style scoped>
+nav {
+  width: 250px;
+  position: fixed
+}
+article {
+  padding-left: 250px;
+}
+</style>

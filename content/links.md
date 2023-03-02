@@ -1,3 +1,3 @@
 # Links
 
-Let's go back [home](../README.md).
+Let's go back to [/content](../content.md).
