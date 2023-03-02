@@ -335,11 +335,15 @@ using `nuxt generate`. If we want to run it in development mode, the vite
 server will run and the built page will be initialized.
 
 ```mermaid
-flowchart TD
+flowchart LR
+    subgraph nuxtbuild
+        direction LR
+        CB(client build) --> SB(server build)
+    end
     E(Eslint) --> P(prebuild)
-    P --> NB(nuxt build)
-    NB -->|nuxt generate| SWS[static web site]
-    NB -->|nuxt run dev| OS[running on server]
+    P --> nuxtbuild(nuxt build)
+    nuxtbuild -->|nuxt generate| SWS(static web site)
+    nuxtbuild -->|nuxt run dev| OS(running on server)
 ```
 
 ## Base url
