@@ -327,8 +327,8 @@ source code
 ## Build Process
 
 The building process proceeds in 4 stages. In the first stage we check the
-lint with eslint. In the second stage, the preparation for markdowns
-before prebuild is working. You can check the [prebuild](/prebuild) page for
+lint with eslint. In the second stage, the preparation for markdowns before
+the build is working. You can check the [prebuild](/prebuild) page for
 this stage. The third stage includes builds. The last stage is divided
 into two. In the last stage, if we want to deploy, we create a static site
 using `nuxt generate`. If we want to run it in development mode, the vite
