@@ -2,18 +2,21 @@
   <div>
     <header>
       <nav>
-        <router-link to="/">
-          Home
-        </router-link> |
-        <router-link to="/contribution-guide">
-          Contribution
-        </router-link> |
-        <router-link to="/prebuild">
-          Prebuild
-        </router-link>
+        <ContentQuery
+          v-slot="{ data: menus }"
+          path="/"
+          :where="{ _dir: { $eq: '' } }"
+        >
+          <NuxtLink
+            v-for="menu in menus"
+            :key="menu.path"
+            to="/"
+          >
+            {{ menu.title }}
+          </NuxtLink>
+        </ContentQuery>
       </nav>
-      <slot />
-      <router-view />
     </header>
+    <slot />
   </div>
 </template>
