@@ -332,7 +332,7 @@ You can check the [prebuild](/prebuild). Third stage is build. Fourth stage
 is divided into two parts, creating a static site for deployement or running
 the built site from third stage in development mode. To create a static site
 we use `nuxt generate`, to run the project in development mode we use
-`npm run dev`.
+`nuxt dev`.
 
 ```mermaid
 flowchart LR
@@ -342,8 +342,8 @@ flowchart LR
     end
     E(Eslint) --> P(prebuild)
     P --> nuxtbuild
-    nuxtbuild -->|nuxt run generate| SWS(static web site)
-    nuxtbuild -->|nuxt run dev| OS(running on server)
+    nuxtbuild -->|nuxt generate| SWS(static web site)
+    nuxtbuild -->|nuxt dev| OS(running on server)
 ```
 
 ## Base url
