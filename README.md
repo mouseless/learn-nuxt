@@ -337,10 +337,9 @@ server will run and the built page will be initialized.
 ```mermaid
 flowchart TD
     E(Eslint) --> P(prebuild)
-    P --> CB(nuxt client build)
-    CB --> SB(nuxt server build)
-    SB -->|nuxt generate| SWS[static web site]
-    SB -->|nuxt run dev| OS[running on server]
+    P --> NB(nuxt build)
+    NB -->|nuxt generate| SWS[static web site]
+    NB -->|nuxt run dev| OS[running on server]
 ```
 
 ## Base url
