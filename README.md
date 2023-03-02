@@ -324,6 +324,16 @@ Demo is at [/demo/open-graph](/demo/open-graph)
 To see the changes, go to [/demo/open-graph](/demo/open-graph) and view the
 source code
 
+## Runtime Config
+
+These are the config settings passed to runtime during build.
+In the `nuxt-content` plugin we use it to set the depth of anchor links
+and to access our config settings like `baseURL` from pages and components.
+See `.theme/nuxt.config.ts` for definition examples and
+`.theme/pages/demo/runtime-config.vue` for usage example.
+
+Demo is at [/demo/runtime-config](/demo/runtime-config)
+
 ## Build Process
 
 The building process has 4 stages. The first stage is lint checking using
