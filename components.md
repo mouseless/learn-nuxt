@@ -36,9 +36,11 @@ event. Ref is used for reactivity, so when a state is expected to change use
 
 Demo is at [/demo/components/emit-and-ref](/demo/components/emit-and-ref)
 
-### Global Emits
+### Global Emit
 
 TBD
+
+Demo is at [/demo/components/global-emit](/demo/components/global-emit)
 
 ## Prose
 
