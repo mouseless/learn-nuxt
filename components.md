@@ -36,9 +36,15 @@ event. Ref is used for reactivity, so when a state is expected to change use
 
 Demo is at [/demo/components/emit-and-ref](/demo/components/emit-and-ref)
 
-### Global Emit
+## Global Emit
 
-TBD
+To emit a global change, we use nuxt's state management. To achieve this;
+
+1. Introduce a state with its default value function as shown in
+   `.theme/composables/states.js`
+1. Import and modify it as shown in
+   `.theme/components/ComponentThatEmitsGlobally.vue`
+1. Watch it as shown in `.theme/pages/demo/components/global-emit.vue`
 
 Demo is at [/demo/components/global-emit](/demo/components/global-emit)
 
