@@ -1,12 +1,5 @@
 <template>
-  <button @click="clickHandler">
+  <button @click="$emit('sample-emit')">
     Click to emit
   </button>
 </template>
-<script setup>
-const emit = defineEmits(["sampleEmit"]);
-
-function clickHandler() {
-  emit("sampleEmit");
-}
-</script>

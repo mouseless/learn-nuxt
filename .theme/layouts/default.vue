@@ -42,6 +42,9 @@ header, article {
   margin: auto;
   padding: 0 10px;
 }
+article {
+  padding-top: 10px;
+}
 .logo {
   margin: 20px 0;
 }
