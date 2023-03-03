@@ -41,11 +41,11 @@ Demo is at [/demo/content-query](/demo/content-query)
 
 ### About Document-Driven Mode
 
-We don't use document-driven mode in nuxt projects even if it's a website that
-contains only markdown content. This is because all it does is to register a
-page with catch-all route along with extra queries like `navigation`,
-`surround` which could be unncessary in your theme. If you need to render
-navigation menu etc., use `<ContentQuery>` or `queryContent()` queries.
+We don't use document-driven mode even if it's a website that contains only
+markdown content. This is because all it does is to register a page with
+catch-all route along with extra queries like `navigation`, `surround` which
+could be unncessary in your theme. If you need to render navigation menu etc.,
+use `<ContentQuery>` or `queryContent()` queries.
 
 > :warning:
 >

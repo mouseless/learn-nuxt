@@ -5,7 +5,7 @@ position: 1
 # Content
 
 We use [Nuxt Content](https://content.nuxtjs.org/) to render markdown content
-in a web page. Add `@nuxt/content` under modules in `.theme/nuxt.congfig.ts`
+in a web page. Add `@nuxt/content` under modules in `.theme/nuxt.config.ts`
 
 Markdown files are placed at the root of to give focus on more to content than
 its theme layout.
