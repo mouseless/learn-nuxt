@@ -36,6 +36,10 @@ event. Ref is used for reactivity, so when a state is expected to change use
 
 Demo is at [/demo/components/emit-and-ref](/demo/components/emit-and-ref)
 
+### Global Emits
+
+TBD
+
 ## Prose
 
 Prose components are wrappers of html tags that are used to render markdown
