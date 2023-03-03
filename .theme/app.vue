@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout :name="layout">
+  <NuxtLayout name="default">
     <!-- key is required to overcome hydration and multiple render issues -->
     <NuxtPage :key="$route.path" />
   </NuxtLayout>
@@ -7,7 +7,6 @@
 <script setup>
 import { useRoute, navigateTo, onMounted } from "#imports";
 
-const layout = "default";
 const route = useRoute();
 
 onMounted(async () => {
