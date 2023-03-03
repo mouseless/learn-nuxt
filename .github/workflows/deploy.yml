@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - epic/nuxt-3
 jobs:
   generate:
     name: Generate
