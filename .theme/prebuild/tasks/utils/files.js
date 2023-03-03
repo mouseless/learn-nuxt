@@ -31,16 +31,16 @@ async function files(rootDir, extension, action, subDir) {
 
   await Promise.all(
     currentFiles.map(async file => {
-      if(file.startsWith(".")) { return; }
-
       let isDirectory;
       try { isDirectory = statSync(join(currentDir, file)).isDirectory(); }
       catch { isDirectory = false; }
 
       if (isDirectory) {
+        if(file.startsWith(".")) { return; }
+
         log.debug(`checking '${file}' under '${currentDir}'`, 1);
         await files(rootDir, extension, action, join(subDir, file));
-      } else if (extname(file) !== extension) {
+      } else if (extension && extname(file) !== extension) {
         log.debug(`skipped '${file}' under '${currentDir}'`, 1);
       } else {
         try {
