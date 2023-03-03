@@ -1,3 +1,7 @@
+---
+position: 1
+---
+
 # Content
 
 We use [Nuxt Content](https://content.nuxtjs.org/) to render markdown content

@@ -1,3 +1,7 @@
+---
+position: 2
+---
+
 # Pages
 
 You can create pages under `.theme/pages/`.

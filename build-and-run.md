@@ -1,3 +1,7 @@
+---
+position: 101
+---
+
 # Build & Run
 
 To create a static site we use `nuxt generate`, to run the project in

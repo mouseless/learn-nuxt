@@ -1,3 +1,7 @@
+---
+position: 3
+---
+
 # Template Syntax
 
 Here you can find how we use template syntax.

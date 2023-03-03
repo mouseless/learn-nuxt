@@ -1,3 +1,7 @@
+---
+position: 5
+---
+
 # Routing
 
 Here you can learn how we use routing for nuxt projects.

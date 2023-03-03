@@ -1,3 +1,7 @@
+---
+position: 6
+---
+
 # Configuration
 
 Below you can find how to configure and use configuration values in your

@@ -1,3 +1,7 @@
+---
+position: 4
+---
+
 # Components
 
 Components are reusable pieces which can be created manually using built in
