@@ -26,7 +26,7 @@ For Windows systems use `build.bat`;
 Process consists of 4 stages;
 
 1. Lint checking using eslint
-1. Prebuild, markdowns are preprocessed in this stage
+1. [Prebuild][], markdowns are preprocessed in this stage
 1. Nuxt build
 1. Last stage differs between `build` & `run`
    1. When building, it creates a static site for deployment
@@ -38,14 +38,10 @@ flowchart TB
         direction LR
         CB(client build) --> SB(server build)
     end
-    E(Eslint) --> P(prebuild)
+    E(eslint) --> P(prebuild)
     P --> nuxtbuild
     nuxtbuild -->|nuxt generate| SWS(static web site)
     nuxtbuild -->|nuxt dev| OS(running on server)
 ```
 
-## Prebuild
-
-We use a task based `prebuild` mechanism submodule in this project to 
-preprocess markdown files before nuxt build. You can view the 
-the documentation here [Prebuild](https://github.com/mouseless/prebuild)
+[Prebuild]: https://github.com/mouseless/prebuild
