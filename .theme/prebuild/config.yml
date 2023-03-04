@@ -1,5 +1,5 @@
 # Project root relative to this config file
-projectRoot: ../../../
+projectRoot: ../../
 
 # Log settings
 log:
@@ -8,6 +8,7 @@ log:
 
 # Tasks to run in given order
 tasks:
+  - sampleTask:
   - clean:
       directories:
         - ./.theme/.public
