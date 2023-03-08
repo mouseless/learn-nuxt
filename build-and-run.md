@@ -46,8 +46,20 @@ flowchart TB
 
 ## `package.json` Configuration
 
-We configure the `package.json` content with the scripts we edit to run
-operations such as [Eslint][] and prebuild.
+We configure build/run commands with the scripts in the `package.json` that we
+edit to run processes such as [Eslint][], [Prebuild][].
+
+### Argument Passing/Parsing
+
+We took help from arguments to reduce repetitive steps and to improve with
+parameters in scripts. Look at `.theme/package.json` to see use.
+
+We used [cross-var](https://www.npmjs.com/package/cross-var) to avoid using
+different syntax for different operating systems.
+
+### npx
+
+npx kullanımının açıklaması buraya gelecek...
 
 [Eslint]: https://eslint.org/
 [Prebuild]: https://github.com/mouseless/prebuild
