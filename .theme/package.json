@@ -11,8 +11,7 @@
     "generate": "nuxt generate --dotenv .env.production",
     "postinstall": "nuxt prepare",
     "prelocal": "npm run generate",
-    "local": "npx http-server .output/public -p 3000",
-    "preview": "nuxt preview"
+    "local": "npx http-server .output/public -p 3000"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^9.3.0",
