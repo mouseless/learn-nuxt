@@ -20,7 +20,6 @@
     "@nuxt/content": "^2.4.3",
     "cross-var": "^1.1.0",
     "dotenv": "^16.0.3",
-    "eslint": "^8.34.0",
     "eslint-plugin-json-format": "^2.0.1",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-vue": "^9.9.0",
