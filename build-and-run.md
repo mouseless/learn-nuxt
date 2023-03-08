@@ -44,4 +44,10 @@ flowchart TB
     nuxtbuild -->|nuxt dev| OS(running on server)
 ```
 
+## `package.json` Configuration
+
+We configure the `package.json` content with the scripts we edit to run
+operations such as [Eslint][] and prebuild.
+
+[Eslint]: https://eslint.org/
 [Prebuild]: https://github.com/mouseless/prebuild
