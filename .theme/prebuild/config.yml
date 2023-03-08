@@ -15,7 +15,7 @@ tasks:
         - ./.theme/content
   - touch:
       path: ./.theme/.env.local
-      
+
   # process and move markdowns to content
   - extractDiagrams:
       source: ./

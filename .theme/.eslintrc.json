@@ -49,7 +49,11 @@
       "error",
       "always"
     ],
-    "vue/multi-word-component-names": "off"
+    "vue/multi-word-component-names": "off",
+    "vue/html-quotes": [
+      "error",
+      "double"
+    ]
   },
   "settings": {
     "json/ignore-files": [
