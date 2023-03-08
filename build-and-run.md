@@ -29,8 +29,12 @@ Process consists of 4 stages;
 1. [Prebuild][], markdowns are preprocessed in this stage
 1. Nuxt build
 1. Last stage differs between `build` & `run`
-   1. When building, it creates a static site for deployment
-   1. When running locally, it runs application in development mode
+   1. When building, there are two different options
+      1. It creates a static site for deployment
+      2. It creates a static site for local testing
+   2. When running locally, there are two different options too
+      1. It runs application in development mode
+      2. It generate a static site and runs it
 
 ```mermaid
 flowchart TB
