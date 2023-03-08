@@ -57,9 +57,12 @@ parameters in scripts. Look at `.theme/package.json` to see use.
 We used [cross-var](https://www.npmjs.com/package/cross-var) to avoid using
 different syntax for different operating systems.
 
-### npx
+### Using `npx`
 
-npx kullanımının açıklaması buraya gelecek...
+We run packages like [Eslint][] and [http-server][] with `npx`, which can be
+used without installing them to reduce dependencies locally. Look at
+`.theme/package.json` to see use.
 
 [Eslint]: https://eslint.org/
+[http-server]: https://www.npmjs.com/package/http-server
 [Prebuild]: https://github.com/mouseless/prebuild
