@@ -1,6 +1,6 @@
 <template>
   <div class="global">
-    Basic component
+    Component styled with Scss using global variable
   </div>
 </template>
 <style lang="scss">
