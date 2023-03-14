@@ -5,7 +5,6 @@
     {{ runtimeConfig.public.baseURL }}
   </div>
 </template>
-
 <script setup>
 import { useRuntimeConfig } from "#app";
 

@@ -3,7 +3,6 @@
     This is an example of using the Open Graph
   </div>
 </template>
-
 <script setup>
 import { useHead } from "#head";
 
