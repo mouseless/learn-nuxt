@@ -46,8 +46,8 @@ Demo is at [/demo/computed/with-ref](/demo/computed/with-ref)
 
 ## Using Scss
 
-Here you can find how to use Scss in nuxt, to learn about Scss syntax check out
-our [Learn Sass Branch](https://github.com/mouseless/learn-css/pull/2).
+Here you can find how to use Scss in nuxt, to learn about Css and Scss syntax
+check out our [learn-css](https://github.com/mouseless/learn-css) repository.
 
 ### Style With Scss
 
