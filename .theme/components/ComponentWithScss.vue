@@ -4,11 +4,14 @@
   </div>
 </template>
 <style lang="scss">
+$justify-content-default: center;
 .basic {
   display: flex;
-  justify-content: center;
-  font-size: 2rem;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  justify-content: $justify-content-default;
   background-color: beige;
+  font: {
+    size: 2rem;
+    family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
 }
 </style>
