@@ -1,10 +1,10 @@
 <template>
-  <div class="basic">
+  <div class="global">
     Basic component
   </div>
 </template>
 <style lang="scss">
-.basic {
+.global {
   display: flex;
   justify-content: center;
   font-size: $font-size-default;
