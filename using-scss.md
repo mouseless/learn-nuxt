@@ -22,7 +22,7 @@ When creating variables you can refer to `./theme/assets/variables.scss`.
 
 To use the global variables simply use the variables created in
 `variables.scss` without importing. You can refer to
-`./theme/components/ComponenetWithGlobalVariable.vue`.
+`./theme/components/ComponentWithGlobalVariable.vue`.
 
 > :warning:
 >
