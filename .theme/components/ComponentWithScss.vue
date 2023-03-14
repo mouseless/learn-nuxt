@@ -6,10 +6,9 @@
 <style lang="scss">
 .basic {
   display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid;
-  font-size: 8rem;
+  justify-content: center;
+  font-size: 3rem;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-color: red;
+  background-color: beige;
 }
 </style>
