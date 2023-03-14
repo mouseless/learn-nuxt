@@ -3,7 +3,6 @@
     Message: {{ message }}
   </div>
 </template>
-
 <script setup>
 defineProps({
   message: {

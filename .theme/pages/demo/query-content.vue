@@ -8,7 +8,6 @@
     />
   </div>
 </template>
-
 <script setup>
 import { useRoute, queryContent } from "#imports";
 
