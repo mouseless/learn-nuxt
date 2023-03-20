@@ -1,6 +1,6 @@
-interface Person{
+interface SimpleType{
     name: string,
     age: number
 }
 
-export default Person;
+export default SimpleType;
