@@ -92,9 +92,9 @@ We configure 2 types of error pages.
 
 ### `#not-found`
 
-When we use `<ContentDoc>` and `<ContentQuery>` from Nuxt Content's component,
-we can configure the error content with `#not-found` when the component cannot
-find the markdown it is looking for.
+When we use `<ContentDoc>` and `<ContentQuery>` from _Nuxt_ _Content_'s
+component, we can configure the error content with `#not-found` when the
+component cannot find the markdown file it is looking for.
 
 Demo is at
 [/demo/error-handling/content-component](/demo/error-handling/content-component)
