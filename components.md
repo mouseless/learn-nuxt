@@ -121,3 +121,18 @@ flowchart TB
 ```
 
 Demo is at [/demo/provide-and-inject](/demo/provide-and-inject)
+
+## Complex Type
+
+To add complex types or interfaces create a types folder at the root, and
+create a `.ts` file `SimpleType.ts`. In this file create and export the
+interface with properties you want to add, you can refer to
+`.theme/types/SimpleType.ts`. This type can be used in components as seen in
+`.theme/components/ComponentWithComplexType.vue`.
+
+Demo is at [/demo/components/type](/demo/components/type)
+
+> :warning: 
+>
+> For type instances in your scripts to work, script language should be set
+> to TypeScript.
