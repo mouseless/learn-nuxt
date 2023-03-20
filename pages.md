@@ -82,3 +82,5 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 > from `.theme/public` to `.theme/.public` via `dir.public` in
 > `.theme/nuxt.config.ts` and copy public assets, content images and generated
 > diagrams into `.public` during preprocessing.
+
+## 404 Page
