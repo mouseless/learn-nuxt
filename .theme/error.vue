@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p><strong>Error Status Code:</strong> {{ error.code }}</p>
-    <p><strong>Error Message:</strong> {{ error.message }}</p>
+    <p><strong>Error Status Code:</strong> {{ error.statusCode }}</p>
+    <p><strong>Error Message:</strong> {{ error.statusMessage }}</p>
     <button @click="handleError">
       Clear errors and route home
     </button>
