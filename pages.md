@@ -83,10 +83,10 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 > `.theme/nuxt.config.ts` and copy public assets, content images and generated
 > diagrams into `.public` during preprocessing.
 
-## 404 Page
+## Error Page
 
-We use error page to custumize the error page that is shown when the searched
-page is not found.
+We use error page to customize the error page that is shown when the page is
+not found.
 
 We configure 2 types of error pages.
 
@@ -101,8 +101,8 @@ Demo is at
 
 ### `createError()`
 
-When content is not found in the query and fetch requests, we show custom error
-with `createError()`.
+When content is not found in the `queryContent()` requests, we show custom
+error with `createError()`.
 
 Demo is at
-[/demo/error-handling/handling-error](/demo/error-handling/handling-error)
+[/demo/error-handling/trigger-error-page](/demo/error-handling/trigger-error-page)

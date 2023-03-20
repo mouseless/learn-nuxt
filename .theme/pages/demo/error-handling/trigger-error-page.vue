@@ -5,7 +5,7 @@
 </template>
 <script setup>
 import { queryContent } from "#imports";
-import { createError } from "#app";
+import { showError } from "#app";
 
 let index;
 
@@ -16,6 +16,6 @@ try{
 }
 catch
 {
-  throw createError({ statusCode:404, statusMessage:"demo error handling", fatal:true });
+  throw showError({ statusCode:404, statusMessage:"demo error handling", fatal:true });
 }
 </script>
