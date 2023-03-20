@@ -89,3 +89,5 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 
 - ContentDoc ile çizdirilen dokümanda markdown bulunamazsa contentdoc içindeki #not-found ile işaretli template içerisindeki boluğu ekrana çizdiriyor.
 - Error sayfasına gitmek istersek createError methodu ile oraya yönlendirebiliyoruz.
+[demo handling error](/demo/error-handling/handling-error)
+[demo content page error](/demo/error-handling/content-page)
