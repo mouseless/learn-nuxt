@@ -10,8 +10,8 @@ const sampleText = part => `Open Graph - ${part}`;
 
 useHead({
   meta: [
-    { hid: "og:title", property: "og:title", content: sampleText("title")},
-    { hid: "og:description", property: "og:description", content: sampleText("description") },
-  ],
+    { hid: "og:title", property: "og:title", content: sampleText("title") },
+    { hid: "og:description", property: "og:description", content: sampleText("description") }
+  ]
 });
 </script>

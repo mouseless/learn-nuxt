@@ -31,7 +31,7 @@ const type = computed(() => {
 const body = computed(() => {
   let result = slot.value;
 
-  if(types[firstLine.value]) {
+  if (types[firstLine.value]) {
     // remove first line to avoid rendering it in body
     result = result.slice(1);
   }

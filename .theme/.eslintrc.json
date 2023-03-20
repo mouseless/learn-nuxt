@@ -8,7 +8,7 @@
     "eslint:recommended",
     "plugin:nuxt/recommended",
     "plugin:vue/recommended",
-    "standard-with-typescript"
+    "@nuxtjs/eslint-config-typeScript"
   ],
   "overrides": [
     {
