@@ -7,13 +7,15 @@
 import { queryContent } from "#imports";
 import { createError } from "#app";
 
+let index;
+
 // Searching for a non-existent markdown
 try{
-  const index = await queryContent("/demo/non-exist-mardown")
+  index = await queryContent("/demo/non-exist-mardown")
     .findOne();
 }
 catch
 {
-  throw createError({statusCode:404, statusMessage:"demo error handling", fatal:true});
+  throw createError({ statusCode:404, statusMessage:"demo error handling", fatal:true });
 }
 </script>
