@@ -10,7 +10,10 @@
 <script setup>
 import { clearError } from "#app";
 defineProps({
-  error: Object
+  error: {
+    type: Object,
+    default: null
+  }
 });
 const handleError = () => clearError({ redirect: "/" });
 </script>
