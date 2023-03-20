@@ -7,7 +7,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:nuxt/recommended",
-    "plugin:vue/recommended"
+    "plugin:vue/recommended",
+    "standard-with-typescript"
   ],
   "overrides": [
     {

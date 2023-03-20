@@ -21,8 +21,10 @@
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^9.3.0",
     "@nuxt/content": "^2.4.3",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
     "cross-var": "^1.1.0",
     "dotenv": "^16.0.3",
+    "eslint-config-standard-with-typescript": "^34.0.1",
     "eslint-plugin-json-format": "^2.0.1",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-vue": "^9.9.0",
