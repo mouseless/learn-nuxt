@@ -84,3 +84,8 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 > diagrams into `.public` during preprocessing.
 
 ## 404 Page
+
+### not-found
+
+- ContentDoc ile çizdirilen dokümanda markdown bulunamazsa contentdoc içindeki #not-found ile işaretli template içerisindeki boluğu ekrana çizdiriyor.
+- Error sayfasına gitmek istersek createError methodu ile oraya yönlendirebiliyoruz.
