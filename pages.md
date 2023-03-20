@@ -85,9 +85,24 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 
 ## 404 Page
 
-### not-found
+We use error page to custumize the error page that is shown when the searched
+page is not found.
 
-- ContentDoc ile çizdirilen dokümanda markdown bulunamazsa contentdoc içindeki #not-found ile işaretli template içerisindeki boluğu ekrana çizdiriyor.
-- Error sayfasına gitmek istersek createError methodu ile oraya yönlendirebiliyoruz.
-[demo handling error](/demo/error-handling/handling-error)
-[demo content page error](/demo/error-handling/content-page)
+We configure 2 types of error pages.
+
+### `#not-found`
+
+When we use `<ContentDoc>` and `<ContentQuery>` from Nuxt Content's component,
+we can configure the error content with `#not-found` when the component cannot
+find the markdown it is looking for.
+
+Demo is at
+[/demo/error-handling/content-component](/demo/error-handling/content-component)
+
+### `createError()`
+
+When content is not found in the query and fetch requests, we show custom error
+with `createError()`.
+
+Demo is at
+[/demo/error-handling/handling-error](/demo/error-handling/handling-error)
