@@ -82,25 +82,3 @@ component.
 > :warning:
 >
 > You need to specify the `styles.scss` as global style in `nuxt.config.ts`
-
-## Complex Type
-
-To add complex types or interfaces create a types folder at the root, and
-create a `.ts` file `IDemoInterface.ts`. In this file create and export the
-interface with properties you want to add, you can refer to
-`.theme/types/IDemoInterface.ts`. 
-
-> :information_source:
->
-> Complex types can be created and used in a single file component without
-> needing to import.
-
-This type can be used in components as seen in
-`.theme/pages/demo/complex-type.vue`.
-
-Demo is at [/demo/complex-type](/demo/complex-type)
-
-> :warning: 
->
-> For type instances in your scripts to work, script language should be set
-> to TypeScript.
