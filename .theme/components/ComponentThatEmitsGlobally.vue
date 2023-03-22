@@ -7,7 +7,7 @@
 import { useSampleGlobal } from "#imports";
 
 const sampleGlobal = useSampleGlobal();
-function toggle () {
+function toggle() {
   sampleGlobal.value = !sampleGlobal.value;
 }
 </script>
