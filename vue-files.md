@@ -2,9 +2,9 @@
 position: 3
 ---
 
-# Template Syntax
+# Vue Files
 
-Here you can find how we use template syntax.
+Here you can find how we use template syntax in vue files.
 
 ## Variable
 
@@ -52,7 +52,7 @@ check out our [learn-css](https://github.com/mouseless/learn-css) repository.
 ### Style With Scss
 
 To style a component using Scss you can refer to
-`./theme/components/ComponentWithScss.vue`
+`./theme/pages/demo/scss/style-with-scss.vue`
 
 Demo is at [/demo/scss/style-with-scss](/demo/scss/style-with-scss)
 
@@ -63,8 +63,7 @@ and add `variables.scss` file. In this file global variables can be created.
 When creating variables you can refer to `./theme/assets/variables.scss`.
 
 To use the global variables simply use the variables created in
-`variables.scss` without importing. You can refer to
-`./theme/components/ComponentWithGlobalVariable.vue`.
+`variables.scss` without importing.
 
 > :warning:
 >

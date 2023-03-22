@@ -11,7 +11,7 @@ Read below guides to find out how we use nuxt;
 
 - [Content](content.md)
 - [Pages](pages.md)
-- [Template Syntax](template-syntax.md)
+- [Vue Files](vue-files.md)
 - [Components](components.md)
 - [Routing](routing.md)
 - [Configuration](configuration.md)

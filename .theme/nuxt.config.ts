@@ -2,15 +2,18 @@ import { defineNuxtConfig } from "nuxt/config";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  typescript: {
+    typeCheck: true
+  },
   runtimeConfig: {
     public: {
       content: {
         anchorLinks: {
-          depth: 0,
-        },
+          depth: 0
+        }
       },
       baseURL: process.env.BASE_URL
-    },
+    }
   },
   app: {
     baseURL: process.env.BASE_URL,
@@ -19,22 +22,22 @@ export default defineNuxtConfig({
         {
           hid: "og:description",
           property: "og:description",
-          content: "Welcome to mouseless",
+          content: "Welcome to mouseless"
         },
         {
           hid: "og:image",
           property: "og:image",
-          content: "https://mouseless.github.io/learn-nuxt/favicon.ico",
+          content: "https://mouseless.github.io/learn-nuxt/favicon.ico"
         },
         {
           hid: "og:image:width",
           property: "og:image:width",
-          content: "50",
+          content: "50"
         },
         {
           hid: "og:image:height",
           property: "og:image:height",
-          content: "50",
+          content: "50"
         }
       ]
     }
@@ -44,12 +47,12 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           additionalData: "@import \"@/assets/variables.scss\";"
-        },
-      },
-    },
+        }
+      }
+    }
   },
   css: [
-    "~/assets/styles.scss",
+    "~/assets/styles.scss"
   ],
   modules: [
     "@nuxt/content"
@@ -57,9 +60,9 @@ export default defineNuxtConfig({
   content: {
     markdown: {
       remarkPlugins: {
-        "remark-emoji": false,
-      },
-    },
+        "remark-emoji": false
+      }
+    }
   },
   router: {
     options: {
@@ -68,11 +71,11 @@ export default defineNuxtConfig({
   },
   components: {
     dirs: [
-      { global: true , path: "~/components/Prose" },
-      "~/components",
+      { global: true, path: "~/components/Prose" },
+      "~/components"
     ]
   },
   dir: {
-    public: ".public",
-  },
+    public: ".public"
+  }
 });
