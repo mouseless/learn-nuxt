@@ -10,7 +10,7 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-import IDemoInterface from "../../../types/IDemoInterface";
+import IDemoInterface from "../../types/IDemoInterface";
 
 const interfacePerson = ref<IDemoInterface>({
   stringProperty: "John",

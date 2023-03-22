@@ -2,7 +2,7 @@
 position: 3
 ---
 
-# Template Syntax
+# Vue Files
 
 Here you can find how we use template syntax.
 
@@ -52,7 +52,7 @@ check out our [learn-css](https://github.com/mouseless/learn-css) repository.
 ### Style With Scss
 
 To style a component using Scss you can refer to
-`./theme/components/ComponentWithScss.vue`
+`./theme/pages/demo/scss/style-with-scss.vue`
 
 Demo is at [/demo/scss/style-with-scss](/demo/scss/style-with-scss)
 
@@ -63,8 +63,7 @@ and add `variables.scss` file. In this file global variables can be created.
 When creating variables you can refer to `./theme/assets/variables.scss`.
 
 To use the global variables simply use the variables created in
-`variables.scss` without importing. You can refer to
-`./theme/components/ComponentWithGlobalVariable.vue`.
+`variables.scss` without importing.
 
 > :warning:
 >
@@ -83,3 +82,18 @@ component.
 > :warning:
 >
 > You need to specify the `styles.scss` as global style in `nuxt.config.ts`
+
+## Complex Type
+
+To add complex types or interfaces create a types folder at the root, and
+create a `.ts` file `IDemoInterface.ts`. In this file create and export the
+interface with properties you want to add, you can refer to
+`.theme/types/IDemoInterface.ts`. This type can be used in components as seen in
+`.theme/pages/demo/complex-type.vue`.
+
+Demo is at [/demo/complex-type](/demo/complex-type)
+
+> :warning: 
+>
+> For type instances in your scripts to work, script language should be set
+> to TypeScript.
