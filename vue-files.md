@@ -4,7 +4,7 @@ position: 3
 
 # Vue Files
 
-Here you can find how we use template syntax.
+Here you can find how we use template syntax in vue files.
 
 ## Variable
 
