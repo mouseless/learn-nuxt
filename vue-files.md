@@ -88,7 +88,14 @@ component.
 To add complex types or interfaces create a types folder at the root, and
 create a `.ts` file `IDemoInterface.ts`. In this file create and export the
 interface with properties you want to add, you can refer to
-`.theme/types/IDemoInterface.ts`. This type can be used in components as seen in
+`.theme/types/IDemoInterface.ts`. 
+
+> :information_source:
+>
+> Complex types can be created and used in a single file component without
+> needing to import.
+
+This type can be used in components as seen in
 `.theme/pages/demo/complex-type.vue`.
 
 Demo is at [/demo/complex-type](/demo/complex-type)
