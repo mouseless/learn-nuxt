@@ -37,6 +37,7 @@
       "error",
       "unix"
     ],
+    "keyword-spacing": "off",
     "no-multi-spaces": "error",
     "no-multiple-empty-lines": "error",
     "no-trailing-spaces": "error",
@@ -50,6 +51,7 @@
       "error",
       "always"
     ],
+    "space-before-function-paren": "off",
     "vue/multi-word-component-names": "off",
     "vue/html-quotes": [
       "error",

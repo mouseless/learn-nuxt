@@ -10,7 +10,7 @@ import { useRoute, navigateTo, onMounted } from "#imports";
 const route = useRoute();
 
 onMounted(async () => {
-  if (route.path.endsWith("/")) {
+  if(route.path.endsWith("/")) {
     const { path, query, hash } = route;
     const nextPath = path.replace(/\/+$/, "") || "/";
     const nextRoute = { path: nextPath, query, hash };

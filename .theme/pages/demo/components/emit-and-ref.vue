@@ -12,12 +12,12 @@
 import { ref } from "#imports";
 
 let count = 0;
-function increment () {
+function increment() {
   count++;
 }
 
 const countRef = ref(0);
-function incrementRef () {
+function incrementRef() {
   countRef.value++;
 }
 </script>
