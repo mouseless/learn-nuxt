@@ -6,7 +6,6 @@
   </div>
 </template>
 <script setup lang="ts">
-
 const complex = {
   optional: "Richard",
   required: 20
