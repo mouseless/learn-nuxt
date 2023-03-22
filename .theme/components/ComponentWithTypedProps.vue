@@ -4,10 +4,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import DemoInterface from "../types/IDemoInterface";
+import DemoType from "../types/DemoType";
 
 withDefaults(defineProps<{
-  complex: DemoInterface
+  complex: DemoType
 }>(), {
   complex: () => {
     return {

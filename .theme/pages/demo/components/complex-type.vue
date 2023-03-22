@@ -6,7 +6,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import DemoType from "../../types/DemoType";
+import DemoType from "../../../types/DemoType";
 
 const complex: DemoType = {
   optional: "Richard",
