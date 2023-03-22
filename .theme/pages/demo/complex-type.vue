@@ -1,10 +1,10 @@
 <template>
   <div>
     <div>
-      {{ interfacePerson.stringProperty }} {{ interfacePerson.numberProperty }}
+      {{ interfaceDemo.stringProperty }} {{ interfaceDemo.numberProperty }}
     </div>
     <div>
-      {{ classPerson.stringProperty }} {{ classPerson.numberProperty }}
+      {{ classDemo.stringProperty }} {{ classDemo.numberProperty }}
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@
 import { ref } from "vue";
 import IDemoInterface from "../../types/IDemoInterface";
 
-const interfacePerson = ref<IDemoInterface>({
+const interfaceDemo = ref<IDemoInterface>({
   stringProperty: "John",
   numberProperty: 20
 });
@@ -25,5 +25,6 @@ class DemoClass implements IDemoInterface {
     this.numberProperty = numberProperty;
   }
 }
-const classPerson = new DemoClass("Richard", 30);
+
+const classDemo = new DemoClass("Richard", 30);
 </script>
