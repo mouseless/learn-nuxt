@@ -4,10 +4,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import DemoType from "../types/DemoType";
-
 withDefaults(defineProps<{
-  complex: DemoType
+  complex: {
+    optional?: string,
+    required: number
+  }
 }>(), {
   complex: () => {
     return {

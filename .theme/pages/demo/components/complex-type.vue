@@ -6,9 +6,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import DemoType from "../../../types/DemoType";
 
-const complex: DemoType = {
+const complex = {
   optional: "Richard",
   required: 20
 };
