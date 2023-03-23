@@ -1,13 +1,12 @@
 <template>
-    <img :src="refinedSrc" :alt="alt" :width="width" :height="height"/>
+  <img :src="refinedSrc" :alt="alt" :width="width" :height="height">
 </template>
 
 <script setup>
 import { withBase } from "ufo";
-import { inject } from "vue";
-import { useRuntimeConfig, computed } from "#imports";
+import { useRoute, useRuntimeConfig, computed } from "#imports";
 
-const route = inject("route", useRuntimeConfig().app.baseURL);
+const route = useRoute().path;
 
 const props = defineProps({
   src: {

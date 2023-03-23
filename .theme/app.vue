@@ -5,8 +5,4 @@
   </NuxtLayout>
 </template>
 <script setup>
-import { provide } from "vue";
-import { useRoute } from "#imports";
-
-provide("route", useRoute().path);
 </script>
