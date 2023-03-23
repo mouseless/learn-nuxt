@@ -27,7 +27,7 @@ const props = defineProps({
   }
 });
 const refinedSrc = computed(() => {
-  if(route !== "/" && route.toString().endsWith("/") && props.src.startsWith(".")) {
+  if(route !== "/" && route.toString().endsWith("/") && props.src.startsWith("./")) {
     return ".".concat(props.src);
   }
   if (props.src?.startsWith("/") && !props.src.startsWith("//")) {
