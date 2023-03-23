@@ -46,4 +46,3 @@ jobs:
           git add -A
           git commit -m 'deploy to github pages'
           git push -f
-
