@@ -1,0 +1,52 @@
+name: test-deploy
+on:
+  push:
+    branches:
+      - issue/trailing-slash
+jobs:
+  generate:
+    name: Generate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Build Docs
+        run: |
+          cd .theme/
+          npm install
+          npm run generate:production
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: .theme/.output/public
+          if-no-files-found: error
+  publish:
+    needs: generate
+    name: test-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: deploy
+      - name: Remove Old Files
+        run: |
+          rm -rdvf ./docs
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: docs
+          path: docs
+      - name: Commit & Push
+        run: |
+          git config user.name 'github-actions'
+          git config user.email 'github-actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'deploy to github pages'
+          git push -f
+
