@@ -20,4 +20,4 @@ onMounted(async () => {
     await navigateTo(nextRoute, { replace: true });
   }
 });
-</script>
+</script
