@@ -1,4 +1,4 @@
-name: test-deploy
+name: Test
 on: workflow_dispatch
 jobs:
   generate:
@@ -25,7 +25,7 @@ jobs:
           if-no-files-found: error
   publish:
     needs: generate
-    name: test-deploy
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
