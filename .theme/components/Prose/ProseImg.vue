@@ -29,7 +29,7 @@ const props = defineProps({
 });
 const refinedSrc = computed(() => {
   if(route !== "/" && route.toString().endsWith("/") && props.src.startsWith(".")) {
-    return props.src.substring(1);
+    return ".".concat(props.src);
   }
   if (props.src?.startsWith("/") && !props.src.startsWith("//")) {
     return withBase(props.src, useRuntimeConfig().app.baseURL);

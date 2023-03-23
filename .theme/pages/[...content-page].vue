@@ -4,7 +4,6 @@
   </div>
 </template>
 <script setup>
-// import { withTrailingSlash } from "ufo";
 import { useRoute } from "#imports";
 
 const docPath = computed(() => {
