@@ -2,7 +2,16 @@
   <div>
     <ContentDoc>
       <template #not-found>
-        <h2>Page Not Found Message</h2>
+        <ContentQuery
+          v-slot="{ data }"
+          path="/"
+          :where="{ _path: { $eq: '/error' }}"
+          find="one"
+        >
+          <ContentRenderer :value="data">
+            <ContentRendererMarkdown :value="data" />
+          </ContentRenderer>
+        </ContentQuery>
       </template>
     </ContentDoc>
   </div>
