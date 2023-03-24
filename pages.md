@@ -104,8 +104,9 @@ Demo is at
 
 ### `createError()`
 
-When content is not found in the `queryContent()` requests, we show custom
-error with `createError()`.
+If the page is not found in the requests we make with `queryContent()`, we
+trigger nuxt's full page error with `createError()`. See `error.vue` for our
+full page error usage.
 
 Demo is at
 [/demo/error-handling/trigger-error-page](/demo/error-handling/trigger-error-page)
