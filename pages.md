@@ -85,15 +85,11 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 
 ## Error Page
 
-We use error page to customize the error page that is shown when the page is
-not found.
-
-When we use `<ContentDoc>` and `<ContentQuery>` from _Nuxt_ _Content_'s
-component, we can configure the error content with `#not-found` when the
-component cannot find the markdown file it is looking for.
-
-To keep with the concept of managing each page content via markdown, we get the
-`#not-found` content from the `error.md` file.
+When we use _Nuxt_ _Content_ components `<ContentDoc>` and `<ContentQuery>`, we
+configure the error content with `#not-found` when the component cannot find
+the markdown file it is looking for. To keep with the concept of managing the
+content of each page with markdown, we get the `#not-found` content from the
+`error.md` file.
 
 Demo is at [/demo/error-handling](/demo/error-handling)
 
