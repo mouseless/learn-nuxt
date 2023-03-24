@@ -85,8 +85,6 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 
 ## Error Page
 
-We do not get error page because we use nuxt's dynamic page. Nuxt content shows the default #not-found template. We customize the page not found content by showing the content of error.md under #not-found template.
-
 We use error page to customize the error page that is shown when the page is
 not found.
 
