@@ -81,6 +81,8 @@ a.left+a.right {
   }
 
   a.left+a.right {
+    margin-top:10px;
+    padding-top:10px;
     padding-left: 0px;
     border-top: solid 1px black;
     border-left: none;
