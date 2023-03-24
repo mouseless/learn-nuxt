@@ -1,13 +1,22 @@
 <template>
   <div>
-    <ContentDoc :path="docPath" />
+    <ContentDoc />
   </div>
 </template>
 <script setup>
 import { useRoute } from "#imports";
 
-const docPath = computed(() => {
-  const x = useRoute().path;
-  return x;
+const route = useRoute();
+const articles = await queryContent(route.path).findOne();
+
+const dir = computed(() => {
+  if(articles._dir !== "") {
+    return "/".concat(articles._dir).concat("/");
+  }
+  return "/".concat(articles._dir);
+});
+
+useHead({
+  base: { href: dir }
 });
 </script>

@@ -1,12 +1,12 @@
 <template>
-  <img :src="refinedSrc" :alt="alt" :width="width" :height="height">
+  <div>
+    <img :src="refinedSrc" :alt="alt" :width="width" :height="height">
+  </div>
 </template>
 
 <script setup>
 import { withBase } from "ufo";
-import { useRoute, useRuntimeConfig, computed } from "#imports";
-
-const route = useRoute().path;
+import { useRuntimeConfig, computed } from "#imports";
 
 const props = defineProps({
   src: {
@@ -26,10 +26,8 @@ const props = defineProps({
     default: undefined
   }
 });
+
 const refinedSrc = computed(() => {
-  if(route !== "/" && route.toString().endsWith("/") && props.src.startsWith("./")) {
-    return ".".concat(props.src);
-  }
   if (props.src?.startsWith("/") && !props.src.startsWith("//")) {
     return withBase(props.src, useRuntimeConfig().app.baseURL);
   }
