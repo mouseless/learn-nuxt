@@ -9,7 +9,7 @@ import { useRoute, navigateTo, onMounted } from "#imports";
 
 const route = useRoute();
 
-onMounted(async () => {
+onMounted(() => {
   if(route.path.endsWith("/")) {
     const { path, query, hash } = route;
     const nextPath = path.replace(/\/+$/, "") || "/";
@@ -17,7 +17,9 @@ onMounted(async () => {
 
     // works only if `router.options.strict` is enabled in `nuxt.config.ts`
     // replace prevents browser to record this navigation in its history
-    await navigateTo(nextRoute, { replace: true });
+    setTimeout(async () => {
+      await navigateTo(nextRoute, { replace: true });
+    }, 2000);
   }
 });
 </script>
