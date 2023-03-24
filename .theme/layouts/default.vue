@@ -67,6 +67,11 @@ nav a {
   margin: 5px;
 }
 
+a.left+a.right {
+  padding-left: 10px;
+  border-left: solid 1px black;
+}
+
 @media (max-width: 800px) {
   .logo img, .logo .separator {
     height: 15px;
@@ -74,9 +79,11 @@ nav a {
   nav a {
     display: block;
   }
-}
-a.left+a.right {
-  padding-left: 10px;
-  border-left: solid 1px black;
+
+  a.left+a.right {
+    padding-left: 0px;
+    border-top: solid 1px black;
+    border-left: none;
+  }
 }
 </style>
