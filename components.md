@@ -28,6 +28,29 @@ when using the component with properties as shown in
 
 Demo is at [/demo/components/defining-props](/demo/components/defining-props)
 
+### Complex Type Props
+
+Complex types can be used with `defineProps` as seen in
+`./theme/components/ComponentWithTypedProp.vue`.
+
+Demo is at
+[/demo/components/complex-type-props](/demo/components/complex-type-props)
+
+> :information_source: 
+>
+> For type instances in your scripts to work, script language should be set
+> to TypeScript. [TypeCheck][] should be enabled. If you have enabled type
+> checking in your project required properties are enforced during compile.
+
+### Reusing Types
+
+To reuse types, create a `types` folder at the root of the project, and create
+an `index.ts` file to export types. You can add your types in this folder and
+export them via `index.ts`, see `./theme/types/Demo.ts`. These types can be
+used in components as seen in `./theme/components/ComponentThatReusesType.vue`
+
+Demo is at [/demo/components/reusing-types](/demo/components/reusing-types)
+
 ## Emit & Ref
 
 Emit is the way to raise events from a component to its parent, like a click
@@ -121,3 +144,5 @@ flowchart TB
 ```
 
 Demo is at [/demo/provide-and-inject](/demo/provide-and-inject)
+
+[TypeCheck]: https://nuxt.com/docs/api/configuration/nuxt-config#typecheck

@@ -20,10 +20,10 @@
 import { ref, computed } from "#imports";
 
 let name = "John";
-const changeName = () => name = name == "John" ? "Richard" : "John";
+const changeName = () => name = name === "John" ? "Richard" : "John";
 const fullName = computed(() => `${name} Doe`);
 
 const nameRef = ref("John");
-const changeNameRef = () => nameRef.value = nameRef.value == "John" ? "Richard" : "John";
+const changeNameRef = () => nameRef.value = nameRef.value === "John" ? "Richard" : "John";
 const fullNameRef = computed(() => `${nameRef.value} Doe`);
 </script>

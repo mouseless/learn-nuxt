@@ -19,12 +19,13 @@
           path="/"
           :only="[ '_path', 'title', 'position' ]"
           :where="{ _dir: { $eq: '' }, _path: { $ne: '/' } }"
-          :sort="{ position: 1, $numeric: true }"
+          :sort="sort"
         >
           <NuxtLink
             v-for="menu in menus"
             :key="menu.title"
             :to="menu._path == $route.path ? '' : menu._path"
+            :class="menu.position < 100 ? 'left' : 'right'"
           >
             {{ menu.title }}
           </NuxtLink>
@@ -36,7 +37,13 @@
     </article>
   </div>
 </template>
-<style scoped>
+<script setup lang="ts">
+const sort = {
+  position: 1,
+  $numeric: true
+};
+</script>
+<style scoped lang="scss">
 header, article {
   max-width: 1000px;
   margin: auto;
@@ -67,5 +74,9 @@ nav a {
   nav a {
     display: block;
   }
+}
+a.left+a.right {
+  padding-left: 10px;
+  border-left: solid 1px black;
 }
 </style>
