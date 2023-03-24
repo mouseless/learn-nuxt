@@ -4,6 +4,7 @@
   </div>
 </template>
 <script setup>
+import { resolveURL } from "ufo";
 import { useRuntimeConfig } from "#app";
 import { useRoute } from "#imports";
 
@@ -12,10 +13,15 @@ const articles = await queryContent(route.path).findOne();
 const runtimeConfig = useRuntimeConfig();
 
 const dir = computed(() => {
-  if(articles._dir !== "") {
-    return runtimeConfig.public.baseURL.concat(articles._dir).concat("/");
+  let bUrl = runtimeConfig.public.baseURL;
+  if(!bUrl.endsWith("/")) {
+    bUrl = bUrl.concat("/");
   }
-  return runtimeConfig.public.baseURL;
+  if(articles._dir !== "") {
+    return resolveURL(runtimeConfig.public.baseURL, articles._dir).concat("/");
+  }else{
+    return bUrl;
+  }
 });
 
 useHead({
