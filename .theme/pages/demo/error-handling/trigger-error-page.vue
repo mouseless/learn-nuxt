@@ -4,8 +4,8 @@
   </div>
 </template>
 <script setup>
-import { queryContent } from "#imports";
 import { showError } from "#app";
+import { queryContent } from "#imports";
 
 let index;
 
@@ -13,9 +13,7 @@ let index;
 try{
   index = await queryContent("/demo/non-exist-mardown")
     .findOne();
-}
-catch
-{
-  throw showError({ statusCode:404, statusMessage:"demo error handling", fatal:true });
+} catch {
+  throw showError({ statusCode: 404, statusMessage: "demo error handling", fatal: true });
 }
 </script>
