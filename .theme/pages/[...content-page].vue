@@ -2,7 +2,7 @@
   <div>
     <ContentDoc>
       <template #not-found>
-        <ContentDoc path="/error" />
+        <ContentDoc path="/not-found" />
       </template>
     </ContentDoc>
   </div>
