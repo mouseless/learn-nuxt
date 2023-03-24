@@ -2,7 +2,7 @@
   <div>
     <p><strong>Error Status Code:</strong> {{ error.statusCode }}</p>
     <p><strong>Error Message:</strong> {{ error.statusMessage }}</p>
-    <button @click="handleError">
+    <button @click="clearError({ redirect: '/' })">
       Clear errors and route home
     </button>
   </div>
@@ -15,5 +15,4 @@ defineProps({
     default: null
   }
 });
-const handleError = () => clearError({ redirect: "/" });
 </script>
