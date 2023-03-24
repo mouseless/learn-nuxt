@@ -4,13 +4,10 @@
       <template #not-found>
         <ContentQuery
           v-slot="{ data }"
-          path="/"
-          :where="{ _path: { $eq: '/error' }}"
+          path="/error"
           find="one"
         >
-          <ContentRenderer :value="data">
-            <ContentRendererMarkdown :value="data" />
-          </ContentRenderer>
+          <ContentRenderer :value="data" />
         </ContentQuery>
       </template>
     </ContentDoc>
