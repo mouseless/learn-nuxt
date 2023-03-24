@@ -88,10 +88,6 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 We use error page to customize the error page that is shown when the page is
 not found.
 
-We configure 2 types of error pages.
-
-### `#not-found`
-
 When we use `<ContentDoc>` and `<ContentQuery>` from _Nuxt_ _Content_'s
 component, we can configure the error content with `#not-found` when the
 component cannot find the markdown file it is looking for.
@@ -99,14 +95,10 @@ component cannot find the markdown file it is looking for.
 To keep with the concept of managing each page content via markdown, we get the
 `#not-found` content from the `error.md` file.
 
-Demo is at
-[/demo/error-handling/content-component](/demo/error-handling/content-component)
+Demo is at [/demo/error-handling](/demo/error-handling)
 
-### `createError()`
-
-If the page is not found in the requests we make with `queryContent()`, we
-trigger nuxt's full page error with `createError()`. See `error.vue` for our
-full page error usage.
-
-Demo is at
-[/demo/error-handling/trigger-error-page](/demo/error-handling/trigger-error-page)
+> :warning:
+>
+> If the page is not found in the requests we make with `queryContent()`, we
+> trigger nuxt's full page error with `createError()`. See `error.vue` for our
+> full page error usage.
