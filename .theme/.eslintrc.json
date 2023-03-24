@@ -37,7 +37,7 @@
       "error",
       "unix"
     ],
-    "keyword-spacing": "off",
+    "keyword-spacing": "warn",
     "no-multi-spaces": "error",
     "no-multiple-empty-lines": "error",
     "no-return-assign": "off",
