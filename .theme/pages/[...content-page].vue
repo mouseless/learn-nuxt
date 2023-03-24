@@ -1,5 +1,9 @@
 <template>
   <div>
-    <ContentDoc />
+    <ContentDoc>
+      <template #not-found>
+        <ContentDoc path="/error" />
+      </template>
+    </ContentDoc>
   </div>
 </template>
