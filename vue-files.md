@@ -83,7 +83,7 @@ component.
 >
 > You need to specify the `styles.scss` as global style in `nuxt.config.ts`
 
-## `error.vue`
+## Handling Errors
 
 We use `error.vue` file to configure default full page error that nuxt shows
 when it can't find the page it wants to load. See `error.vue` for an example.
@@ -96,7 +96,7 @@ with `clearError()` and give the page we want with the redirect parameter. See
 
 ### Using `createError()`
 
-We use `createError()` to create an error. We redirect to `error.vue` by making
-`fatal` true.
+We use `createError()` to create an error. It redirects to `error.vue` when
+`fatal` is set to `true`.
 
 Demo is at [/demo/error/error-handling](/demo/error/error-handling)
