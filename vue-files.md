@@ -93,3 +93,10 @@ when it can't find the page it wants to load. See `error.vue` for an example.
 When we want to return to another page from the error page, we clear the errors
 with `clearError()` and give the page we want with the redirect parameter. See
 `error.vue` for an example.
+
+### Using `createError()`
+
+We use `createError()` to create an error. We redirect to `error.vue` by making
+`fatal` true.
+
+Demo is at [/demo/error/error-handling](/demo/error/error-handling)

@@ -91,4 +91,4 @@ the markdown file it is looking for. To keep with the concept of managing the
 content of each page with markdown, we get the `#not-found` content from the
 `error.md` file.
 
-Demo is at [/demo/error-handling](/demo/error-handling)
+Demo is at [/demo/error/content-not-found](/demo/error/content-not-found)
