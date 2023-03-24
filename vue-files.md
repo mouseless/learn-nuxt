@@ -82,3 +82,14 @@ component.
 > :warning:
 >
 > You need to specify the `styles.scss` as global style in `nuxt.config.ts`
+
+## `error.vue`
+
+We use `error.vue` file to configure default full page error that nuxt shows
+when it can't find the page it wants to load. See `error.vue` for an example.
+
+### Using `clearError()`
+
+When we want to return to another page from the error page, we clear the errors
+with `clearError()` and give the page we want with the redirect parameter. See
+`error.vue` for an example.

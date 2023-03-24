@@ -92,9 +92,3 @@ content of each page with markdown, we get the `#not-found` content from the
 `error.md` file.
 
 Demo is at [/demo/error-handling](/demo/error-handling)
-
-> :warning:
->
-> If the page is not found in the requests we make with `queryContent()`, we
-> trigger nuxt's full page error with `createError()`. See `error.vue` for our
-> full page error usage.
