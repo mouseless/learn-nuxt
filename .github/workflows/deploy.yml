@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - issue/trailing-slash
 jobs:
   generate:
     name: Generate
