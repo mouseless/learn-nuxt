@@ -3,6 +3,7 @@ on:
   pull_request:
     branches:
       - main
+      - 'epic/**'
 jobs:
   generate:
     name: Generate
