@@ -2,13 +2,7 @@
   <div>
     <ContentDoc>
       <template #not-found>
-        <ContentQuery
-          v-slot="{ data }"
-          path="/error"
-          find="one"
-        >
-          <ContentRenderer :value="data" />
-        </ContentQuery>
+        <ContentDoc path="/error" />
       </template>
     </ContentDoc>
   </div>
