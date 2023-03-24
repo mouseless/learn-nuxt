@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper.c27b6911.js";import{o as a,c as s}from"./entry.555b5f3f.js";const l={},o={class:"class-with-global-variable"};function t(c,_){return a(),s("div",o," Styled with Scss using global variable ")}const i=e(l,[["render",t]]);export{i as default};
