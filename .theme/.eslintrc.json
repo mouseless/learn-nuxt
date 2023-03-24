@@ -8,7 +8,7 @@
     "eslint:recommended",
     "plugin:nuxt/recommended",
     "plugin:vue/recommended",
-    "@nuxtjs/eslint-config-typeScript"
+    "@nuxtjs/eslint-config-typescript"
   ],
   "overrides": [
     {
@@ -37,7 +37,28 @@
       "error",
       "unix"
     ],
-    "keyword-spacing": "off",
+    "keyword-spacing": [
+      "error",
+      {
+        "overrides": {
+          "if": {
+            "after": false
+          },
+          "for": {
+            "after": false
+          },
+          "while": {
+            "after": false
+          },
+          "static": {
+            "after": false
+          },
+          "as": {
+            "after": false
+          }
+        }
+      }
+    ],
     "no-multi-spaces": "error",
     "no-multiple-empty-lines": "error",
     "no-return-assign": "off",

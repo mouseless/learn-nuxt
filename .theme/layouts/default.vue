@@ -18,7 +18,7 @@
           v-slot="{ data: menus }"
           path="/"
           :only="[ '_path', 'title', 'position' ]"
-          :where="{ _dir: { $eq: '' }, _path: { $ne: '/' } }"
+          :where="{ _dir: { $eq: '' }, _path: { $ne: '/' }, position: { $exists: true } }"
           :sort="sort"
         >
           <NuxtLink

@@ -82,3 +82,13 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 > from `.theme/public` to `.theme/.public` via `dir.public` in
 > `.theme/nuxt.config.ts` and copy public assets, content images and generated
 > diagrams into `.public` during preprocessing.
+
+## 404 - Not Found
+
+When we use _Nuxt_ _Content_ components `<ContentDoc>` and `<ContentQuery>`, we
+configure the error content with `#not-found` when the component cannot find
+the markdown file it is looking for. To keep with the concept of managing the
+content of each page with markdown, we get the `#not-found` content from the
+`not-found.md` file.
+
+Demo is at [/demo/error/non-existent-content](/demo/error/non-existent-content)
