@@ -49,34 +49,44 @@ header, article {
   margin: auto;
   padding: 0 10px;
 }
+
 article {
   padding-top: 10px;
 }
+
 .logo {
   margin: 20px 0;
-}
-.logo .separator {
-  display: inline-block;
-  margin: 0 15px;
-  border-right: solid 2px lightgray;
-}
-.logo img, .logo .separator {
-  height: 25px;
-}
-nav a {
-  margin: 5px;
+  .separator {
+    display: inline-block;
+    margin: 0 15px;
+    border-right: solid 2px lightgray;
+  }
+  img, .separator {
+    height: 25px;
+  }
+  @media (max-width: 800px) {
+    img, .separator {
+      height: 15px;
+    }
+  }
 }
 
-@media (max-width: 800px) {
-  .logo img, .logo .separator {
-    height: 15px;
-  }
-  nav a {
-    display: block;
+nav a {
+  margin: 5px;
+  @media (max-width: 800px) {
+    & {
+      display: block;
+    }
   }
 }
+
 a.left+a.right {
   padding-left: 10px;
-  border-left: solid 1px black;
+  @media (max-width: 800px) {
+    & {
+      padding-top: 10px;
+      padding-left: 0px;
+    }
+  }
 }
 </style>

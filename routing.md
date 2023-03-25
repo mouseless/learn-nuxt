@@ -47,8 +47,7 @@ urls. When this happens that page fails to load resources with a relative path
 because a trailing slash would indicate another directory in a path.
 
 To workaround this, we've added a script that checks if `route.path` has a
-trailing slash upon mounting. We know that this is not the best solution, but
-for now this is the workaround we use.
+trailing slash upon mounting.
 
 > :warning:
 >
@@ -57,4 +56,4 @@ for now this is the workaround we use.
 > trailing slash is not treated as same as a path without a trailing slash.
 > Otherwise `navigateTo` does not redirect and throws an error.
 
-Solution is in `.theme/app.vue`.
+Solution is in `.theme/[...content-page].vue`.
