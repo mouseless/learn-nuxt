@@ -1,5 +1,11 @@
 <template>
-  <ContentDoc>
+  <!--
+    when reloaded in browser, any non-content page also lands here because
+    there is a trailing slash in url. it shows 'not found' slot for a moment
+    because a corresponding .md file does not exist, so it should render only
+    when there is no trailing slash to avoid unnecessary 'not found' display
+  -->
+  <ContentDoc v-if="!trailingSlash">
     <template #not-found>
       <ContentDoc path="/not-found" />
     </template>
@@ -9,11 +15,12 @@
 import { useRoute, navigateTo, onMounted } from "#imports";
 
 const route = useRoute();
+const trailingSlash = route.path !== "/" && route.path.endsWith("/");
 
 onMounted(async () => {
-  if(route.path !== "/" && route.path.endsWith("/")) {
+  if(trailingSlash) {
     const { path, query, hash } = route;
-    const nextPath = path.replace(/\/+$/, "") || "/";
+    const nextPath = path.replace(/\/+$/, "");
     const nextRoute = { path: nextPath, query, hash };
 
     // works only if `router.options.strict` is enabled in `nuxt.config.ts`
