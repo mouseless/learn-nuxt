@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from "nuxt/config";
+import { joinURL } from "ufo";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -39,6 +40,9 @@ export default defineNuxtConfig({
           property: "og:image:height",
           content: "50"
         }
+      ],
+      link: [
+        { rel: "icon", type: "image/x-icon", href: joinURL(process.env.BASE_URL ?? "/", "favicon.ico") }
       ]
     }
   },
