@@ -84,7 +84,7 @@ a.left+a.right {
   padding-left: 10px;
   @media (max-width: 800px) {
     & {
-      padding-top:10px;
+      padding-top: 10px;
       padding-left: 0px;
     }
   }
