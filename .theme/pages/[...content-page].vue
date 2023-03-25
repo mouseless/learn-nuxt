@@ -1,22 +1,24 @@
 <template>
-  <div>
-    <ContentDoc>
-      <template #not-found>
-        <ContentDoc path="/not-found" />
-      </template>
-    </ContentDoc>
-  </div>
+  <ContentDoc>
+    <template #not-found>
+      <ContentDoc path="/not-found" />
+    </template>
+  </ContentDoc>
 </template>
-<!--
 <script setup>
-import { withoutTrailingSlash } from "ufo";
-import { useRoute } from "#imports";
+import { useRoute, navigateTo, onMounted } from "#imports";
 
 const route = useRoute();
 
-const path = withoutTrailingSlash(route.path);
+onMounted(async () => {
+  if(route.path !== "/" && route.path.endsWith("/")) {
+    const { path, query, hash } = route;
+    const nextPath = path.replace(/\/+$/, "") || "/";
+    const nextRoute = { path: nextPath, query, hash };
 
-console.log(route.path);
-console.log(path);
+    // works only if `router.options.strict` is enabled in `nuxt.config.ts`
+    // replace prevents browser to record this navigation in its history
+    await navigateTo(nextRoute, { replace: true });
+  }
+});
 </script>
--->
