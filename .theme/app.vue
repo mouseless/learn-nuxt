@@ -4,6 +4,7 @@
     <NuxtPage :key="$route.path" />
   </NuxtLayout>
 </template>
+<!--
 <script setup>
 import { useRoute, navigateTo, onMounted } from "#imports";
 
@@ -21,3 +22,4 @@ onMounted(async () => {
   }
 });
 </script>
+-->
