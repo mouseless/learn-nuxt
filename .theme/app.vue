@@ -1,10 +1,9 @@
 <template>
   <NuxtLayout name="default">
     <!-- key is required to overcome hydration and multiple render issues -->
-    <NuxtPage :key="$route.path" />
+    <NuxtPage />
   </NuxtLayout>
 </template>
-<!--
 <script setup>
 import { useRoute, navigateTo, onMounted } from "#imports";
 
@@ -22,4 +21,3 @@ onMounted(async () => {
   }
 });
 </script>
--->
