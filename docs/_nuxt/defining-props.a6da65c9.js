@@ -1,0 +1,1 @@
+import{o as n,c as o,t as c,_ as a,S as t}from"./entry.863706d1.js";const _={__name:"ComponentWithProps",props:{message:{type:String,required:!0}},setup(s){return(r,e)=>(n(),o("div",null," Message: "+c(s.message),1))}},p={};function i(s,r){const e=_;return n(),o("div",null,[t(e,{message:"Hello"}),t(e,{message:"World"})])}const l=a(p,[["render",i]]);export{l as default};

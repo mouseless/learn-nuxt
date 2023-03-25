@@ -1,0 +1,1 @@
+import{o as t,c as e,a,H as o}from"./entry.863706d1.js";import"./app.config.48dd4df8.js";const _={__name:"error-handling",setup(s){function r(){throw o({statusCode:500,statusMessage:"Status Message",fatal:!0})}return(n,c)=>(t(),e("div",null,[a("button",{onClick:r}," Throw Error ")]))}};export{_ as default};

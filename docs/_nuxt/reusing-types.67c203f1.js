@@ -1,0 +1,1 @@
+import{k as r,o as s,c as t,t as c,_ as a,S as p}from"./entry.863706d1.js";const _=r({__name:"ComponentThatReusesType",props:{reused:null},setup(e){return(o,n)=>(s(),t("div",null," stringProp: "+c(e.reused.stringProp),1))}}),u={};function i(e,o){const n=_;return s(),t("div",null,[p(n,{reused:{stringProp:"Demo"}})])}const m=a(u,[["render",i]]);export{m as default};

@@ -1,0 +1,1 @@
+import{_ as o,o as r,c as n,b as e,a,t as s}from"./entry.863706d1.js";const c={},l=a("code",null,"{{ $route.params.page }}",-1);function _(t,i){return r(),n("div",null,[e(" Page with dynamic route with an optional parameter "),a("div",null,[l,e(" is '"),a("code",null,s(t.$route.params.page),1),e("' ")])])}const d=o(c,[["render",_]]);export{d as default};
