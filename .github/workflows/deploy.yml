@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 jobs:
   generate:
     name: Generate
@@ -37,6 +34,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: deploy
+      - name: Remove Old Files
+        run: |
+          rm -rdvf *
       - name: Download Artifacts
         uses: actions/download-artifact@v3
         with:
