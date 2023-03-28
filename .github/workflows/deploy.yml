@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - 'issue/**'
+      - 'SeferMirza:issue/deployment-directory'
 jobs:
   generate:
     name: Generate
