@@ -36,12 +36,12 @@ jobs:
           ref: deploy
       - name: Remove Old Files
         run: |
-          rm -rdvf ./docs
+          rm -rdvf ./
       - name: Download Artifacts
         uses: actions/download-artifact@v3
         with:
           name: docs
-          path: docs
+          path: /
       - name: Commit & Push
         run: |
           git config user.name 'github-actions'
