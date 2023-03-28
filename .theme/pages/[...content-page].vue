@@ -7,7 +7,8 @@
   -->
   <ContentDoc v-if="!trailingSlash">
     <template #not-found>
-      <ContentDoc path="/not-found" />
+      <!-- To avoid duplicate og meta data -->
+      <ContentDoc path="/not-found" :head="false" />
     </template>
   </ContentDoc>
 </template>
