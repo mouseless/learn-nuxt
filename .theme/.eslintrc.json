@@ -33,6 +33,10 @@
       "error",
       2
     ],
+    "@typescript-eslint/indent": [
+      "error",
+      2
+    ],
     "linebreak-style": [
       "error",
       "unix"

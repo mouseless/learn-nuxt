@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - 'issue/**'
 jobs:
   generate:
     name: Generate
@@ -36,12 +37,12 @@ jobs:
           ref: deploy
       - name: Remove Old Files
         run: |
-          rm -rdvf ./docs
+          git rm -rf .
+          git clean -fxd
       - name: Download Artifacts
         uses: actions/download-artifact@v3
         with:
           name: docs
-          path: docs
       - name: Commit & Push
         run: |
           git config user.name 'github-actions'
