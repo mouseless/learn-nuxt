@@ -44,7 +44,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: docs
-          path: ./
       - name: Commit & Push
         run: |
           git config user.name 'github-actions'
