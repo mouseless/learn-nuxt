@@ -58,3 +58,10 @@ See `.theme/nuxt.config.ts` for definition examples and
 `.theme/pages/demo/runtime-config.vue` for usage example.
 
 Demo is at [/demo/runtime-config](/demo/runtime-config)
+
+## Generate.Routes
+
+When generating in Nuxt, if there are pages in the route hierarchy that are not
+linked to the index, they are not generated. We add these pages to
+`generate.routes` to create them during generate. See `.theme/nuxt.config.ts`
+for an example.

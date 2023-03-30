@@ -81,5 +81,8 @@ export default defineNuxtConfig({
   },
   dir: {
     public: ".public"
+  },
+  generate: {
+    routes: [ "/not-found" ]
   }
 });
