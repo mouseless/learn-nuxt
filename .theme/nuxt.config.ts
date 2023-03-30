@@ -46,6 +46,11 @@ export default defineNuxtConfig({
           rel: "icon",
           type: "image/x-icon",
           href: joinURL(process.env.BASE_URL ?? "/", "favicon.ico")
+        },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "https://mouseless.github.io/brand/assets/css/primary.css"
         }
       ]
     }
