@@ -91,4 +91,10 @@ the markdown file it is looking for. To keep with the concept of managing the
 content of each page with markdown, we get the `#not-found` content from the
 `not-found.md` file.
 
+> :information_source:
+>
+> If you are getting the not-found content from markdown you should add a link
+> to `generate.routes`. See
+> [Configuration / Generate Routes](/configuration#generate-routes) for details.
+
 Demo is at [/demo/error/non-existent-content](/demo/error/non-existent-content)
