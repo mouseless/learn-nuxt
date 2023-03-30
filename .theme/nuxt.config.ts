@@ -42,7 +42,11 @@ export default defineNuxtConfig({
         }
       ],
       link: [
-        { rel: "icon", type: "image/x-icon", href: joinURL(process.env.BASE_URL ?? "/", "favicon.ico") }
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: joinURL(process.env.BASE_URL ?? "/", "favicon.ico")
+        }
       ]
     }
   },
@@ -55,12 +59,8 @@ export default defineNuxtConfig({
       }
     }
   },
-  css: [
-    "~/assets/styles.scss"
-  ],
-  modules: [
-    "@nuxt/content"
-  ],
+  css: ["~/assets/styles.scss"],
+  modules: ["@nuxt/content"],
   content: {
     markdown: {
       remarkPlugins: {
@@ -74,15 +74,12 @@ export default defineNuxtConfig({
     }
   },
   components: {
-    dirs: [
-      { global: true, path: "~/components/Prose" },
-      "~/components"
-    ]
+    dirs: [{ global: true, path: "~/components/Prose" }, "~/components"]
   },
   dir: {
     public: ".public"
   },
   generate: {
-    routes: [ "/not-found" ]
+    routes: ["/not-found"]
   }
 });
