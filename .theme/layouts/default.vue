@@ -3,14 +3,14 @@
     <header>
       <div class="logo">
         <NuxtLink to="/">
-          <img src="https://raw.githubusercontent.com/mouseless/brand/main/assets/logo/svg/logo-full-primary.svg">
+          <img class="mouseless logo">
         </NuxtLink>
         <span class="separator" />
         <NuxtLink
           to="https://nuxt.com"
           target="_blank"
         >
-          <img src="https://nuxt.com/assets/design-kit/logo/full-logo-green-dark.svg">
+          <img src="https://nuxt.com/assets/design-kit/logo/full-logo-green-light.svg">
         </NuxtLink>
       </div>
       <nav>
@@ -54,18 +54,18 @@ article {
   padding-top: 10px;
 }
 
-.logo {
-  margin: 20px 0;
+div.logo {
+  margin: 20px 0px;
   .separator {
     display: inline-block;
     margin: 0 15px;
     border-right: solid 2px lightgray;
   }
-  img, .separator {
+  img, .separator, .logo:is(.mouseless) {
     height: 25px;
   }
   @media (max-width: 800px) {
-    img, .separator {
+    img, .separator, .logo:is(.mouseless) {
       height: 15px;
     }
   }
