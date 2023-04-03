@@ -26,6 +26,11 @@ properties can be added later on. Values of these properties can be assigned
 when using the component with properties as shown in
 `.theme/demo/defining-props.vue`
 
+> :information_source:
+>
+> When we use `defineProps`, we prefer the language to be `typescript` to keep
+> the props type-safe.
+
 Demo is at [/demo/components/defining-props](/demo/components/defining-props)
 
 ### Complex Type Props
@@ -36,7 +41,7 @@ Complex types can be used with `defineProps` as seen in
 Demo is at
 [/demo/components/complex-type-props](/demo/components/complex-type-props)
 
-> :information_source: 
+> :information_source:
 >
 > For type instances in your scripts to work, script language should be set
 > to TypeScript. [TypeCheck][] should be enabled. If you have enabled type
