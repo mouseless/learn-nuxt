@@ -3,11 +3,8 @@
     Message: {{ message }}
   </div>
 </template>
-<script setup>
-defineProps({
-  message: {
-    type: String,
-    required: true
-  }
-});
+<script setup lang="ts">
+defineProps<{
+  message: String
+}>();
 </script>

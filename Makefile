@@ -5,8 +5,10 @@ run:
 	echo "(1) Dev" ; \
 	echo "(2) Dev With Build" ; \
 	echo "(3) Local" ; \
+	echo "(4) Eslint" ; \
+	echo "(5) Eslint Fix" ; \
 	echo "" ; \
-	echo "Please select 1-3: " ; \
+	echo "Please select 1-5: " ; \
 	read srv ; \
 	if test $$srv -eq "1" ; then \
 		cd .theme ; npm run dev ; cd .. ; \
@@ -16,6 +18,12 @@ run:
 	fi ; \
 	if test $$srv -eq "3" ; then \
 		cd .theme ; npm run local ; cd .. ; \
+	fi ; \
+	if test $$srv -eq "4" ; then \
+		cd .theme ; npx eslint . ; cd .. ; \
+	fi ; \
+	if test $$srv -eq "5" ; then \
+		cd .theme ; npx eslint . --fix ; cd .. ; \
 	fi
 build:
 	@ \
