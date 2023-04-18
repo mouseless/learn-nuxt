@@ -40,8 +40,8 @@ reduce the crowd in the script.
 > :warning:
 >
 > Use `<ContentQuery>` only if you know what you're doing, because it works in
-> the render stage. If you're not too sure, use `queryContent()` instead, which
-> runs in the setup stage.
+> the render stage. Otherwise, we strongly suggest usage of `queryContent()`
+> which runs once in setup stage.
 
 Demo is at [/demo/content-query](/demo/content-query)
 
