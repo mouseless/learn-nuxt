@@ -1,0 +1,1 @@
+import{_ as o,c,b as e,a,t as r,o as s}from"./entry.62d1e6ac.js";const n={},l=a("code",null,"{{ $route.params.page }}",-1);function _(t,d){return s(),c("div",null,[e(" Page with catch all route "),a("div",null,[l,e(" is '"),a("code",null,r(t.$route.params.page),1),e("' ")])])}const p=o(n,[["render",_]]);export{p as default};

@@ -1,0 +1,1 @@
+import{B as o,c as n,o as p}from"./entry.62d1e6ac.js";const s={__name:"open-graph",setup(r){const e=t=>`Open Graph - ${t}`;return o({meta:[{hid:"og:title",property:"og:title",content:e("title")},{hid:"og:description",property:"og:description",content:e("description")}]}),(t,a)=>(p(),n("div",null," This is an example of using the Open Graph "))}};export{s as default};
