@@ -37,6 +37,12 @@ there is no need to change the data we receive with `queryContent` in the
 script block, the query sent to the content with `<ContentQuery>` was made to
 reduce the crowd in the script.
 
+> :warning:
+>
+> Use `<ContentQuery>` only if you know what you're doing, because it works in
+> the render stage. Otherwise, we strongly suggest usage of `queryContent()`
+> which runs once in setup stage.
+
 Demo is at [/demo/content-query](/demo/content-query)
 
 ### About Document-Driven Mode

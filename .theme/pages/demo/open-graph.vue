@@ -4,7 +4,7 @@
   </div>
 </template>
 <script setup>
-import { useHead } from "#head";
+import { useHead } from "#imports";
 
 const sampleText = part => `Open Graph - ${part}`;
 
