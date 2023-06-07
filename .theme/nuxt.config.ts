@@ -1,5 +1,6 @@
 import { defineNuxtConfig } from "nuxt/config";
 import { joinURL } from "ufo";
+import TransformModule from "./transformers/transform-module";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -65,7 +66,11 @@ export default defineNuxtConfig({
     }
   },
   css: ["~/assets/styles.scss"],
-  modules: ["@nuxt/content"],
+  modules: [
+    // @ts-ignore
+    TransformModule,
+    "@nuxt/content"
+  ],
   content: {
     markdown: {
       remarkPlugins: {
