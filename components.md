@@ -151,3 +151,7 @@ flowchart TB
 Demo is at [/demo/provide-and-inject](/demo/provide-and-inject)
 
 [TypeCheck]: https://nuxt.com/docs/api/configuration/nuxt-config#typecheck
+
+## Content Transform
+
+TBD
