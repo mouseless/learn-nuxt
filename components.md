@@ -163,7 +163,7 @@ See `/transformers/optimus-prime.ts` to see how it is done.
 
 > :information_source:
 >
-> For `Content Transformers` to work, we need to register them in Nuxt and add,
+> For Content Transformers to work, we need to register them in Nuxt and add
 > them as modules. You can see how we register them in
-> `/transformers/tranform-module.ts` and how we add them as modules in
+> `/transformers/transform-module.ts` and how we add them as modules in
 > `nuxt.config.ts`.
