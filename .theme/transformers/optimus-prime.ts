@@ -6,8 +6,7 @@ export default defineTransformer({
   extensions: [".md"],
   transform (content: any) {
     if(content.title === "Transformers") {
-      // @ts-ignore
-      content.body.children.filter(f => f.tag === "p")[0].tag = "strong";
+      content.body.children.filter((f: any) => f.tag === "p")[0].tag = "strong";
     }
     return content;
   }

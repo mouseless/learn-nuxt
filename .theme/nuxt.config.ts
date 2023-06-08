@@ -1,6 +1,6 @@
 import { defineNuxtConfig } from "nuxt/config";
 import { joinURL } from "ufo";
-import TransformModule from "./transformers/transform-module";
+import TransformerModule from "./transformers/transformer-module";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -68,7 +68,7 @@ export default defineNuxtConfig({
   css: ["~/assets/styles.scss"],
   modules: [
     // @ts-ignore
-    TransformModule,
+    TransformerModule,
     "@nuxt/content"
   ],
   content: {
