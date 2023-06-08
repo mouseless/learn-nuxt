@@ -5,8 +5,8 @@ import { defineNuxtModule } from "@nuxt/kit";
 // understand how transformers are registered.
 export default defineNuxtModule({
   setup (_options, nuxt) {
-    nuxt.options.nitro.externals = nuxt.options.nitro.externals || { };
-    nuxt.options.nitro.externals.inline = nuxt.options.nitro.externals.inline || [];
+    nuxt.options.nitro.externals ||= { };
+    nuxt.options.nitro.externals.inline ||= [];
     nuxt.options.nitro.externals.inline.push(resolve("./transformers"));
 
     nuxt.hook("content:context", contentContext => {
