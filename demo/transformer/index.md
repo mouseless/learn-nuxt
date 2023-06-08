@@ -1,3 +1,3 @@
 # Transformers
 
-This text should be strong after transformer work.
+This text should be strong after transformation.
