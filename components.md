@@ -154,7 +154,7 @@ Demo is at [/demo/provide-and-inject](/demo/provide-and-inject)
 
 ## Content Transformer
 
-We use Content Transformers when we want to manipulate of a markdown of our
+We use Content Transformers when we want to manipulate the html content of a
 markdown content before it is rendered, after it is parsed.
 
 See [/demo/transformer](/demo/transformer/) to see what can be done.
