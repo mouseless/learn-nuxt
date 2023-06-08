@@ -151,3 +151,19 @@ flowchart TB
 Demo is at [/demo/provide-and-inject](/demo/provide-and-inject)
 
 [TypeCheck]: https://nuxt.com/docs/api/configuration/nuxt-config#typecheck
+
+## Content Transformer
+
+We use Content Transformers when we want to manipulate the html content of a
+markdown content before it is rendered, after it is parsed.
+
+See [/demo/transformer](/demo/transformer/) to see what can be done.
+
+See `/transformers/optimus-prime.ts` to see how it is done.
+
+> :information_source:
+>
+> For Content Transformers to work, we need to register them in Nuxt and add
+> them as modules. You can see how we register them in
+> `/transformers/transform-module.ts` and how we add them as modules in
+> `nuxt.config.ts`.
