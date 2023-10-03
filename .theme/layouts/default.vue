@@ -58,7 +58,7 @@ header, nav {
 }
 
 article {
-  max-width: 80ch;
+  max-width: var(--width-content);
   padding-top: 1em;
 }
 
