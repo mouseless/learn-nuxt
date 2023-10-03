@@ -1,0 +1,1 @@
+import{_ as n,o as c,c as e,X as r}from"./entry.bee7f997.js";const s={};function a(o,t){return c(),e("div",null," Basic component ")}const i=n(s,[["render",a]]),f={};function m(o,t){const _=i;return c(),e("div",null,[r(_)])}const l=n(f,[["render",m]]);export{l as default};

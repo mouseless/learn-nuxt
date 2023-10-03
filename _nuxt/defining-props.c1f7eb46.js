@@ -1,0 +1,1 @@
+import{k as a,o,c as t,t as c,_,X as s}from"./entry.bee7f997.js";const p=a({__name:"ComponentWithProps",props:{message:null},setup(n){return(r,e)=>(o(),t("div",null," Message: "+c(n.message),1))}}),l={};function m(n,r){const e=p;return o(),t("div",null,[s(e,{message:"Hello"}),s(e,{message:"World"})])}const d=_(l,[["render",m]]);export{d as default};

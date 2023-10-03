@@ -1,1 +1,0 @@
-import{f as a,c as n,t as o,u as s,o as c}from"./entry.6c68dceb.js";const p={__name:"index",setup(l){const e="John",t=a(()=>`${e} Doe`);return(r,u)=>(c(),n("div",null," Full Name: "+o(s(t)),1))}};export{p as default};
