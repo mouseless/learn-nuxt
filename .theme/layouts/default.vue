@@ -48,9 +48,13 @@ header, article {
   padding: 0 1em;
 }
 
-header {
+header, nav {
   max-width: 1000px;
   text-align: center;
+
+  @media (max-width: 800px) {
+    text-align: left;
+  }
 }
 
 article {
@@ -67,7 +71,7 @@ img.nuxt:is(.logo) {
 }
 
 div.logo {
-  margin: 20px 0;
+  margin: 2em 0;
 
   a+a {
     padding-left: 1em;
@@ -85,11 +89,10 @@ div.logo {
 }
 
 nav {
-  text-align: center;
-
   a {
     color: var(--color-fg-soft);
     text-decoration: none;
+    margin: 5px;
 
     &:not(:any-link) {
       font-weight: bold;
@@ -98,13 +101,14 @@ nav {
     &:hover:any-link {
       color: var(--color-logo-mark);
     }
-    margin: 5px;
+
     @media (max-width: 800px) {
       & {
         display: block;
       }
     }
   }
+
   a.left+a.right {
     padding-left: 1em;
     @media (max-width: 800px) {
