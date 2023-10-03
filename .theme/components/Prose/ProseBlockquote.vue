@@ -46,15 +46,15 @@ blockquote {
   margin-left: 1em;
 }
 .info {
-  border-color: lightblue;
+  border-color: var(--color-blue);
 }
 .warning {
-  border-color: orange;
+  border-color: var(--color-yellow);
 }
 .success {
-  border-color: lightgreen;
+  border-color: var(--color-green);
 }
 .default {
-  border-color: lightgray;
+  border-color: var(--color-fg);
 }
 </style>
