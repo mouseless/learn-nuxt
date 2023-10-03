@@ -5,12 +5,11 @@
         <NuxtLink to="/">
           <img class="mouseless logo">
         </NuxtLink>
-        <span class="separator" />
         <NuxtLink
           to="https://nuxt.com"
           target="_blank"
         >
-          <img src="https://nuxt.com/assets/design-kit/logo/full-logo-green-light.svg">
+          <img class="nuxt logo">
         </NuxtLink>
       </div>
       <nav>
@@ -45,48 +44,80 @@ const sort = {
 </script>
 <style scoped lang="scss">
 header, article {
-  max-width: 1000px;
   margin: auto;
-  padding: 0 10px;
+  padding: 0 1em;
+}
+
+header, nav {
+  max-width: 1000px;
+  text-align: center;
+
+  @media (max-width: 800px) {
+    text-align: left;
+  }
 }
 
 article {
-  padding-top: 10px;
+  max-width: var(--width-content);
+  padding-top: 1em;
+}
+
+img.nuxt:is(.logo) {
+  content: url(https://nuxt.com/assets/design-kit/logo/full-logo-green-dark.svg);
+
+  @media (prefers-color-scheme: dark) {
+    content: url(https://nuxt.com/assets/design-kit/logo/full-logo-green-light.svg);
+  }
 }
 
 div.logo {
-  margin: 20px 0px;
-  .separator {
-    display: inline-block;
-    margin: 0 15px;
-    border-right: solid 2px lightgray;
+  margin: 2em 0;
+
+  a+a {
+    padding-left: 1em;
   }
-  img, .separator, .logo:is(.mouseless) {
-    height: 25px;
+
+  img.logo {
+    height: var(--height-logo);
   }
+
   @media (max-width: 800px) {
-    img, .separator, .logo:is(.mouseless) {
-      height: 15px;
+    img.logo {
+      height: calc(var(--height-logo) / 2);
     }
   }
 }
 
-nav a {
-  margin: 5px;
-  @media (max-width: 800px) {
-    & {
-      display: block;
+nav {
+  a {
+    color: var(--color-fg-soft);
+    text-decoration: none;
+    margin: 5px;
+
+    &:not(:any-link) {
+      font-weight: bold;
+    }
+
+    &:hover:any-link {
+      color: var(--color-logo-mark);
+    }
+
+    @media (max-width: 800px) {
+      & {
+        display: block;
+      }
+    }
+  }
+
+  a.left+a.right {
+    padding-left: 1em;
+    @media (max-width: 800px) {
+      & {
+        padding-top: 1em;
+        padding-left: 0;
+      }
     }
   }
 }
 
-a.left+a.right {
-  padding-left: 10px;
-  @media (max-width: 800px) {
-    & {
-      padding-top: 10px;
-      padding-left: 0px;
-    }
-  }
-}
 </style>
