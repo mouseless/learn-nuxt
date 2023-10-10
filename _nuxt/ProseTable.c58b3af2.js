@@ -1,1 +1,0 @@
-import{_ as o,o as r,c as t,h as s}from"./entry.bee7f997.js";const c={},a={border:"1"};function n(e,_){return r(),t("table",a,[s(e.$slots,"default")])}const d=o(c,[["render",n]]);export{d as default};
