@@ -49,7 +49,7 @@ blockquote {
   border-color: var(--color-blue);
 }
 .warning {
-  border-color: var(--color-yellow);
+  border-color: var(--color-orange);
 }
 .success {
   border-color: var(--color-green);
