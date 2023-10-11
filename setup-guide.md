@@ -146,6 +146,19 @@ Clean upgrade. No issues.
 }
 ```
 
+### webpack
+
+#### 5.88.2
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+  "webpack": "^5.88.2",
+  ...
+}
+```
+
 ### Nuxt
 
 #### 3.7.4
