@@ -81,6 +81,19 @@ not found: "ts.executeCommandLine(ts.sys, ts.noop, ts.sys.args);"".
 
 Upgraded the nuxt version to 3.7.4 to fix it.
 
+### Mermaid-js
+
+#### 10.4.0
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+    "@mermaid-js/mermaid-cli": "^10.4.0",
+    ...
+}
+```
+
 ### Nuxt
 
 #### 3.7.4
