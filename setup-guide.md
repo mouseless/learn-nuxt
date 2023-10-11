@@ -66,13 +66,21 @@ $git config --global core.autocrlf true
 
 ## Migration
 
+The upgrade sequences are as below. Different errors may occur if the order
+changes.
+
 ### Node
 
 #### 20.8.0
 
-When upgrading to this version, version 3.4.1 of nuxt gives run time error.
+When upgrading to this version, version 3.4.1 of nuxt gives run time errors.
 
 ```log
+WARN  Current version of Node.js (20.8.0) is unsupported and might cause
+issues.
+Please upgrade to a compatible version (^14.18.0 || ^16.10.0 || ^17.0.0 ||
+ ^18.0.0 || ^19.0.0).
+
 ERROR  [uncaughtException] This error originated either by throwing inside of
 an async function without a catch block, or by rejecting a promise which was
 not handled with .catch(). The promise rejected with the reason "Search string
@@ -172,9 +180,43 @@ Clean upgrade. No issues.
 }
 ```
 
+### typescript
+
+#### 5.2.2
+
+```json
+"devDependencies": {
+  "typescript": "^5.2.2",
+  ...
+}
+```
+
+When we upgraded the Typescript version to 5.2.2 there was a conflict with
+eslint. You can see the problem below.
+
+```log
+=============
+
+WARNING: You are currently running a version of TypeScript which is not
+officially supported by @typescript-eslint/typescript-estree.
+
+You may find that it works just fine, or you may not.
+
+SUPPORTED TYPESCRIPT VERSIONS: >=3.3.1 <5.1.0
+
+YOUR TYPESCRIPT VERSION: 5.2.2
+
+Please only submit bug reports when using the officially supported version.
+
+=============
+```
+
 ### Nuxt
 
 #### 3.7.4
+
+With this version, the generate process fails if the url of the links cannot be
+generated. So make sure that the target page of the links exists.
 
 ### Nuxt Content
 
