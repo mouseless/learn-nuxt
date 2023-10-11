@@ -133,6 +133,19 @@ Clean upgrade. No issues.
 }
 ```
 
+### yaml
+
+#### 2.3.2
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+  "yaml": "^2.3.2",
+  ...
+}
+```
+
 ### Nuxt
 
 #### 3.7.4
