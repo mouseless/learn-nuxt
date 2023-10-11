@@ -107,6 +107,19 @@ Clean upgrade. No issues.
 }
 ```
 
+### eslint-plugin-vue
+
+#### 9.17.0
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+  "eslint-plugin-vue": "^9.17.0",
+  ...
+}
+```
+
 ### Nuxt
 
 #### 3.7.4

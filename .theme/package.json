@@ -24,7 +24,7 @@
     "dotenv": "^16.3.1",
     "eslint-plugin-json-format": "^2.0.1",
     "eslint-plugin-nuxt": "^4.0.0",
-    "eslint-plugin-vue": "^9.11.0",
+    "eslint-plugin-vue": "^9.17.0",
     "log-symbols": "^5.1.0",
     "nuxt": "^3.4.1",
     "sass": "^1.62.0",
