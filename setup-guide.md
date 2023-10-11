@@ -89,8 +89,21 @@ Clean upgrade. No issues.
 
 ```json
 "devDependencies": {
-    "@mermaid-js/mermaid-cli": "^10.4.0",
-    ...
+  "@mermaid-js/mermaid-cli": "^10.4.0",
+  ...
+}
+```
+
+### dotenv
+
+#### 16.3.1
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+  "dotenv": "^16.3.1",
+  ...
 }
 ```
 
