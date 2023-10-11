@@ -64,5 +64,60 @@ $git config --global core.autocrlf true
 > npx eslint . --fix
 > ```
 
+## Migration
+
+### Node
+
+#### 20.8.0
+
+When upgrading to this version, version 3.4.1 of nuxt gives run time error.
+
+```log
+ERROR  [uncaughtException] This error originated either by throwing inside of
+an async function without a catch block, or by rejecting a promise which was
+not handled with .catch(). The promise rejected with the reason "Search string
+not found: "ts.executeCommandLine(ts.sys, ts.noop, ts.sys.args);"".
+```
+
+Upgraded the nuxt version to 3.7.4 to fix it.
+
+### Nuxt
+
+#### 3.7.4
+
+### Nuxt Content
+
+#### 2.5.2
+
+[nuxt.config.ts]
+```ts
+content: {
+  anchorLinks: {
+    depth: 0
+  }
+}
+```
+
+#### 2.8.5
+
+[nuxt.config.ts]
+```ts
+mdc: {
+  headings: {
+    anchorLinks: {
+      h1: false,
+      h2: false,
+      ...
+    }
+  }
+}
+```
+
+### log-symbols
+
+#### 5.1.0
+
+Added it because it is needed for the `log` task in `.prebuild`.
+
 [1]:<https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings> "configuring-git-to-handle-line-endings"
 [2]:<https://eslint.org/> "eslint.org"
