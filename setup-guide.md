@@ -159,6 +159,19 @@ Clean upgrade. No issues.
 }
 ```
 
+### vue-tsc
+
+#### 1.8.19
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+  "vue-tsc": "^1.8.19",
+  ...
+}
+```
+
 ### Nuxt
 
 #### 3.7.4
