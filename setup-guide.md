@@ -120,6 +120,19 @@ Clean upgrade. No issues.
 }
 ```
 
+### sass
+
+#### 1.69.2
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+  "sass": "^1.62.0",
+  ...
+}
+```
+
 ### Nuxt
 
 #### 3.7.4

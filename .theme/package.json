@@ -27,7 +27,7 @@
     "eslint-plugin-vue": "^9.17.0",
     "log-symbols": "^5.1.0",
     "nuxt": "^3.4.1",
-    "sass": "^1.62.0",
+    "sass": "^1.69.2",
     "sass-loader": "^13.2.2",
     "typescript": "^5.0.4",
     "vue-tsc": "^1.2.0",
