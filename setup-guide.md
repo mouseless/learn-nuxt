@@ -69,6 +69,12 @@ $git config --global core.autocrlf true
 The upgrade sequences are as below. Different errors may occur if the order
 changes.
 
+### log-symbols
+
+#### 5.1.0
+
+Added it because it is needed for the `log` task in `.prebuild`.
+
 ### Node
 
 #### 20.8.0
@@ -211,6 +217,20 @@ Please only submit bug reports when using the officially supported version.
 =============
 ```
 
+### Types/node
+
+#### 20.8.4
+
+```json
+"devDependencies": {
+  "@types/node": "^20.8.4",
+  ...
+}
+```
+
+This version of type/node does not work with version 3.4.1 of nuxt. You can
+downgrade the version or upgrade the version of nuxt for a solution.
+
 ### Nuxt
 
 #### 3.7.4
@@ -245,12 +265,6 @@ mdc: {
   }
 }
 ```
-
-### log-symbols
-
-#### 5.1.0
-
-Added it because it is needed for the `log` task in `.prebuild`.
 
 [1]:<https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings> "configuring-git-to-handle-line-endings"
 [2]:<https://eslint.org/> "eslint.org"
