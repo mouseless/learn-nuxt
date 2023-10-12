@@ -268,3 +268,149 @@ mdc: {
 
 [1]:<https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings> "configuring-git-to-handle-line-endings"
 [2]:<https://eslint.org/> "eslint.org"
+
+## Move new project
+
+First create new nuxt project with latest version
+
+`npx nuxi@latest init .theme`
+
+Replace to this code in `app.vue`
+
+```vue
+<template>
+  <NuxtLayout name="default">
+    <NuxtPage />
+  </NuxtLayout>
+</template>
+```
+
+Create new page `[...content-page]` and add this code to under `/pages` directory
+
+```vue
+<template>
+  <ContentDoc />
+</template>
+```
+
+Add content module
+
+`npm install @nuxt/content`
+
+Configure `nuxt.config.ts`
+
+```ts
+export default defineNuxtConfig({
+  devtools: { enabled: true },
+  modules: [
+    '@nuxt/content'
+  ],
+  content: {
+    // ... options
+  }
+})
+```
+
+If you have come this far, create a markdown file called `index.md` under the
+`/content` folder. Display your page by saying `npm run dev`.
+
+Make this configuration to prevent the headers from being in link format
+
+```ts
+export default defineNuxtConfig({
+  ...
+  runtimeConfig: {
+    public: {
+      mdc: {
+        headings: {
+          anchorLinks: {
+            h1: false,
+            h2: false,
+            h3: false,
+            h4: false,
+            h5: false,
+            h6: false,
+          },
+        },
+      },
+    },
+  },
+});
+```
+
+### Sass & Css
+
+You can make these configurations to source css to the project from outside.
+
+```ts
+export default defineNuxtConfig({
+  ...
+  app: {
+      head: {
+        ...
+        link: [
+          {
+            rel: "stylesheet",
+            type: "text/css",
+            href: "https://mouseless.github.io/brand/assets/css/default.css"
+          }
+        ]
+      }
+    },
+    css: ["~/assets/styles.css"]
+})
+```
+
+to export sass files first install sass
+
+`npm install sass`
+
+second configure `nuxt.config.ts`
+
+```ts
+export default defineNuxtConfig({
+  ...
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: "@import \"@/assets/variables.scss\";"
+        }
+      }
+    }
+  },
+  css: ["~/assets/styles.scss"]
+})
+```
+
+put your style files under `/assets`
+
+### env files
+
+By adding enverioment files, you can export these files during build and use
+your constant values during build or runtime.
+
+`npx nuxi dev --dotenv .env.local`
+
+If you write your constant values with the prefix `NUXT` and `NUXT_PUBLIC` in
+your env file, nuxt will match them automatically.
+
+### prebuild
+
+In the preparation phase with prebuild, we prepare the markdowns at the root
+and put them under content. We also prepare the corresponding pages and pull
+the markdown content in these pages and render them.
+
+### componenets
+
+You must do this configuration to access globally when writing and using
+the component.
+
+```ts
+export default defineNuxtConfig({
+  ...
+  components: {
+    dirs: [{ global: true, path: "~/components/Prose" }, "~/components"]
+  },
+})
+```
