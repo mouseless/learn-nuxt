@@ -414,3 +414,16 @@ export default defineNuxtConfig({
   },
 })
 ```
+
+### new module & nuxt content transformer
+
+To intervene when `nuxt content` reads markdowns and converts them to html
+object, we need to use the `transformer` feature of `nuxt content`, to do
+this we need to add it as a module to nuxt.
+
+Nuxt scans the `/modules` directory and loads them before starting. If you
+add them under `/modules`, you don't need to add those local modules to your
+`nuxt.config.ts` separately.
+
+To see the use of transformer `/transformers/optimus-prime.ts`
+To see how to add a module look `nuxt.config.ts`.
