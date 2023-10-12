@@ -427,3 +427,13 @@ add them under `/modules`, you don't need to add those local modules to your
 
 To see the use of transformer `/transformers/optimus-prime.ts`
 To see how to add a module look `nuxt.config.ts`.
+
+### prerender fail
+
+After version nuxt 3.6.2, if a page corresponding to the link cannot be found,
+it gives generate error.
+
+For solution you can make `nitro.prerender.failOnError` `false` or add path to
+`nitro.prerender.ignore` array.
+
+See `nuxt.config.ts` for example.

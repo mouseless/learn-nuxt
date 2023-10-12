@@ -48,5 +48,10 @@ export default defineNuxtConfig({
       }
     }
   },
-  css: ["~/assets/styles.scss"]
+  css: ["~/assets/styles.scss"],
+  nitro: {
+    prerender: {
+      ignore: ["/demo/error/non-existent-content"]
+    }
+  }
 });
