@@ -30,10 +30,6 @@ export default defineNuxtConfig({
       ]
     }
   },
-  modules: ["@nuxt/content"],
-  content: {
-    // ... options
-  },
   vite: {
     css: {
       preprocessorOptions: {
@@ -44,6 +40,20 @@ export default defineNuxtConfig({
     }
   },
   css: ["~/assets/styles.scss"],
+  modules: ["@nuxt/content"],
+  content: {
+    markdown: {
+      remarkPlugins: {
+        "remark-emoji": false
+      }
+    }
+  },
+  components: {
+    dirs: [{ global: true, path: "~/components/Prose" }, "~/components"]
+  },
+  dir: {
+    public: ".public"
+  },
   nitro: {
     prerender: {
       ignore: ["/demo/error/non-existent-content"]

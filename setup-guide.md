@@ -401,6 +401,18 @@ In the preparation phase with prebuild, we prepare the markdowns at the root
 and put them under content. We also prepare the corresponding pages and pull
 the markdown content in these pages and render them.
 
+After `prebuild` make sure that the folder where the public files are moved
+from `nuxt.config.ts` is set correctly.
+
+```ts
+export default defineNuxtConfig({
+  ...
+  dir: {
+    public: ".public"
+  },
+})
+```
+
 ### componenets
 
 You must do this configuration to access globally when writing and using
