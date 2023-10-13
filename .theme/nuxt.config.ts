@@ -1,3 +1,5 @@
+import { joinURL } from "ufo";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -22,6 +24,11 @@ export default defineNuxtConfig({
     baseURL: process.env.NUXT_PUBLIC_BASE_URL,
     head: {
       link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: joinURL(process.env.NUXT_PUBLIC_BASE_URL ?? "/", "favicon.ico")
+        },
         {
           rel: "stylesheet",
           type: "text/css",
@@ -56,7 +63,12 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      ignore: ["/demo/error/non-existent-content"]
+      ignore: [
+        joinURL(
+          process.env.NUXT_PUBLIC_BASE_URL ?? "/",
+          "/demo/error/non-existent-content"
+        )
+      ]
     }
   }
 });
