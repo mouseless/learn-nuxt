@@ -3,6 +3,3 @@
     <NuxtPage />
   </NuxtLayout>
 </template>
-<script setup>
-console.log(useRuntimeConfig().public.baseUrl);
-</script>
