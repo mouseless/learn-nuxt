@@ -1,5 +1,3 @@
-import TransformerModule from "./transformers/transformer-module";
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -32,10 +30,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  modules: [
-    TransformerModule,
-    "@nuxt/content"
-  ],
+  modules: ["@nuxt/content"],
   content: {
     // ... options
   },
