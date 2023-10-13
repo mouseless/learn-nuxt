@@ -5,7 +5,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      baseUrl: '',
       mdc: {
         headings: {
           anchorLinks: {
@@ -18,6 +17,7 @@ export default defineNuxtConfig({
           },
         },
       },
+      baseUrl: '',
     },
   },
   app: {
@@ -70,5 +70,8 @@ export default defineNuxtConfig({
         )
       ]
     }
+  },
+  generate: {
+    routes: ["/not-found"]
   }
 });
