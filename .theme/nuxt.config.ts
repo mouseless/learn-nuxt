@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    baseURL: process.env.BASE_URL,
+    baseURL: process.env.NUXT_PUBLIC_BASE_URL,
     head: {
       link: [
         {
