@@ -83,11 +83,6 @@ export default defineNuxtConfig({
   dir: {
     public: ".public"
   },
-  router: {
-    options: {
-      strict: true
-    }
-  },
   nitro: {
     prerender: {
       ignore: [
