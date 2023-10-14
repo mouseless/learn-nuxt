@@ -1,3 +1,3 @@
 export type Demo = {
-    stringProp: string
+  stringProp: string
 };
