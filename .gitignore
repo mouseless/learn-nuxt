@@ -9,6 +9,7 @@
 
 # Nuxt generate
 .theme/dist
+.theme/server
 
 # vscode files
 .editorconfig

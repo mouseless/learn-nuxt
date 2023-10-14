@@ -266,9 +266,6 @@ mdc: {
 }
 ```
 
-[1]:<https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings> "configuring-git-to-handle-line-endings"
-[2]:<https://eslint.org/> "eslint.org"
-
 ## Move new project
 
 First create new nuxt project with latest version
@@ -453,3 +450,6 @@ For solution you can make `nitro.prerender.failOnError` `false` or add path to
 `nitro.prerender.ignore` array.
 
 See `nuxt.config.ts` for example.
+
+[1]:<https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings> "configuring-git-to-handle-line-endings"
+[2]:<https://eslint.org/> "eslint.org"
