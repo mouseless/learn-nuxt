@@ -451,9 +451,6 @@ For solution you can make `nitro.prerender.failOnError` `false` or add path to
 
 See `nuxt.config.ts` for example.
 
-[1]:<https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings> "configuring-git-to-handle-line-endings"
-[2]:<https://eslint.org/> "eslint.org"
-
 ### trailingslash
 
 according to this note, the trailing slash problem seems to be solved.
@@ -466,3 +463,6 @@ according to this note, the trailing slash problem seems to be solved.
     when there is no trailing slash to avoid unnecessary 'not found' display
   -->
 ```
+
+[1]:<https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings> "configuring-git-to-handle-line-endings"
+[2]:<https://eslint.org/> "eslint.org"
