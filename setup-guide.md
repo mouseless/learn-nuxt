@@ -453,16 +453,11 @@ See `nuxt.config.ts` for example.
 
 ### trailingslash
 
-according to this note, the trailing slash problem seems to be solved.
+With the new nuxt version, the trailing slash problem we found earlier no
+longer works.
 
-```html
-<!--
-    when reloaded in browser, any non-content page also lands here because
-    there is a trailing slash in url. it shows 'not found' slot for a moment
-    because a corresponding .md file does not exist, so it should render only
-    when there is no trailing slash to avoid unnecessary 'not found' display
-  -->
-```
+See here for possible img cases.
+[test](./test/index.md)
 
 [1]:<https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings> "configuring-git-to-handle-line-endings"
 [2]:<https://eslint.org/> "eslint.org"
