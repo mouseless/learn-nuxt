@@ -40,12 +40,10 @@ const refinedSrc = computed(() => {
     }
   }
 
-  // This if control was made considering that generate is used. This will not
-  // be valid when taken live as an application.
-  if (process.env.NODE_ENV === "production") {
-    if (trailingSlash) {
-      return joinURL("../", props.src);
-    }
+  if (!props.src.includes("index") && process.env.NODE_ENV === "prerender") {
+    // regex rule : folder/page/ => folder
+    const updatedPath = route.path.replace(/\/[^/]*\/?$/, '');
+    return `${updatedPath}/${props.src}`;
   }
 
   return props.src;

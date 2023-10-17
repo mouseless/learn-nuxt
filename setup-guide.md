@@ -456,6 +456,12 @@ See `nuxt.config.ts` for example.
 With the new nuxt version, the trailing slash problem we found earlier no
 longer works.
 
+In the new version, the trailing slash causes problems with images. As a
+solution, we saw that the change we made in ProseImg reflected the change made
+in the prerender phase. Therefore, we removed the page part from the paths of
+the images in the files that are not on the index page in the prerender phase.
+In this way, it searches the image under the relevant file.
+
 See here for possible img cases.
 [test](./test/index.md)
 
