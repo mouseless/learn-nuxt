@@ -26,9 +26,6 @@ const props = defineProps({
 });
 
 const route = useRoute();
-const trailingSlash = computed(
-  () => route.path !== "/" && route.path.endsWith("/")
-);
 
 const refinedSrc = computed(() => {
   if (props.src?.startsWith("/") && !props.src.startsWith("//")) {
@@ -40,7 +37,22 @@ const refinedSrc = computed(() => {
     }
   }
 
-  if (!props.src.includes("index") && process.env.NODE_ENV === "prerender") {
+  if ((!props.src.includes("index") && !props.src.includes("README")) && process.env.NODE_ENV === "prerender") {
+    // regex rule : folder/page/ => page
+    const page = route.path.match(/[^/]+(?=\/$|$)/);
+    if(page !== null) {
+      const pageWithoutSlash = page[0].replaceAll('/', '').replaceAll('-', '').toLowerCase();
+      const pureSrc = props.src
+        .replace('.png', '')
+        .replace('.jpg', '')
+        .replace('.svg', '')
+        .replace(/\d|-|\.|\//g, ''); // regex rule : ./build-and-run => buildandrun
+
+      if(pureSrc.toLowerCase() !== pageWithoutSlash) {
+        return props.src;
+      }
+    }
+
     // regex rule : folder/page/ => folder
     const updatedPath = route.path.replace(/\/[^/]*\/?$/, '');
     return `${updatedPath}/${props.src}`;

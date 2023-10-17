@@ -462,6 +462,9 @@ in the prerender phase. Therefore, we removed the page part from the paths of
 the images in the files that are not on the index page in the prerender phase.
 In this way, it searches the image under the relevant file.
 
+See `ProseImg.vue` component in `components/Prose` folder for how to fix
+trailing slash issue.
+
 See here for possible img cases.
 [test](./test/index.md)
 
