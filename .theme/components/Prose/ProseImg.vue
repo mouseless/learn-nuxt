@@ -1,7 +1,6 @@
 <template>
   <img :src="refinedSrc" :alt="alt" :width="width" :height="height" />
 </template>
-
 <script setup lang="ts">
 import { withTrailingSlash, withLeadingSlash, joinURL } from "ufo";
 import { useRuntimeConfig, computed, useRoute } from "#imports";
@@ -38,19 +37,10 @@ const refinedSrc = computed(() => {
   }
 
   if ((!props.src.includes("index") && !props.src.includes("README")) && process.env.NODE_ENV === "prerender") {
-    // regex rule : folder/page/ => page
-    const page = route.path.match(/[^/]+(?=\/$|$)/);
-    if(page !== null) {
-      const pageWithoutSlash = page[0].replaceAll('/', '').replaceAll('-', '').toLowerCase();
-      const pureSrc = props.src
-        .replace('.png', '')
-        .replace('.jpg', '')
-        .replace('.svg', '')
-        .replace(/\d|-|\.|\//g, ''); // regex rule : ./build-and-run => buildandrun
-
-      if(pureSrc.toLowerCase() !== pageWithoutSlash) {
-        return props.src;
-      }
+    const page = purifyPath(route.path).toLowerCase();
+    const pureSrc = purifyPath(props.src).toLowerCase();
+    if(pureSrc !== page) {
+      return props.src;
     }
 
     // regex rule : folder/page/ => folder
@@ -60,4 +50,9 @@ const refinedSrc = computed(() => {
 
   return props.src;
 });
+
+function purifyPath(path: string) {
+  // regex rule : clear folder path, '.', '/', '-' and extension
+  return path.replace(/.*\/|\d|-|\/|\.[^.]+$|\./g, '');
+}
 </script>
