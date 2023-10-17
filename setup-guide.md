@@ -455,6 +455,9 @@ See `nuxt.config.ts` for example.
 
 With the new nuxt version, the trailing slash problem we found earlier no
 longer works.
+longer works. So we removed the solution for trailing slash in
+`[...content-page].vue` and the `router.options.strict: true` setting in
+`nuxt.config.ts`.
 
 In the new version, the trailing slash causes problems with images. As a
 solution, we saw that the change we made in ProseImg reflected the change made
