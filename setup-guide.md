@@ -454,7 +454,6 @@ See `nuxt.config.ts` for example.
 ### trailingslash
 
 With the new nuxt version, the trailing slash problem we found earlier no
-longer works.
 longer works. So we removed the solution for trailing slash in
 `[...content-page].vue` and the `router.options.strict: true` setting in
 `nuxt.config.ts`.
@@ -470,6 +469,10 @@ trailing slash issue.
 
 See here for possible img cases.
 [test](./test/index.md)
+
+### Eslint
+
+eski projeden eslintrc.json alındı ve extendslerden typescript olan kaldırıldı.
 
 [1]:<https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings> "configuring-git-to-handle-line-endings"
 [2]:<https://eslint.org/> "eslint.org"

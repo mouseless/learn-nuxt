@@ -12,7 +12,7 @@ import { clearError } from "#app";
 defineProps({
   error: {
     type: Object,
-    default: null
-  }
+    default: null,
+  },
 });
 </script>

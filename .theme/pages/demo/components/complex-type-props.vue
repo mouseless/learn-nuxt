@@ -8,6 +8,6 @@
 <script setup lang="ts">
 const complex = {
   optional: "Richard",
-  required: 20
+  required: 20,
 };
 </script>
