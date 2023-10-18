@@ -472,7 +472,8 @@ See here for possible img cases.
 
 ### Eslint
 
-eski projeden eslintrc.json alındı ve extendslerden typescript olan kaldırıldı.
+The `@nuxtjs/eslint-config-typescript` module is sufficient by itself, so
+other modules have been removed from eslint.
 
 ### Removing the build stage
 
