@@ -5,7 +5,7 @@ on:
       - main
   pull_request:
     branches:
-      - issue/library-upgrades
+      - main
 jobs:
   generate:
     name: Generate
