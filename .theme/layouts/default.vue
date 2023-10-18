@@ -63,10 +63,10 @@ article {
 }
 
 img.nuxt:is(.logo) {
-  content: url(https://nuxt.com/assets/design-kit/logo/full-logo-green-dark.svg);
+  content: url(https://nuxt.com/assets/design-kit/logo-green-black.svg);
 
   @media (prefers-color-scheme: dark) {
-    content: url(https://nuxt.com/assets/design-kit/logo/full-logo-green-light.svg);
+    content: url(https://nuxt.com/assets/design-kit/logo-green-white.svg);
   }
 }
 
