@@ -22,7 +22,7 @@ folder.
 >
 > `find`, `findOne` methods return `promise` so you need to wait with `await`.
 
-Demo is at [/demo/query-content](/demo/query-content/)
+Demo is at [/demo/query-content](/demo/query-content)
 
 > :warning:
 >

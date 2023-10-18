@@ -410,7 +410,7 @@ export default defineNuxtConfig({
 })
 ```
 
-### componenets
+### components
 
 You must do this configuration to access globally when writing and using
 the component.
@@ -453,7 +453,7 @@ See `nuxt.config.ts` for example.
 
 ### trailingslash
 
-With the new nuxt version, the trailing slash problem we found earlier no
+With the new nuxt version, the trailing slash solution we found earlier no
 longer works. So we removed the solution for trailing slash in
 `[...content-page].vue` and the `router.options.strict: true` setting in
 `nuxt.config.ts`.
