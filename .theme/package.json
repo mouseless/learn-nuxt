@@ -2,16 +2,16 @@
   "type": "module",
   "scripts": {
     "lint": "eslint .",
-    "predev": "npm run preparation --env=local",
+    "prepare": "npm run lint && npx cross-var node -r dotenv/config prebuild dotenv_config_path=.env.$npm_config_env",
+    "predev": "npm run prepare --env=local",
     "dev": "npx nuxi dev --dotenv .env.local",
-    "pregenerate": "npx cross-var npm run preparation --env=$npm_config_env",
+    "pregenerate": "npx cross-var npm run prepare --env=$npm_config_env",
     "generate": "npx cross-var npx nuxi generate --dotenv .env.$npm_config_env",
     "generate:local": "npm run generate --env=local",
     "generate:production": "npm run generate --env=production",
     "postinstall": "npx nuxi prepare",
     "prelocal": "npm run generate:local",
-    "local": "npx http-server .output/public -p 3000",
-    "preparation": "npm run lint && npx cross-var node -r dotenv/config prebuild dotenv_config_path=.env.$npm_config_env"
+    "local": "npx http-server .output/public -p 3000"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.15",
