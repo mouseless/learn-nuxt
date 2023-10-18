@@ -16,7 +16,7 @@
     "postinstall": "npx nuxi prepare",
     "prelocal": "npm run generate:local",
     "local": "npx http-server .output/public -p 3000",
-    "preparation": "eslint . && npx cross-var node -r dotenv/config prebuild dotenv_config_path=.env.$npm_config_env"
+    "preparation": "npm run lint && npx cross-var node -r dotenv/config prebuild dotenv_config_path=.env.$npm_config_env"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.15",

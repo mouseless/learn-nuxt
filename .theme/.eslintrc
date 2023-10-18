@@ -7,23 +7,24 @@
   "extends": [
     "@nuxtjs/eslint-config-typescript",
   ],
-  "overrides": [
-    // {
-    //   "files": [
-    //     "**/*.{ts,js,json,vue}"
-    //   ]
-    // }
-  ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
     "requireConfigFile": false,
   },
   "rules": {
-    "quotes": ["error", "double"],
-    "semi": ["error", "always"],
-    "comma-dangle": ["error", "always-multiline"],
-    "space-before-function-paren": ["error", "never"],
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "indent": [
+      "error",
+      2
+    ],
     "keyword-spacing": [
       "error",
       {
@@ -46,20 +47,24 @@
         }
       }
     ],
-    "arrow-parens": [
-      "error",
-      "as-needed"
-    ],
-    "no-return-assign": "off",
-    "indent": [
-      "error",
-      2
-    ],
     "no-multi-spaces": "error",
     "no-multiple-empty-lines": "error",
+    "no-return-assign": "off",
     "no-trailing-spaces": "error",
     "no-var": "error",
     "prefer-const": "error",
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "space-before-function-paren": [
+      "error",
+      "never"
+    ],
     "vue/multi-word-component-names": "off",
     "vue/html-quotes": [
       "error",
