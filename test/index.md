@@ -1,11 +1,9 @@
-# Tests
+# test / index
 
-## Trailing Slash Diagram Test
-
-[subfolder](./subfolder/index.md)
-[subfolder deneme](./subfolder/deneme.md)
+- [test/folder/index](./folder/index.md)
+- [test/folder/content](./folder/content.md)
 
 ```mermaid
 flowchart
-    A --> B
+    test/index.md
 ```
