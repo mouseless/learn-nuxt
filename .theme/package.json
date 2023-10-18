@@ -2,8 +2,6 @@
   "type": "module",
   "scripts": {
     "lint": "eslint .",
-    "prebuild": "npm run preparation",
-    "build": "npx nuxi build",
     "predev": "npm run preparation --env=local",
     "dev": "npx nuxi dev --dotenv .env.local",
     "pregenerate": "npx cross-var npm run preparation --env=$npm_config_env",
