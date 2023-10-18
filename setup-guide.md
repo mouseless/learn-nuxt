@@ -474,5 +474,11 @@ See here for possible img cases.
 
 eski projeden eslintrc.json alındı ve extendslerden typescript olan kaldırıldı.
 
+### Removing the build stage
+
+Removing the build stage we added in generate. Now nuxt builds itself before
+generate. The build script that we want to run before generate has been
+removed from the scripts.
+
 [1]:<https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings> "configuring-git-to-handle-line-endings"
 [2]:<https://eslint.org/> "eslint.org"
