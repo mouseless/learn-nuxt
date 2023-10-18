@@ -8,7 +8,7 @@ withDefaults(defineProps<{
   complex: {
     optional?: string,
     required: number
-  },
+  }
 }>(), {
   complex: () => {
     return {
