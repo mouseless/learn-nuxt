@@ -60,11 +60,11 @@
     "no-trailing-spaces": "error",
     "no-var": "error",
     "prefer-const": "error",
-    // "vue/multi-word-component-names": "off",
-    // "vue/html-quotes": [
-    //   "error",
-    //   "double"
-    // ]
+    "vue/multi-word-component-names": "off",
+    "vue/html-quotes": [
+      "error",
+      "double"
+    ]
   },
   "settings": {
     "json/ignore-files": [

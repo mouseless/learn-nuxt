@@ -14,7 +14,12 @@
       </div>
       <nav>
         <ContentQuery
-          v-slot="{ data: menus }" path="/" :only="[ '_path', 'title', 'position' ]" :where="{ _dir: { $eq: '' }, _path: { $ne: '/' }, position: { $exists: true } }" :sort="sort">
+          v-slot="{ data: menus }"
+          path="/"
+          :only="[ '_path', 'title', 'position' ]"
+          :where="{ _dir: { $eq: '' }, _path: { $ne: '/' }, position: { $exists: true } }"
+          :sort="sort"
+        >
           <NuxtLink
             v-for="menu in menus"
             :key="menu.title"
