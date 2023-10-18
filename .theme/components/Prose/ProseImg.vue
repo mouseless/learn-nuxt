@@ -1,5 +1,5 @@
 <template>
-  <img :src="refinedSrc" :alt="alt" :width="width" :height="height" />
+  <img :src="refinedSrc" :alt="alt" :width="width" :height="height">
 </template>
 <script setup lang="ts">
 import { withTrailingSlash, withLeadingSlash, joinURL } from "ufo";
@@ -27,16 +27,16 @@ const props = defineProps({
 const route = useRoute();
 
 const refinedSrc = computed(() => {
-  if (props.src?.startsWith("/") && !props.src.startsWith("//")) {
+  if(props.src?.startsWith("/") && !props.src.startsWith("//")) {
     const _base = withLeadingSlash(
-      withTrailingSlash(useRuntimeConfig().app.baseURL)
+      withTrailingSlash(useRuntimeConfig().app.baseURL),
     );
-    if (_base !== "/" && !props.src.startsWith(_base)) {
+    if(_base !== "/" && !props.src.startsWith(_base)) {
       return joinURL(_base, props.src);
     }
   }
 
-  if ((!props.src.includes("index") && !props.src.includes("README")) && process.env.NODE_ENV === "prerender") {
+  if((!props.src.includes("index") && !props.src.includes("README")) && process.env.NODE_ENV === "prerender") {
     const page = purifyPath(route.path).toLowerCase();
     const pureSrc = purifyPath(props.src).toLowerCase();
     if(pureSrc !== page) {
@@ -44,7 +44,7 @@ const refinedSrc = computed(() => {
     }
 
     // regex rule : folder/page/ => folder
-    const updatedPath = route.path.replace(/\/[^/]*\/?$/, '');
+    const updatedPath = route.path.replace(/\/[^/]*\/?$/, "");
     return `${updatedPath}/${props.src}`;
   }
 
@@ -53,6 +53,6 @@ const refinedSrc = computed(() => {
 
 function purifyPath(path: string) {
   // regex rule : clear folder path, '.', '/', '-' and extension
-  return path.replace(/.*\/|\d|-|\/|\.[^.]+$|\./g, '');
+  return path.replace(/.*\/|\d|-|\/|\.[^.]+$|\./g, "");
 }
 </script>

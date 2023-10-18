@@ -7,10 +7,16 @@
   "extends": [
     "@nuxtjs/eslint-config-typescript",
   ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.{ts,js,vue}"
+      ]
+    }
+  ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "requireConfigFile": false,
   },
   "rules": {
     "arrow-parens": [
