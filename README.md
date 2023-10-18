@@ -19,8 +19,3 @@ Read below guides to find out how we use nuxt;
 Enjoy your web site project 🤗
 
 To contribute please read [Contributing](CONTRIBUTING.md).
-
-```mermaid
-flowchart
-    A --> B
-```
