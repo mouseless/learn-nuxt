@@ -27,32 +27,19 @@ const props = defineProps({
 const route = useRoute();
 
 const refinedSrc = computed(() => {
-  if(props.src?.startsWith("/") && !props.src.startsWith("//")) {
-    const _base = withLeadingSlash(
-      withTrailingSlash(useRuntimeConfig().app.baseURL)
-    );
-    if(_base !== "/" && !props.src.startsWith(_base)) {
-      return joinURL(_base, props.src);
-    }
+  if(props.src.startsWith("//")) {
+    return props.src;
   }
 
-  if((!props.src.includes("index") && !props.src.includes("README")) && process.env.NODE_ENV === "prerender") {
-    const page = purifyPath(route.path).toLowerCase();
-    const pureSrc = purifyPath(props.src).toLowerCase();
-    if(pureSrc !== page) {
-      return props.src;
-    }
+  const base = withLeadingSlash(withTrailingSlash(useRuntimeConfig().app.baseURL));
+  const path = parsePath(route.path);
 
-    // regex rule : folder/page/ => folder
-    const updatedPath = route.path.replace(/\/[^/]*\/?$/, "");
-    return `${updatedPath}/${props.src}`;
-  }
-
-  return props.src;
+  return joinURL(base, path, props.src);
 });
 
-function purifyPath(path: string) {
-  // regex rule : clear folder path, '.', '/', '-' and extension
-  return path.replace(/.*\/|\d|-|\/|\.[^.]+$|\./g, "");
+function parsePath(path: string) {
+  return path.endsWith("/")
+    ? path
+    : path.replace(/\/[^/]*\/?$/, "");
 }
 </script>
