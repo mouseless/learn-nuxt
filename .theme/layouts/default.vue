@@ -39,7 +39,7 @@
 <script setup lang="ts">
 const sort = {
   position: 1,
-  $numeric: true,
+  $numeric: true
 };
 </script>
 <style scoped lang="scss">

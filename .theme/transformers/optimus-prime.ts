@@ -9,5 +9,5 @@ export default defineTransformer({
       content.body.children.filter((f: any) => f.tag === "p")[0].tag = "strong";
     }
     return content;
-  },
+  }
 });

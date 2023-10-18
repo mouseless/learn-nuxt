@@ -21,7 +21,7 @@ const firstLine = computed(() => {
 const types = {
   ":information_source:": "info",
   ":warning:": "warning",
-  ":bulb:": "success",
+  ":bulb:": "success"
 };
 
 const type = computed(() => {

@@ -13,8 +13,8 @@ withDefaults(defineProps<{
   complex: () => {
     return {
       optional: "default",
-      required: 10,
+      required: 10
     };
-  },
+  }
 });
 </script>

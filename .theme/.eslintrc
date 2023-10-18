@@ -25,7 +25,7 @@
     ],
     "comma-dangle": [
       "error",
-      "always-multiline"
+      "never"
     ],
     "indent": [
       "error",

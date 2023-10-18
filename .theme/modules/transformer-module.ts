@@ -12,5 +12,5 @@ export default defineNuxtModule({
     nuxt.hook("content:context", contentContext => {
       contentContext.transformers.push(resolve("./transformers/optimus-prime.ts"));
     });
-  },
+  }
 });
