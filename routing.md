@@ -48,6 +48,5 @@ because a trailing slash would indicate another directory in a path.
 
 We have this problem with images. Since we use dynamic path, it looks in a
 different directory due to trailing slash. We solved this problem by making the
-path absolute in `ProseImg`.
-
-To see solution look here `components/prose/ProseImg`
+path absolute in `ProseImg`. To see solution look here
+`components/prose/ProseImg`.
