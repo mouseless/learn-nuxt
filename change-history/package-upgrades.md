@@ -1,23 +1,17 @@
----
-position: 103
----
-
-# Migration
-
-## Upgrage package
+# Package upgrades for the new version of Nuxt
 
 The upgrade sequences are as below. Different errors may occur if the order
 changes.
 
-### `log-symbols`
+## `log-symbols`
 
-#### 5.1.0
+### 5.1.0
 
 Added it because it is needed for the `log` task in `.prebuild`.
 
-### `Node`
+## `Node`
 
-#### 20.8.0
+### 20.8.0
 
 When upgrading to this version, version 3.4.1 of nuxt gives run time errors.
 
@@ -35,9 +29,9 @@ not found: "ts.executeCommandLine(ts.sys, ts.noop, ts.sys.args);"".
 
 Upgraded the nuxt version to 3.7.4 to fix it.
 
-### `Mermaid-js`
+## `Mermaid-js`
 
-#### 10.4.0
+### 10.4.0
 
 Clean upgrade. No issues.
 
@@ -48,9 +42,9 @@ Clean upgrade. No issues.
 }
 ```
 
-### `dotenv`
+## `dotenv`
 
-#### 16.3.1
+### 16.3.1
 
 Clean upgrade. No issues.
 
@@ -61,9 +55,9 @@ Clean upgrade. No issues.
 }
 ```
 
-### `eslint-plugin-vue`
+## `eslint-plugin-vue`
 
-#### 9.17.0
+### 9.17.0
 
 Clean upgrade. No issues.
 
@@ -74,9 +68,9 @@ Clean upgrade. No issues.
 }
 ```
 
-### `sass`
+## `sass`
 
-#### 1.69.2
+### 1.69.2
 
 Clean upgrade. No issues.
 
@@ -87,9 +81,9 @@ Clean upgrade. No issues.
 }
 ```
 
-### `yaml`
+## `yaml`
 
-#### 2.3.2
+### 2.3.2
 
 Clean upgrade. No issues.
 
@@ -100,9 +94,9 @@ Clean upgrade. No issues.
 }
 ```
 
-### `webpack`
+## `webpack`
 
-#### 5.88.2
+### 5.88.2
 
 Clean upgrade. No issues.
 
@@ -113,9 +107,9 @@ Clean upgrade. No issues.
 }
 ```
 
-### `vue-tsc`
+## `vue-tsc`
 
-#### 1.8.19
+### 1.8.19
 
 Clean upgrade. No issues.
 
@@ -126,9 +120,9 @@ Clean upgrade. No issues.
 }
 ```
 
-### `typescript`
+## `typescript`
 
-#### 5.2.2
+### 5.2.2
 
 ```json
 "devDependencies": {
@@ -157,9 +151,9 @@ Please only submit bug reports when using the officially supported version.
 =============
 ```
 
-### `types/node`
+## `types/node`
 
-#### 20.8.4
+### 20.8.4
 
 ```json
 "devDependencies": {
@@ -171,9 +165,9 @@ Please only submit bug reports when using the officially supported version.
 This version of type/node does not work with version 3.4.1 of nuxt. You can
 downgrade the version or upgrade the version of nuxt for a solution.
 
-### `nuxt`
+## `nuxt`
 
-#### 3.7.4
+### 3.7.4
 
 With this version, the generate process fails if the url of the links cannot be
 generated. So make sure that the target page of the links exists.
@@ -183,9 +177,9 @@ to move to a final version nuxt project built with the new nuxt kit.
 
 You can see this move by looking at [Move to new project](./setup-guide#move-to-new-project).
 
-### `nuxt Content`
+## `nuxt Content`
 
-#### 2.5.2
+### 2.5.2
 
 [nuxt.config.ts]
 ```ts
@@ -196,7 +190,7 @@ content: {
 }
 ```
 
-#### 2.8.5
+### 2.8.5
 
 [nuxt.config.ts]
 ```ts
