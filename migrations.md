@@ -10,7 +10,7 @@ encountered while migrating, solutions to problems and changes.
 ## Nuxt: v3.4.1 👉 v3.7.4
 
 First we tried to upgrade to the new version of nuxt with upgrades, but the
-resulting confilicts got too complicated, you can see the upgrade process in
+resulting conflicts got too complicated, you can see the upgrade process in
 [Package Upgrades](./change-history/package-upgrades.md). So we proceeded by
 creating a new nuxt project with the latest version of `nuxt-kit`.
 
@@ -18,9 +18,10 @@ creating a new nuxt project with the latest version of `nuxt-kit`.
 
 > :information_source:
 >
-> Before create a new project we recommend to move `.theme` to `.theme-legacy`.
+> Before creating a new project we recommend to move `.theme` to
+> `.theme-legacy`.
 
-Replace to this code in `app.vue`
+Change the code in `app.vue` as follows
 
 ```vue
 <template>
@@ -154,7 +155,7 @@ put your style files under `/assets`
 
 ### env files
 
-By adding enverioment files, you can export these files during build and use
+By adding environment files, you can export these files during build and use
 your constant values during build or runtime.
 
 `npx nuxi dev --dotenv .env.local`
@@ -162,7 +163,7 @@ your constant values during build or runtime.
 If you write your constant values with the prefix `NUXT` and `NUXT_PUBLIC` in
 your env file, nuxt will match them automatically.
 
-### prebuild
+### Prebuild
 
 In the preparation phase with prebuild, we prepare the markdowns at the root
 and put them under content. We also prepare the corresponding pages and pull
@@ -180,7 +181,7 @@ export default defineNuxtConfig({
 })
 ```
 
-### components
+### Components
 
 You must do this configuration to access globally when writing and using
 the component.
@@ -194,7 +195,7 @@ export default defineNuxtConfig({
 })
 ```
 
-### new module & nuxt content transformer
+### New module & Nuxt Content transformer
 
 To intervene when `nuxt content` reads markdowns and converts them to html
 object, we need to use the `transformer` feature of `nuxt content`, to do
@@ -221,7 +222,7 @@ For solution you can make `nitro.prerender.failOnError` `false` or add path to
 
 See `nuxt.config.ts` for example.
 
-### trailingslash
+### Trailing slash
 
 With the new nuxt version, the trailing slash solution we found earlier no
 longer works. So we removed the solution for trailing slash in
