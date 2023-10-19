@@ -44,7 +44,7 @@ First create new nuxt project with latest version
 
 `npx nuxi@latest init .theme`
 
-> :information_box:
+> :information_source:
 >
 > Before create a new project we recommend to move `.theme` to `.theme-legacy`.
 
@@ -91,7 +91,17 @@ If you have come this far, create a markdown file called `index.md` under the
 
 #### Close `headings.anchorLinks` option
 
-Make this configuration to prevent the headers from being in link format
+By default headers come in link format and the render will be as follows.
+
+```html
+<h2 id="head"...>
+  <a href="#head">
+    Head
+  </a>
+</h2>
+```
+
+You can do the following configuration to turn it off and render normal text.
 
 ```ts
 export default defineNuxtConfig({
@@ -113,6 +123,14 @@ export default defineNuxtConfig({
     },
   },
 });
+```
+
+the output is as follows.
+
+```html
+<h2 id="head"...>
+  Head
+</h2>
 ```
 
 ### Sass & Css
