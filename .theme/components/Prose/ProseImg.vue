@@ -1,5 +1,10 @@
 <template>
-  <img :src="refinedSrc" :alt="alt" :width="width" :height="height">
+  <img
+    :src="refinedSrc"
+    :alt="alt"
+    :width="width"
+    :height="height"
+  >
 </template>
 <script setup lang="ts">
 import { withTrailingSlash, withLeadingSlash, joinURL } from "ufo";
