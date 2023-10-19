@@ -33,11 +33,12 @@ Change the code in `app.vue` as follows
 
 ### Adding Nuxt Content Module
 
-Add content module
+Add content module run following command
 
 `npm install @nuxt/content`
 
-Create new page `[...content-page]` and add this code to under `/pages` directory
+Create new page `[...content-page].vue` and add this code to under `/pages`
+directory
 
 ```vue
 <template>
@@ -62,9 +63,9 @@ export default defineNuxtConfig({
 If you have come this far, create a markdown file called `index.md` under the
 `/content` folder. Display your page by saying `npm run dev`.
 
-#### Close `headings.anchorLinks` option
+#### Disable `headings.anchorLinks` option
 
-By default headers come in link format and the render will be as follows.
+By default, headers come in link format and the render will be as follows.
 
 ```html
 <h2 id="head"...>
