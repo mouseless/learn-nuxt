@@ -175,7 +175,7 @@ generated. So make sure that the target page of the links exists.
 After upgrading from 3.4.1 to 3.7.4, due to incompatibilities, it was decided
 to move to a final version nuxt project built with the new nuxt kit.
 
-You can see this move by looking at [Move to new project](./setup-guide#move-to-new-project).
+You can see this move by looking at [migrations](../migrations.md).
 
 ## `nuxt Content`
 
