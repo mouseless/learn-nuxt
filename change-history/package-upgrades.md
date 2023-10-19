@@ -1,4 +1,4 @@
-# Package upgrades for the new version of Nuxt
+# Package upgrades for the v3.7.4 of Nuxt
 
 The upgrade sequences are as below. Different errors may occur if the order
 changes.

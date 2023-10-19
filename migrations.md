@@ -4,9 +4,10 @@ position: 103
 
 # Migrations
 
-versionlar arası geçiş ....
+It is the documentation of the migrations between versions, problems
+encountered while migrating, solutions to problems and changes.
 
-## Nuxt: v3.4.1 :point_right: v3.7.4
+## Nuxt: v3.4.1 👉 v3.7.4
 
 First we tried to upgrade to the new version of nuxt with upgrades, but the
 resulting confilicts got too complicated, you can see the upgrade process in
