@@ -13,7 +13,7 @@ export default defineNuxtConfig({
             h3: false,
             h4: false,
             h5: false,
-            h6: false
+            h6: true
           }
         }
       },

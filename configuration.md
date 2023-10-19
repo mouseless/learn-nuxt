@@ -59,6 +59,16 @@ See `.theme/nuxt.config.ts` for definition examples and
 
 Demo is at [/demo/runtime-config](/demo/runtime-config)
 
+## Nuxt Content Heading AnchorLinks
+
+By default headers come in with anchorlink. You can do configuration to turn it
+off and render normal text.
+
+To learn how its configure look `runtimeConfig.public.mdc.headings.anchorLinks`
+configuration in `nuxt.config.ts`.
+
+To see how is look like [/demo/headings-anchorlinks](/demo/headings-anchorlinks)
+
 ## Generate Routes
 
 When generating in Nuxt, if there are pages in the route hierarchy that are not
