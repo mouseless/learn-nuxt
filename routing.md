@@ -46,14 +46,8 @@ static site hosting services, such as GitHub Pages, to add a trailing slash to
 urls. When this happens that page fails to load resources with a relative path
 because a trailing slash would indicate another directory in a path.
 
-To workaround this, we've added a script that checks if `route.path` has a
-trailing slash upon mounting.
+We have this problem with images. Since we use dynamic path, it looks in a
+different directory due to trailing slash. We solved this problem by making the
+path absolute in `ProseImg`.
 
-> :warning:
->
-> For this solution to work correctly, you need to enable
-> `router.options.strict` in `.theme/nuxt.config.ts` so that a path with a
-> trailing slash is not treated as same as a path without a trailing slash.
-> Otherwise `navigateTo` does not redirect and throws an error.
-
-Solution is in `.theme/[...content-page].vue`.
+To see solution look here `components/prose/ProseImg`
