@@ -84,3 +84,9 @@ In our project, there are some links that we use for testing in the document
 and we expect the page to be empty. For this reason, the build gives an error
 because Nitro cannot create routes from these links. To ignore these routes,
 we add these routes to the `nitro.prerender.ignore` array in `nuxt.config.ts`.
+
+## PayloadExtraction
+
+When this option is enabled payload of pages that are prerendered are
+extracted. We do not want the `_payload.json` file to be created, so we set
+`experimental.payloadExtraction` to `false`.
