@@ -150,6 +150,8 @@ to export sass files first install sass
 
 `npm install sass`
 
+then put your style files under `/assets`
+
 You can then configure `nuxt.config.ts` as follows to apply your styles and
 access style variables from vue files.
 
@@ -169,17 +171,37 @@ export default defineNuxtConfig({
 })
 ```
 
-put your style files under `/assets`
-
 ### env files
 
 By adding environment files, you can export these files during build and use
 your constant values during build or runtime.
 
-`npx nuxi dev --dotenv .env.local`
+After getting your env files from the old project, give the relevant `.env`
+files to the places you want in the scripts in `package.json` to apply them to
+the project.
+
+`"dev": "npx nuxi dev --dotenv .env.local"`
 
 If you write your constant values with the prefix `NUXT` and `NUXT_PUBLIC` in
 your env file, nuxt will match them automatically.
+
+`NUXT_PUBLIC_BASE_URL=/`
+
+must have a match in `runtimeConfig.public` for automatic mapping. It should
+be as follows.
+
+```ts
+export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      baseUrl: ""
+    }
+  },
+});
+```
+
+To access it from somewhere other than `runtimeConfig`, you can call it as
+`process.env.NUXT_PUBLIC_BASE_URL`.
 
 ### Prebuild
 
@@ -198,6 +220,12 @@ export default defineNuxtConfig({
   },
 })
 ```
+
+> :information_source:
+>
+> Don't forget to install the dependencies of the prebuild.
+> `npm install -D log-symbols`
+> `npm install -D @mermaid-js/mermaid-cli`
 
 ### Components
 
