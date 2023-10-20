@@ -131,18 +131,18 @@ You can make these configurations to source css to the project from outside.
 export default defineNuxtConfig({
   ...
   app: {
-      head: {
-        ...
-        link: [
-          {
-            rel: "stylesheet",
-            type: "text/css",
-            href: "https://mouseless.github.io/brand/assets/css/default.css"
-          }
-        ]
-      }
-    },
-    css: ["~/assets/styles.css"]
+    head: {
+      ...
+      link: [
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "https://mouseless.github.io/brand/assets/css/default.css"
+        }
+      ]
+    }
+  },
+  css: ["~/assets/styles.css"]
 })
 ```
 
@@ -150,7 +150,8 @@ to export sass files first install sass
 
 `npm install sass`
 
-second configure `nuxt.config.ts`
+You can then configure `nuxt.config.ts` as follows to apply your styles and
+access style variables from vue files.
 
 ```ts
 export default defineNuxtConfig({
