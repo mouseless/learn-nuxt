@@ -28,6 +28,11 @@ When it asks:
 > `.theme-legacy`. After renaming, don't forget to delete generate contents
 > like `/.nuxt`, `/node_modules` etc. because too many changes will appear.
 
+> :warning:
+>
+> `nuxi` automatically install nuxt with the latest version. don't forget to
+> upgrade to version `v3.7.4` in `package.json`.
+
 Change the code in `app.vue` as follows
 
 ```vue
@@ -47,7 +52,7 @@ not been added yet.
 
 Add content module run following command
 
-`npm install @nuxt/content`
+`npm install @nuxt/content --save-dev`
 
 Create new page `[...content-page].vue` and add this code to under `/pages`
 directory
@@ -148,7 +153,7 @@ export default defineNuxtConfig({
 
 to export sass files first install sass
 
-`npm install sass`
+`npm install sass --save-dev`
 
 then put your style files under `/assets`
 
@@ -224,8 +229,14 @@ export default defineNuxtConfig({
 > :information_source:
 >
 > Don't forget to install the dependencies of the prebuild.
-> `npm install -D log-symbols`
-> `npm install -D @mermaid-js/mermaid-cli`
+> `npm install log-symbols --save-dev`
+> `npm install @mermaid-js/mermaid-cli --save-dev`
+
+#### config.yml
+
+When you get the prebuild from your old project or when you write a new one,
+you can remove `puppeteer` warnings by saying `config.headless: new` while
+extracting mermaid diagrams in `config.yml`.
 
 ### Components
 
@@ -257,6 +268,21 @@ add them under `/modules`, you don't need to add those local modules to your
 
 To see the use of transformer `/transformers/optimus-prime.ts`
 To see how to add a module look `nuxt.config.ts`.
+
+### types
+
+With version `v3.7.4` of Nuxt, you must specify `Type` at the beginning of the
+type in type imports as below.
+
+```ts
+import type { TestNewProps } from '~/types';
+```
+
+or
+
+```ts
+import { type TestNewProps } from '~/types';
+```
 
 ### prerender fail
 
