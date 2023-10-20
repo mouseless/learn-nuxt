@@ -16,6 +16,12 @@ creating a new nuxt project with the latest version of `nuxt-kit`.
 
 `npx nuxi@latest init .theme`
 
+During installation it will give you options.
+When it asks:
+
+- `package manager`:  Select `npm`.
+- `initialize git repository`: select `No`.
+
 > :information_source:
 >
 > Before creating a new project we recommend to move `.theme` to
