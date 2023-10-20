@@ -20,4 +20,4 @@ Enjoy your web site project 🤗
 
 To contribute please read [Contributing](CONTRIBUTING.md).
 
-To see migrations guides please visit [Migrations](migrations.md).
+To see migration guides please visit [Migrations](migrations.md).
