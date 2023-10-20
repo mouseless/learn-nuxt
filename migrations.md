@@ -7,6 +7,13 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
+## Nuxt: v3.4.1 👉 v3.7.4
+
+First we tried to upgrade to the new version of nuxt with upgrades, but the
+resulting conflicts got too complicated, you can see the upgrade process in
+[Package Upgrades](./change-history/package-upgrades.md). So we proceeded by
+creating a new nuxt project with the latest version of `nuxt-kit`.
+
 Below you can find a migration checklist;
 
 ```markdown
@@ -37,14 +44,11 @@ Below you can find a migration checklist;
 - [ ] set `PayloadExtraction` `false`
 ```
 
-## Nuxt: v3.4.1 👉 v3.7.4
+Start by running following command
 
-First we tried to upgrade to the new version of nuxt with upgrades, but the
-resulting conflicts got too complicated, you can see the upgrade process in
-[Package Upgrades](./change-history/package-upgrades.md). So we proceeded by
-creating a new nuxt project with the latest version of `nuxt-kit`.
-
-`npx nuxi@latest init .theme`
+```bash
+npx nuxi@latest init .theme
+```
 
 During installation it will give you options.
 When it asks:
@@ -82,7 +86,9 @@ not been added yet.
 
 Add content module run following command
 
-`npm install @nuxt/content --save-dev`
+```bash
+npm install @nuxt/content --save-dev
+```
 
 Create new page `[...content-page].vue` and add this code to under `/pages`
 directory
@@ -183,7 +189,9 @@ export default defineNuxtConfig({
 
 to export sass files first install sass
 
-`npm install sass --save-dev`
+```bash
+npm install sass --save-dev
+```
 
 then put your style files under `/assets`
 
