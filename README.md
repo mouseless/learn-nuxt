@@ -19,3 +19,4 @@ Read below guides to find out how we use nuxt;
 Enjoy your web site project 🤗
 
 To contribute please read [Contributing](CONTRIBUTING.md).
+To see migrations guides please visit [migrations](migrations.md).

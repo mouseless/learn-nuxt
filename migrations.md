@@ -7,6 +7,36 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
+Below you can find a migration checklist;
+
+```markdown
+- [ ] move `.theme` to `.theme-legacy`
+- [ ] create nuxt project (v3.7.4)
+- [ ] update `app.vue` code
+- [ ] install `nuxt-content` module & add as module in `nuxt.config.ts`
+- [ ] add dynamic page & create `.md` file in `/content` directory for demo
+- [ ] Disable `headings.anchorLinks`
+- [ ] install `sass` -> move assets from old project -> add styles in
+  `nuxt.config.ts`
+- [ ] move `.env` files from old project
+- [ ] add prefix to constants in `.env` file
+- [ ] update `runtimeConfig.public` (for `.env`)
+- [ ] move prebuild from old project
+- [ ] update `config.yml` for puppeteer warnings
+- [ ] add prebuild dependencies (`log-symbols`, `mermaid....`)
+- [ ] set all components global `true`
+- [ ] move all pages & and component from old project
+- [ ] move transformers & modules from old projects
+- [ ] move modules to under `/modules`
+- [ ] add `type` to type imports
+- [ ] add empty link to `nitro.prerender.failOnError`
+- [ ] make absolute image path
+- [ ] move eslintrc config and use only `@nuxtjs/eslint-config-typescript`
+- [ ] add eslint run command to scripts
+- [ ] remove build stage from scripts
+- [ ] set `PayloadExtraction` `false`
+```
+
 ## Nuxt: v3.4.1 👉 v3.7.4
 
 First we tried to upgrade to the new version of nuxt with upgrades, but the
@@ -31,7 +61,7 @@ When it asks:
 > :warning:
 >
 > `nuxi` automatically install nuxt with the latest version. don't forget to
-> upgrade to version `v3.7.4` in `package.json`.
+> set version to `v3.7.4` in `package.json`.
 
 Change the code in `app.vue` as follows
 
@@ -275,13 +305,13 @@ With version `v3.7.4` of Nuxt, you must specify `Type` at the beginning of the
 type in type imports as below.
 
 ```ts
-import type { TestNewProps } from '~/types';
+import type { TestNewProps } from '~~/types';
 ```
 
 or
 
 ```ts
-import { type TestNewProps } from '~/types';
+import { type TestNewProps } from '~~/types';
 ```
 
 ### prerender fail
