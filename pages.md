@@ -43,7 +43,7 @@ reduce the crowd in the script.
 > the render stage. Otherwise, we strongly suggest usage of `queryContent()`
 > which runs once in setup stage.
 
-Demo is at [/demo/content-query](/demo/content-query)
+Demo is at [/demo/content-query](/demo/content-query/)
 
 ### About Document-Driven Mode
 

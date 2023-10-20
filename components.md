@@ -82,11 +82,11 @@ Prose components are wrappers of html tags that are used to render markdown
 content. When you want to change the way nuxt renders markdown you need to
 override a prose component.
 
-To override a prose, let's say `<table>`, browse to [Nuxt Content /
-Prose](https://github.com/nuxt/content/blob/main/src/runtime/components/Prose/)
-and copy corresponding component, `ProseTable.vue` in this case, and place it
-under exactly the same path `.theme/components/Prose/`, and make any change you
-want.
+To override a prose, let's say `<table>`, go to the
+[Nuxt Content](https://content.nuxt.com/components/prose) page and find the
+source code of the component on github, in this case `ProseTable`. Copy the
+code from there, and place it under exactly the same path
+`.theme/components/Prose/`, and make any change you want.
 
 Below is a demonstration of overriding `ProseTable.vue`;
 
@@ -163,7 +163,6 @@ See `/transformers/optimus-prime.ts` to see how it is done.
 
 > :information_source:
 >
-> For Content Transformers to work, we need to register them in Nuxt and add
-> them as modules. You can see how we register them in
-> `/transformers/transform-module.ts` and how we add them as modules in
-> `nuxt.config.ts`.
+> For Content Transformers to work, we need to add them as modules to Nuxt.
+> Nuxt does this automatically if the nuxt modules are under `/modules`. You
+> can see how to add them as modules in `/modules/transform-module.ts`.

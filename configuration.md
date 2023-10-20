@@ -59,9 +59,34 @@ See `.theme/nuxt.config.ts` for definition examples and
 
 Demo is at [/demo/runtime-config](/demo/runtime-config)
 
+## Nuxt Content Heading AnchorLinks
+
+By default headers come in with anchorlink. You can do configuration to turn it
+off and render normal text.
+
+To learn how its configure look `runtimeConfig.public.mdc.headings.anchorLinks`
+configuration in `nuxt.config.ts`.
+
+To see how is look like [/demo/headings-anchorlinks](/demo/headings-anchorlinks)
+
 ## Generate Routes
 
 When generating in Nuxt, if there are pages in the route hierarchy that are not
 linked to the index, they are not generated. We add these pages to
 `generate.routes` to create them during generate. See `.theme/nuxt.config.ts`
 for an example.
+
+## Nitro Prerender Route
+
+Nitro PrerenderRoutes travels and creates all routes before runtime.
+
+In our project, there are some links that we use for testing in the document
+and we expect the page to be empty. For this reason, the build gives an error
+because Nitro cannot create routes from these links. To ignore these routes,
+we add these routes to the `nitro.prerender.ignore` array in `nuxt.config.ts`.
+
+## PayloadExtraction
+
+When this option is enabled payload of pages that are prerendered are
+extracted. We do not want the `_payload.json` file to be created, so we set
+`experimental.payloadExtraction` to `false`.

@@ -23,11 +23,11 @@ For Windows systems use `build.bat`;
 
 ## Process
 
-Process consists of 4 stages;
+Process consists of 2 stages;
 
-1. Lint checking using eslint
-1. [Prebuild][], markdowns are preprocessed in this stage
-1. Nuxt build
+1. Prepare has 2 stage in itself
+   1. Lint checking using eslint
+   1. [Prebuild][], markdowns are preprocessed in this stage
 1. Last stage differs between `build` & `run`
    1. When building, there are two different options
       1. It creates a static site for deployment
@@ -38,14 +38,12 @@ Process consists of 4 stages;
 
 ```mermaid
 flowchart TB
-    subgraph nuxtbuild[nuxt build]
+    subgraph prepare[prepare]
         direction LR
-        CB(client build) --> SB(server build)
+        E(eslint) --> P(prebuild)
     end
-    E(eslint) --> P(prebuild)
-    P --> nuxtbuild
-    nuxtbuild -->|nuxt generate| SWS(static web site)
-    nuxtbuild -->|nuxt dev| OS(running on server)
+    prepare -->|nuxt generate| SWS(static web site)
+    prepare -->|nuxt dev| OS(running on server)
 ```
 
 ## `package.json` Configuration

@@ -37,32 +37,3 @@ to use under `CHROMIUM_EXECUTABLE_PATH` key.
 
 This is where we host the config settings for production mode. Settings in
 `.env.production` are used when deploying.
-
-## End of line
-
-We use [Eslint][2] in this project. Configuration is in `.eslintrc.json`
-file, and we use `unix` style line endings.
-
-### Windows Settings
-
-When you checkout a repository on Windows, by default git handles line endings
-as `clrf` for compatibility. Due to this reason, when you run the application,
-eslint will prompt and error because it expects `lf` line endings.
-
-You can set `core.autoclrf` to false in your `git config` or provide setup for
-specific repository. Visit [Git Documentation][1] page for further details.
-
-```bash
-$git config --global core.autocrlf true
-```
-
-> :bulb:
->
-> You can use the command below to fix your existing files
->
-> ```bash
-> npx eslint . --fix
-> ```
-
-[1]:<https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings> "configuring-git-to-handle-line-endings"
-[2]:<https://eslint.org/> "eslint.org"

@@ -1,24 +1,27 @@
-import { defineNuxtConfig } from "nuxt/config";
 import { joinURL } from "ufo";
-import TransformerModule from "./transformers/transformer-module";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  typescript: {
-    typeCheck: true
-  },
+  devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      content: {
-        anchorLinks: {
-          depth: 0
+      mdc: {
+        headings: {
+          anchorLinks: {
+            h1: false,
+            h2: false,
+            h3: false,
+            h4: false,
+            h5: false,
+            h6: true
+          }
         }
       },
-      baseURL: process.env.BASE_URL
+      baseUrl: ""
     }
   },
   app: {
-    baseURL: process.env.BASE_URL,
+    baseURL: process.env.NUXT_PUBLIC_BASE_URL,
     head: {
       meta: [
         {
@@ -46,7 +49,7 @@ export default defineNuxtConfig({
         {
           rel: "icon",
           type: "image/x-icon",
-          href: joinURL(process.env.BASE_URL ?? "/", "favicon.ico")
+          href: joinURL(process.env.NUXT_PUBLIC_BASE_URL ?? "/", "favicon.ico")
         },
         {
           rel: "stylesheet",
@@ -66,11 +69,7 @@ export default defineNuxtConfig({
     }
   },
   css: ["~/assets/styles.scss"],
-  modules: [
-    // @ts-ignore
-    TransformerModule,
-    "@nuxt/content"
-  ],
+  modules: ["@nuxt/content"],
   content: {
     markdown: {
       remarkPlugins: {
@@ -78,16 +77,24 @@ export default defineNuxtConfig({
       }
     }
   },
-  router: {
-    options: {
-      strict: true
-    }
-  },
   components: {
     dirs: [{ global: true, path: "~/components/Prose" }, "~/components"]
   },
   dir: {
     public: ".public"
+  },
+  nitro: {
+    prerender: {
+      ignore: [
+        joinURL(
+          process.env.NUXT_PUBLIC_BASE_URL ?? "/",
+          "/demo/error/non-existent-content"
+        )
+      ]
+    }
+  },
+  experimental: {
+    payloadExtraction: false
   },
   generate: {
     routes: ["/not-found"]
