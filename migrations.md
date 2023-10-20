@@ -25,7 +25,8 @@ When it asks:
 > :information_source:
 >
 > Before creating a new project we recommend to move `.theme` to
-> `.theme-legacy`.
+> `.theme-legacy`. After renaming, don't forget to delete generate contents
+> like `/.nuxt`, `/node_modules` etc. because too many changes will appear.
 
 Change the code in `app.vue` as follows
 
@@ -36,6 +37,11 @@ Change the code in `app.vue` as follows
   </NuxtLayout>
 </template>
 ```
+
+Navigate to the `/.theme` directory `npm run dev` run the command.
+
+When you change the code, you will see a blank html page because a page has
+not been added yet.
 
 ### Adding Nuxt Content Module
 
@@ -65,6 +71,10 @@ export default defineNuxtConfig({
   }
 })
 ```
+
+The nuxt content module will not be able to access any content at this stage
+because it is looking for a file with `.md` extension under `/content`.
+Therefore, you may see a warning like `Document not found` on the screen.
 
 If you have come this far, create a markdown file called `index.md` under the
 `/content` folder. Display your page by saying `npm run dev`.
