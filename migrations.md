@@ -318,6 +318,10 @@ See here for possible img cases.
 The `@nuxtjs/eslint-config-typescript` module is sufficient by itself, so
 other modules have been removed from eslint.
 
+For eslint to work, you can run it in the prepare script in `package.json` with
+`npx eslint .` or if you have added eslint to dependencies, you can run it
+with `eslint .` before build.
+
 ### Removing the build stage
 
 Removing the build stage we added in generate. Now nuxt builds itself before
