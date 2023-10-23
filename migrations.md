@@ -383,12 +383,12 @@ Removing the build stage we added in generate. Now nuxt builds itself before
 generate. The build script that we want to run before generate has been
 removed from the scripts.
 
-## PayloadExtraction
+### PayloadExtraction
 
 We do not want the `_payload.json` file to be created, so we set
 `experimental.payloadExtraction` to `false`.
 
-## Migration `nuxt.config.ts`
+### Migration `nuxt.config.ts`
 
 At this point, if there is a config left in your old file, move your config
 other than the following.
