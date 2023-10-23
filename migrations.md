@@ -9,8 +9,8 @@ encountered while migrating, solutions to problems and changes.
 
 ## Node
 
-`Nuxt` v3.7.4 requires `Node` version v18 and above to work. The document is
-routed over `Node` v20.
+`Nuxt` v3.7.4 requires `Node` version v18 and above to work but we decide to
+`Node` v20 so this document according to `Node` v20.
 
 ## Nuxt: v3.4.1 👉 v3.7.4
 
