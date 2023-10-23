@@ -51,6 +51,7 @@ Below you can find a migration checklist;
 - [ ] remove build stage from scripts
 - [ ] set `PayloadExtraction` `false`
 - [ ] migration of remaining config in `nuxt.config.ts`
+- [ ] Edit incoming old config according to the new config(`.env` config structure etc.)
 - [ ] sort configs in `nuxt.config.ts`
 ```
 
@@ -400,3 +401,9 @@ These configs are no longer needed. Apart from these, you can move your
 configurations in `runtimeConfig` or routes that you want to be generated.
 
 Remember to sort the config in name order after the migration.
+
+> :information_source:
+>
+> Don't forget to review the remaining config from the old project when you
+> migrate. Since the config from the `.env` file is renamed, your config such
+> as `app.baseUrl` may be corrupted etc.
