@@ -248,7 +248,7 @@ To access it from somewhere other than `runtimeConfig`, you can call it as
 
 ### Prebuild
 
-In the preparation phase with prebuild, we prepare the markdowns at the root
+In the setup phase with prebuild, we prepare the markdowns at the root
 and put them under content. We also prepare the corresponding pages and pull
 the markdown content in these pages and render them.
 
@@ -356,7 +356,7 @@ See here for possible img cases.
 The `@nuxtjs/eslint-config-typescript` module is sufficient by itself, so
 other modules have been removed from eslint.
 
-For eslint to work, you can run it in the prepare script in `package.json` with
+For eslint to work, you can run it in the setup script in `package.json` with
 `npx eslint .` or if you have added eslint to dependencies, you can run it
 with `eslint .` before build.
 
