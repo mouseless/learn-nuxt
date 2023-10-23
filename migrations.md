@@ -7,6 +7,11 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
+## Node
+
+`Nuxt` v3.7.4 requires `Node` version v18 and above to work. The document is
+routed over `Node` v20.
+
 ## Nuxt: v3.4.1 👉 v3.7.4
 
 First we tried to upgrade to the new version of nuxt with upgrades, but the
@@ -17,6 +22,7 @@ creating a new nuxt project with the latest version of `nuxt-kit`.
 Below you can find a migration checklist;
 
 ```markdown
+- [ ] upgrade node version on workflow
 - [ ] move `.theme` to `.theme-legacy`
 - [ ] create nuxt project (v3.7.4)
 - [ ] update `app.vue` code
@@ -373,7 +379,7 @@ removed from the scripts.
 We do not want the `_payload.json` file to be created, so we set
 `experimental.payloadExtraction` to `false`.
 
-## migration `nuxt.config.ts`
+## Migration `nuxt.config.ts`
 
 At this point, if there is a config left in your old file, move your config
 other than the following.
