@@ -42,6 +42,8 @@ Below you can find a migration checklist;
 - [ ] add eslint run command to scripts
 - [ ] remove build stage from scripts
 - [ ] set `PayloadExtraction` `false`
+- [ ] migration of remaining config in `nuxt.config.ts`
+- [ ] sort configs in `nuxt.config.ts`
 ```
 
 Start by running following command
@@ -370,3 +372,16 @@ removed from the scripts.
 
 We do not want the `_payload.json` file to be created, so we set
 `experimental.payloadExtraction` to `false`.
+
+## migration `nuxt.config.ts`
+
+At this point, if there is a config left in your old file, move your config
+other than the following.
+
+- `router.options.strict: true` ❌
+- `typescript.typeCheck: true` ❌
+
+These configs are no longer needed. Apart from these, you can move your
+configurations in `runtimeConfig` or routes that you want to be generated.
+
+Remember to sort the config in name order after the migration.
