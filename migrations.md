@@ -10,7 +10,7 @@ encountered while migrating, solutions to problems and changes.
 ## Node
 
 `Nuxt` v3.7.4 requires `Node` version v18 and above to work but we've decided
-to use v20. Make sure you have node v20 installed in your local machine.
+to use v20. Make sure you have v20 installed in your local machine.
 
 ## Nuxt: v3.4.1 👉 v3.7.4
 
@@ -278,8 +278,11 @@ export default defineNuxtConfig({
 > :information_source:
 >
 > Don't forget to install the dependencies of the prebuild.
-> `npm install log-symbols --save-dev`
-> `npm install @mermaid-js/mermaid-cli --save-dev`
+>
+> ```bash
+> npm install log-symbols --save-dev
+> npm install @mermaid-js/mermaid-cli --save-dev
+> ```
 
 #### `config.yml`
 
