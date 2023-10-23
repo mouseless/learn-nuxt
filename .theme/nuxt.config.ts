@@ -2,27 +2,21 @@ import { joinURL } from "ufo";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  runtimeConfig: {
-    public: {
-      mdc: {
-        headings: {
-          anchorLinks: {
-            h1: false,
-            h2: false,
-            h3: false,
-            h4: false,
-            h5: false,
-            h6: true
-          }
-        }
-      },
-      baseUrl: ""
-    }
-  },
   app: {
     baseURL: process.env.NUXT_PUBLIC_BASE_URL,
     head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: joinURL(process.env.NUXT_PUBLIC_BASE_URL ?? "/", "favicon.ico")
+        },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "https://mouseless.github.io/brand/assets/css/default.css"
+        }
+      ],
       meta: [
         {
           hid: "og:description",
@@ -44,21 +38,21 @@ export default defineNuxtConfig({
           property: "og:image:height",
           content: "50"
         }
-      ],
-      link: [
-        {
-          rel: "icon",
-          type: "image/x-icon",
-          href: joinURL(process.env.NUXT_PUBLIC_BASE_URL ?? "/", "favicon.ico")
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "https://mouseless.github.io/brand/assets/css/default.css"
-        }
       ]
     }
   },
+  components: {
+    dirs: [{ global: true, path: "~/components/Prose" }, "~/components"]
+  },
+  content: {
+    markdown: {
+      remarkPlugins: {
+        "remark-emoji": false
+      }
+    }
+  },
+  css: ["~/assets/styles.scss"],
+  devtools: { enabled: true },
   vite: {
     css: {
       preprocessorOptions: {
@@ -68,20 +62,15 @@ export default defineNuxtConfig({
       }
     }
   },
-  css: ["~/assets/styles.scss"],
   modules: ["@nuxt/content"],
-  content: {
-    markdown: {
-      remarkPlugins: {
-        "remark-emoji": false
-      }
-    }
-  },
-  components: {
-    dirs: [{ global: true, path: "~/components/Prose" }, "~/components"]
-  },
   dir: {
     public: ".public"
+  },
+  experimental: {
+    payloadExtraction: false
+  },
+  generate: {
+    routes: ["/not-found"]
   },
   nitro: {
     prerender: {
@@ -93,10 +82,21 @@ export default defineNuxtConfig({
       ]
     }
   },
-  experimental: {
-    payloadExtraction: false
-  },
-  generate: {
-    routes: ["/not-found"]
+  runtimeConfig: {
+    public: {
+      mdc: {
+        headings: {
+          anchorLinks: {
+            h1: false,
+            h2: false,
+            h3: false,
+            h4: false,
+            h5: false,
+            h6: true
+          }
+        }
+      },
+      baseUrl: ""
+    }
   }
 });

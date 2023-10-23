@@ -25,7 +25,7 @@ For Windows systems use `build.bat`;
 
 Process consists of 2 stages;
 
-1. Prepare has 2 stage in itself
+1. Setup has 2 stage in itself
    1. Lint checking using eslint
    1. [Prebuild][], markdowns are preprocessed in this stage
 1. Last stage differs between `build` & `run`
@@ -38,12 +38,12 @@ Process consists of 2 stages;
 
 ```mermaid
 flowchart TB
-    subgraph prepare[prepare]
+    subgraph setup[setup]
         direction LR
         E(eslint) --> P(prebuild)
     end
-    prepare -->|nuxt generate| SWS(static web site)
-    prepare -->|nuxt dev| OS(running on server)
+    setup -->|nuxt generate| SWS(static web site)
+    setup -->|nuxt dev| OS(running on server)
 ```
 
 ## `package.json` Configuration

@@ -4,7 +4,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Demo } from "~~/types";
+import type { Demo } from "~~/types";
 
 defineProps<{ reused: Demo }>();
 </script>

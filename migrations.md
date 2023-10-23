@@ -7,6 +7,11 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
+## Node
+
+`Nuxt` v3.7.4 requires `Node` version v18 and above to work but we've decided
+to use v20. Make sure you have v20 installed in your local machine.
+
 ## Nuxt: v3.4.1 👉 v3.7.4
 
 First we tried to upgrade to the new version of nuxt with upgrades, but the
@@ -17,6 +22,7 @@ creating a new nuxt project with the latest version of `nuxt-kit`.
 Below you can find a migration checklist;
 
 ```markdown
+- [ ] upgrade node version on workflow
 - [ ] move `.theme` to `.theme-legacy`
 - [ ] create nuxt project (v3.7.4)
 - [ ] update `app.vue` code
@@ -39,9 +45,14 @@ Below you can find a migration checklist;
 - [ ] add empty link to `nitro.prerender.failOnError`
 - [ ] make absolute image path
 - [ ] move eslintrc config and use only `@nuxtjs/eslint-config-typescript`
+- [ ] rename eslint config file as `.eslintrc`
 - [ ] add eslint run command to scripts
+- [ ] move your scripts from old project
 - [ ] remove build stage from scripts
 - [ ] set `PayloadExtraction` `false`
+- [ ] migration of remaining config in `nuxt.config.ts`
+- [ ] Edit incoming old config according to the new config(`.env` config structure etc.)
+- [ ] sort configs in `nuxt.config.ts`
 ```
 
 Start by running following command
@@ -214,7 +225,7 @@ export default defineNuxtConfig({
 })
 ```
 
-### env files
+### `.env.*` files
 
 By adding environment files, you can export these files during build and use
 your constant values during build or runtime.
@@ -248,7 +259,7 @@ To access it from somewhere other than `runtimeConfig`, you can call it as
 
 ### Prebuild
 
-In the preparation phase with prebuild, we prepare the markdowns at the root
+In the setup phase with prebuild, we prepare the markdowns at the root
 and put them under content. We also prepare the corresponding pages and pull
 the markdown content in these pages and render them.
 
@@ -267,10 +278,13 @@ export default defineNuxtConfig({
 > :information_source:
 >
 > Don't forget to install the dependencies of the prebuild.
-> `npm install log-symbols --save-dev`
-> `npm install @mermaid-js/mermaid-cli --save-dev`
+>
+> ```bash
+> npm install log-symbols --save-dev
+> npm install @mermaid-js/mermaid-cli --save-dev
+> ```
 
-#### config.yml
+#### `config.yml`
 
 When you get the prebuild from your old project or when you write a new one,
 you can remove `puppeteer` warnings by saying `config.headless: new` while
@@ -322,7 +336,7 @@ or
 import { type TestNewProps } from '~~/types';
 ```
 
-### prerender fail
+### Prerender fail
 
 After version nuxt 3.6.2, if a page corresponding to the link cannot be found,
 it gives generate error.
@@ -351,12 +365,19 @@ trailing slash issue.
 See here for possible img cases.
 [test](./test/index.md)
 
+### Move `package.json` scripts
+
+You can move your scripts in `package.json` from your old project. There is no
+need to build before Generate and Development, remove it from your scripts.
+
 ### Eslint
+
+Move your Eslint files and rename the config files to `.eslintrc`.
 
 The `@nuxtjs/eslint-config-typescript` module is sufficient by itself, so
 other modules have been removed from eslint.
 
-For eslint to work, you can run it in the prepare script in `package.json` with
+For eslint to work, you can run it in the setup script in `package.json` with
 `npx eslint .` or if you have added eslint to dependencies, you can run it
 with `eslint .` before build.
 
@@ -366,7 +387,26 @@ Removing the build stage we added in generate. Now nuxt builds itself before
 generate. The build script that we want to run before generate has been
 removed from the scripts.
 
-## PayloadExtraction
+### PayloadExtraction
 
 We do not want the `_payload.json` file to be created, so we set
 `experimental.payloadExtraction` to `false`.
+
+### Migration `nuxt.config.ts`
+
+At this point, if there is a config left in your old file, move your config
+other than the following.
+
+- `router.options.strict: true` ❌
+- `typescript.typeCheck: true` ❌
+
+These configs are no longer needed. Apart from these, you can move your
+configurations in `runtimeConfig` or routes that you want to be generated.
+
+Remember to sort the config in name order after the migration.
+
+> :information_source:
+>
+> Don't forget to review the remaining config from the old project when you
+> migrate. Since the config from the `.env` file is renamed, your config such
+> as `app.baseUrl` may be corrupted etc.
