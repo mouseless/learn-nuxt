@@ -47,6 +47,7 @@ Below you can find a migration checklist;
 - [ ] move eslintrc config and use only `@nuxtjs/eslint-config-typescript`
 - [ ] rename eslint config file as `.eslintrc`
 - [ ] add eslint run command to scripts
+- [ ] move your scripts from old project
 - [ ] remove build stage from scripts
 - [ ] set `PayloadExtraction` `false`
 - [ ] migration of remaining config in `nuxt.config.ts`
@@ -359,6 +360,11 @@ trailing slash issue.
 
 See here for possible img cases.
 [test](./test/index.md)
+
+### Move `package.json` scripts
+
+You can move your scripts in `package.json` from your old project. There is no
+need to build before Generate and Development, remove it from your scripts.
 
 ### Eslint
 
