@@ -45,6 +45,7 @@ Below you can find a migration checklist;
 - [ ] add empty link to `nitro.prerender.failOnError`
 - [ ] make absolute image path
 - [ ] move eslintrc config and use only `@nuxtjs/eslint-config-typescript`
+- [ ] rename eslint config file as `.eslintrc`
 - [ ] add eslint run command to scripts
 - [ ] remove build stage from scripts
 - [ ] set `PayloadExtraction` `false`
@@ -222,7 +223,7 @@ export default defineNuxtConfig({
 })
 ```
 
-### env files
+### `.env.*` files
 
 By adding environment files, you can export these files during build and use
 your constant values during build or runtime.
@@ -278,7 +279,7 @@ export default defineNuxtConfig({
 > `npm install log-symbols --save-dev`
 > `npm install @mermaid-js/mermaid-cli --save-dev`
 
-#### config.yml
+#### `config.yml`
 
 When you get the prebuild from your old project or when you write a new one,
 you can remove `puppeteer` warnings by saying `config.headless: new` while
@@ -330,7 +331,7 @@ or
 import { type TestNewProps } from '~~/types';
 ```
 
-### prerender fail
+### Prerender fail
 
 After version nuxt 3.6.2, if a page corresponding to the link cannot be found,
 it gives generate error.
@@ -360,6 +361,8 @@ See here for possible img cases.
 [test](./test/index.md)
 
 ### Eslint
+
+Move your Eslint files and rename the config files to `.eslintrc`.
 
 The `@nuxtjs/eslint-config-typescript` module is sufficient by itself, so
 other modules have been removed from eslint.
