@@ -166,3 +166,9 @@ See `/transformers/optimus-prime.ts` to see how it is done.
 > For Content Transformers to work, we need to add them as modules to Nuxt.
 > Nuxt does this automatically if the nuxt modules are under `/modules`. You
 > can see how to add them as modules in `/modules/transform-module.ts`.
+
+## Data Fetching
+
+TBD...
+
+See [/demo/contributors](/demo/contributors/)
