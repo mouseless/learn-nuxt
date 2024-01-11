@@ -1,7 +1,7 @@
 <template>
-  <div class="root">
+  <div class="contributor-container">
     <div v-for="contributor in contributors" :key="contributor.author.login">
-      <div class="card">
+      <div class="contributor">
         <img class="profile-image" :src="contributor.author.avatar_url">
         <h3>{{ contributor.author.login }}</h3>
         <p><strong>Total commits:</strong> {{ contributor.total }}</p>
@@ -10,12 +10,10 @@
   </div>
 </template>
 <script setup>
-const contributors = await $fetch(
-  "https://api.github.com/repos/mouseless/learn-nuxt/stats/contributors"
-);
+const { data: contributors } = await useAsyncData(() => fetchCommits());
 </script>
 <style>
-.root {
+.contributor-container {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -23,9 +21,7 @@ const contributors = await $fetch(
   align-items: center;
 }
 
-.card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
+.contributor {
   padding: 16px;
   text-align: center;
   width: 200px;
