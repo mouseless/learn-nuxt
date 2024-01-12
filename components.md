@@ -172,14 +172,15 @@ See `/transformers/optimus-prime.ts` to see how it is done.
 In our data fetching processes, we utilize Nuxt's operations such as `$fetch`,
 `useFetch`, and `useAsyncData`. To streamline the management and readability of
 tasks like specifying URLs, setting headers, and defining options in such
-operations, we prefer keeping them in a separate area. In Nuxt examples and as
-it is automatically imported, we place them under the `composables` folder.
+operations, we prefer keeping them in a separate area. Nuxt examples use the
+`composables` folder for these functions, and we follow suit. This folder is
+also a practical choice because of its automatic import feature.
 
 - `$fetch`: We use `$fetch` to perform simple API calls.
 - `useAsyncData`: Typically, we make requests with `$fetch` and `useAsyncData`
   to make them more SSR-friendly while taking advantage of capabilities like
   watching for changes with the watch parameter.
-- `useFetch`: We using the `useFetch` composable when there is a need to utilize
+- `useFetch`: We use `useFetch` composable when there is a need to utilize
   both `$fetch` and `useAsyncData` in the same context. This choice is driven by
   the desire for a more straightforward data-fetching approach, streamlining the
   process and enhancing clarity in our codebase.
@@ -189,6 +190,6 @@ it is automatically imported, we place them under the `composables` folder.
 > `useFetch` composable is a wrapper around the `useAsyncData` composable and
 > `$fetch` utility.
 
-See `/composables/github-api.js` to see an example send requests.
+See `/composables/github-api.js`, for example send requests.
 
 Demo is at [/demo/contributors](/demo/contributors/).
