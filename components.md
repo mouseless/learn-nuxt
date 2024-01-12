@@ -189,6 +189,6 @@ it is automatically imported, we place them under the `composables` folder.
 > `useFetch` composable is a wrapper around the `useAsyncData` composable and
 > `$fetch` utility.
 
-See `/composables/github-api.js` to see how we send requests.
+See `/composables/github-api.js` to see an example send requests.
 
-See [/demo/contributors](/demo/contributors/) for an example request usage.
+Demo is at [/demo/contributors](/demo/contributors/).
