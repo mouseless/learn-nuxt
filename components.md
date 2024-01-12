@@ -169,6 +169,15 @@ See `/transformers/optimus-prime.ts` to see how it is done.
 
 ## Data Fetching
 
-TBD...
+Since Nuxt recommends using `$fetch` for data fetch, we fetch data using
+`$fetch` for simple requests. We write a method for each endpoint and present it
+under composable. In this way, it is automatically imported and we assign the
+request by calling the method from the page we want.
 
-See [/demo/contributors](/demo/contributors/)
+Since the type of site we are targeting is a static site, we want requests to be
+made only on the client side.For this, we give the server parameter false in
+requests.
+
+See `/composables/github-api.js` to see how we send requests.
+
+See [/demo/contributors](/demo/contributors/) to see what we use requests for.

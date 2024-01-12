@@ -10,9 +10,9 @@
   </div>
 </template>
 <script setup>
-const { data: contributors } = await useAsyncData(() => fetchCommits());
+const { data: contributors } = await useAsyncData(() => fetchContributorsStats());
 </script>
-<style>
+<style lang="scss">
 .contributor-container {
   display: flex;
   flex-wrap: wrap;
@@ -31,7 +31,7 @@ const { data: contributors } = await useAsyncData(() => fetchCommits());
 .profile-image {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: var(--border-radius);
   margin-bottom: 8px;
 }
 </style>
