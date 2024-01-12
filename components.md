@@ -169,15 +169,26 @@ See `/transformers/optimus-prime.ts` to see how it is done.
 
 ## Data Fetching
 
-Since Nuxt recommends using `$fetch` for data fetch, we fetch data using
-`$fetch` for simple requests. We write a method for each endpoint and present it
-under composable. In this way, it is automatically imported and we assign the
-request by calling the method from the page we want.
+In our data fetching processes, we utilize Nuxt's operations such as `$fetch`,
+`useFetch`, and `useAsyncData`. To streamline the management and readability of
+tasks like specifying URLs, setting headers, and defining options in such
+operations, we prefer keeping them in a separate area. In Nuxt examples and as
+it is automatically imported, we place them under the `composables` folder.
 
-Since the type of site we are targeting is a static site, we want requests to be
-made only on the client side.For this, we give the server parameter false in
-requests.
+- `$fetch`: We use `$fetch` to perform simple API calls.
+- `useAsyncData`: Typically, we make requests with `$fetch` and `useAsyncData`
+  to make them more SSR-friendly while taking advantage of capabilities like
+  watching for changes with the watch parameter.
+- `useFetch`: We using the `useFetch` composable when there is a need to utilize
+  both `$fetch` and `useAsyncData` in the same context. This choice is driven by
+  the desire for a more straightforward data-fetching approach, streamlining the
+  process and enhancing clarity in our codebase.
+
+> :information_source:
+>
+> `useFetch` composable is a wrapper around the `useAsyncData` composable and
+> `$fetch` utility.
 
 See `/composables/github-api.js` to see how we send requests.
 
-See [/demo/contributors](/demo/contributors/) to see what we use requests for.
+See [/demo/contributors](/demo/contributors/) for an example request usage.

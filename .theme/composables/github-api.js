@@ -5,7 +5,7 @@ const repositoryUrl = "https://api.github.com/repos/mouseless/learn-nuxt";
 export const fetchContributorsStats = async() => {
   // Look here for response detail and headers =>
   // https://docs.github.com/en/rest/metrics/statistics?apiVersion=2022-11-28#get-all-contributor-commit-activity
-  const contributors = await $fetch(
+  const result = await $fetch(
     joinURL(repositoryUrl, "/stats/contributors"),
     {
       method: "GET",
@@ -18,5 +18,5 @@ export const fetchContributorsStats = async() => {
     }
   );
 
-  return contributors;
+  return result;
 };
