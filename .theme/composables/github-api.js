@@ -9,7 +9,6 @@ export const fetchContributorsStats = async() => {
     joinURL(repositoryUrl, "/stats/contributors"),
     {
       method: "GET",
-      lazy: false,
       // This will work only client side
       server: false,
       headers: {

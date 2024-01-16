@@ -10,7 +10,12 @@
   </div>
 </template>
 <script setup>
-const { data: contributors } = await useAsyncData(() => fetchContributorsStats());
+const { data: contributors } = await useAsyncData(
+  () => fetchContributorsStats(),
+  {
+    server: false
+  }
+);
 </script>
 <style lang="scss">
 .contributor-container {
