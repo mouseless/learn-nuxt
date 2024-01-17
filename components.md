@@ -167,29 +167,25 @@ See `/transformers/optimus-prime.ts` to see how it is done.
 > Nuxt does this automatically if the nuxt modules are under `/modules`. You
 > can see how to add them as modules in `/modules/transform-module.ts`.
 
-## Data Fetching
+## Fetching Data
 
-In our data fetching processes, we utilize Nuxt's operations such as `$fetch`,
-`useFetch`, and `useAsyncData`. To streamline the management and readability of
-tasks like specifying URLs, setting headers, and defining options in such
-operations, we prefer keeping them in a separate area. Nuxt examples use the
-`composables` folder for these functions, and we follow suit. This folder is
-also a practical choice because of its automatic import feature.
+We use Nuxt's `$fetch` operations for our data fetches. To streamline the
+management and readability of tasks like specifying URLs, setting headers, and
+defining options in such operations, we prefer keeping them in a separate area.
+Nuxt examples use the `composables` folder for these functions, and we follow
+suit. This folder is also a practical choice because of its automatic import
+feature.
 
-- `$fetch`: We use `$fetch` to perform simple API calls.
-- `useAsyncData`: Typically, we make requests with `$fetch` and `useAsyncData`
-  to make them more SSR-friendly while taking advantage of capabilities like
-  watching for changes with the watch parameter.
-- `useFetch`: We use `useFetch` composable when there is a need to utilize
-  both `$fetch` and `useAsyncData` in the same context. This choice is driven by
-  the desire for a more straightforward data-fetching approach, streamlining the
-  process and enhancing clarity in our codebase.
+On the `script setup` side, if the data needs to be kept up to date (for example
+the number of commits of contributors on github) we do two things.
 
-> :information_source:
->
-> `useFetch` composable is a wrapper around the `useAsyncData` composable and
-> `$fetch` utility.
+1. Pulling the data during generation, for which we use `onServerPrefetch`.
+1. When the user makes a request to the page, we take the current data and
+  replace it with the old one taken during generation. We do this with
+  `onBeforeMount` or `onMounted`.
+
+If there is no need to update data, we do not use step 2.
 
 See `/composables/github-api.js`, for example send requests.
 
-Demo is at [/demo/contributors](/demo/contributors/).
+Demo is at [/demo/fetching-data](/demo/fetching-data/).

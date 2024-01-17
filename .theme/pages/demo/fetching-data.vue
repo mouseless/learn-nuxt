@@ -10,12 +10,10 @@
   </div>
 </template>
 <script setup>
-const { data: contributors } = await useAsyncData(
-  () => fetchContributorsStats(),
-  {
-    server: false
-  }
-);
+const contributors = ref();
+
+onServerPrefetch(async() => contributors.value = await fetchContributorsStats());
+onBeforeMount(async() => contributors.value = await fetchContributorsStats());
 </script>
 <style lang="scss">
 .contributor-container {
