@@ -1,26 +1,71 @@
 <template>
-  <div class="contributor-container">
-    <div v-for="contributor in contributors" :key="contributor.author.login">
-      <div class="contributor">
-        <img class="profile-image" :src="contributor.author.avatar_url">
-        <h3>{{ contributor.author.login }}</h3>
-        <p><strong>Total commits:</strong> {{ contributor.total }}</p>
+  <div class="container">
+    <div class="organization">
+      <h2>Fetch Once - Hybrid Example</h2>
+      <div>
+        <strong>Organization:</strong> {{ organization.name }} <br>
+        <strong>Public repositories count:</strong> {{ organization.public_repos }}
+      </div>
+    </div>
+    <div class="repository">
+      <h2>Fetch Once - Only Client</h2>
+      <div>
+        <strong>Repository:</strong> {{ repository?.name }} <br>
+        <strong>Description:</strong> {{ repository?.description }}
+      </div>
+    </div>
+    <div>
+      <h2>Fetch Twice - Server and Client</h2>
+      <div class="contributors">
+        <div
+          v-for="contributor in contributors"
+          :key="contributor.author.login"
+        >
+          <div class="contributor">
+            <img class="profile-image" :src="contributor.author.avatar_url">
+            <h3>{{ contributor.author.login }}</h3>
+            <p><strong>Total commits:</strong> {{ contributor.total }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script setup>
+const { getContributorStats, getRepository, getOrganization } = useGitHub();
+
+const organizationName = "mouseless";
+const repositoryFullName = `${organizationName}/learn-nuxt`;
+const repository = ref([]);
 const contributors = ref();
 
-onServerPrefetch(async() => contributors.value = await fetchContributorsStats());
-onBeforeMount(async() => contributors.value = await fetchContributorsStats());
+// Only server side
+const { data: organization } = await useAsyncData(
+  () => getOrganization(organizationName),
+  { server: true }
+);
+
+// Only client side
+onBeforeMount(async() => repository.value = await getRepository(repositoryFullName));
+
+// Both side
+onServerPrefetch(async() => contributors.value = await getContributorStats(repositoryFullName));
+onBeforeMount(async() => contributors.value = await getContributorStats(repositoryFullName));
 </script>
 <style lang="scss">
-.contributor-container {
+.container {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contributors {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 

@@ -166,26 +166,3 @@ See `/transformers/optimus-prime.ts` to see how it is done.
 > For Content Transformers to work, we need to add them as modules to Nuxt.
 > Nuxt does this automatically if the nuxt modules are under `/modules`. You
 > can see how to add them as modules in `/modules/transform-module.ts`.
-
-## Fetching Data
-
-We use Nuxt's `$fetch` operations for our data fetches. To streamline the
-management and readability of tasks like specifying URLs, setting headers, and
-defining options in such operations, we prefer keeping them in a separate area.
-Nuxt examples use the `composables` folder for these functions, and we follow
-suit. This folder is also a practical choice because of its automatic import
-feature.
-
-On the `script setup` side, if the data needs to be kept up to date (for example
-the number of commits of contributors on github) we do two things.
-
-1. Pulling the data during generation, for which we use `onServerPrefetch`.
-1. When the user makes a request to the page, we take the current data and
-  replace it with the old one taken during generation. We do this with
-  `onBeforeMount` or `onMounted`.
-
-If there is no need to update data, we do not use step 2.
-
-See `/composables/github-api.js`, for example send requests.
-
-Demo is at [/demo/fetching-data](/demo/fetching-data/).

@@ -1,0 +1,53 @@
+import { joinURL } from "ufo";
+
+export default function() {
+  const urlBase = "https://api.github.com";
+
+  async function getContributorStats(repository) {
+    // Look here for response detail and headers =>
+    // https://docs.github.com/en/rest/metrics/statistics?apiVersion=2022-11-28#get-all-contributor-commit-activity
+    return await $fetch(
+      joinURL(urlBase, "repos", repository, "stats/contributors"),
+      {
+        method: "GET",
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28"
+        }
+      }
+    );
+  };
+
+  async function getRepository(repository) {
+    // Look here for response detail and headers =>
+    // https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#get-a-repository
+    return await $fetch(
+      joinURL(urlBase, "repos", repository),
+      {
+        method: "GET",
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28"
+        }
+      }
+    );
+  };
+
+  async function getOrganization(organization) {
+    // Look here for response detail and headers =>
+    // https://docs.github.com/en/rest/orgs/orgs?apiVersion=2022-11-28#get-an-organization
+    return await $fetch(
+      joinURL(urlBase, "orgs", organization),
+      {
+        method: "GET",
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28"
+        }
+      }
+    );
+  };
+
+  return {
+    getContributorStats,
+    getRepository,
+    getOrganization
+  };
+}
