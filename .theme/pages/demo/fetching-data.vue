@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="organization">
-      <h2>Fetch Once - Hybrid Example</h2>
+      <h2>Fetch Once - Server or Client Example</h2>
       <div>
         <strong>Organization:</strong> {{ organization.name }} <br>
         <strong>Public repositories count:</strong> {{ organization.public_repos }}
@@ -39,16 +39,13 @@ const repositoryFullName = `${organizationName}/learn-nuxt`;
 const repository = ref([]);
 const contributors = ref();
 
-// Only server side
-const { data: organization } = await useAsyncData(
-  () => getOrganization(organizationName),
-  { server: true }
-);
+// Fetch Once - Server or Client
+const { data: organization } = await useAsyncData(() => getOrganization(organizationName));
 
-// Only client side
+// Fetch Once - Only Client
 onBeforeMount(async() => repository.value = await getRepository(repositoryFullName));
 
-// Both side
+// Fetch Twice - Server and Client
 onServerPrefetch(async() => contributors.value = await getContributorStats(repositoryFullName));
 onBeforeMount(async() => contributors.value = await getContributorStats(repositoryFullName));
 </script>
