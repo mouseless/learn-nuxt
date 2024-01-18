@@ -1,1 +1,0 @@
-import{f as a,o,b as t,t as c,_,a as n}from"./entry.69108db4.js";const p=a({__name:"ComponentWithProps",props:{message:{}},setup(r){return(s,e)=>(o(),t("div",null," Message: "+c(s.message),1))}}),m={};function i(r,s){const e=p;return o(),t("div",null,[n(e,{message:"Hello"}),n(e,{message:"World"})])}const f=_(m,[["render",i]]);export{f as default};
