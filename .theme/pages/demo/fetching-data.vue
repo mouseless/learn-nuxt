@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="organization">
-      <h2>Fetch Once - Server or Client Example</h2>
+      <h2>Fetch Once - Server or Client</h2>
       <div>
         <strong>Organization:</strong> {{ organization.name }} <br>
         <strong>Public repositories count:</strong> {{ organization.public_repos }}
