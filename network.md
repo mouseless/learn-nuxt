@@ -1,5 +1,5 @@
 ---
-position: 8
+position: 6
 ---
 
 # Network
@@ -15,32 +15,34 @@ Nuxt examples use the `composables` folder for these functions, and we follow
 suit. This folder is also a practical choice because of its automatic import
 feature.
 
-### Fetch on Server Side
+### Fetch Once - Server or Client
 
 We do the one-time fetch operations on the server side and bring them to the
-client side by making the server side of `useAsyncData` true.
+client side by making the server side of `useAsyncData` true. Use this method if
+this data is not expected to change frequently.
 
-### Fetch on Only Client Side
+### Fetch Once - Only Client
 
 We use `onMounted`, `onBeforeMount` etc. methods for the fetch operations
-requested to be done on the client side.
+requested to be done on the client side. Use this method if this data is likely
+to change frequently and there are no SEO concerns for the content.
 
-### Fetch on Both Side
+### Fetch Twice - Server and Client
 
-If the data needs to be kept up to date (for example the number of commits of
-contributors on github) we use two things. We use `onServerPrefetch` for the
-fetch operation on the server side and `onMounted` or `onBeforeMount` for the
-operation to be performed on the client side.
+We use `onServerPrefetch` for the fetch operation during site generation, and
+`onMounted` or `onBeforeMount` for the operation to be performed on the client
+side. We use this method if this data is likely to change and there are SEO
+concerns.
 
 ### Requests in Composables
 
 We group the requests under composables with `use` prefix. In this way, we
-follow the same naming convention as nuxt.
+follow the same naming convention as Nuxt.
 
 Where we group the endpoints under an unnamed function and return them. This way
-nuxt automatically imports them with the same file name. When we want to use it,
+Nuxt automatically imports them with the same file name. When we want to use it,
 we can call it with the name we grouped and use it.
 
-See `/composables/useGithub.js`, for example send requests.
+See `/composables/useGitHub.js`, for example send requests.
 
 Demo is at [/demo/fetching-data](/demo/fetching-data/).

@@ -12,12 +12,13 @@ Read below guides to find out how we use nuxt;
 - [Content](content.md)
 - [Pages](pages.md)
 - [Vue Files](vue-files.md)
-- [Components](components.md)
 - [Routing](routing.md)
+- [Components](components.md)
+- [Network](network.md)
 - [Configuration](configuration.md)
 
 Enjoy your web site project 🤗
 
-To contribute please read [Contributing](CONTRIBUTING.md).
+To contribute please read our [contribution guide](CONTRIBUTING.md).
 
-To see migration guides please visit [Migrations](migrations.md).
+To see migration guides please visit [here](migrations.md).
