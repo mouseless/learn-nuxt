@@ -6,13 +6,17 @@
 
 Clean upgrade. No issues.
 
+### 7.22.15 Added
+
+No issues
+
 ## `@mermaid-js/mermaid-cli`
 
 ### 10.4.0 to 10.8.0
 
 Clean upgrade. No issues.
 
-### 10.4.0
+### 10.1.0 to 10.4.0
 
 Clean upgrade. No issues.
 
@@ -29,7 +33,7 @@ Clean upgrade. No issues.
 
 Clean upgrade. No issues.
 
-#### 2.8.5
+### 2.5.2 to 2.8.5
 
 [nuxt.config.ts]
 ```ts
@@ -44,7 +48,7 @@ mdc: {
 }
 ```
 
-#### 2.5.2
+### 2.4.3 to 2.5.2
 
 [nuxt.config.ts]
 ```ts
@@ -57,7 +61,7 @@ content: {
 
 ## `dotenv`
 
-### 16.3.1
+### 16.0.3 to 16.3.1
 
 Clean upgrade. No issues.
 
@@ -76,7 +80,7 @@ Clean upgrade. No issues.
 
 ## `eslint-plugin-vue`
 
-### 9.17.0
+### 9.11.0 to 9.17.0
 
 Clean upgrade. No issues.
 
@@ -93,13 +97,13 @@ Clean upgrade. No issues.
 
 Clean upgrade. No issues.
 
-#### 5.1.0
+### 5.1.0 Added
 
 Added it because it is needed for the `log` task in `.prebuild`.
 
 ## `Node`
 
-### 20.8.0
+### 16.x to 20.8.0
 
 When upgrading to this version, version 3.4.1 of nuxt gives run time errors.
 
@@ -141,7 +145,7 @@ useHead({
 });
 ```
 
-### 3.7.4
+### 3.4.1 to 3.7.4
 
 With this version, the generate process fails if the url of the links cannot be
 generated. So make sure that the target page of the links exists.
@@ -157,27 +161,13 @@ You can see this move by looking at [migrations](../migrations.md).
 
 Clean upgrade. No issues.
 
-### 1.69.2
+### 1.62.0 to 1.69.3
 
 Clean upgrade. No issues.
 
-```json
-"devDependencies": {
-  "sass": "^1.62.0",
-  ...
-}
-```
-
 ## `typescript`
 
-### 5.2.2
-
-```json
-"devDependencies": {
-  "typescript": "^5.2.2",
-  ...
-}
-```
+### 5.0.4 to 5.2.2
 
 When we upgraded the Typescript version to 5.2.2 there was a conflict with
 eslint. You can see the problem below.
@@ -201,14 +191,7 @@ Please only submit bug reports when using the officially supported version.
 
 ## `types/node`
 
-### 20.8.4
-
-```json
-"devDependencies": {
-  "@types/node": "^20.8.4",
-  ...
-}
-```
+### 18.15.11 to 20.8.4
 
 This version of type/node does not work with version 3.4.1 of nuxt. You can
 downgrade the version or upgrade the version of nuxt for a solution.
@@ -227,39 +210,18 @@ Clean upgrade. No issues.
 
 ## `vue-tsc`
 
-### 1.8.19
+### 1.2.0 to 1.8.19
 
 Clean upgrade. No issues.
-
-```json
-"devDependencies": {
-  "vue-tsc": "^1.8.19",
-  ...
-}
-```
 
 ## `yaml`
 
-### 2.3.2
+### 2.2.1 to 2.3.2
 
 Clean upgrade. No issues.
-
-```json
-"devDependencies": {
-  "yaml": "^2.3.2",
-  ...
-}
-```
 
 ## `webpack`
 
-### 5.88.2
+### 5.79.0 to 5.88.2
 
 Clean upgrade. No issues.
-
-```json
-"devDependencies": {
-  "webpack": "^5.88.2",
-  ...
-}
-```
