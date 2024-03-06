@@ -1,11 +1,99 @@
-# Package upgrades for the v3.7.4 of Nuxt
+# Package upgrades
 
-The upgrade sequences are as below. Different errors may occur if the order
-changes.
+## `@babel/eslint-parser`
+
+### 7.22.15 to 7.23.10
+
+Clean upgrade. No issues.
+
+## `@mermaid-js/mermaid-cli`
+
+### 10.4.0 to 10.8.0
+
+Clean upgrade. No issues.
+
+### 10.4.0
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+  "@mermaid-js/mermaid-cli": "^10.4.0",
+  ...
+}
+```
+
+## `@nuxt/content`
+
+### 2.8.5 to 2.12.0
+
+Clean upgrade. No issues.
+
+#### 2.8.5
+
+[nuxt.config.ts]
+```ts
+mdc: {
+  headings: {
+    anchorLinks: {
+      h1: false,
+      h2: false,
+      ...
+    }
+  }
+}
+```
+
+#### 2.5.2
+
+[nuxt.config.ts]
+```ts
+content: {
+  anchorLinks: {
+    depth: 0
+  }
+}
+```
+
+## `dotenv`
+
+### 16.3.1
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+  "dotenv": "^16.3.1",
+  ...
+}
+```
+
+## `eslint`
+
+### 8.51.0 to 8.57.0
+
+Clean upgrade. No issues.
+
+## `eslint-plugin-vue`
+
+### 9.17.0
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+  "eslint-plugin-vue": "^9.17.0",
+  ...
+}
+```
 
 ## `log-symbols`
 
-### 5.1.0
+### 5.1.0 to 6.0.0
+
+Clean upgrade. No issues.
+
+#### 5.1.0
 
 Added it because it is needed for the `log` task in `.prebuild`.
 
@@ -29,46 +117,45 @@ not found: "ts.executeCommandLine(ts.sys, ts.noop, ts.sys.args);"".
 
 Upgraded the nuxt version to 3.7.4 to fix it.
 
-## `Mermaid-js`
+## `nuxt`
 
-### 10.4.0
+### 3.7.4 to 3.10.3
 
-Clean upgrade. No issues.
+#### Using `useSeoMeta` for open graph instead of `useHead`
 
-```json
-"devDependencies": {
-  "@mermaid-js/mermaid-cli": "^10.4.0",
-  ...
-}
+```javascript
+useSeoMeta({
+  ogTitle: ...,
+  ogDescription: ...
+});
 ```
 
-## `dotenv`
+instead of
 
-### 16.3.1
-
-Clean upgrade. No issues.
-
-```json
-"devDependencies": {
-  "dotenv": "^16.3.1",
-  ...
-}
+```javascript
+useHead({
+  meta: [
+    { hid: "og:title", property: "og:title", content: ... },
+    { hid: "og:description", property: "og:description", content: ... }
+  ]
+});
 ```
 
-## `eslint-plugin-vue`
+### 3.7.4
 
-### 9.17.0
+With this version, the generate process fails if the url of the links cannot be
+generated. So make sure that the target page of the links exists.
 
-Clean upgrade. No issues.
+After upgrading from 3.4.1 to 3.7.4, due to incompatibilities, it was decided
+to move to a final version nuxt project built with the new nuxt kit.
 
-```json
-"devDependencies": {
-  "eslint-plugin-vue": "^9.17.0",
-  ...
-}
-```
+You can see this move by looking at [migrations](../migrations.md).
 
 ## `sass`
+
+### 1.69.3 to 1.71.1
+
+Clean upgrade. No issues.
 
 ### 1.69.2
 
@@ -77,45 +164,6 @@ Clean upgrade. No issues.
 ```json
 "devDependencies": {
   "sass": "^1.62.0",
-  ...
-}
-```
-
-## `yaml`
-
-### 2.3.2
-
-Clean upgrade. No issues.
-
-```json
-"devDependencies": {
-  "yaml": "^2.3.2",
-  ...
-}
-```
-
-## `webpack`
-
-### 5.88.2
-
-Clean upgrade. No issues.
-
-```json
-"devDependencies": {
-  "webpack": "^5.88.2",
-  ...
-}
-```
-
-## `vue-tsc`
-
-### 1.8.19
-
-Clean upgrade. No issues.
-
-```json
-"devDependencies": {
-  "vue-tsc": "^1.8.19",
   ...
 }
 ```
@@ -165,42 +213,53 @@ Please only submit bug reports when using the officially supported version.
 This version of type/node does not work with version 3.4.1 of nuxt. You can
 downgrade the version or upgrade the version of nuxt for a solution.
 
-## `nuxt`
+## `vue`
 
-### 3.7.4
+### 3.3.4 to 3.4.21
 
-With this version, the generate process fails if the url of the links cannot be
-generated. So make sure that the target page of the links exists.
+Clean upgrade. No issues.
 
-After upgrading from 3.4.1 to 3.7.4, due to incompatibilities, it was decided
-to move to a final version nuxt project built with the new nuxt kit.
+## `vue-router`
 
-You can see this move by looking at [migrations](../migrations.md).
+### 4.2.5 to 4.3.0
 
-## `nuxt Content`
+Clean upgrade. No issues.
 
-### 2.5.2
+## `vue-tsc`
 
-[nuxt.config.ts]
-```ts
-content: {
-  anchorLinks: {
-    depth: 0
-  }
+### 1.8.19
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+  "vue-tsc": "^1.8.19",
+  ...
 }
 ```
 
-### 2.8.5
+## `yaml`
 
-[nuxt.config.ts]
-```ts
-mdc: {
-  headings: {
-    anchorLinks: {
-      h1: false,
-      h2: false,
-      ...
-    }
-  }
+### 2.3.2
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+  "yaml": "^2.3.2",
+  ...
+}
+```
+
+## `webpack`
+
+### 5.88.2
+
+Clean upgrade. No issues.
+
+```json
+"devDependencies": {
+  "webpack": "^5.88.2",
+  ...
 }
 ```
