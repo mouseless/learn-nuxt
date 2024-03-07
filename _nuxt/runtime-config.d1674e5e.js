@@ -1,1 +1,0 @@
-import{b as t,d as o,t as s,u as a,e,o as i,n as c}from"./entry.981ae92b.js";const u=e("h1",null,"Runtime Config",-1),r=e("code",null,"{{ runtimeConfig.public.baseURL }}",-1),p={__name:"runtime-config",setup(l){const n=c();return(_,m)=>(i(),t("div",null,[u,r,o(" = "+s(a(n).public.baseURL),1)]))}};export{p as default};

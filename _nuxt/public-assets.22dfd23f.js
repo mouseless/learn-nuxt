@@ -1,1 +1,0 @@
-import{_ as s,b as e,o,e as t}from"./entry.981ae92b.js";const c=""+globalThis.__publicAssetsURL("logo.png"),_={},n=t("img",{src:c},null,-1),r=[n];function l(a,i){return o(),e("div",null,r)}const d=s(_,[["render",l]]);export{d as default};
