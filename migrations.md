@@ -7,6 +7,53 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
+## Nuxt: v3.7.4 👉 v3.10.3
+
+Below you can find a migration checklist;
+
+```markdown
+- [ ] upgrade nuxt with `npx nuxi upgrade`. This will upgrade to the latest
+  version.
+- [ ] upgrade `@babel/eslint-parser`
+- [ ] upgrade `@mermaid-js/mermaid-cli`
+- [ ] upgrade `@nuxt/content`
+- [ ] upgrade `eslint`
+- [ ] upgrade `log-symbols`
+- [ ] upgrade `sass`
+- [ ] upgrade `vue`
+- [ ] upgrade `vue-router`
+- [ ] use `useSeoMeta` instead of `useHead` for open graph
+```
+
+> :warning:
+>
+> `npx nuxi upgrade` upgrade nuxt with the latest version. When we did this
+> update, nuxt had version `3.10.3`. Only this version is guaranteed to be no
+> issue :smile:
+
+### Use `useSeoMeta`
+
+While preparing the open graph data, we were updating the meta using `useHead`.
+We switched to `useSeaMeta` which comes with the new versions of Nuxt.
+
+```javascript
+useSeoMeta({
+  ogTitle: ...,
+  ogDescription: ...
+});
+```
+
+instead of
+
+```javascript
+useHead({
+  meta: [
+    { hid: "og:title", property: "og:title", content: ... },
+    { hid: "og:description", property: "og:description", content: ... }
+  ]
+});
+```
+
 ## Node
 
 `Nuxt` v3.7.4 requires `Node` version v18 and above to work but we've decided

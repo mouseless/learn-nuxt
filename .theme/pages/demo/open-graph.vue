@@ -4,14 +4,10 @@
   </div>
 </template>
 <script setup>
-import { useHead } from "#imports";
-
 const sampleText = part => `Open Graph - ${part}`;
 
-useHead({
-  meta: [
-    { hid: "og:title", property: "og:title", content: sampleText("title") },
-    { hid: "og:description", property: "og:description", content: sampleText("description") }
-  ]
+useSeoMeta({
+  ogTitle: sampleText("title"),
+  ogDescription: sampleText("description")
 });
 </script>
