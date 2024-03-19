@@ -166,3 +166,10 @@ See `/transformers/optimus-prime.ts` to see how it is done.
 > For Content Transformers to work, we need to add them as modules to Nuxt.
 > Nuxt does this automatically if the nuxt modules are under `/modules`. You
 > can see how to add them as modules in `/modules/transform-module.ts`.
+
+## Pinia
+
+We use Pinia when we try to fetch the same data multiple times. For example,
+let's say we use the same titles for the items in the header, footer and side
+menu. With Pinia, we can fetch the data once and distribute it to other
+components.
