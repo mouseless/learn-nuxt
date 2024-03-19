@@ -169,9 +169,9 @@ See `/transformers/optimus-prime.ts` to see how it is done.
 
 ## Pinia
 
-We use Pinia when we try to fetch the same data multiple times. For example,
-let's say we use the same titles for the items in the header, footer and side
-menu. With Pinia, we can fetch the data once and distribute it to other
+We use [Pinia][pinia] when we try to fetch the same data multiple times. For
+example, let's say we use the same titles for the items in the header, footer
+and side menu. With Pinia, we can fetch the data once and distribute it to other
 components.
 
 See [/store/piniaStore](/store/piniaStore.js) for the pinia store where we store
@@ -179,3 +179,5 @@ the fetched data.
 
 See [demo/pinia](/demo/pinia) for demo of how we use the Pinia store to add and
 import data.
+
+[pinia]: https://pinia.vuejs.org/ssr/nuxt.html

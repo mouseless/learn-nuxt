@@ -7,5 +7,7 @@ import { usePiniaStore } from "~/store/piniaStore";
 const store = usePiniaStore();
 const titles = ["title1", "title2", "title3"];
 
-store.setTitles(titles);
+if(store.titles === null) {
+  store.setTitles(titles);
+}
 </script>
