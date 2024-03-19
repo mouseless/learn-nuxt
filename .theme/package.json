@@ -19,9 +19,11 @@
     "@nuxt/content": "^2.12.0",
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@pinia/nuxt": "^0.5.1",
     "eslint": "^8.57.0",
     "log-symbols": "^6.0.0",
     "nuxt": "3.10.3",
+    "pinia": "^2.1.7",
     "sass": "^1.71.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
