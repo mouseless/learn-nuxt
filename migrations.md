@@ -7,6 +7,14 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
+## Nuxt: v3.10.3 👉 v3.12.4
+
+Below you can find a migration checklist;
+
+```markdown
+- [ ] TBD
+```
+
 ## Nuxt: v3.7.4 👉 v3.10.3
 
 Below you can find a migration checklist;
