@@ -75,7 +75,8 @@
     "vue/html-quotes": [
       "error",
       "double"
-    ]
+    ],
+    "vue/no-multiple-template-root": "off"
   },
   "settings": {
     "json/ignore-files": [

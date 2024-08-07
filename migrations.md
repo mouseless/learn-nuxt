@@ -12,8 +12,43 @@ encountered while migrating, solutions to problems and changes.
 Below you can find a migration checklist;
 
 ```markdown
-- [ ] TBD
+- [ ] upgrade nuxt: "3.12.4"
+- [ ] upgrade babel/eslint-parser: "7.25.1"
+- [ ] upgrade mermaid-js/mermaid-cli: "10.9.1"
+  - [ ] override puppeteer: "22.15.0"
+- [ ] upgrade nuxt/content: "2.13.2"
+- [ ] upgrade pinia/nuxt: "0.5.2"
+- [ ] upgrade pinia: "2.2.0"
+- [ ] upgrade sass: "1.77.8"
+- [ ] upgrade vue: "3.4.21"
+- [ ] upgrade vue-router: "4.4.2"
 ```
+
+### Use multiple root elements
+
+Vue 2 reguired single root element when creating components but with Vue 3 we can
+now use of multiple root elements. 
+
+```html
+<!-- Vue 3 -->
+<template>
+  <header />
+  <footer />
+</template>  
+
+<!-- Vue 2 -->
+<template>
+  <div>
+    <header />
+    <footer />
+  </div>  
+</template>  
+```
+
+> :info:
+>
+> Disable "vue/no-multiple-template-root". This rule checks whether template
+> contains single root element valid for Vue 2.
 
 ## Nuxt: v3.7.4 👉 v3.10.3
 
