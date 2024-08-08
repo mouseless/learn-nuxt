@@ -47,8 +47,16 @@ now use of multiple root elements.
 
 > :info:
 >
-> Disable "vue/no-multiple-template-root". This rule checks whether template
-> contains single root element valid for Vue 2.
+> Disable "vue/no-multiple-template-root" when using multiple root elements
+
+> :info:
+>
+> For further details see [Vue 3 Migration Guide](https://v3-migration.vuejs.org/)
+
+### `/` is no longer prerendered 
+
+With Nuxt@3.12.0 `/` is removed from prerendered routes. Add `/` to 
+nitro.prerender.routes if nuxi generate is not working as expected 
 
 ## Nuxt: v3.7.4 👉 v3.10.3
 
