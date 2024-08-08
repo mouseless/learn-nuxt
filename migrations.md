@@ -58,6 +58,18 @@ now use of multiple root elements.
 With Nuxt@3.12.0 `/` is removed from prerendered routes. Add `/` to 
 nitro.prerender.routes if nuxi generate is not working as expected 
 
+
+### Missing Vite @rollup dependency
+
+Upgraded Vite version now creates missing `@rollup/rollup-linux...` package error
+and fails when bulding on linux. Add following section to package.json to fix
+this issue.
+
+```json
+"optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.20.0"
+  }
+```
 ## Nuxt: v3.7.4 👉 v3.10.3
 
 Below you can find a migration checklist;
