@@ -32,5 +32,8 @@
     "@mermaid-js/mermaid-cli": {
       "puppeteer": "^22.15.0"
     }
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-musl": "^4.20.0"
   }
 }
