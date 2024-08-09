@@ -24,6 +24,11 @@ Below you can find a migration checklist;
 - [ ] upgrade vue-router: "4.4.2"
 ```
 
+> :info:
+>
+> Node version 22.6 is used to test with given packages
+
+
 ### `/` is no longer prerendered 
 
 With Nuxt@3.12.0 `/` is removed from prerendered routes. Add `/` to 
@@ -70,6 +75,11 @@ now use of multiple root elements.
 > :info:
 >
 > For further details see [Vue 3 Migration Guide](https://v3-migration.vuejs.org/)
+
+### Precedence change for `v-if v-for`
+
+With Vue 3, `v-if` will have higher precedence when used together with `v-for`
+within the same element.
 
 ## Nuxt: v3.7.4 👉 v3.10.3
 
