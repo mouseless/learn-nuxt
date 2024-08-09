@@ -1,40 +1,38 @@
 <template>
-  <div>
-    <header>
-      <div class="logo">
-        <NuxtLink to="/">
-          <img class="mouseless logo">
-        </NuxtLink>
+  <header>
+    <div class="logo">
+      <NuxtLink to="/">
+        <img class="mouseless logo">
+      </NuxtLink>
+      <NuxtLink
+        to="https://nuxt.com"
+        target="_blank"
+      >
+        <img class="nuxt logo">
+      </NuxtLink>
+    </div>
+    <nav>
+      <ContentQuery
+        v-slot="{ data: menus }"
+        path="/"
+        :only="[ '_path', 'title', 'position' ]"
+        :where="{ _dir: { $eq: '' }, _path: { $ne: '/' }, position: { $exists: true } }"
+        :sort="sort"
+      >
         <NuxtLink
-          to="https://nuxt.com"
-          target="_blank"
+          v-for="menu in menus"
+          :key="menu.title"
+          :to="menu._path == $route.path ? '' : menu._path"
+          :class="menu.position < 100 ? 'left' : 'right'"
         >
-          <img class="nuxt logo">
+          {{ menu.title }}
         </NuxtLink>
-      </div>
-      <nav>
-        <ContentQuery
-          v-slot="{ data: menus }"
-          path="/"
-          :only="[ '_path', 'title', 'position' ]"
-          :where="{ _dir: { $eq: '' }, _path: { $ne: '/' }, position: { $exists: true } }"
-          :sort="sort"
-        >
-          <NuxtLink
-            v-for="menu in menus"
-            :key="menu.title"
-            :to="menu._path == $route.path ? '' : menu._path"
-            :class="menu.position < 100 ? 'left' : 'right'"
-          >
-            {{ menu.title }}
-          </NuxtLink>
-        </ContentQuery>
-      </nav>
-    </header>
-    <article>
-      <slot />
-    </article>
-  </div>
+      </ContentQuery>
+    </nav>
+  </header>
+  <article>
+    <slot />
+  </article>
 </template>
 <script setup lang="ts">
 const sort = {

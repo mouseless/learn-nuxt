@@ -24,7 +24,7 @@ Below you can find a migration checklist;
 - [ ] upgrade vue-router: "4.4.2"
 ```
 
-> :info:
+> :information_source:
 >
 > Node version 22.6 is used to test with given packages
 
@@ -68,11 +68,11 @@ now use of multiple root elements.
 </template>  
 ```
 
-> :info:
+> :information_source:
 >
 > Disable "vue/no-multiple-template-root" when using multiple root elements
 
-> :info:
+> :information_source:
 >
 > For further details see [Vue 3 Migration Guide](https://v3-migration.vuejs.org/)
 
