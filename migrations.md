@@ -32,14 +32,14 @@ Below you can find a migration checklist;
 >
 > Node version 22.6 is used to test with given packages
 
-### Nuxt Content Notes
+### Nuxt Content
 
 #### `/` is no longer prerendered 
 
 With Nuxt@3.12.0 `/` is removed from prerendered routes. Add `/` to 
 nitro.prerender.routes if nuxi generate is not working as expected 
 
-### Vue 3 Notes
+### Vue 3
 
 #### Missing Vite @rollup dependency
 

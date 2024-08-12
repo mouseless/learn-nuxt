@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <code v-pre>{{ "curly escaped" }}</code>
-  </div>
+  <code v-pre>{{ "curly escaped" }}</code>
 </template>

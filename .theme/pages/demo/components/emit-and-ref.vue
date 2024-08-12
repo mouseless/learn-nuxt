@@ -1,11 +1,9 @@
 <template>
   <div>
-    <div>
-      No ref: <ComponentThatEmits @sample-emit="increment" />  👉 {{ count }}
-    </div>
-    <div>
-      Ref: <ComponentThatEmits @sample-emit="incrementRef" /> 👉 {{ countRef }}
-    </div>
+    No ref: <ComponentThatEmits @sample-emit="increment" />  👉 {{ count }}
+  </div>
+  <div>
+    Ref: <ComponentThatEmits @sample-emit="incrementRef" /> 👉 {{ countRef }}
   </div>
 </template>
 <script setup>

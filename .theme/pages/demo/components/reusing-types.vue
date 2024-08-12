@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <ComponentThatReusesType :reused="{ stringProp: 'Demo' }" />
-  </div>
+  <ComponentThatReusesType :reused="{ stringProp: 'Demo' }" />
 </template>

@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <BasicComponent />
-  </div>
+  <BasicComponent />
 </template>
