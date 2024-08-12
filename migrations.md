@@ -26,6 +26,8 @@ Below you can find a migration checklist;
 - [ ] upgrade vue-router: "4.4.3"
 - [ ] check linux build
   - [ ] add optional rollup dependency
+- [ ] update workflow actions to `v4`
+- [ ] update workflow node versions to `22`  
 ```
 
 > :information_source:
