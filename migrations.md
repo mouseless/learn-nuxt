@@ -41,18 +41,6 @@ nitro.prerender.routes if nuxi generate is not working as expected
 
 ### Vue 3
 
-#### Missing Vite @rollup dependency
-
-Upgraded Vite version now creates missing `@rollup/rollup-linux...` package error
-and fails when bulding on linux. Add following section to package.json to fix
-this issue.
-
-```json
-"optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.20.0"
-  }
-```
-
 #### Vue 3 multiple root elements
 
 Vue 2 reguired single root element when creating components but with Vue 3 we can
@@ -82,6 +70,18 @@ now use of multiple root elements.
 
 With Vue 3, `v-if` will have higher precedence when used together with `v-for`
 within the same element.
+
+#### Missing Vite @rollup dependency
+
+Upgraded Vite version now creates missing `@rollup/rollup-linux...` package 
+error and fails when bulding on linux. Add following section to package.json to 
+fix this issue.
+
+```json
+"optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.20.0"
+  }
+```
 
 > :information_source:
 >
