@@ -17,25 +17,31 @@ Below you can find a migration checklist;
 - [ ] upgrade mermaid-js/mermaid-cli: "10.9.1"
   - [ ] override puppeteer: "22.15.0"
 - [ ] upgrade nuxt/content: "2.13.2"
-- [ ] upgrade pinia/nuxt: "0.5.2"
+- [ ] upgrade pinia/nuxt: "0.5.3"
 - [ ] upgrade pinia: "2.2.0"
 - [ ] upgrade sass: "1.77.8"
-- [ ] upgrade vue: "3.4.21"
-- [ ] upgrade vue-router: "4.4.2"
+- [ ] upgrade vue: "3.4.35"
+  - [ ] disable "vue/no-multiple-template-root"
+  - [ ] remove wrapper root elements
+- [ ] upgrade vue-router: "4.4.3"
+- [ ] check linux build
+  - [ ] add optional rollup dependency
 ```
 
 > :information_source:
 >
 > Node version 22.6 is used to test with given packages
 
+### Nuxt Content Notes
 
-### `/` is no longer prerendered 
+#### `/` is no longer prerendered 
 
 With Nuxt@3.12.0 `/` is removed from prerendered routes. Add `/` to 
 nitro.prerender.routes if nuxi generate is not working as expected 
 
+### Vue 3 Notes
 
-### Missing Vite @rollup dependency
+#### Missing Vite @rollup dependency
 
 Upgraded Vite version now creates missing `@rollup/rollup-linux...` package error
 and fails when bulding on linux. Add following section to package.json to fix
@@ -47,7 +53,7 @@ this issue.
   }
 ```
 
-### Vue 3 multiple root elements
+#### Vue 3 multiple root elements
 
 Vue 2 reguired single root element when creating components but with Vue 3 we can
 now use of multiple root elements. 
@@ -72,14 +78,14 @@ now use of multiple root elements.
 >
 > Disable "vue/no-multiple-template-root" when using multiple root elements
 
-> :information_source:
->
-> For further details see [Vue 3 Migration Guide](https://v3-migration.vuejs.org/)
-
-### Precedence change for `v-if v-for`
+#### Precedence change for `v-if v-for`
 
 With Vue 3, `v-if` will have higher precedence when used together with `v-for`
 within the same element.
+
+> :information_source:
+>
+> For further details see [Vue 3 Migration Guide](https://v3-migration.vuejs.org/)
 
 ## Nuxt: v3.7.4 👉 v3.10.3
 
