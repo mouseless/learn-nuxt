@@ -41,6 +41,23 @@ Below you can find a migration checklist;
 With Nuxt@3.12.0 `/` is removed from prerendered routes. Add `/` to 
 nitro.prerender.routes if nuxi generate is not working as expected 
 
+### Disable `Inline Styles` feature
+
+With Nuxt@3.12, we experienced inconsistency with local and external `css` 
+precedence when generating static sites. Local `css` files added in 
+`nuxt.config.ts` is now inlined before external styles when a static site 
+is generated and causes issues when overriding external styles. Add following 
+config to `nuxt.config.ts` to disable inlining css files.
+
+```javascript
+export default defineNuxtConfig({
+  ...
+  features: {
+    inlineStyles: false
+  }
+}
+```
+
 ### Vue 3
 
 #### Vue 3 multiple root elements
