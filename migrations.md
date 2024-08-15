@@ -13,6 +13,7 @@ Below you can find a migration checklist;
 
 ```markdown
 - [ ] upgrade nuxt: "3.12.4"
+  - [ ] disable inline style feature
 - [ ] upgrade babel/eslint-parser: "7.25.1"
 - [ ] upgrade mermaid-js/mermaid-cli: "10.9.1"
   - [ ] override puppeteer: "22.15.0"
@@ -20,6 +21,7 @@ Below you can find a migration checklist;
 - [ ] upgrade pinia/nuxt: "0.5.3"
 - [ ] upgrade pinia: "2.2.0"
 - [ ] upgrade sass: "1.77.8"
+  - [ ] move root css rules before any nested
 - [ ] upgrade vue: "3.4.35"
   - [ ] disable "vue/no-multiple-template-root"
   - [ ] remove wrapper root elements
@@ -105,6 +107,34 @@ fix this issue.
 > :information_source:
 >
 > For further details see [Vue 3 Migration Guide](https://v3-migration.vuejs.org/)
+
+### Sass
+
+#### Nested Before Root Declerations Warning
+
+With recent sass update, a deprecation warning is shown for changing sass 
+behaviour about css declerations appear before root declerations. Move nested
+declerations below any root declerations to maintain expected css behaviour
+
+```css
+/* deprecated */
+.example {
+  color: red;
+  a {
+    font-weight: bold;
+  }
+  font-weight: normal;
+}
+
+/* suggested */
+.example {
+  color: red;
+  font-weight: normal;
+  a {
+    font-weight: bold;
+  }
+}
+```
 
 ## Nuxt: v3.7.4 👉 v3.10.3
 
