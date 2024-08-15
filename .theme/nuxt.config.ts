@@ -69,6 +69,9 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false
   },
+  features: {
+    inlineStyles: false
+  },
   generate: {
     routes: ["/not-found"]
   },
