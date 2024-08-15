@@ -1,19 +1,17 @@
 <template>
   <div>
-    <div>
-      <h1>No Ref</h1>
-      <button @click="changeName">
-        Change Name
-      </button>
-      {{ fullName }}
-    </div>
-    <div>
-      <h1>Ref</h1>
-      <button @click="changeNameRef">
-        Change Name
-      </button>
-      {{ fullNameRef }}
-    </div>
+    <h1>No Ref</h1>
+    <button @click="changeName">
+      Change Name
+    </button>
+    {{ fullName }}
+  </div>
+  <div>
+    <h1>Ref</h1>
+    <button @click="changeNameRef">
+      Change Name
+    </button>
+    {{ fullNameRef }}
   </div>
 </template>
 <script setup>

@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <div>
-      <ComponentWithTypedProps :complex="complex" />
-    </div>
-  </div>
+  <ComponentWithTypedProps :complex="complex" />
 </template>
 <script setup lang="ts">
 const complex = {

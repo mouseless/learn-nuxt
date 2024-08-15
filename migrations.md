@@ -7,6 +7,135 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
+## Nuxt: v3.10.3 👉 v3.12.4
+
+Below you can find a migration checklist;
+
+```markdown
+- [ ] upgrade nuxt: "3.12.4"
+  - [ ] disable inline style feature
+- [ ] upgrade babel/eslint-parser: "7.25.1"
+- [ ] upgrade mermaid-js/mermaid-cli: "10.9.1"
+  - [ ] override puppeteer: "22.15.0"
+- [ ] upgrade nuxt/content: "2.13.2"
+- [ ] upgrade pinia/nuxt: "0.5.3"
+- [ ] upgrade pinia: "2.2.0"
+- [ ] upgrade sass: "1.77.8"
+  - [ ] move root css rules before any nested
+- [ ] upgrade vue: "3.4.35"
+  - [ ] disable "vue/no-multiple-template-root"
+  - [ ] remove wrapper root elements
+- [ ] upgrade vue-router: "4.4.3"
+- [ ] check linux build
+  - [ ] add optional rollup dependency
+- [ ] update workflow actions to `v4`
+- [ ] update workflow node versions to `22`  
+```
+
+> :information_source:
+>
+> Node version 22.6 is used to test with given packages
+
+### Nuxt Content
+
+#### `/` is no longer prerendered 
+
+With Nuxt@3.12.0 `/` is removed from prerendered routes. Add `/` to 
+nitro.prerender.routes if nuxi generate is not working as expected 
+
+### Disable `Inline Styles` feature
+
+With Nuxt@3.12, we experienced inconsistency with local and external `css` 
+precedence when generating static sites. Local `css` files added in 
+`nuxt.config.ts` is now inlined before external styles when a static site 
+is generated and causes issues when overriding external styles. Add following 
+config to `nuxt.config.ts` to disable inlining css files.
+
+```javascript
+export default defineNuxtConfig({
+  ...
+  features: {
+    inlineStyles: false
+  }
+}
+```
+
+### Vue 3
+
+#### Vue 3 multiple root elements
+
+Vue 2 reguired single root element when creating components but with Vue 3 we can
+now use of multiple root elements. 
+
+```html
+<!-- Vue 3 -->
+<template>
+  <header />
+  <footer />
+</template>  
+
+<!-- Vue 2 -->
+<template>
+  <div>
+    <header />
+    <footer />
+  </div>  
+</template>  
+```
+
+> :information_source:
+>
+> Disable "vue/no-multiple-template-root" when using multiple root elements
+
+#### Precedence change for `v-if v-for`
+
+With Vue 3, `v-if` will have higher precedence when used together with `v-for`
+within the same element.
+
+#### Missing Vite @rollup dependency
+
+Upgraded Vite version now creates missing `@rollup/rollup-linux...` package 
+error and fails when bulding on linux. Add following section to package.json to 
+fix this issue.
+
+```json
+"optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.20.0"
+  }
+```
+
+> :information_source:
+>
+> For further details see [Vue 3 Migration Guide](https://v3-migration.vuejs.org/)
+
+### Sass
+
+#### Nested Before Root Declerations Warning
+
+With recent sass update, a deprecation warning is shown for changing sass 
+behaviour about css declerations appear before root declerations. Move nested
+declerations below any root declerations to maintain expected css behaviour
+
+```css
+/* deprecated */
+.example {
+  color: red;
+  a {
+    font-weight: bold;
+  }
+  font-weight: normal;
+}
+
+/* suggested */
+.example {
+  color: red;
+  font-weight: normal;
+  a {
+    font-weight: bold;
+  }
+}
+```
+
 ## Nuxt: v3.7.4 👉 v3.10.3
 
 Below you can find a migration checklist;

@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <button @click="throwError">
-      Throw Error
-    </button>
-  </div>
+  <button @click="throwError">
+    Throw Error
+  </button>
 </template>
 <script setup>
 import { createError } from "#app";

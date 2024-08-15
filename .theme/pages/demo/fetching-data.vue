@@ -40,7 +40,7 @@ const repository = ref([]);
 const contributors = ref();
 
 // Fetch Once - Server or Client
-const { data: organization } = await useAsyncData(() => getOrganization(organizationName));
+const { data: organization } = await useAsyncData("organization", async() => await getOrganization(organizationName));
 
 // Fetch Once - Only Client
 onBeforeMount(async() => repository.value = await getRepository(repositoryFullName));

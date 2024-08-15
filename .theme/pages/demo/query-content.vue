@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <ContentRenderer :value="index" />
-    <ContentRenderer
-      v-for="page in pages"
-      :key="page.title"
-      :value="page"
-    />
-  </div>
+  <ContentRenderer :value="index" />
+  <ContentRenderer
+    v-for="page in pages"
+    :key="page.title"
+    :value="page"
+  />
 </template>
 <script setup>
 import { useRoute, queryContent } from "#imports";
