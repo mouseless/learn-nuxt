@@ -26,6 +26,7 @@ jobs:
           name: docs
           path: .theme/.output/public
           if-no-files-found: error
+          include-hidden-files: true
   publish:
     needs: generate
     name: Publish
