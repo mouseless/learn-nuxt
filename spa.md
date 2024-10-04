@@ -4,12 +4,12 @@ position: 7
 
 # SPA
 
-Running nuxt as a single-page application (SPA) is pretty straight-forward, but
+Running Nuxt as a single-page application (SPA) is pretty straightforward, but
 there are a couple of challenges.
 
 ## Configuration
 
-Enable SPA mode by simply setting `ssr` config to `false`. This disables
+Enable SPA mode by simply setting the `ssr` config to `false`. This disables
 server-side rendering.
 
 ```typescript
@@ -22,9 +22,10 @@ export default defineNuxtConfig({
 
 ## Build
 
-Apparently `nuxi build` only works you have Node.js in backend. Since it is
-single page, we shouldn't be requiring it on the server side. To statically
-serve an SPA from any http server, we still use `nuxi generate`.
+Apparently, `nuxi build` only works if you have Node.js in the backend. Since it
+is a single page application, we shouldn't require it on the server side. To
+statically serve an SPA from any HTTP server, we'll use `nuxi generate` like we
+do in static sites.
 
 ```json
 {
@@ -40,9 +41,9 @@ serve an SPA from any http server, we still use `nuxi generate`.
 
 > [!NOTE]
 >
-> We named it as `build` not generate, because for us there is no use case where
-> we require both `nuxi generate` and `nuxi build`. Since `build` is a general
-> term for building the application for production, we sticked with that.
+> We named it as `build` not `generate`, because for us there is no use case
+> where we require both `nuxi generate` and `nuxi build`. Since `build` is a
+> general term for building the application for production, we stuck with that.
 
 ## Loading Page
 
@@ -50,9 +51,9 @@ By disabling `ssr`, `nuxi generate` no more generates static pages per route.
 However, it still generates an `index.html` at the root, which will load the app
 on the client-side. To inform user with a loading page, Nuxt allows you to show
 a loading page in the `index.html` by placing a file called
-`app/spa-loading-template.html` in the root of your project. See [Nuxt
-Configuration / spaLoadingTemplate][] for the detailed explanation and a sample
-template.
+`spa-loading-template.html` in `./app` folder at the root of your project. See
+[Nuxt Configuration / spaLoadingTemplate][] for the detailed explanation and a
+sample template.
 
 ```bash
 - . (root)
@@ -63,14 +64,14 @@ template.
 > [!NOTE]
 >
 > Notice this template file is only partial. Nuxt will render it within the
-> generated `index.html` file. So, don't wrapp it with `<html>` and `<body>`
+> generated `index.html` file. So, don't wrap it with `<html>` and `<body>`
 > tags.
 
 ## Deploy
 
-After `nuxi generate` script runs, it outputs the static files under
-`.output/public` by default. When you serve the files under that directory, you
-are done.
+After the `nuxi generate` script runs, it outputs the static files under
+`.output/public` by default. When you configure your server to serve those
+files, you are done.
 
 Below you can see a `Dockerfile` that builds an app under `src/my-app` folder,
 and then deploy and serve it using an `nginx` server instance.
@@ -105,7 +106,7 @@ http {
   server {
     listen 80;
 
-    # include default mime types for js and css files to have proper conetnt
+    # include default mime types for js and css files to have proper content
     # type
     location / {
       include /etc/nginx/mime.types;
