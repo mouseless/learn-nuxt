@@ -66,4 +66,55 @@ template.
 > generated `index.html` file. So, don't wrapp it with `<html>` and `<body>`
 > tags.
 
+## Deploy
+
+After `nuxi generate` script runs, it outputs the static files under
+`.output/public` by default. When you serve the files under that directory, you
+are done.
+
+Below you can see a `Dockerfile` that builds an app under `src/my-app` folder,
+and then deploy and serve it using an `nginx` server instance.
+
+```dockerfile
+# syntax=docker/dockerfile:1.7-labs
+
+FROM node:22-bullseye AS build
+
+# first copy only package.json and package-lock.json to cache after downloading
+# packages
+COPY --parents src/my-app/package.json .
+COPY --parents src/my-app/package-lock.json .
+RUN cd src/my-app ; npm install
+
+# copy rest of the app while keeping the folder structure
+COPY --parents src/my-app/ .
+RUN cd src/my-app ; npm run build:development
+
+FROM nginx AS final
+
+# bring output from `build` phase
+COPY --from=build src/my-app/.output/public /www/public
+
+# use an inline nginx config to serve static files
+RUN cat <<EOF > /etc/nginx/nginx.conf
+events { }
+http {
+  # add output files as root for nginx server
+  root /www/public;
+
+  server {
+    listen 80;
+
+    # include default mime types for js and css files to have proper conetnt
+    # type
+    location / {
+      include /etc/nginx/mime.types;
+    }
+  }
+}
+EOF
+
+CMD nginx -g "daemon off;"
+```
+
 [Nuxt Configuration / spaLoadingTemplate]: https://nuxt.com/docs/api/nuxt-config#spaloadingtemplate
