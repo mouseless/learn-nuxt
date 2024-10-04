@@ -107,7 +107,7 @@ Added it because it is needed for the `log` task in `.prebuild`.
 
 When upgrading to this version, version 3.4.1 of nuxt gives run time errors.
 
-```log
+```text
 WARN  Current version of Node.js (20.8.0) is unsupported and might cause
 issues.
 Please upgrade to a compatible version (^14.18.0 || ^16.10.0 || ^17.0.0 ||
@@ -172,7 +172,7 @@ Clean upgrade. No issues.
 When we upgraded the Typescript version to 5.2.2 there was a conflict with
 eslint. You can see the problem below.
 
-```log
+```text
 =============
 
 WARNING: You are currently running a version of TypeScript which is not

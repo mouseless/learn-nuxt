@@ -49,6 +49,24 @@ export default defineNuxtConfig({
       remarkPlugins: {
         "remark-emoji": false
       }
+    },
+    highlight: {
+      theme: "slack-dark",
+      preload: [
+        "diff",
+        "ts",
+        "js",
+        "css",
+        "java",
+        "markdown",
+        "sql",
+        "xml",
+        "json",
+        "csharp",
+        "md",
+        "bash",
+        "dockerfile"
+      ]
     }
   },
   css: ["~/assets/styles.scss"],
