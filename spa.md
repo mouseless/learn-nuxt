@@ -2,10 +2,10 @@
 position: 7
 ---
 
-# Single-Page Application (SPA)
+# SPA
 
-Running nuxt as SPA is pretty straight-forward, but there are a couple of
-challenges.
+Running nuxt as a single-page application (SPA) is pretty straight-forward, but
+there are a couple of challenges.
 
 ## Configuration
 

@@ -53,16 +53,6 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/styles.scss"],
   devtools: { enabled: true },
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: "@import \"@/assets/variables.scss\";"
-        }
-      }
-    }
-  },
-  modules: ["@nuxt/content", "@pinia/nuxt"],
   dir: {
     public: ".public"
   },
@@ -75,6 +65,7 @@ export default defineNuxtConfig({
   generate: {
     routes: ["/not-found"]
   },
+  modules: ["@nuxt/content", "@pinia/nuxt"],
   nitro: {
     prerender: {
       ignore: [
@@ -100,6 +91,15 @@ export default defineNuxtConfig({
         }
       },
       baseUrl: ""
+    }
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: "@import \"@/assets/variables.scss\";"
+        }
+      }
     }
   }
 });
