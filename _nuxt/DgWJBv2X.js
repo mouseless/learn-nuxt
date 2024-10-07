@@ -1,0 +1,1 @@
+import{_ as a,b as e,o as s}from"./DrU2srZ_.js";const c={},l={class:"class-with-global-variable"};function o(t,r){return s(),e("div",l," Styled with Scss using global variable ")}const i=a(c,[["render",o]]);export{i as default};
