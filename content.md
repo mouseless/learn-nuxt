@@ -31,7 +31,7 @@ Code references are given in code block such as `const x = ref(5);`. To use
 code block wrap the code with "\`" character. This usage works for a single
 line, in order to have multiple lines of code block use "\`\`\`" instead of "\`".
 
-> :information_source:
+> [!NOTE]
 >
 > Code related terms and terms in general are not given in code block,
 > use "\_\_Term\_\_" for code related terms, and italic for terms in general.

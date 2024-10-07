@@ -15,13 +15,13 @@ const slot = computed(() => {
 
 const firstLine = computed(() => {
   // avoids multiple rendering of default slot in children
-  return slot.value[0].children.default()[0].children;
+  return slot.value[0].children.default()[0].children[0].children;
 });
 
 const types = {
-  ":information_source:": "info",
-  ":warning:": "warning",
-  ":bulb:": "success"
+  "!NOTE": "info",
+  "!WARNING": "warning",
+  "!TIP": "success"
 };
 
 const type = computed(() => {
@@ -46,13 +46,13 @@ blockquote {
   margin-left: 1em;
 }
 .info {
-  border-color: var(--color-blue);
+  border-color: var(--color-blue-n1);
 }
 .warning {
-  border-color: var(--color-orange);
+  border-color: var(--color-orange-0);
 }
 .success {
-  border-color: var(--color-green);
+  border-color: var(--color-green-n1);
 }
 .default {
   border-color: var(--color-fg);

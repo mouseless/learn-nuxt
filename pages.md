@@ -18,13 +18,13 @@ We needed to load all markdown content under a folder in one page. To achieve
 this we used `queryContent` by which you can retrieve content under `content/`
 folder.
 
-> :information_source:
+> [!NOTE]
 >
 > `find`, `findOne` methods return `promise` so you need to wait with `await`.
 
 Demo is at [/demo/query-content](/demo/query-content)
 
-> :warning:
+> [!WARNING]
 >
 > We've disabled `navigation` and `surround` options to avoid extra queries
 > when a page is loaded. You might reenable these depending on the theme you
@@ -37,7 +37,7 @@ there is no need to change the data we receive with `queryContent` in the
 script block, the query sent to the content with `<ContentQuery>` was made to
 reduce the crowd in the script.
 
-> :warning:
+> [!WARNING]
 >
 > Use `<ContentQuery>` only if you know what you're doing, because it works in
 > the render stage. Otherwise, we strongly suggest usage of `queryContent()`
@@ -53,7 +53,7 @@ catch-all route along with extra queries like `navigation`, `surround` which
 could be unncessary in your theme. If you need to render navigation menu etc.,
 use `<ContentQuery>` or `queryContent()` queries.
 
-> :warning:
+> [!WARNING]
 >
 > This project contains pages without a corresponding markdown content under
 > `/demo` path. When you enable document-driven mode, dynamic pages under
@@ -80,7 +80,7 @@ file under `.theme/public` folder. It will be served at the root path. E.g.
 
 Demo is at [/demo/public-assets](/demo/public-assets).
 
-> :information_source:
+> [!NOTE]
 >
 > `.png` from content images or generated diagrams should be served under
 > `.theme/public` but they shouldn't be included in git. To preserve the
@@ -97,7 +97,7 @@ the markdown file it is looking for. To keep with the concept of managing the
 content of each page with markdown, we get the `#not-found` content from the
 `not-found.md` file.
 
-> :information_source:
+> [!NOTE]
 >
 > If you are getting the not-found content from markdown you should add a link
 > to `generate.routes`. See

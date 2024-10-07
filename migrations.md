@@ -29,26 +29,26 @@ Below you can find a migration checklist;
 - [ ] check linux build
   - [ ] add optional rollup dependency
 - [ ] update workflow actions to `v4`
-- [ ] update workflow node versions to `22`  
+- [ ] update workflow node versions to `22`
 ```
 
-> :information_source:
+> [!NOTE]
 >
 > Node version 22.6 is used to test with given packages
 
 ### Nuxt Content
 
-#### `/` is no longer prerendered 
+#### `/` is no longer prerendered
 
-With Nuxt@3.12.0 `/` is removed from prerendered routes. Add `/` to 
-nitro.prerender.routes if nuxi generate is not working as expected 
+With Nuxt@3.12.0 `/` is removed from prerendered routes. Add `/` to
+nitro.prerender.routes if nuxi generate is not working as expected
 
 ### Disable `Inline Styles` feature
 
-With Nuxt@3.12, we experienced inconsistency with local and external `css` 
-precedence when generating static sites. Local `css` files added in 
-`nuxt.config.ts` is now inlined before external styles when a static site 
-is generated and causes issues when overriding external styles. Add following 
+With Nuxt@3.12, we experienced inconsistency with local and external `css`
+precedence when generating static sites. Local `css` files added in
+`nuxt.config.ts` is now inlined before external styles when a static site
+is generated and causes issues when overriding external styles. Add following
 config to `nuxt.config.ts` to disable inlining css files.
 
 ```javascript
@@ -65,25 +65,25 @@ export default defineNuxtConfig({
 #### Vue 3 multiple root elements
 
 Vue 2 reguired single root element when creating components but with Vue 3 we can
-now use of multiple root elements. 
+now use of multiple root elements.
 
 ```html
 <!-- Vue 3 -->
 <template>
   <header />
   <footer />
-</template>  
+</template>
 
 <!-- Vue 2 -->
 <template>
   <div>
     <header />
     <footer />
-  </div>  
-</template>  
+  </div>
+</template>
 ```
 
-> :information_source:
+> [!NOTE]
 >
 > Disable "vue/no-multiple-template-root" when using multiple root elements
 
@@ -94,8 +94,8 @@ within the same element.
 
 #### Missing Vite @rollup dependency
 
-Upgraded Vite version now creates missing `@rollup/rollup-linux...` package 
-error and fails when bulding on linux. Add following section to package.json to 
+Upgraded Vite version now creates missing `@rollup/rollup-linux...` package
+error and fails when bulding on linux. Add following section to package.json to
 fix this issue.
 
 ```json
@@ -104,7 +104,7 @@ fix this issue.
   }
 ```
 
-> :information_source:
+> [!NOTE]
 >
 > For further details see [Vue 3 Migration Guide](https://v3-migration.vuejs.org/)
 
@@ -112,7 +112,7 @@ fix this issue.
 
 #### Nested Before Root Declerations Warning
 
-With recent sass update, a deprecation warning is shown for changing sass 
+With recent sass update, a deprecation warning is shown for changing sass
 behaviour about css declerations appear before root declerations. Move nested
 declerations below any root declerations to maintain expected css behaviour
 
@@ -154,7 +154,7 @@ Below you can find a migration checklist;
 - [ ] use `useSeoMeta` instead of `useHead` for open graph
 ```
 
-> :warning:
+> [!WARNING]
 >
 > `npx nuxi upgrade` upgrade nuxt with the latest version. When we did this
 > update, nuxt had version `3.10.3`. Only this version is guaranteed to be no
@@ -243,13 +243,13 @@ When it asks:
 - `package manager`:  Select `npm`.
 - `initialize git repository`: select `No`.
 
-> :information_source:
+> [!NOTE]
 >
 > Before creating a new project we recommend to move `.theme` to
 > `.theme-legacy`. After renaming, don't forget to delete generate contents
 > like `/.nuxt`, `/node_modules` etc. because too many changes will appear.
 
-> :warning:
+> [!WARNING]
 >
 > `nuxi` automatically install nuxt with the latest version. don't forget to
 > set version to `v3.7.4` in `package.json`.
@@ -451,7 +451,7 @@ export default defineNuxtConfig({
 })
 ```
 
-> :information_source:
+> [!NOTE]
 >
 > Don't forget to install the dependencies of the prebuild.
 >
@@ -490,7 +490,7 @@ Nuxt scans the `/modules` directory and loads them before starting. If you
 add them under `/modules`, you don't need to add those local modules to your
 `nuxt.config.ts` separately.
 
-> :warning:
+> [!WARNING]
 >
 > only nuxt modules should be under `/modules`.
 
@@ -581,7 +581,7 @@ configurations in `runtimeConfig` or routes that you want to be generated.
 
 Remember to sort the config in name order after the migration.
 
-> :information_source:
+> [!NOTE]
 >
 > Don't forget to review the remaining config from the old project when you
 > migrate. Since the config from the `.env` file is renamed, your config such

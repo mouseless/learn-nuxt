@@ -12,7 +12,7 @@ Variables can be created as shown in `.theme/pages/demo/variable`.
 
 Demo is at [/demo/variable](/demo/variable).
 
-> :information_source:
+> [!NOTE]
 >
 > We are using __Composition__ __API__ with setup in nuxt and in demos.
 
@@ -30,7 +30,7 @@ Computed properties can be created as shown in
 
 Demo is at [/demo/computed](/demo/computed).
 
-> :information_source:
+> [!NOTE]
 >
 > Computed properties are evaluated only once while functions will be
 > re-evaluated every time they are called.
@@ -65,7 +65,7 @@ When creating variables you can refer to `./theme/assets/variables.scss`.
 To use the global variables simply use the variables created in
 `variables.scss` without importing.
 
-> :warning:
+> [!WARNING]
 >
 > You need to use a sass-loader and configure `nuxt.config.ts` for global
 > variables to work.
@@ -79,7 +79,7 @@ styles as can be seen in `./theme/assets/styles.scss`. Global styles will work
 like a default style, only when the specific style is not given in the
 component.
 
-> :warning:
+> [!WARNING]
 >
 > You need to specify the `styles.scss` as global style in `nuxt.config.ts`
 

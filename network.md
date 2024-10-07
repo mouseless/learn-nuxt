@@ -21,11 +21,11 @@ We do the one-time fetch operations on the server side and bring them to the
 client side by making the server side of `useAsyncData` true. Use this method if
 this data is not expected to change frequently.
 
-> :info:
+> [!NOTE]
 >
-> We experienced issues when using `ContentQuery` and `useAsyncData` within 
-> script setup, we solved the issue by using _async_ and _await_ keywords when 
->invoking async function in `useAsyncData()` 
+> We experienced issues when using `ContentQuery` and `useAsyncData` within
+> script setup, we solved the issue by using _async_ and _await_ keywords when
+>invoking async function in `useAsyncData()`
 >
 > ```javascript
 > await useAsyncData(async () => await ...);

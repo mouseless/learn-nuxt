@@ -26,7 +26,7 @@ properties can be added later on. Values of these properties can be assigned
 when using the component with properties as shown in
 `.theme/demo/defining-props.vue`
 
-> :information_source:
+> [!NOTE]
 >
 > When we use `defineProps`, we prefer the language to be `typescript` to keep
 > the props type-safe.
@@ -41,7 +41,7 @@ Complex types can be used with `defineProps` as seen in
 Demo is at
 [/demo/components/complex-type-props](/demo/components/complex-type-props)
 
-> :information_source:
+> [!NOTE]
 >
 > For type instances in your scripts to work, script language should be set
 > to TypeScript. [TypeCheck][] should be enabled. If you have enabled type
@@ -95,7 +95,7 @@ Below is a demonstration of overriding `ProseTable.vue`;
 | Using    | Prose | Components |
 | To       | Add   | Border     |
 
-> :information_source:
+> [!NOTE]
 >
 > You need to configure `~/components/Prose` as a global directory to enable
 > this. See `.theme/nuxt.config.ts`.
@@ -105,7 +105,7 @@ Below is a demonstration of overriding `ProseTable.vue`;
 We need this one to create an alarm component out of a blockquote with an icon
 in its first line like below;
 
-> :warning:
+> [!WARNING]
 >
 > Demo warning message
 
@@ -119,7 +119,7 @@ changed or created.
 
 Other types demonstrated below;
 
-> :information_source:
+> [!NOTE]
 >
 > Demo info message
 
@@ -161,7 +161,7 @@ See [/demo/transformer](/demo/transformer/) to see what can be done.
 
 See `/transformers/optimus-prime.ts` to see how it is done.
 
-> :information_source:
+> [!NOTE]
 >
 > For Content Transformers to work, we need to add them as modules to Nuxt.
 > Nuxt does this automatically if the nuxt modules are under `/modules`. You

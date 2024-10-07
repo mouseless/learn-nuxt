@@ -15,6 +15,7 @@ Read below guides to find out how we use nuxt;
 - [Routing](routing.md)
 - [Components](components.md)
 - [Network](network.md)
+- [Single-Page Application (SPA)](spa.md)
 - [Configuration](configuration.md)
 
 Enjoy your web site project 🤗
