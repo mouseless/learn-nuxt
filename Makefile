@@ -8,10 +8,10 @@ run:
 	echo "Please select 1-4: " ; \
 	read srv ; \
 	if test $$srv -eq "1" ; then \
-		cd .theme ; npm run dev ; cd .. ; \
+		cd .theme ; npm run -s dev ; cd .. ; \
 	fi ; \
 	if test $$srv -eq "2" ; then \
-		cd .theme ; npm run local ; cd .. ; \
+		cd .theme ; npm run -s local ; cd .. ; \
 	fi
 build:
 	@ \
@@ -21,8 +21,8 @@ build:
 	echo "Please select 1-2: " ; \
 	read srv ; \
 	if test $$srv -eq "1" ; then \
-		cd .theme ; npm run generate:production ; cd .. ; \
+		cd .theme ; npm run -s generate:production ; cd .. ; \
 	fi ; \
 	if test $$srv -eq "2" ; then \
-		cd .theme ; npm run generate:local ; cd .. ; \
+		cd .theme ; npm run -s generate:local ; cd .. ; \
 	fi

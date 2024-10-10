@@ -1,14 +1,13 @@
-import { joinURL } from "ufo";
-
 export default function() {
-  const urlBase = "https://api.github.com";
+  const { public: { gitHubBaseURL: baseURL } } = useRuntimeConfig();
 
   async function getContributorStats(repository) {
     // Look here for response detail and headers =>
     // https://docs.github.com/en/rest/metrics/statistics?apiVersion=2022-11-28#get-all-contributor-commit-activity
     return await $fetch(
-      joinURL(urlBase, "repos", repository, "stats/contributors"),
+      `repos/${repository}/stats/contributors`,
       {
+        baseURL,
         method: "GET",
         headers: {
           "X-GitHub-Api-Version": "2022-11-28"
@@ -21,8 +20,9 @@ export default function() {
     // Look here for response detail and headers =>
     // https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#get-a-repository
     return await $fetch(
-      joinURL(urlBase, "repos", repository),
+      `repos/${repository}`,
       {
+        baseURL,
         method: "GET",
         headers: {
           "X-GitHub-Api-Version": "2022-11-28"
@@ -35,8 +35,9 @@ export default function() {
     // Look here for response detail and headers =>
     // https://docs.github.com/en/rest/orgs/orgs?apiVersion=2022-11-28#get-an-organization
     return await $fetch(
-      joinURL(urlBase, "orgs", organization),
+      `orgs/${organization}`,
       {
+        baseURL,
         method: "GET",
         headers: {
           "X-GitHub-Api-Version": "2022-11-28"

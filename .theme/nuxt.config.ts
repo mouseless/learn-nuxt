@@ -108,7 +108,8 @@ export default defineNuxtConfig({
           }
         }
       },
-      baseUrl: ""
+      baseUrl: "",
+      gitHubBaseURL: "https://api.github.com"
     }
   },
   vite: {
