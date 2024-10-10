@@ -1,6 +1,5 @@
 import { joinURL } from "ufo";
 
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
     baseURL: process.env.NUXT_PUBLIC_BASE_URL,
@@ -41,6 +40,7 @@ export default defineNuxtConfig({
       ]
     }
   },
+  compatibilityDate: "2024-10-10",
   components: {
     dirs: [{ global: true, path: "~/components/Prose" }, "~/components"]
   },
@@ -108,7 +108,8 @@ export default defineNuxtConfig({
           }
         }
       },
-      baseUrl: ""
+      baseUrl: "",
+      gitHubBaseURL: "https://api.github.com"
     }
   },
   vite: {

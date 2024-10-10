@@ -180,4 +180,87 @@ the fetched data.
 See [demo/pinia](/demo/pinia) for demo of how we use the Pinia store to add and
 import data.
 
+## PrimeVue
+
+We use [PrimeVue][primevue] for app development. Install it using below script;
+
+```bash
+npm i primevue primeicons @primevue/themes # base packages
+npm i chart.js # to enable Chart component
+npm i --save-dev @primevue/nuxt-module @nuxtjs/tailwindcss # dev dependencies
+```
+
+To use prime icons you need to import it in `assets/styles.scss`.
+
+```scss
+@import "primeicons/primeicons.css";
+```
+
+Finally `nuxt.config.ts` should include below configurations;
+
+```typescript
+import Aura from "@primevue/themes/aura";
+
+export default defineNuxtConfig({
+  ...
+  modules: [
+    ...
+    "@nuxtjs/tailwindcss",
+    "@primevue/nuxt-module",
+    ...
+  ],
+  primevue: {
+    options: {
+      theme: {
+        preset: Aura
+      }
+    },
+    autoImport: true
+  },
+  ...
+});
+```
+
+### Customizing Themes
+
+To make customizations in a theme, include `definePreset` and use a theme as a
+base, e.g., `Aura`.
+
+```typescript
+import Aura from "@primevue/themes/aura";
+import { definePreset } from "@primevue/themes";
+
+const Mouseless = definePreset(Aura, {
+  semantic: {
+    primary: {
+      50: "{red.50}",
+      ...
+      950: "{red.950}"
+    }
+  }
+});
+
+export default defineNuxtConfig({
+  ...
+  primevue: {
+    options: {
+      theme: {
+        preset: Mouseless
+      }
+    }
+  },
+  ...
+});
+```
+
+See https://primevue.org/theming/styled/#customization for detailed official
+docs.
+
+> [!NOTE]
+>
+> This site currently does not use [PrimeVue][primevue] and [Tailwind
+> CSS][tailwindcss].
+
 [pinia]: https://pinia.vuejs.org/ssr/nuxt.html
+[primevue]: https://primevue.org/nuxt/
+[tailwindcss]: https://tailwindcss.com/docs/installation

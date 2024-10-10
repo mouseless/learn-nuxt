@@ -4,8 +4,8 @@ position: 101
 
 # Build & Run
 
-To create a static site we use `nuxt generate`, to run the project in
-development mode we use `nuxt dev`.
+To create a static site we use `nuxi generate`, to run the project in
+development mode we use `nuxi dev`.
 
 For unix-like systems use `Makefile`;
 
@@ -42,8 +42,8 @@ flowchart TB
         direction LR
         E(eslint) --> P(prebuild)
     end
-    setup -->|nuxt generate| SWS(static web site)
-    setup -->|nuxt dev| OS(running on server)
+    setup -->|nuxi generate| SWS(static web site)
+    setup -->|nuxi dev| OS(running on server)
 ```
 
 ## `package.json` Configuration
@@ -54,17 +54,17 @@ edit to run processes such as [Eslint][], [Prebuild][].
 ### Argument Passing/Parsing
 
 We took help from arguments to reduce repetitive steps and to improve with
-parameters in scripts. Look at `.theme/package.json` to see use.
+parameters in scripts. Have a look at `.theme/package.json` to see use.
 
-We used [cross-var](https://www.npmjs.com/package/cross-var) to avoid using
+We used [cross-env](https://npmjs.com/package/cross-env) to avoid using
 different syntax for different operating systems.
 
 ### Using `npx`
 
-We run packages like [Eslint][] and [http-server][] with `npx`, which can be
-used without installing them to reduce dependencies locally. Look at
-`.theme/package.json` to see use.
+We run [http-server][] package via `npx`, which allows it to be used without
+installing to reduce dependencies. Have a look at `.theme/package.json` to see
+use.
 
 [Eslint]: https://eslint.org/
-[http-server]: https://www.npmjs.com/package/http-server
 [Prebuild]: https://github.com/mouseless/prebuild
+[http-server]: https://www.npmjs.com/package/http-server
