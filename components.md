@@ -261,6 +261,23 @@ docs.
 > This site currently does not use [PrimeVue][primevue] and [Tailwind
 > CSS][tailwindcss].
 
+### Form
+
+We use `Form` component from [PrimeVue Forms][form] library. Install it using 
+below command;
+
+```bash
+npm install @primevue/forms
+```
+
+To use `Form` component need to import it in `.vue` files
+
+```javascript
+import { Form } from '@primevue/forms';
+```
+
 [pinia]: https://pinia.vuejs.org/ssr/nuxt.html
 [primevue]: https://primevue.org/nuxt/
+[form]: https://primevue.org/forms
 [tailwindcss]: https://tailwindcss.com/docs/installation
+
