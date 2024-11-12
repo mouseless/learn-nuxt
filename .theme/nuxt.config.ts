@@ -1,4 +1,15 @@
 import { joinURL } from "ufo";
+import Aura from "@primevue/themes/aura";
+import { definePreset } from "@primevue/themes";
+
+const Mouseless = definePreset(Aura, {
+  semantic: {
+    primary: {
+      50: "{red.50}",
+      950: "{red.950}"
+    }
+  }
+});
 
 export default defineNuxtConfig({
   app: {
@@ -83,7 +94,14 @@ export default defineNuxtConfig({
   generate: {
     routes: ["/not-found"]
   },
-  modules: ["@nuxt/content", "@pinia/nuxt"],
+  modules: ["@nuxt/content", "@pinia/nuxt", "@nuxtjs/tailwindcss", "@primevue/nuxt-module"],
+  primevue: {
+    options: {
+      theme: {
+        preset: Mouseless
+      }
+    }
+  },
   nitro: {
     prerender: {
       ignore: [
@@ -120,5 +138,8 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  tailwindcss: {
+    cssPath: ["~/assets/tailwind.css", { injectPosition: "first" }]
   }
 });

@@ -276,6 +276,8 @@ To use `Form` component need to import it in `.vue` files
 import { Form } from '@primevue/forms';
 ```
 
+Demo is at [/demo/primevue](/demo/primevue).
+
 [pinia]: https://pinia.vuejs.org/ssr/nuxt.html
 [primevue]: https://primevue.org/nuxt/
 [form]: https://primevue.org/forms
