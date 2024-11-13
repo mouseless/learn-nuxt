@@ -71,12 +71,16 @@ img.nuxt:is(.logo) {
 div.logo {
   margin: 2em 0;
 
+  a {
+    display: inline-flex;
+  }
   a+a {
     padding-left: 1em;
   }
 
   img.logo {
     height: var(--height-logo);
+    display: inline;
   }
 
   @media (max-width: 800px) {

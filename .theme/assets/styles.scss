@@ -1,0 +1,35 @@
+@import url("https://brand.mouseless.codes/assets/css/default.css");
+
+* {
+    box-sizing: content-box;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+a {
+    text-decoration: underline;
+}
+
+img {
+    vertical-align: top;
+}
+
+code {
+    font-size: small;
+    font-family: monospace;
+}
+
+table, th, td {
+    border-width: 1px;
+    border-collapse: separate;
+    border-spacing: 2px;
+    text-indent: initial;
+    border-color: gray;
+    border-style: outset;
+}
+
+th, td, tr {
+    border-style: inset;
+}

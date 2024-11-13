@@ -256,11 +256,6 @@ export default defineNuxtConfig({
 See https://primevue.org/theming/styled/#customization for detailed official
 docs.
 
-> [!NOTE]
->
-> This site currently does not use [PrimeVue][primevue] and [Tailwind
-> CSS][tailwindcss].
-
 ### Form
 
 We use `Form` component from [PrimeVue Forms][form] library. Install it using 

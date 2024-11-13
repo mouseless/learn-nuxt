@@ -20,11 +20,6 @@ export default defineNuxtConfig({
           rel: "icon",
           type: "image/x-icon",
           href: joinURL(process.env.NUXT_PUBLIC_BASE_URL ?? "/", "favicon.ico")
-        },
-        {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "https://brand.mouseless.codes/assets/css/default.css"
         }
       ],
       meta: [
@@ -139,8 +134,5 @@ export default defineNuxtConfig({
         }
       }
     }
-  },
-  tailwindcss: {
-    cssPath: ["~/assets/tailwind.css", { injectPosition: "first" }]
   }
 });
