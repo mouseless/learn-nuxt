@@ -221,6 +221,11 @@ export default defineNuxtConfig({
 });
 ```
 
+> [!NOTE]
+>
+> For demo purposes we followed [primevue-tailwind] documentation to setup 
+> and properly use _primevue_ themes with _tailwind_
+
 ### Customizing Themes
 
 To make customizations in a theme, include `definePreset` and use a theme as a
@@ -283,4 +288,5 @@ Demo is at [/demo/primevue](/demo/primevue).
 [pinia]: https://pinia.vuejs.org/ssr/nuxt.html
 [primevue]: https://primevue.org/nuxt/
 [tailwindcss]: https://tailwindcss.com/docs/installation
+[primevue-tailwind]: https://v3.primevue.org/csslayer/
 
