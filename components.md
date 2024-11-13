@@ -265,7 +265,7 @@ below command;
 npm install @primevue/forms
 ```
 
-To use `Form` component need to import it in `.vue` files
+To use `Form` component, you need to import it in `.vue` files
 
 ```javascript
 import { Form } from '@primevue/forms';
@@ -273,8 +273,14 @@ import { Form } from '@primevue/forms';
 
 Demo is at [/demo/primevue](/demo/primevue).
 
+> [!NOTE]
+>
+> We experienced issues when following the given documentation when trying to 
+> configure resolvers so implemented a custom resolver to demonstrate how 
+> invalid inputs are visualized
+
+[form]: https://primevue.org/forms
 [pinia]: https://pinia.vuejs.org/ssr/nuxt.html
 [primevue]: https://primevue.org/nuxt/
-[form]: https://primevue.org/forms
 [tailwindcss]: https://tailwindcss.com/docs/installation
 
