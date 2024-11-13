@@ -100,7 +100,8 @@ export default defineNuxtConfig({
       theme: {
         preset: Mouseless
       }
-    }
+    },
+    autoImport: true
   },
   nitro: {
     prerender: {
