@@ -1,0 +1,1 @@
+import{aT as s,o as e,b as a,q as r,u as n,s as d}from"./CAmniYOv.js";const c={key:0},_={__name:"ProseP",setup(p){const t=s("provided-data",!1);return(o,l)=>(e(),a("p",null,[r(o.$slots,"default"),n(t)?(e(),a("span",c," (provided data injected)")):d("",!0)]))}};export{_ as default};
