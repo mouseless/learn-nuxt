@@ -221,6 +221,11 @@ export default defineNuxtConfig({
 });
 ```
 
+> [!NOTE]
+>
+> For demo purposes we followed [primevue-tailwind] documentation to setup 
+> and properly use _primevue_ themes with _tailwind_
+
 ### Customizing Themes
 
 To make customizations in a theme, include `definePreset` and use a theme as a
@@ -256,11 +261,32 @@ export default defineNuxtConfig({
 See https://primevue.org/theming/styled/#customization for detailed official
 docs.
 
+### Form
+
+We use `Form` component from [PrimeVue Forms][form] library. Install it using 
+below command;
+
+```bash
+npm install @primevue/forms
+```
+
+To use `Form` component, you need to import it in `.vue` files
+
+```javascript
+import { Form } from '@primevue/forms';
+```
+
+Demo is at [/demo/primevue](/demo/primevue).
+
 > [!NOTE]
 >
-> This site currently does not use [PrimeVue][primevue] and [Tailwind
-> CSS][tailwindcss].
+> We experienced issues when following the given documentation when trying to 
+> configure resolvers so implemented a custom resolver to demonstrate how 
+> invalid inputs are visualized
 
+[form]: https://primevue.org/forms
 [pinia]: https://pinia.vuejs.org/ssr/nuxt.html
 [primevue]: https://primevue.org/nuxt/
 [tailwindcss]: https://tailwindcss.com/docs/installation
+[primevue-tailwind]: https://v3.primevue.org/csslayer/
+
