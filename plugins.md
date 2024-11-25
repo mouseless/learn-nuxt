@@ -4,7 +4,7 @@ position: 9
 
 # Plugins
 
-We use [Nuxt Plugins](0) when adding app-level functionality. Plugins provide 
+We use [Nuxt Plugins][0] when adding app-level functionality. Plugins provide 
 better configurability and helps keeping `app.vue` setup cleaner. To create a 
 plugin, create a directory named `plugins` and files which are located in this 
 directory will be autmatically registered. We prefer using object syntax to 
@@ -65,4 +65,4 @@ const counter = useNuxtApp().$counter
 </script> 
 ```
 
-[0](https://nuxt.com/docs/guide/directory-structure/plugins)
+[0]: https://nuxt.com/docs/guide/directory-structure/plugins
