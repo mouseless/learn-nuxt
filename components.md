@@ -180,6 +180,18 @@ the fetched data.
 See [demo/pinia](/demo/pinia) for demo of how we use the Pinia store to add and
 import data.
 
+## Mutex
+
+We use [async-mutex][async-mutex] when we want to synchronize concurrent 
+processes. When a page is rendered, multiple components may fetch data from an 
+api but may need to refresh access token. Since components will not be rendered
+syncronized, many requests will be performed to acquire new access token. 
+In order to prevent this issue, we lock refresh token flow, so that each 
+component will wait for first refresh token request and use the newly obtained 
+token.
+
+See [demo/mutex](/demo/mutex) for demo of synchronizing concurrent processes
+
 ## PrimeVue
 
 We use [PrimeVue][primevue] for app development. Install it using below script;
@@ -286,7 +298,7 @@ Demo is at [/demo/primevue](/demo/primevue).
 
 [form]: https://primevue.org/forms
 [pinia]: https://pinia.vuejs.org/ssr/nuxt.html
+[async-mutex]: https://www.npmjs.com/package/async-mutex
 [primevue]: https://primevue.org/nuxt/
 [tailwindcss]: https://tailwindcss.com/docs/installation
 [primevue-tailwind]: https://v3.primevue.org/csslayer/
-

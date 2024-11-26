@@ -1,14 +1,14 @@
 <template>
   <div class="flex justify-around">
     <div class="w-1/2 m-4">
-      <span class="text-l">Counter Without Mutex</span>
-      <pre>
+      <span class="text-xl">Counter Without Mutex</span>
+      <pre class="mt-4">
 {{ nonMutex }}
       </pre>
     </div>
     <div class="w-1/2 m-4">
-      <span pan class="text-l">Counter With Mutex</span>
-      <pre>
+      <span pan class="text-xl">Counter With Mutex</span>
+      <pre class="mt-4">
 {{ withMutex }}
       </pre>
     </div>
