@@ -17,6 +17,7 @@ Read below guides to find out how we use nuxt;
 - [Network](network.md)
 - [Single-Page Application (SPA)](spa.md)
 - [Configuration](configuration.md)
+- [Plugins](plugins.md)
 
 Enjoy your web site project 🤗
 
