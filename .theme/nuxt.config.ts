@@ -94,7 +94,7 @@ export default defineNuxtConfig({
   generate: {
     routes: ["/not-found"]
   },
-  modules: ["@nuxt/content", "@pinia/nuxt", "@nuxtjs/tailwindcss", "@primevue/nuxt-module"],
+  modules: ["@nuxt/content", "@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxt/eslint", "@primevue/nuxt-module"],
   primevue: {
     options: {
       theme: {

@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error nuxt/content/transformers is exist
 import { defineTransformer } from "@nuxt/content/transformers";
 
 export default defineTransformer({
