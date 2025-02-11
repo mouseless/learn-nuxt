@@ -56,28 +56,30 @@ export default defineNuxtConfig({
     dirs: [{ global: true, path: "~/components/Prose" }, "~/components"]
   },
   content: {
-    markdown: {
-      remarkPlugins: {
-        "remark-emoji": false
+    build: {
+      markdown: {
+        remarkPlugins: {
+          "remark-emoji": false
+        },
+        highlight: {
+          theme: "slack-dark",
+          preload: [
+            "diff",
+            "ts",
+            "js",
+            "css",
+            "java",
+            "markdown",
+            "sql",
+            "xml",
+            "json",
+            "csharp",
+            "md",
+            "bash",
+            "dockerfile"
+          ]
+        }
       }
-    },
-    highlight: {
-      theme: "slack-dark",
-      preload: [
-        "diff",
-        "ts",
-        "js",
-        "css",
-        "java",
-        "markdown",
-        "sql",
-        "xml",
-        "json",
-        "csharp",
-        "md",
-        "bash",
-        "dockerfile"
-      ]
     }
   },
   css: ["~/assets/styles.scss"],
