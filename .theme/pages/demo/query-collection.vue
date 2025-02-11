@@ -7,19 +7,15 @@
   />
 </template>
 <script setup>
-import { useRoute, queryCollection } from "#imports";
-
-const route = useRoute();
+import { queryCollection } from "#imports";
 
 // query index page
 const index = await queryCollection("content")
   .path("/demo/query-collection")
-  .where({ _path: { $eq: route.path } })
   .first();
 
 // filter out index page to avoid rendering it twice
 const pages = await queryCollection("content")
-  .path("/demo/query-collection")
-  .where({ _path: { $ne: route.path } })
+  .where("path", "LIKE", "/demo/query-collection/%")
   .all();
 </script>

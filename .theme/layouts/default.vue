@@ -12,22 +12,14 @@
       </NuxtLink>
     </div>
     <nav>
-      <ContentQuery
-        v-slot="{ data: menus }"
-        path="/"
-        :only="[ '_path', 'title', 'position' ]"
-        :where="{ _dir: { $eq: '' }, _path: { $ne: '/' }, position: { $exists: true } }"
-        :sort="sort"
+      <NuxtLink
+        v-for="menu in menus"
+        :key="menu.title"
+        :to="menu.path == $route.path ? '' : menu.path"
+        :class="menu.position < 100 ? 'left' : 'right'"
       >
-        <NuxtLink
-          v-for="menu in menus"
-          :key="menu.title"
-          :to="menu._path == $route.path ? '' : menu._path"
-          :class="menu.position < 100 ? 'left' : 'right'"
-        >
-          {{ menu.title }}
-        </NuxtLink>
-      </ContentQuery>
+        {{ menu.title }}
+      </NuxtLink>
     </nav>
   </header>
   <article>
@@ -35,10 +27,10 @@
   </article>
 </template>
 <script setup lang="ts">
-const sort = {
-  position: 1,
-  $numeric: true
-};
+const menus = await queryCollection("headers")
+  .where("position", "IS NOT NULL")
+  .order("position", "ASC")
+  .all();
 </script>
 <style scoped lang="scss">
 header, article {
