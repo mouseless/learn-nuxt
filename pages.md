@@ -17,9 +17,18 @@ the given markdown content as HTML. It is located in
 
 Collections gather content from paths specified in `content.config.ts` and
 create collections under the given names. Then, we can access these collections
-using `queryCollection` with the defined names.
+using `queryCollection` with the defined names. By giving `type` to collections,
+you can create `page` or `data` type. With `source` information you can specify
+the location of the data to be collected, with `schema` you can specify the
+schema with which they will be saved.
 
-See `content.config.ts` to see how a collection is created.
+> [!NOTE]
+>
+> You should use [ZOD][] when specifying `schema`.
+
+See `content.config.ts` to see our example.
+
+See [Nuxt Content Collection Definition][] to see more detail.
 
 ### Querying with `queryCollection`
 
@@ -69,3 +78,6 @@ When the requested route does not have corresponding markdown content, we fetch
 the content from `not-found.md` and render it on the screen.
 
 Demo is available at [/demo/error/non-existent-content](/demo/error/non-existent-content).
+
+[ZOD]: https://zod.dev/
+[Nuxt Content Collection Definition]: https://content.nuxt.com/docs/collections/define
