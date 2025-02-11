@@ -18,7 +18,7 @@ itself. Links, images etc. should be working on any platform this markdown file
 is viewed, such as GitHub. Below is the list of our conventions, the ones that
 require more explanation are explained in their own sections below.
 
-- Line lengths sould be less or equal to 80 characters
+- Line lengths should be less or equal to 80 characters
 - Indentantions are two space, don't use tab indentation
 - Empty line before and after every Code Block, Image, Link, Mermaid Diagram,
   Warning / Error / Note / Tip Boxes, Header etc.
