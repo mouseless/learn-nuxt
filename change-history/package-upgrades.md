@@ -78,6 +78,38 @@ content: {
 
 No issues
 
+## `@nuxtjs/tailwindcss`
+
+### 6.12.2 to 6.13.1
+
+Clean upgrade. No issues.
+
+## `@pinia/nuxt`
+
+### 0.5.3 to 0.9.0
+
+Clean upgrade. No issues.
+
+## `@primevue/nuxt-module`
+
+### 4.2.1 to 4.2.5
+
+`cssLayerOrder` is deprecated. `order` can be given from `theme` options.
+
+```json
+primevue: {
+  options: {
+    theme: {
+      options: {
+        cssLayer: {
+          order: "tailwind-base, primevue, tailwind-utilities"
+        }
+      }
+    }
+  }
+}
+```
+
 ## `dotenv`
 
 ### 16.0.3 to 16.3.1
@@ -185,6 +217,12 @@ After upgrading from 3.4.1 to 3.7.4, due to incompatibilities, it was decided
 to move to a final version nuxt project built with the new nuxt kit.
 
 You can see this move by looking at [migrations](../migrations.md).
+
+## `primevue`
+
+### 4.2.1 to 4.2.5
+
+Clean upgrade. No issues.
 
 ## `sass`
 
