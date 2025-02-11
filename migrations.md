@@ -13,7 +13,6 @@ Below you can find a migration checklist;
 
 ```markdown
 - [ ] upgrade `nuxt`: "3.15.4"
-  - [ ] use `nuxt` instead of `nuxi`
 - [ ] upgrade `vue`: "3.5.13"
 - [ ] upgrade `nuxt/content`: "3.1.0"
   - [ ] add `content.config.ts`
@@ -39,34 +38,6 @@ Below you can find a migration checklist;
 - [ ] upgrade `@rollup/rollup-linux-x64-gnu`: "4.34.6"
 - [ ] upgrade `vue-router`: "4.4.3"
 - [ ] upgrade `log-symbols`: "7.0.0"
-```
-
-### Nuxt
-
-Use `nuxt` instead of `nuxi` in scripts.
-
-[Old]
-```json
-{
-  "type": "module",
-  "scripts": {
-    ...
-    "dev": "nuxi dev --dotenv .env.local"
-    ...
-  }
-}
-```
-
-[New]
-```json
-{
-  "type": "module",
-  "scripts": {
-    ...
-    "dev": "nuxt dev --dotenv .env.local",
-    ...
-  }
-}
 ```
 
 ### Nuxt Content
