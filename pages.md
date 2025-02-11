@@ -31,7 +31,7 @@ page using `ContentRenderer`.
 >
 > The `all` and `first` methods return a `promise`, so you need to use `await`.
 
-Demo is available at [/demo/query-content](/demo/query-content).
+Demo is available at [/demo/query-collection](/demo/query-collection).
 
 ## Custom Pages
 

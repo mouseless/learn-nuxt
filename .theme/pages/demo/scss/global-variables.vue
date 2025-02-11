@@ -3,7 +3,7 @@
     Styled with Scss using global variable
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .class-with-global-variable {
   display: flex;
   justify-content: $justify-content-default;
