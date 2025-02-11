@@ -2,6 +2,10 @@
 
 ## `@babel/eslint-parser`
 
+### 7.25.1 to 7.26.8
+
+Clean upgrade. No issues.
+
 ### 7.22.15 to 7.23.10
 
 Clean upgrade. No issues.
@@ -11,6 +15,10 @@ Clean upgrade. No issues.
 No issues
 
 ## `@mermaid-js/mermaid-cli`
+
+### 10.9.1 to 11.4.2
+
+Clean upgrade. No issues.
 
 ### 10.4.0 to 10.8.0
 
@@ -28,6 +36,11 @@ Clean upgrade. No issues.
 ```
 
 ## `@nuxt/content`
+
+### 2.13.2 to 3.1.0
+
+There are a lot of breaking changes for it. See [Nuxt Content Migration][] for
+migration documentation.
 
 ### 2.8.5 to 2.12.0
 
@@ -59,6 +72,12 @@ content: {
 }
 ```
 
+## `@nuxt/eslint`
+
+### 1.0.1 Added
+
+No issues
+
 ## `dotenv`
 
 ### 16.0.3 to 16.3.1
@@ -73,6 +92,10 @@ Clean upgrade. No issues.
 ```
 
 ## `eslint`
+
+### 8.57.0 to 9.20.0
+
+Clean upgrade. No issues.
 
 ### 8.51.0 to 8.57.0
 
@@ -92,6 +115,10 @@ Clean upgrade. No issues.
 ```
 
 ## `log-symbols`
+
+### 6.0.0 to 7.0.0
+
+Clean upgrade. No issues.
 
 ### 5.1.0 to 6.0.0
 
@@ -122,6 +149,10 @@ not found: "ts.executeCommandLine(ts.sys, ts.noop, ts.sys.args);"".
 Upgraded the nuxt version to 3.7.4 to fix it.
 
 ## `nuxt`
+
+### 3.12.4 to 3.15.4
+
+`nuxt` is recommended instead of `nuxi` in scripts.
 
 ### 3.7.4 to 3.10.3
 
@@ -156,6 +187,13 @@ to move to a final version nuxt project built with the new nuxt kit.
 You can see this move by looking at [migrations](../migrations.md).
 
 ## `sass`
+
+### 1.77.8 to 1.84.0
+
+- Switched to using `@use` instead of `@import` for import.
+- Imported files are accessed with namespace.
+
+See [Sass Breaking Changes][] to see other breaking changes.
 
 ### 1.69.3 to 1.71.1
 
@@ -198,11 +236,19 @@ downgrade the version or upgrade the version of nuxt for a solution.
 
 ## `vue`
 
+### 3.4.35 to 3.5.13
+
+Clean upgrade. No issues.
+
 ### 3.3.4 to 3.4.21
 
 Clean upgrade. No issues.
 
 ## `vue-router`
+
+### 4.4.3 to 4.5.0
+
+Clean upgrade. No issues.
 
 ### 4.2.5 to 4.3.0
 
@@ -225,3 +271,6 @@ Clean upgrade. No issues.
 ### 5.79.0 to 5.88.2
 
 Clean upgrade. No issues.
+
+[Nuxt Content Migration]: https://content.nuxt.com/docs/getting-started/migration
+[Sass Breaking Changes]: https://sass-lang.com/documentation/breaking-changes/
