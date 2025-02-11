@@ -100,10 +100,14 @@ export default defineNuxtConfig({
   primevue: {
     options: {
       theme: {
-        preset: Mouseless
+        preset: Mouseless,
+        options: {
+          cssLayer: {
+            order: "tailwind-base, primevue, tailwind-utilities"
+          }
+        }
       }
     },
-    cssLayerOrder: "tailwind-base, primevue, tailwind-utilities",
     autoImport: true
   },
   nitro: {
@@ -144,6 +148,6 @@ export default defineNuxtConfig({
     }
   },
   tailwindcss: {
-    cssPath: ["~/assets/tailwind.css"]
+    cssPath: ["~/assets/tailwind.css", {injectPosition: "first"}]
   }
 });
