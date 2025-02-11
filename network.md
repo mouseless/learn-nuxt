@@ -27,7 +27,7 @@ this data is not expected to change frequently.
 > script setup, we solved the issue by using _async_ and _await_ keywords when
 >invoking async function in `useAsyncData()`
 >
-> ```javascript
+> ```js
 > await useAsyncData(async () => await ...);
 > ```
 

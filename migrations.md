@@ -251,7 +251,7 @@ precedence when generating static sites. Local `css` files added in
 is generated and causes issues when overriding external styles. Add following
 config to `nuxt.config.ts` to disable inlining css files.
 
-```javascript
+```js
 export default defineNuxtConfig({
   ...
   features: {
@@ -365,7 +365,7 @@ Below you can find a migration checklist;
 While preparing the open graph data, we were updating the meta using `useHead`.
 We switched to `useSeaMeta` which comes with the new versions of Nuxt.
 
-```javascript
+```js
 useSeoMeta({
   ogTitle: ...,
   ogDescription: ...
@@ -374,7 +374,7 @@ useSeoMeta({
 
 instead of
 
-```javascript
+```js
 useHead({
   meta: [
     { hid: "og:title", property: "og:title", content: ... },
