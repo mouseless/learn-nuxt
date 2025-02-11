@@ -21,7 +21,7 @@ require more explanation are explained in their own sections below.
 - Line lengths sould be less or equal to 80 characters
 - Indentantions are two space, don't use tab indentation
 - Empty line before and after every Code Block, Image, Link, Mermaid Diagram,
-  Alert / Info / Tip Boxes, Header etc.
+  Warning / Error / Note / Tip Boxes, Header etc.
 - Table rows should have the same width.
 - We have disabled emoji conversion, use actual emoji icons.
 
@@ -36,16 +36,17 @@ line, in order to have multiple lines of code block use "\`\`\`" instead of "\`"
 > Code related terms and terms in general are not given in code block,
 > use "\_\_Term\_\_" for code related terms, and italic for terms in general.
 
-## Alert / Info / Tip Box
+## Warning / Error / Note / Tip Box
 
 We use these boxes to give information, warning or tips when it is related to
 the context but could not be included in the paragraph.
 
 | Box Type | Markdown Name        |
 | ---      | ---                  |
-| Alert    | :warning:            |
-| Info     | :information_source: |
-| Tip      | :bulb:               |
+| Warning  | \[!WARNING\]         |
+| Error    | \[!CAUTION\]         |
+| Note     | \[!NOTE\]            |
+| Tip      | \[!TIP\]             |
 
 ## Links
 
