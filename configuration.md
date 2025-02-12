@@ -64,8 +64,8 @@ Demo is at [/demo/runtime-config](/demo/runtime-config)
 By default headers come in with anchorlink. You can do configuration to turn it
 off and render normal text.
 
-To learn how its configure look `runtimeConfig.public.mdc.headings.anchorLinks`
-configuration in `nuxt.config.ts`.
+To learn how its configure look `content.renderer.anchorLinks` configuration in
+`nuxt.config.ts`.
 
 To see how is look like [/demo/headings-anchorlinks](/demo/headings-anchorlinks)
 

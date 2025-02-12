@@ -20,6 +20,7 @@ Below you can find a migration checklist;
   - [ ] get pages with `queryCollection`
   - [ ] use `queryCollection` instead of `queryContent`
   - [ ] move `markdown` config into `build`
+  - [ ] move `anchorLink` configuration from `runtimeConfig` under `content.renderer`
 - [ ] add `@nuxt/eslint`("1.0.1") and remove `@nuxtjs/eslint-config-typescript`
 - [ ] update `eslint`: "9.20.0"
   - [ ] remove `.eslintrc` and add `eslint.config.mjs`
