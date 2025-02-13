@@ -1,0 +1,1 @@
+import{b as o,e as n,d as s,t as i,a,o as r,z as u}from"./Ccagcpjq.js";const p={__name:"runtime-config",setup(l){const t=u();return(m,e)=>(r(),o("div",null,[e[0]||(e[0]=n("h1",null,"Runtime Config",-1)),e[1]||(e[1]=n("code",null,"{{ runtimeConfig.public.baseURL }}",-1)),s(" = "+i(a(t).public.baseURL),1)]))}};export{p as default};

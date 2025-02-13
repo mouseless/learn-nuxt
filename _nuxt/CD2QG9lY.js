@@ -1,0 +1,1 @@
+import{f as a,b as o,o as t,t as c,_,g as n,F as p}from"./Ccagcpjq.js";const m=a({__name:"ComponentWithProps",props:{message:{}},setup(r){return(s,e)=>(t(),o("div",null," Message: "+c(s.message),1))}}),i={};function l(r,s){const e=m;return t(),o(p,null,[n(e,{message:"Hello"}),n(e,{message:"World"})],64)}const g=_(i,[["render",l]]);export{g as default};

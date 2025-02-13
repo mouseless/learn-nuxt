@@ -1,0 +1,1 @@
+import{J as s,b as i,t as a,a as l,o as n}from"./Ccagcpjq.js";const o=s("piniaStore",{state:()=>({titles:[]}),actions:{setTitles(e){this.titles=e}}}),_={__name:"pinia",setup(e){const t=o();return t.titles.length===0&&t.setTitles(["title1","title2","title3"]),(r,c)=>(n(),i("div",null,"Titles: "+a(l(t).titles),1))}};export{_ as default};
