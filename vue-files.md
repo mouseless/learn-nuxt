@@ -65,6 +65,10 @@ When creating variables you can refer to `./theme/assets/variables.scss`.
 To use the global variables simply use the variables created in
 `variables.scss` without importing.
 
+> [!TIP]
+>
+> We use `*` when importing the scss module to avoid the namespace requirement.
+
 > [!WARNING]
 >
 > You need to use a sass-loader and configure `nuxt.config.ts` for global

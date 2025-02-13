@@ -25,7 +25,7 @@ Below you can find a migration checklist;
 - [ ] update `eslint`: "9.20.0"
   - [ ] remove `.eslintrc` and add `eslint.config.mjs`
   - [ ] wrap configs with `withNuxt`
-- [ ] upgrade `sass`: "1.84.0"
+- [ ] upgrade `scss`: "1.84.0"
   - [ ] use `@use` instead of `@import`
   - [ ] also change on `nuxt.config`
 - [ ] upgrade `primevue` and other packages connected to it: "4.2.5"
@@ -121,9 +121,9 @@ export default withNuxt([
 
 ```
 
-### Sass
+### Scss
 
-In Sass, import is now done with `use`.
+In Scss, import is now done with `use`.
 
 ```scss
 @use 'variables.scss';
@@ -135,14 +135,6 @@ Namespace should be used to access the module after import or it should be
 specified when importing.
 
 ```scss
-@use "variables";
-
-@mixin border() {
-  border-color: solid 2px variables.$color-bg-second;
-}
-
-//or
-
 @use "variables" as *;
 
 @mixin border() {
