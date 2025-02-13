@@ -6,6 +6,7 @@
 .theme/.nitro
 .theme/.cache
 .theme/.output
+.theme/.data
 
 # Nuxt generate
 .theme/dist

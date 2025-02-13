@@ -8,56 +8,39 @@ You can create pages under `.theme/pages/`.
 
 ## Content Page
 
-Content page is a page that uses `<ContentDoc />` which renders given markdown
-content as html. It is at `.theme/pages/[...content-page].vue` which has a
-catch all route to handle any markdown file in any directory.
+A content page is a page that uses the `<ContentRenderer />` component to render
+the given markdown content as HTML. It is located in
+`.theme/pages/[...content-page].vue` and renders the page retrieved with
+`queryCollection` based on the current route.
 
-### Querying with `queryContent`
+## Collections
 
-We needed to load all markdown content under a folder in one page. To achieve
-this we used `queryContent` by which you can retrieve content under `content/`
-folder.
+Collections gather content from paths specified in `content.config.ts` and
+create collections under the given names. Then, we can access these collections
+using `queryCollection` with the defined names. By giving `type` to collections,
+you can create `page` or `data` type. With `source` information you can specify
+the location of the data to be collected, with `schema` you can specify the
+schema with which they will be saved.
 
 > [!NOTE]
 >
-> `find`, `findOne` methods return `promise` so you need to wait with `await`.
+> You should use [ZOD][] when specifying `schema`.
 
-Demo is at [/demo/query-content](/demo/query-content)
+See `content.config.ts` to see our example.
 
-> [!WARNING]
+See [Nuxt Content Collection Definition][] to see more detail.
+
+### Querying with `queryCollection`
+
+We needed to retrieve all markdown content from a collection. To achieve this,
+we used `queryCollection`, allowing us to display the collection content on the
+page using `ContentRenderer`.
+
+> [!NOTE]
 >
-> We've disabled `navigation` and `surround` options to avoid extra queries
-> when a page is loaded. You might reenable these depending on the theme you
-> are using.
+> The `all` and `first` methods return a `promise`, so you need to use `await`.
 
-### Querying with `<ContentQuery>`
-
-We needed to load all markdown content under a folder on a single page. When
-there is no need to change the data we receive with `queryContent` in the
-script block, the query sent to the content with `<ContentQuery>` was made to
-reduce the crowd in the script.
-
-> [!WARNING]
->
-> Use `<ContentQuery>` only if you know what you're doing, because it works in
-> the render stage. Otherwise, we strongly suggest usage of `queryContent()`
-> which runs once in setup stage.
-
-Demo is at [/demo/content-query](/demo/content-query/)
-
-### About Document-Driven Mode
-
-We don't use document-driven mode even if it's a website that contains only
-markdown content. This is because all it does is to register a page with
-catch-all route along with extra queries like `navigation`, `surround` which
-could be unncessary in your theme. If you need to render navigation menu etc.,
-use `<ContentQuery>` or `queryContent()` queries.
-
-> [!WARNING]
->
-> This project contains pages without a corresponding markdown content under
-> `/demo` path. When you enable document-driven mode, dynamic pages under
-> `/demo` will not work.
+Demo is available at [/demo/query-collection](/demo/query-collection).
 
 ## Custom Pages
 
@@ -91,16 +74,10 @@ Demo is at [/demo/public-assets](/demo/public-assets).
 
 ## 404 - Not Found
 
-When we use _Nuxt_ _Content_ components `<ContentDoc>` and `<ContentQuery>`, we
-configure the error content with `#not-found` when the component cannot find
-the markdown file it is looking for. To keep with the concept of managing the
-content of each page with markdown, we get the `#not-found` content from the
-`not-found.md` file.
+When the requested route does not have corresponding markdown content, we fetch
+the content from `not-found.md` and render it on the screen.
 
-> [!NOTE]
->
-> If you are getting the not-found content from markdown you should add a link
-> to `generate.routes`. See
-> [Configuration / Generate Routes](/configuration#generate-routes) for details.
+Demo is available at [/demo/error/non-existent-content](/demo/error/non-existent-content).
 
-Demo is at [/demo/error/non-existent-content](/demo/error/non-existent-content)
+[ZOD]: https://zod.dev/
+[Nuxt Content Collection Definition]: https://content.nuxt.com/docs/collections/define

@@ -7,6 +7,170 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
+## Nuxt: v3.12.4 👉 v3.15.4
+
+Below you can find a migration checklist;
+
+```markdown
+- [ ] upgrade `nuxt`: "3.15.4"
+- [ ] upgrade `vue`: "3.5.13"
+- [ ] upgrade `nuxt/content`: "3.1.0"
+  - [ ] add `content.config.ts`
+  - [ ] `ContentDoc`, `ContentQuery` are deprecated. Use `ContentRenderer`
+  - [ ] get pages with `queryCollection`
+  - [ ] use `queryCollection` instead of `queryContent`
+  - [ ] move `markdown` config into `build`
+  - [ ] move `anchorLink` configuration from `runtimeConfig` under `content.renderer`
+- [ ] add `@nuxt/eslint`("1.0.1") and remove `@nuxtjs/eslint-config-typescript`
+- [ ] update `eslint`: "9.20.0"
+  - [ ] remove `.eslintrc` and add `eslint.config.mjs`
+  - [ ] wrap configs with `withNuxt`
+- [ ] upgrade `scss`: "1.84.0"
+  - [ ] use `@use` instead of `@import`
+  - [ ] also change on `nuxt.config`
+- [ ] upgrade `primevue` and other packages connected to it: "4.2.5"
+  - [ ] `cssLayerOrder` deprecated. use `primevue.options.theme.options.cssLayer.order`
+- [ ] upgrade `@nuxtjs/tailwindcss`: "6.13.1"
+  - [ ] add `injectPosition` to `cssPath`
+- [ ] upgrade `@babel/eslint-parser`: "7.26.8"
+- [ ] upgrade `mermaid-js/mermaid-cli`: "11.4.2"
+- [ ] upgrade `@pinia/nuxt`: "0.9.0"
+- [ ] upgrade `pinia`: "2.3.1"
+- [ ] upgrade `@rollup/rollup-linux-x64-gnu`: "4.34.6"
+- [ ] upgrade `vue-router`: "4.4.3"
+- [ ] upgrade `log-symbols`: "7.0.0"
+```
+
+### Nuxt Content
+
+#### Add `content.config.ts`
+
+```ts
+import { defineContentConfig, defineCollection, z } from "@nuxt/content";
+
+export default defineContentConfig({
+  collections: {
+    content: defineCollection({
+      type: "page",
+      source: "**/*.md"
+    })
+  }
+});
+```
+
+#### Remove dropped components
+
+All content should be rendered using `<ContentRenderer>` component.
+`<ContentDoc>`, `<ContentList>`, `<ContentNavigation>` and `<ContentQuery>`
+components are dropped
+
+```vue
+<ContentRenderer v-if="doc" :value="doc" />
+```
+
+#### Use `queryCollector`
+
+`queryContent()` API is replaced with new `queryCollection()`
+
+```js
+const doc = await queryCollection("content").path(route.path).first();
+```
+
+#### Move `markdown` config into `build`
+
+```js
+//old
+content: {
+  markdown: {...},
+  highlight: {...}
+}
+
+//new
+content: {
+  build: {
+    markdown: {...},
+    highlight: {...}
+  }
+}
+```
+
+### Eslint
+
+#### Migrate `.eslintrc` to `eslint.config.mjs`
+
+You can do migrate quickly with `npx @eslint/migrate-config .eslintrc.json`
+after renaming `.eslintrc` to `.eslintrc.json`.
+
+Then you can configure the Eslint for Nuxt using `withNuxt` with the added
+`@nuxt/eslint`.
+
+```js
+import withNuxt from "./.nuxt/eslint.config.mjs";
+
+export default withNuxt([
+  {
+    ignores: []
+  },
+  {
+    rules: {
+      "arrow-parens": ["error", "as-needed"],
+      ...
+    }
+  }
+]);
+
+```
+
+### Scss
+
+In Scss, import is now done with `use`.
+
+```scss
+@use 'variables.scss';
+@use 'mixins.scss';
+@use 'default.scss';
+```
+
+Namespace should be used to access the module after import or it should be
+specified when importing.
+
+```scss
+@use "variables" as *;
+
+@mixin border() {
+  border-color: solid 2px $color-bg-second;
+}
+```
+
+### Primevue
+
+`cssLayerOrder` deprecated. use
+
+```js
+primevue: {
+  options: {
+    theme: {
+      options: {
+        cssLayer: {
+          order: "tailwind-base, primevue, tailwind-utilities"
+        }
+      }
+    }
+  },
+  //cssLayerOrder: "tailwind-base, primevue, tailwind-utilities"
+}
+```
+
+### Tailwindcss
+
+Add `injectPosition` to `cssPath`
+
+```js
+tailwindcss: {
+  cssPath: ["~/assets/tailwind.css", {injectPosition: "first"}]
+}
+```
+
 ## Nuxt: v3.10.3 👉 v3.12.4
 
 Below you can find a migration checklist;
@@ -51,7 +215,7 @@ precedence when generating static sites. Local `css` files added in
 is generated and causes issues when overriding external styles. Add following
 config to `nuxt.config.ts` to disable inlining css files.
 
-```javascript
+```js
 export default defineNuxtConfig({
   ...
   features: {
@@ -165,7 +329,7 @@ Below you can find a migration checklist;
 While preparing the open graph data, we were updating the meta using `useHead`.
 We switched to `useSeaMeta` which comes with the new versions of Nuxt.
 
-```javascript
+```js
 useSeoMeta({
   ogTitle: ...,
   ogDescription: ...
@@ -174,7 +338,7 @@ useSeoMeta({
 
 instead of
 
-```javascript
+```js
 useHead({
   meta: [
     { hid: "og:title", property: "og:title", content: ... },

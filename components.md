@@ -182,12 +182,12 @@ import data.
 
 ## Mutex
 
-We use [async-mutex][async-mutex] when we want to synchronize concurrent 
-processes. When a page is rendered, multiple components may fetch data from an 
+We use [async-mutex][async-mutex] when we want to synchronize concurrent
+processes. When a page is rendered, multiple components may fetch data from an
 api but may need to refresh access token. Since components will not be rendered
-syncronized, many requests will be performed to acquire new access token. 
-In order to prevent this issue, we lock refresh token flow, so that each 
-component will wait for first refresh token request and use the newly obtained 
+syncronized, many requests will be performed to acquire new access token.
+In order to prevent this issue, we lock refresh token flow, so that each
+component will wait for first refresh token request and use the newly obtained
 token.
 
 See [demo/mutex](/demo/mutex) for demo of synchronizing concurrent processes
@@ -235,7 +235,7 @@ export default defineNuxtConfig({
 
 > [!NOTE]
 >
-> For demo purposes we followed [primevue-tailwind] documentation to setup 
+> For demo purposes we followed [primevue-tailwind] documentation to setup
 > and properly use _primevue_ themes with _tailwind_
 
 ### Customizing Themes
@@ -275,7 +275,7 @@ docs.
 
 ### Form
 
-We use `Form` component from [PrimeVue Forms][form] library. Install it using 
+We use `Form` component from [PrimeVue Forms][form] library. Install it using
 below command;
 
 ```bash
@@ -284,7 +284,7 @@ npm install @primevue/forms
 
 To use `Form` component, you need to import it in `.vue` files
 
-```javascript
+```js
 import { Form } from '@primevue/forms';
 ```
 
@@ -292,8 +292,8 @@ Demo is at [/demo/primevue](/demo/primevue).
 
 > [!NOTE]
 >
-> We experienced issues when following the given documentation when trying to 
-> configure resolvers so implemented a custom resolver to demonstrate how 
+> We experienced issues when following the given documentation when trying to
+> configure resolvers so implemented a custom resolver to demonstrate how
 > invalid inputs are visualized
 
 [form]: https://primevue.org/forms

@@ -56,28 +56,40 @@ export default defineNuxtConfig({
     dirs: [{ global: true, path: "~/components/Prose" }, "~/components"]
   },
   content: {
-    markdown: {
-      remarkPlugins: {
-        "remark-emoji": false
+    build: {
+      markdown: {
+        remarkPlugins: {
+          "remark-emoji": false
+        },
+        highlight: {
+          theme: "slack-dark",
+          preload: [
+            "diff",
+            "ts",
+            "js",
+            "css",
+            "java",
+            "markdown",
+            "sql",
+            "xml",
+            "json",
+            "csharp",
+            "md",
+            "bash",
+            "dockerfile"
+          ]
+        }
       }
     },
-    highlight: {
-      theme: "slack-dark",
-      preload: [
-        "diff",
-        "ts",
-        "js",
-        "css",
-        "java",
-        "markdown",
-        "sql",
-        "xml",
-        "json",
-        "csharp",
-        "md",
-        "bash",
-        "dockerfile"
-      ]
+    renderer: {
+      anchorLinks: {
+        h1: false,
+        h2: false,
+        h3: false,
+        h4: false,
+        h5: false,
+        h6: true
+      }
     }
   },
   css: ["~/assets/styles.scss"],
@@ -94,14 +106,18 @@ export default defineNuxtConfig({
   generate: {
     routes: ["/not-found"]
   },
-  modules: ["@nuxt/content", "@pinia/nuxt", "@nuxtjs/tailwindcss", "@primevue/nuxt-module"],
+  modules: ["@nuxt/content", "@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxt/eslint", "@primevue/nuxt-module"],
   primevue: {
     options: {
       theme: {
-        preset: Mouseless
+        preset: Mouseless,
+        options: {
+          cssLayer: {
+            order: "tailwind-base, primevue, tailwind-utilities"
+          }
+        }
       }
     },
-    cssLayerOrder: "tailwind-base, primevue, tailwind-utilities",
     autoImport: true
   },
   nitro: {
@@ -116,18 +132,6 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      mdc: {
-        headings: {
-          anchorLinks: {
-            h1: false,
-            h2: false,
-            h3: false,
-            h4: false,
-            h5: false,
-            h6: true
-          }
-        }
-      },
       baseUrl: "",
       gitHubBaseURL: "https://api.github.com"
     }
@@ -136,12 +140,12 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: "@import \"@/assets/variables.scss\";"
+          additionalData: "@use \"~/assets/variables.scss\" as *;"
         }
       }
     }
   },
   tailwindcss: {
-    cssPath: ["~/assets/tailwind.css"]
+    cssPath: ["~/assets/tailwind.css", {injectPosition: "first"}]
   }
 });
