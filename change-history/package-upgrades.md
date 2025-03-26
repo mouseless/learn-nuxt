@@ -182,6 +182,10 @@ Upgraded the nuxt version to 3.7.4 to fix it.
 
 ## `nuxt`
 
+### 3.15.4 to 3.16.1
+
+TBD...
+
 ### 3.12.4 to 3.15.4
 
 Clean update. No issues.
