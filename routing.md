@@ -46,7 +46,9 @@ static site hosting services, such as GitHub Pages, to add a trailing slash to
 urls. When this happens that page fails to load resources with a relative path
 because a trailing slash would indicate another directory in a path.
 
-We have this problem with images. Since we use dynamic path, it looks in a
-different directory due to trailing slash. We solved this problem by making the
-path absolute in `ProseImg`. To see solution look here
-`components/prose/ProseImg`.
+We have this problem with images and links. Since we use dynamic path, it looks
+in a different directory due to trailing slash. For images we solved this
+problem by making the path absolute in `ProseImg`. For links, we solved it by
+merging the link with the parent directory path in `ProseA` for cases where the
+route ends with a slash and the link does not start with a slash. See
+`components/prose/ProseImg` and `components/prose/ProseA` to see the solutions.
