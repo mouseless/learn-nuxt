@@ -2,6 +2,10 @@
 
 ## `@babel/eslint-parser`
 
+### 7.26.8 to 7.27.0
+
+Clean upgrade. No issues.
+
 ### 7.25.1 to 7.26.8
 
 Clean upgrade. No issues.
@@ -36,6 +40,10 @@ Clean upgrade. No issues.
 ```
 
 ## `@nuxt/content`
+
+### 3.1.0 to 3.4.0
+
+Clean upgrade. No issues.
 
 ### 2.13.2 to 3.1.0
 
@@ -74,6 +82,10 @@ content: {
 
 ## `@nuxt/eslint`
 
+### 1.0.1 to 1.2.0
+
+No issues
+
 ### 1.0.1 Added
 
 No issues
@@ -85,6 +97,10 @@ No issues
 Clean upgrade. No issues.
 
 ## `@pinia/nuxt`
+
+### 0.9.0 to 0.10.1
+
+Clean upgrade. No issues.
 
 ### 0.5.3 to 0.9.0
 
@@ -124,6 +140,10 @@ Clean upgrade. No issues.
 ```
 
 ## `eslint`
+
+### 9.20.0 to 9.23.0
+
+Clean upgrade. No issues.
 
 ### 8.57.0 to 9.20.0
 
@@ -182,6 +202,10 @@ Upgraded the nuxt version to 3.7.4 to fix it.
 
 ## `nuxt`
 
+### 3.15.4 to 3.16.1
+
+Clean update. No issues.
+
 ### 3.12.4 to 3.15.4
 
 Clean update. No issues.
@@ -225,6 +249,10 @@ You can see this move by looking at [migrations](../migrations.md).
 Clean upgrade. No issues.
 
 ## `sass`
+
+### 1.84.0 to 1.86.0
+
+No issues
 
 ### 1.77.8 to 1.84.0
 

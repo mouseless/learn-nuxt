@@ -5,6 +5,7 @@
 </template>
 <script setup lang="ts">
 withDefaults(defineProps<{
+  // eslint-disable-next-line vue/no-required-prop-with-default
   complex: {
     optional?: string,
     required: number

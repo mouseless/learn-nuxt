@@ -7,6 +7,24 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
+## Nuxt: v3.15.4 👉 v3.16.1
+
+```markdown
+- [ ] upgrade nuxt with `npx nuxi upgrade`. This will upgrade to the latest
+  version(`3.16.1`).
+- upgrade other packages
+  - [ ] upgrade `@babel/eslint-parser` to `7.27.0`
+  - [ ] upgrade `@nuxt/content` to `3.4.0`
+  - [ ] upgrade `@nuxt/eslint` to `1.2.0`
+  - [ ] upgrade `@nuxtjs/tailwindcss` to `6.13.2`
+  - [ ] upgrade `@pinia/nuxt` to `0.10.1`
+  - [ ] upgrade `eslint` to `9.23.0`
+  - [ ] upgrade `pinia` to `3.0.1`
+  - [ ] upgrade `sass` to `1.86.0`
+```
+
+There should be no issues with packages after upgrades.
+
 ## Nuxt: v3.12.4 👉 v3.15.4
 
 Below you can find a migration checklist;
