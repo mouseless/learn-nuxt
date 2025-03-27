@@ -108,10 +108,6 @@ Clean upgrade. No issues.
 
 ## `@primevue/nuxt-module`
 
-### 4.2.5 to 4.3.2
-
-No issues
-
 ### 4.2.1 to 4.2.5
 
 `cssLayerOrder` is deprecated. `order` can be given from `theme` options.
