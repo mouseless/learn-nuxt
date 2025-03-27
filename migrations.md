@@ -18,7 +18,6 @@ encountered while migrating, solutions to problems and changes.
   - [ ] upgrade `@nuxt/eslint` to `1.2.0`
   - [ ] upgrade `@nuxtjs/tailwindcss` to `6.13.2`
   - [ ] upgrade `@pinia/nuxt` to `0.10.1`
-  - [ ] upgrade `@primevue/nuxt-module` to `4.3.2`
   - [ ] upgrade `eslint` to `9.23.0`
   - [ ] upgrade `pinia` to `3.0.1`
   - [ ] upgrade `sass` to `1.86.0`
