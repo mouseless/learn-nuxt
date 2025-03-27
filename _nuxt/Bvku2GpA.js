@@ -1,0 +1,1 @@
+import{aC as r,c as t,o as s,t as c,_ as p,j as a}from"./CY6SFX_I.js";const _=r({__name:"ComponentThatReusesType",props:{reused:{}},setup(o){return(e,n)=>(s(),t("div",null," stringProp: "+c(e.reused.stringProp),1))}}),u={};function i(o,e){const n=_;return s(),a(n,{reused:{stringProp:"Demo"}})}const d=p(u,[["render",i]]);export{d as default};

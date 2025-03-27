@@ -1,0 +1,1 @@
+import{aC as r,c as o,o as t,t as c,_,g as n,F as p}from"./CY6SFX_I.js";const m=r({__name:"ComponentWithProps",props:{message:{}},setup(a){return(s,e)=>(t(),o("div",null," Message: "+c(s.message),1))}}),i={};function l(a,s){const e=m;return t(),o(p,null,[n(e,{message:"Hello"}),n(e,{message:"World"})],64)}const g=_(i,[["render",l]]);export{g as default};

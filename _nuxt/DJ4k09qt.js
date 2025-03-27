@@ -1,0 +1,1 @@
+import{c as o,a as n,b as s,t as a,u as i,o as u,az as r}from"./CY6SFX_I.js";const p={__name:"runtime-config",setup(l){const t=r();return(m,e)=>(u(),o("div",null,[e[0]||(e[0]=n("h1",null,"Runtime Config",-1)),e[1]||(e[1]=n("code",null,"{{ runtimeConfig.public.baseURL }}",-1)),s(" = "+a(i(t).public.baseURL),1)]))}};export{p as default};
