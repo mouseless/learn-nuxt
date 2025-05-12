@@ -296,6 +296,10 @@ Demo is at [/demo/primevue](/demo/primevue).
 > configure resolvers so implemented a custom resolver to demonstrate how
 > invalid inputs are visualized
 
+## Localization
+
+TBD...
+
 [form]: https://primevue.org/forms
 [pinia]: https://pinia.vuejs.org/ssr/nuxt.html
 [async-mutex]: https://www.npmjs.com/package/async-mutex
