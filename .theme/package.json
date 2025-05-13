@@ -20,6 +20,7 @@
     "@nuxt/content": "^3.4.0",
     "@nuxt/devtools": "latest",
     "@nuxt/eslint": "^1.2.0",
+    "@nuxtjs/i18n": "^9.5.4",
     "@nuxtjs/tailwindcss": "^6.13.2",
     "@pinia/nuxt": "^0.10.1",
     "@primevue/nuxt-module": "~4.2.5",
