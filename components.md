@@ -302,10 +302,12 @@ We use `@nuxtjs/i18n` module to adapt to different regions and languages. This
 module makes it easier to switch content between the languages we support.
 
 In static sites, if we have content in different languages, we take advantage of
-the route switching feature of the `@nuxtjs/i18n` module. In app applications,
-we only use in-place content modification.
+the route switching feature of the `@nuxtjs/i18n` module. In apps, we only use
+in-place content modification.
 
 Demo is at [/demo/i18n](/demo/i18n).
+
+See [nuxt/i18n] for more.
 
 ### Setup & Configuration
 
@@ -323,3 +325,4 @@ See `nuxt.config.ts` for installation and settings.
 [primevue]: https://primevue.org/nuxt/
 [tailwindcss]: https://tailwindcss.com/docs/installation
 [primevue-tailwind]: https://v3.primevue.org/csslayer/
+[nuxt/i18n]: https://i18n.nuxtjs.org/docs/getting-started/usage
