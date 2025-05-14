@@ -296,9 +296,33 @@ Demo is at [/demo/primevue](/demo/primevue).
 > configure resolvers so implemented a custom resolver to demonstrate how
 > invalid inputs are visualized
 
+## i18n
+
+We use `@nuxtjs/i18n` module to adapt to different regions and languages. This
+module makes it easier to switch content between the languages we support.
+
+In static sites, if we have content in different languages, we take advantage of
+the route switching feature of the `@nuxtjs/i18n` module. In apps, we only use
+in-place content modification.
+
+Demo is at [/demo/i18n](/demo/i18n).
+
+See [nuxt/i18n] for more.
+
+### Setup & Configuration
+
+After downloading the `@nuxtjs/i18n` package, we add the module to use.
+
+By default it looks for locale files under `<root>/i18n/locales`, we prefer
+`root/locales`. Also, the route is changed by default when the language is
+changed. We change this setting according to the type of site we use.
+
+See `nuxt.config.ts` for installation and settings.
+
 [form]: https://primevue.org/forms
 [pinia]: https://pinia.vuejs.org/ssr/nuxt.html
 [async-mutex]: https://www.npmjs.com/package/async-mutex
 [primevue]: https://primevue.org/nuxt/
 [tailwindcss]: https://tailwindcss.com/docs/installation
 [primevue-tailwind]: https://v3.primevue.org/csslayer/
+[nuxt/i18n]: https://i18n.nuxtjs.org/docs/getting-started/usage

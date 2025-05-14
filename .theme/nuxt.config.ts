@@ -106,7 +106,23 @@ export default defineNuxtConfig({
   generate: {
     routes: ["/not-found"]
   },
-  modules: ["@nuxt/content", "@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxt/eslint", "@primevue/nuxt-module"],
+  modules: [
+    "@nuxt/content",
+    "@pinia/nuxt",
+    "@nuxtjs/tailwindcss",
+    "@nuxt/eslint",
+    "@primevue/nuxt-module",
+    "@nuxtjs/i18n"
+  ],
+  i18n: {
+    restructureDir: "",
+    defaultLocale: "en",
+    strategy: "no_prefix",
+    locales: [
+      { code: "en", name: "English", file: "en.json" },
+      { code: "tr", name: "Türkçe", file: "tr.json" }
+    ]
+  },
   primevue: {
     options: {
       theme: {
