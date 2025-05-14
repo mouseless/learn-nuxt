@@ -120,7 +120,7 @@ export default defineNuxtConfig({
     strategy: "no_prefix",
     locales: [
       { code: "en", name: "English", file: "en.json" },
-      { code: "tr", name: "Turkish", file: "tr.json" }
+      { code: "tr", name: "Türkçe", file: "tr.json" }
     ]
   },
   primevue: {

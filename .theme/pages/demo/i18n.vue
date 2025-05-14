@@ -8,8 +8,8 @@
     >
       {{ name }}
     </button>
-    <h1>Current locale: {{ locale }}</h1>
-    <h1>{{ $t('welcome') }}</h1>
+    <h1>{{ $t('current_locale__LOCALE', {locale}) }}</h1>
+    <span>{{ $t('welcome_NAME_to_localization_sample_page', {name: 'john'}) }}</span>
   </div>
 </template>
 <script setup>
