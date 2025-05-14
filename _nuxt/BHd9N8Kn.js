@@ -1,1 +1,0 @@
-import{c as e,o as a,h as s,k as r,u as n,an as d}from"./CY6SFX_I.js";const c={key:0},_={__name:"ProseP",setup(p){const t=d("provided-data",!1);return(o,l)=>(a(),e("p",null,[s(o.$slots,"default"),n(t)?(a(),e("span",c," (provided data injected)")):r("",!0)]))}};export{_ as default};

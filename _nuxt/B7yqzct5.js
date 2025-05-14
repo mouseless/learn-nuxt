@@ -1,1 +1,0 @@
-import{c as t,o as e,ay as o}from"./CY6SFX_I.js";const u={__name:"error-handling",setup(a){function r(){throw o({statusCode:500,statusMessage:"Status Message",fatal:!0})}return(s,n)=>(e(),t("button",{onClick:r}," Throw Error "))}};export{u as default};

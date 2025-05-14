@@ -1,0 +1,1 @@
+import{aD as r,c as t,o as s,t as c,_ as p,l as a}from"./ByjBGsN8.js";const _=r({__name:"ComponentThatReusesType",props:{reused:{}},setup(o){return(e,n)=>(s(),t("div",null," stringProp: "+c(e.reused.stringProp),1))}}),u={};function i(o,e){const n=_;return s(),a(n,{reused:{stringProp:"Demo"}})}const l=p(u,[["render",i]]);export{l as default};
