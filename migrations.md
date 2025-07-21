@@ -7,25 +7,28 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
-## Nuxt: v3.16.1 👉 v3.17.5
+## Nuxt: v3.16.1 👉 v3.17.7
 
 ```markdown
 - [ ] upgrade nuxt with `npx nuxi upgrade`. This will upgrade to the latest
   version(`3.17.7`).
-- upgrade other packages
+- [ ] upgrade other packages
   - [ ] upgrade `@babel/eslint-parser` to `7.28.0`
   - [ ] upgrade `@mermaid-js/mermaid-cli` to `11.6.0`
   - [ ] upgrade `@nuxt/content` to `3.6.3`
   - [ ] upgrade `@nuxt/eslint` to `1.5.2`
   - [ ] upgrade `@nuxtjs/tailwindcss` to `6.14.0`
-  - [ ] upgrade `@pinia/nuxt` to `0.11.1`
+  - [ ] upgrade `@pinia/nuxt` to `0.11.2`
+  - [ ] upgrade `@nuxtjs/i18n` to `9.5.6`
   - [ ] upgrade `@primevue/forms` to `4.3.6`
   - [ ] upgrade `@primevue/nuxt-module` to `4.3.6`
-  - [ ] upgrade `@primevue/themes` to `4.3.6`
-  - [ ] upgrade `@pinia/nuxt` to `0.11.1`
+  - [ ] upgrade `@primevue/themes` to `@primeuix/themes`
   - [ ] upgrade `eslint` to `9.31.0`
-  - [ ] upgrade `sass` to `1.89.2`
-  - [ ] upgrade `primevue` to `4.3.6`
+  - [ ] upgrade `sass` to `1.89.0`
+  - [ ] upgrade `primevue` to => `4.3.6`
+- [ ] Remove ^ and ~ from all package.json files to have more control over
+used packages.
+- [ ] install `better-sqlite3` package for `@nuxt/content`
 ```
 
 ## Nuxt: v3.15.4 👉 v3.16.1
@@ -33,7 +36,7 @@ encountered while migrating, solutions to problems and changes.
 ```markdown
 - [ ] upgrade nuxt with `npx nuxi upgrade`. This will upgrade to the latest
   version(`3.16.1`).
-- upgrade other packages
+- [ ] upgrade other packages
   - [ ] upgrade `@babel/eslint-parser` to `7.27.0`
   - [ ] upgrade `@nuxt/content` to `3.4.0`
   - [ ] upgrade `@nuxt/eslint` to `1.2.0`
