@@ -90,6 +90,9 @@ export default defineNuxtConfig({
         h5: false,
         h6: true
       }
+    },
+    experimental: {
+      nativeSqlite: true
     }
   },
   css: ["~/assets/styles.scss"],
