@@ -1,6 +1,6 @@
 import { joinURL } from "ufo";
-import Aura from "@primevue/themes/aura";
-import { definePreset } from "@primevue/themes";
+import Aura from "@primeuix/themes/aura";
+import { definePreset } from "@primeuix/themes";
 
 const Mouseless = definePreset(Aura, {
   semantic: {
