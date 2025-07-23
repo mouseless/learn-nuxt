@@ -19,7 +19,7 @@ encountered while migrating, solutions to problems and changes.
   - [ ] upgrade `@nuxt/eslint` to `1.5.2`
   - [ ] upgrade `@nuxtjs/tailwindcss` to `6.14.0`
   - [ ] upgrade `@pinia/nuxt` to `0.11.2`
-  - [ ] upgrade `@nuxtjs/i18n` to `9.5.6`
+  - [ ] upgrade `@nuxtjs/i18n` to `10.0.2`
   - [ ] upgrade `@primevue/forms` to `4.3.6`
   - [ ] upgrade `@primevue/nuxt-module` to `4.3.6`
   - [ ] upgrade `@primevue/themes` to `@primeuix/themes`
