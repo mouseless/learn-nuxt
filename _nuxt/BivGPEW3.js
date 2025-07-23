@@ -1,0 +1,1 @@
+const e={current_locale__LOCALE:{t:0,b:{t:2,i:[{t:3,v:"Current locale: "},{t:4,k:"locale"}]}},welcome_NAME_to_localization_sample_page:{t:0,b:{t:2,i:[{t:3,v:"Welcome "},{t:4,k:"name"},{t:3,v:" to localization sample page"}]}}};export{e as default};

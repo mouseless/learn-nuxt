@@ -1,0 +1,1 @@
+import{c as t,o as e,H as o}from"./C5G9rh5D.js";const u={__name:"error-handling",setup(a){function r(){throw o({statusCode:500,statusMessage:"Status Message",fatal:!0})}return(s,n)=>(e(),t("button",{onClick:r}," Throw Error "))}};export{u as default};
