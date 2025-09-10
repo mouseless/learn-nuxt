@@ -1,0 +1,1 @@
+import{_ as r}from"./Blgl34En.js";import{q as a}from"./cS5CxTAR.js";import{p as s,k as c,b as _,o as m}from"./DmSCGCEU.js";const h={__name:"[[page]]",async setup(p){let e,t;const o=([e,t]=s(()=>a("content").path("/demo/transformer").first()),e=await e,t(),e);return(l,f)=>{const n=r;return m(),c(n,{value:_(o)},null,8,["value"])}}};export{h as default};

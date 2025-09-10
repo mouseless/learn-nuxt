@@ -1,1 +1,0 @@
-import{m as o,c as a,o as n}from"./C5G9rh5D.js";const c={__name:"open-graph",setup(p){const e=t=>`Open Graph - ${t}`;return o({ogTitle:e("title"),ogDescription:e("description")}),(t,s)=>(n(),a("div",null," This is an example of using the Open Graph "))}};export{c as default};

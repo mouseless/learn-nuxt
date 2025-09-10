@@ -1,1 +1,0 @@
-import{q as t,c as a,t as n,b as o,o as s}from"./C5G9rh5D.js";const c="John",p={__name:"index",setup(l){const e=t(()=>`${c} Doe`);return(r,m)=>(s(),a("div",null," Full Name: "+n(o(e)),1))}};export{p as default};
