@@ -2,6 +2,10 @@
 
 ## `@babel/eslint-parser`
 
+### 7.28.0 to 7.28.4
+
+Clean upgrade. No issues.
+
 ### 7.26.8 to 7.27.0
 
 Clean upgrade. No issues.
@@ -19,6 +23,10 @@ Clean upgrade. No issues.
 No issues
 
 ## `@mermaid-js/mermaid-cli`
+
+### 11.6.0 to 11.9.0
+
+Clean upgrade. No issues.
 
 ### 10.9.1 to 11.4.2
 
@@ -82,11 +90,21 @@ content: {
 
 ## `@nuxt/eslint`
 
+### 1.5.2 to 1.9.0
+
+No issues
+
 ### 1.0.1 to 1.2.0
 
 No issues
 
 ### 1.0.1 Added
+
+No issues
+
+## `@nuxtjs/i18n`
+
+### 10.0.2 to 10.1.0
 
 No issues
 
@@ -107,6 +125,10 @@ Clean upgrade. No issues.
 Clean upgrade. No issues.
 
 ## `@primevue/nuxt-module`
+
+### 4.3.6 to 4.3.9
+
+No issues
 
 ### 4.2.1 to 4.2.5
 
@@ -141,6 +163,10 @@ Clean upgrade. No issues.
 
 ## `eslint`
 
+### 9.31.0 to 9.35.0
+
+Clean upgrade. No issues.
+
 ### 9.20.0 to 9.23.0
 
 Clean upgrade. No issues.
@@ -167,6 +193,10 @@ Clean upgrade. No issues.
 ```
 
 ## `log-symbols`
+
+### 7.0.0 to 7.0.1
+
+Clean upgrade. No issues.
 
 ### 6.0.0 to 7.0.0
 
@@ -250,6 +280,10 @@ Clean upgrade. No issues.
 
 ## `sass`
 
+### 1.89.0 to 1.92.1
+
+No issues
+
 ### 1.84.0 to 1.86.0
 
 No issues
@@ -302,6 +336,10 @@ downgrade the version or upgrade the version of nuxt for a solution.
 
 ## `vue`
 
+### 3.5.13 to 3.5.21
+
+Clean upgrade. No issues.
+
 ### 3.4.35 to 3.5.13
 
 Clean upgrade. No issues.
@@ -311,6 +349,10 @@ Clean upgrade. No issues.
 Clean upgrade. No issues.
 
 ## `vue-router`
+
+### 4.5.0 to 4.5.1
+
+Clean upgrade. No issues.
 
 ### 4.4.3 to 4.5.0
 
