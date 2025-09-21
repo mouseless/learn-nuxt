@@ -16,6 +16,12 @@ encountered while migrating, solutions to problems and changes.
   - [ ] upgrade `@nuxt/devtools` to `2.6.5`
   - [ ] upgrade `eslint` to `9.36.0`
   - [ ] upgrade `sass` to `1.93.0`
+- [ ] use `globalThis` instead of `window`
+- [ ] use if necessary `onInstall` and `onUpgrade` module hooks
+- [ ] use `defineRouteRules` if necessary
+- [ ] use `Lazy Hydration Macros`
+- [ ] use `<NuxtRouteAnnouncer>` in `app.vue` for users with visual impairments
+- [ ] use `onWatcherCleanup` in `watch` if necessary(it's globally imported)
 ```
 
 ## Nuxt: v3.16.1 👉 v3.17.7
