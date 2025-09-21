@@ -24,6 +24,91 @@ encountered while migrating, solutions to problems and changes.
 - [ ] use `onWatcherCleanup` in `watch` if necessary(it's globally imported)
 ```
 
+### `onInstall` and `onUpgrade` hooks
+
+```javascript
+export default defineNuxtModule({
+  meta: { ... },
+  onInstall(nuxt) {
+    // The module works when first installed.
+  },
+  onUpgrade(options, nuxt, previousVersion) {
+    // The module runs every time it is updated.
+  },
+  setup(options, nuxt) { ... }
+})
+```
+
+### `defineRouteRules` helper
+
+`defineRouteRules` is a helper function that allows you to define custom rules
+for a specific route at the page level (within a .vue file).
+
+```js
+defineRouteRules({
+  prerender: true,
+  ssr: false,
+  swr: 3600,
+  isr: true,
+  redirect: '/new-page',
+  cors: true,
+  headers: {
+    'x-custom-header': 'value'
+  },
+  noScripts: true,
+  appMiddleware: 'auth'
+})
+```
+
+First, to use this feature, you need to enable the
+`experimental.inlineRouteRules` option in your `nuxt.config.ts` file:
+
+```ts
+export default defineNuxtConfig({
+  experimental: {
+    inlineRouteRules: true
+  }
+})
+```
+
+### Lazy Hydration Macros
+
+Lazy Hydration Macros are compiler macros used in Nuxt to determine when and how
+a component should hydrate (become interactive).
+
+```js
+<script setup>
+const LazyHydrationMyComponent = defineLazyHydrationComponent(
+  'visible', // or 'idle', 'interaction', 'mediaQuery', 'if', 'time', 'never'
+  () => import('./components/MyComponent.vue')
+)
+</script>
+
+<template>
+  <div>
+    <LazyHydrationMyComponent :hydrate-on-visible="{ rootMargin: '100px' }" />
+  </div>
+</template>
+```
+
+### `onWatcherCleanup`
+
+This function is used to clean up side effects created by a watcher (such as
+`watch` or `watchEffect`).
+
+```js
+watchEffect((onCleanup) => {
+  const interval = setInterval(() => {
+    console.log('Interval running')
+  }, 1000)
+
+  onWatcherCleanup(() => {
+    clearInterval(interval)
+    console.log('Interval cleaned')
+  })
+})
+```
+
 ## Nuxt: v3.16.1 👉 v3.17.7
 
 ```markdown
