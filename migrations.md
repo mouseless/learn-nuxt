@@ -7,6 +7,17 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
+## Nuxt: v3.17.7 👉 v3.19.2
+
+```markdown
+- [ ] upgrade nuxt to `3.19.2`.
+- [ ] upgrade other packages
+  - [ ] upgrade `@mermaid-js/mermaid-cli` to `11.10.1`
+  - [ ] upgrade `@nuxt/devtools` to `2.6.5`
+  - [ ] upgrade `eslint` to `9.36.0`
+  - [ ] upgrade `sass` to `1.93.0`
+```
+
 ## Nuxt: v3.16.1 👉 v3.17.7
 
 ```markdown
