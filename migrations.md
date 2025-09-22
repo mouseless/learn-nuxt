@@ -20,6 +20,8 @@ encountered while migrating, solutions to problems and changes.
 - [ ] upgrade `@nuxt/content` to `3.7.1`
 - [ ] import `z` from `zod/v4` instead of `nuxt/content`(probably only in
 `content.config.ts` file)
+- [ ] add module dependencies and integration
+  :warning: `installModule` deprecated
 - [ ] upgrade `better-sqlite3` to `12.3.0`
 - if you are upgrade from `3.17.7`
   - [ ] use `globalThis` instead of `window`
@@ -82,6 +84,35 @@ Edit `tsconfig.ts` like
 ```
 
 to fix references errors
+
+### Adding Module Dependencies and Integration
+
+Modules can specify dependencies and modify options for other modules.
+
+```ts
+export default defineNuxtModule({
+  meta: {
+    name: 'my-module',
+  },
+  moduleDependencies: {
+    'some-module': {
+      // You can specify a version constraint for the module
+      version: '>=2',
+      // By default moduleDependencies will be added to the list of modules
+      // to be installed by Nuxt unless `optional` is set.
+      optional: true,
+      // Any configuration that should override `nuxt.options`.
+      overrides: {},
+      // Any configuration that should be set. It will override module defaults but
+      // will not override any configuration set in `nuxt.options`.
+      defaults: {}
+    }
+  },
+  setup (options, nuxt) {
+    // Your module setup logic
+  }
+})
+```
 
 ## Nuxt: v3.17.7 👉 v3.19.2
 
