@@ -7,6 +7,17 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
+## Nuxt: v3.19.2 👉 v4.1.2
+
+```markdown
+- [ ] upgrade nuxt to `4.1.2` with `npx nuxt upgrade --dedupe`
+  :warning: make sure version is `4.1.2`
+- [ ] upgrade `@nuxt/content` to `3.7.1`
+- [ ] import `z` from `zod/v4` instead of `nuxt/content`(probably only in
+`content.config.ts` file)
+- [ ] upgrade `better-sqlite3` to `12.3.0`
+```
+
 ## Nuxt: v3.17.7 👉 v3.19.2
 
 ```markdown
