@@ -12,11 +12,67 @@ encountered while migrating, solutions to problems and changes.
 ```markdown
 - [ ] upgrade nuxt to `4.1.2` with `npx nuxt upgrade --dedupe`
   :warning: make sure version is `4.1.2`
+- [ ] moving to `/app` directory
+- [ ] search releative path and fix paths according to new app directory
+- [ ] edit `tsconfig.ts` to fix ts error
+- [ ] use `nitro.prerender.routes` config according to `generate.routes`
 - [ ] upgrade `@nuxt/content` to `3.7.1`
 - [ ] import `z` from `zod/v4` instead of `nuxt/content`(probably only in
 `content.config.ts` file)
 - [ ] upgrade `better-sqlite3` to `12.3.0`
 ```
+
+### Moving to `/app`
+
+Move this folder and components to under `/app` directory
+
+- assets
+- components
+- composables
+- layouts
+- pages
+- store(for pinia if exist)
+- types
+- app.vue and error.vue
+
+final result must be look like this
+
+my-nuxt-app/
+├─ app/
+│  ├─ assets/
+│  ├─ components/
+│  ├─ composables/
+│  ├─ layouts/
+│  ├─ middleware/
+│  ├─ pages/
+│  ├─ plugins/
+│  ├─ utils/
+│  ├─ app.vue
+│  ├─ app.config.ts
+│  └─ error.vue
+├─ content/
+├─ public/
+├─ shared/
+├─ server/
+└─ nuxt.config.ts
+
+### Editing `tsconfig.ts`
+
+Edit `tsconfig.ts` like
+
+```ts
+{
+  "files": [],
+  "references": [
+    { "path": "./.nuxt/tsconfig.app.json" },
+    { "path": "./.nuxt/tsconfig.server.json" },
+    { "path": "./.nuxt/tsconfig.shared.json" },
+    { "path": "./.nuxt/tsconfig.node.json" }
+  ]
+}
+```
+
+to fix references errors
 
 ## Nuxt: v3.17.7 👉 v3.19.2
 

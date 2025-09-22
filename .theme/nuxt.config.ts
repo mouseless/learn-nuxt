@@ -106,9 +106,6 @@ export default defineNuxtConfig({
   features: {
     inlineStyles: false
   },
-  generate: {
-    routes: ["/not-found"]
-  },
   modules: [
     "@nuxt/content",
     "@pinia/nuxt",
@@ -146,7 +143,8 @@ export default defineNuxtConfig({
           process.env.NUXT_PUBLIC_BASE_URL ?? "/",
           "/demo/error/non-existent-content"
         )
-      ]
+      ],
+      routes: ["/not-found"]
     }
   },
   runtimeConfig: {
