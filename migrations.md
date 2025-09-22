@@ -16,10 +16,19 @@ encountered while migrating, solutions to problems and changes.
 - [ ] search releative path and fix paths according to new app directory
 - [ ] edit `tsconfig.ts` to fix ts error
 - [ ] use `nitro.prerender.routes` config according to `generate.routes`
+- [ ] use auto import env variables feature instead of get with process
 - [ ] upgrade `@nuxt/content` to `3.7.1`
 - [ ] import `z` from `zod/v4` instead of `nuxt/content`(probably only in
 `content.config.ts` file)
 - [ ] upgrade `better-sqlite3` to `12.3.0`
+- if you are upgrade from `3.17.7`
+  - [ ] use `globalThis` instead of `window`
+  - [ ] use if necessary `onInstall` and `onUpgrade` module hooks
+  - [ ] use `defineRouteRules` if necessary
+  - [ ] use `Lazy Hydration Macros`
+  - [ ] use `<NuxtRouteAnnouncer>` in `app.vue` for users with visual
+  impairments
+  - [ ] use `onWatcherCleanup` in `watch` if necessary(it's globally imported)
 ```
 
 ### Moving to `/app`
@@ -533,7 +542,7 @@ Below you can find a migration checklist;
 >
 > `npx nuxi upgrade` upgrade nuxt with the latest version. When we did this
 > update, nuxt had version `3.10.3`. Only this version is guaranteed to be no
-> issue :smile:
+> issue 😄
 
 ### Use `useSeoMeta`
 
