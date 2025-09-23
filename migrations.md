@@ -574,7 +574,7 @@ Below you can find a migration checklist;
 >
 > `npx nuxi upgrade` upgrade nuxt with the latest version. When we did this
 > update, nuxt had version `3.10.3`. Only this version is guaranteed to be no
-> issue 😄
+> issue :smile:
 
 ### Use `useSeoMeta`
 
