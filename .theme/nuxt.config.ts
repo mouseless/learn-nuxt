@@ -1,4 +1,3 @@
-import { joinURL } from "ufo";
 import Aura from "@primeuix/themes/aura";
 import { definePreset } from "@primeuix/themes";
 
@@ -137,12 +136,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      ignore: [
-        joinURL(
-          process.env.NUXT_PUBLIC_BASE_URL ?? "/",
-          "/demo/error/non-existent-content"
-        )
-      ],
+      ignore: ["/demoe/error/non-existent-content"],
       routes: ["/not-found"]
     }
   },
