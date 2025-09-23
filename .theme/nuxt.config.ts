@@ -13,13 +13,12 @@ const Mouseless = definePreset(Aura, {
 
 export default defineNuxtConfig({
   app: {
-    baseURL: process.env.NUXT_PUBLIC_BASE_URL,
     head: {
       link: [
         {
           rel: "icon",
           type: "image/x-icon",
-          href: joinURL(process.env.NUXT_PUBLIC_BASE_URL ?? "/", "favicon.ico")
+          href: "favicon.icon"
         },
         {
           rel: "stylesheet",

@@ -17,6 +17,7 @@ encountered while migrating, solutions to problems and changes.
 - [ ] edit `tsconfig.ts` to fix ts error
 - [ ] use `nitro.prerender.routes` config according to `generate.routes`
 - [ ] use auto import env variables feature instead of get with process
+  - some app config can set with `NUXT_APP_` prefix in env file, like `baseUrl`
 - [ ] upgrade `@nuxt/content` to `3.7.1`
 - [ ] import `z` from `zod/v4` instead of `nuxt/content`(probably only in
 `content.config.ts` file)
