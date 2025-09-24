@@ -15,11 +15,6 @@ export default defineNuxtConfig({
     head: {
       link: [
         {
-          rel: "icon",
-          type: "image/x-icon",
-          href: "favicon.icon"
-        },
-        {
           rel: "stylesheet",
           type: "text/css",
           href: "https://brand.mouseless.codes/assets/css/default.css"
