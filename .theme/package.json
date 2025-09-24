@@ -31,6 +31,11 @@
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.34.6"
   },
+  "overrides": {
+    "@mermaid-js/mermaid-cli": {
+      "puppeteer": "^22.15.0"
+    }
+  },
   "dependencies": {
     "@primeuix/themes": "1.2.3",
     "@primevue/forms": "4.3.9",
