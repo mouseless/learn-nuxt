@@ -24,6 +24,8 @@ encountered while migrating, solutions to problems and changes.
 - [ ] add module dependencies and integration
   :warning: `installModule` deprecated
 - [ ] upgrade `better-sqlite3` to `12.3.0`
+- [ ] check packages you suspect are unnecessary with `npm why` and remove them
+if they are not directly used
 - if you are upgrade from `3.17.7`
   - [ ] use `globalThis` instead of `window`
   - [ ] use if necessary `onInstall` and `onUpgrade` module hooks

@@ -136,7 +136,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      ignore: ["/demoe/error/non-existent-content"],
+      ignore: ["/demo/error/non-existent-content"],
       routes: ["/not-found"]
     }
   },
