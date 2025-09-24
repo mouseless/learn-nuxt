@@ -53,6 +53,6 @@ Where we group the endpoints under an unnamed function and return them. This way
 Nuxt automatically imports them with the same file name. When we want to use it,
 we can call it with the name we grouped and use it.
 
-See `/composables/useGitHub.js`, for example send requests.
+See `/app/composables/useGitHub.js`, for example send requests.
 
 Demo is at [/demo/fetching-data](/demo/fetching-data/).

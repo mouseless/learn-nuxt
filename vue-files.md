@@ -8,7 +8,7 @@ Here you can find how we use template syntax in vue files.
 
 ## Variable
 
-Variables can be created as shown in `.theme/pages/demo/variable`.
+Variables can be created as shown in `.theme/app/pages/demo/variable`.
 
 Demo is at [/demo/variable](/demo/variable).
 
@@ -19,14 +19,14 @@ Demo is at [/demo/variable](/demo/variable).
 ### Escape Curly Braces
 
 To escape curly braces use `v-pre` as shown in
-`.theme/pages/demo/escape-curly-braces.vue`.
+`.theme/app/pages/demo/escape-curly-braces.vue`.
 
 Demo is at [/demo/escape-curly-braces](/demo/escape-curly-braces).
 
 ## Computed
 
 Computed properties can be created as shown in
-`.theme/pages/demo/computed/index.vue`.
+`.theme/app/pages/demo/computed/index.vue`.
 
 Demo is at [/demo/computed](/demo/computed).
 
@@ -40,7 +40,7 @@ Demo is at [/demo/computed](/demo/computed).
 Ref can be used with computed properties, this results in an automatic
 re-rendering after a single re-evaluation when dependencies have changed. Ref
 can be used in computed properties as shown in
-`.theme/pages/demo/computed/with-ref.vue`
+`.theme/app/pages/demo/computed/with-ref.vue`
 
 Demo is at [/demo/computed/with-ref](/demo/computed/with-ref)
 
@@ -52,7 +52,7 @@ check out our [learn-css](https://github.com/mouseless/learn-css) repository.
 ### Style With Scss
 
 To style a component using Scss you can refer to
-`./theme/pages/demo/scss/style-with-scss.vue`
+`./theme/app/pages/demo/scss/style-with-scss.vue`
 
 Demo is at [/demo/scss/style-with-scss](/demo/scss/style-with-scss)
 
@@ -60,7 +60,7 @@ Demo is at [/demo/scss/style-with-scss](/demo/scss/style-with-scss)
 
 To add global variables create an `assets` folder at the root of your project
 and add `variables.scss` file. In this file global variables can be created.
-When creating variables you can refer to `./theme/assets/variables.scss`.
+When creating variables you can refer to `./theme/app/assets/variables.scss`.
 
 To use the global variables simply use the variables created in
 `variables.scss` without importing.
@@ -79,8 +79,8 @@ Demo is at [/demo/scss/global-variables](/demo/scss/global-variables)
 ### Global Style
 
 To add a global style create `styles.scss` file in your assets folder and add
-styles as can be seen in `./theme/assets/styles.scss`. Global styles will work
-like a default style, only when the specific style is not given in the
+styles as can be seen in `./theme/app/assets/styles.scss`. Global styles will
+work like a default style, only when the specific style is not given in the
 component.
 
 > [!WARNING]
