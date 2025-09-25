@@ -1,3 +1,5 @@
+import { useRuntimeConfig } from "#app";
+
 export default function() {
   const { public: { gitHubBaseURL: baseURL } } = useRuntimeConfig();
 

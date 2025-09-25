@@ -13,7 +13,7 @@ useHead({
     {
       rel: "icon",
       type: "image/x-icon",
-      href: joinURL(config.public.baseUrl, "favicon.ico")
+      href: joinURL(config.public.baseUrl, "/favicon.ico")
     }
   ]
 });

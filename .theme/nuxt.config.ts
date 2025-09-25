@@ -131,8 +131,14 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      ignore: ["/demo/error/non-existent-content"],
       routes: ["/not-found"]
+    },
+    hooks: {
+      "prerender:generate"(route) {
+        if(route.route.endsWith("/demo/error/non-existent-content")) {
+          route.skip = true;
+        }
+      }
     }
   },
   runtimeConfig: {
