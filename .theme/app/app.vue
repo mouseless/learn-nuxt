@@ -6,14 +6,14 @@
 <script setup>
 import { joinURL } from "ufo";
 
-const config = useRuntimeConfig();
+const { public: { baseUrl } } = useRuntimeConfig();
 
 useHead({
   link: [
     {
       rel: "icon",
       type: "image/x-icon",
-      href: joinURL(config.public.baseUrl, "/favicon.ico")
+      href: joinURL(baseUrl, "/favicon.ico")
     }
   ]
 });
