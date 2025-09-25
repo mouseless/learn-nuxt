@@ -82,8 +82,16 @@ Nitro PrerenderRoutes travels and creates all routes before runtime.
 
 In our project, there are some links that we use for testing in the document
 and we expect the page to be empty. For this reason, the build gives an error
-because Nitro cannot create routes from these links. To ignore these routes,
-we add these routes to the `nitro.prerender.ignore` array in `nuxt.config.ts`.
+because Nitro cannot create routes from these links.
+
+### Ignoring Routes
+
+When creating routes, we write hooks to ignore some of them, and here we skip
+the routes we don't want. You can look `nuxt.config.ts`.
+
+Because we use `BaseUrl`, `nitro.prerender.ignore` doesn't give us exactly the
+result we want. It needs to be ignored in two ways: with `BaseUrl` and without
+`BaseUrl`.
 
 ## PayloadExtraction
 
