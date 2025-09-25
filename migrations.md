@@ -26,6 +26,8 @@ encountered while migrating, solutions to problems and changes.
 - [ ] upgrade `better-sqlite3` to `12.3.0`
 - [ ] check packages you suspect are unnecessary with `npm why` and remove them
 if they are not directly used
+- [ ] give favicon with `useHead` in `app.vue` and with `baseUrl` using
+`runtimeConfig`
 - if you are upgrade from `3.17.7`
   - [ ] use `globalThis` instead of `window`
   - [ ] use if necessary `onInstall` and `onUpgrade` module hooks
@@ -115,6 +117,24 @@ export default defineNuxtModule({
     // Your module setup logic
   }
 })
+```
+
+### favicon in `app.vue`
+
+```js
+import { joinURL } from "ufo";
+
+const config = useRuntimeConfig();
+
+useHead({
+  link: [
+    {
+      rel: "icon",
+      type: "image/x-icon",
+      href: joinURL(config.public.baseUrl, "favicon.ico")
+    }
+  ]
+});
 ```
 
 ## Nuxt: v3.17.7 👉 v3.19.2
