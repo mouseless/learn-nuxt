@@ -6,15 +6,15 @@ position: 5
 
 Components are reusable pieces which can be created manually using built in
 components. Creating components gives you flexibility in designing your UI.
-To create a component, create a vue file in `.theme/components` directory.
+To create a component, create a vue file in `.theme/app/components` directory.
 
 ## Basic Component
 
 Basic component is our understanding of a component in its simplest form,
 to create a basic component create the vue file `BasicComponent.vue` in
-`.theme/components` directory. To create more complex components this base
+`.theme/app/components` directory. To create more complex components this base
 component can be used as a starting point. Then use this component in a page
-as shown in `.theme/pages/demo/basic.vue`.
+as shown in `.theme/app/pages/demo/basic.vue`.
 
 Demo is at [/demo/components/basic](/demo/components/basic).
 
@@ -24,7 +24,7 @@ To add properties to a component, `defineProps` can be used and type and default
 value can be set as shown in `./theme/components/ComponentWithProps.vue`. More
 properties can be added later on. Values of these properties can be assigned
 when using the component with properties as shown in
-`.theme/demo/defining-props.vue`
+`.theme/app/pages/demo/defining-props.vue`
 
 > [!NOTE]
 >
@@ -36,7 +36,7 @@ Demo is at [/demo/components/defining-props](/demo/components/defining-props)
 ### Complex Type Props
 
 Complex types can be used with `defineProps` as seen in
-`./theme/components/ComponentWithTypedProp.vue`.
+`./theme/app/components/ComponentWithTypedProp.vue`.
 
 Demo is at
 [/demo/components/complex-type-props](/demo/components/complex-type-props)
@@ -51,8 +51,9 @@ Demo is at
 
 To reuse types, create a `types` folder at the root of the project, and create
 an `index.ts` file to export types. You can add your types in this folder and
-export them via `index.ts`, see `./theme/types/Demo.ts`. These types can be
-used in components as seen in `./theme/components/ComponentThatReusesType.vue`
+export them via `index.ts`, see `./theme/app/types/Demo.ts`. These types can be
+used in components as seen in
+`./theme/app/components/ComponentThatReusesType.vue`
 
 Demo is at [/demo/components/reusing-types](/demo/components/reusing-types)
 
@@ -69,9 +70,9 @@ Demo is at [/demo/components/emit-and-ref](/demo/components/emit-and-ref)
 To emit a global change, we use nuxt's state management. To achieve this;
 
 1. Introduce a state with its default value function as shown in
-   `.theme/composables/states.js`
+   `.theme/app/composables/states.js`
 1. Import and modify it as shown in
-   `.theme/components/ComponentThatEmitsGlobally.vue`
+   `.theme/app/components/ComponentThatEmitsGlobally.vue`
 1. Watch it as shown in `.theme/pages/demo/components/global-emit.vue`
 
 Demo is at [/demo/components/global-emit](/demo/components/global-emit)
@@ -86,7 +87,7 @@ To override a prose, let's say `<table>`, go to the
 [Nuxt Content](https://content.nuxt.com/components/prose) page and find the
 source code of the component on github, in this case `ProseTable`. Copy the
 code from there, and place it under exactly the same path
-`.theme/components/Prose/`, and make any change you want.
+`.theme/app/components/Prose/`, and make any change you want.
 
 Below is a demonstration of overriding `ProseTable.vue`;
 
@@ -159,7 +160,7 @@ markdown content before it is rendered, after it is parsed.
 
 See [/demo/transformer](/demo/transformer/) to see what can be done.
 
-See `/transformers/optimus-prime.ts` to see how it is done.
+See `/app/transformers/optimus-prime.ts` to see how it is done.
 
 > [!NOTE]
 >
@@ -174,8 +175,8 @@ example, let's say we use the same titles for the items in the header, footer
 and side menu. With Pinia, we can fetch the data once and distribute it to other
 components.
 
-See [/store/piniaStore](/store/piniaStore.js) for the pinia store where we store
-the fetched data.
+See [/app/store/piniaStore](/app/store/piniaStore.js) for the pinia store where
+we store the fetched data.
 
 See [demo/pinia](/demo/pinia) for demo of how we use the Pinia store to add and
 import data.
@@ -202,7 +203,7 @@ npm i chart.js # to enable Chart component
 npm i --save-dev @primevue/nuxt-module @nuxtjs/tailwindcss # dev dependencies
 ```
 
-To use prime icons you need to import it in `assets/styles.scss`.
+To use prime icons you need to import it in `app/assets/styles.scss`.
 
 ```scss
 @import "primeicons/primeicons.css";

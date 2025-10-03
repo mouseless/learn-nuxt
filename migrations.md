@@ -7,6 +7,161 @@ position: 103
 It is the documentation of the migrations between versions, problems
 encountered while migrating, solutions to problems and changes.
 
+## Nuxt: v3.19.2 👉 v4.1.2
+
+```markdown
+- [ ] upgrade nuxt to `4.1.2` with `npx nuxt upgrade --dedupe`
+  :warning: make sure version is `4.1.2`
+- [ ] moving to `/app` directory
+- [ ] search releative path and fix paths according to new app directory
+- [ ] edit `tsconfig.ts` to fix ts error
+- [ ] use `nitro.prerender.routes` config according to `generate.routes`
+- [ ] use auto import env variables feature instead of get with process
+  - some app config can set with `NUXT_APP_` prefix in env file, like `baseUrl`
+- [ ] upgrade `@nuxt/content` to `3.7.1`
+- [ ] import `z` from `zod/v4` instead of `nuxt/content`(probably only in
+`content.config.ts` file)
+- [ ] add module dependencies and integration
+  :warning: `installModule` deprecated
+- [ ] upgrade `better-sqlite3` to `12.3.0`
+- [ ] check packages you suspect are unnecessary with `npm why` and remove them
+if they are not directly used
+- [ ] give favicon with `useHead` in `app.vue` and with `baseUrl` using
+`runtimeConfig`
+- [ ] use nitro prerender hook for ignored path
+- if you are upgrade from `3.17.7`
+  - [ ] use `globalThis` instead of `window`
+  - [ ] use if necessary `onInstall` and `onUpgrade` module hooks
+  - [ ] use `defineRouteRules` if necessary
+  - [ ] use `Lazy Hydration Macros`
+  - [ ] use `<NuxtRouteAnnouncer>` in `app.vue` for users with visual
+  impairments
+  - [ ] use `onWatcherCleanup` in `watch` if necessary(it's globally imported)
+```
+
+### Moving to `/app`
+
+Move this folder and components to under `/app` directory
+
+- assets
+- components
+- composables
+- layouts
+- pages
+- store(for pinia if exist)
+- types
+- app.vue and error.vue
+
+final result must be look like this
+
+my-nuxt-app/
+├─ app/
+│  ├─ assets/
+│  ├─ components/
+│  ├─ composables/
+│  ├─ layouts/
+│  ├─ middleware/
+│  ├─ pages/
+│  ├─ plugins/
+│  ├─ utils/
+│  ├─ app.vue
+│  ├─ app.config.ts
+│  └─ error.vue
+├─ content/
+├─ public/
+├─ shared/
+├─ server/
+└─ nuxt.config.ts
+
+### Editing `tsconfig.ts`
+
+Edit `tsconfig.ts` like
+
+```ts
+{
+  "files": [],
+  "references": [
+    { "path": "./.nuxt/tsconfig.app.json" },
+    { "path": "./.nuxt/tsconfig.server.json" },
+    { "path": "./.nuxt/tsconfig.shared.json" },
+    { "path": "./.nuxt/tsconfig.node.json" }
+  ]
+}
+```
+
+to fix references errors
+
+### Adding Module Dependencies and Integration
+
+Modules can specify dependencies and modify options for other modules.
+
+```ts
+export default defineNuxtModule({
+  meta: {
+    name: 'my-module',
+  },
+  moduleDependencies: {
+    'some-module': {
+      // You can specify a version constraint for the module
+      version: '>=2',
+      // By default moduleDependencies will be added to the list of modules
+      // to be installed by Nuxt unless `optional` is set.
+      optional: true,
+      // Any configuration that should override `nuxt.options`.
+      overrides: {},
+      // Any configuration that should be set. It will override module defaults but
+      // will not override any configuration set in `nuxt.options`.
+      defaults: {}
+    }
+  },
+  setup (options, nuxt) {
+    // Your module setup logic
+  }
+})
+```
+
+### favicon in `app.vue`
+
+```js
+import { joinURL } from "ufo";
+
+const config = useRuntimeConfig();
+
+useHead({
+  link: [
+    {
+      rel: "icon",
+      type: "image/x-icon",
+      href: joinURL(config.public.baseUrl, "favicon.ico")
+    }
+  ]
+});
+```
+
+### Ignored paths
+
+Use this this hook
+
+```ts
+export default defineNuxtConfig({
+  ...
+  nitro: {
+    prerender: {
+      ...
+    },
+    hooks: {
+      "prerender:generate"(route) {
+        if(route.route === "xx") {
+          route.skip = true;
+        }
+      }
+    }
+  }
+});
+```
+
+for ignored paths instead of `nitro.prerender.ignore`
+
 ## Nuxt: v3.17.7 👉 v3.19.2
 
 ```markdown

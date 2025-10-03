@@ -4,13 +4,13 @@ position: 2
 
 # Pages
 
-You can create pages under `.theme/pages/`.
+You can create pages under `.theme/app/pages/`.
 
 ## Content Page
 
 A content page is a page that uses the `<ContentRenderer />` component to render
 the given markdown content as HTML. It is located in
-`.theme/pages/[...content-page].vue` and renders the page retrieved with
+`.theme/app/pages/[...content-page].vue` and renders the page retrieved with
 `queryCollection` based on the current route.
 
 ## Collections
@@ -50,10 +50,10 @@ different types of routes.
 ## Layout
 
 We used layout to seperate header and sidebar components from pages. For nuxt
-to recognize layouts, they should be implemented in `.theme/layout` folder. To
-create a layout create a `default.vue` in the layout folder. Our implementation
-is at `.theme/layout/default.vue`. For layout to be used in every page it needs
-to be added to `app.vue` as shown in `.theme/app.vue`.
+to recognize layouts, they should be implemented in `.theme/app/layout` folder.
+To create a layout create a `default.vue` in the layout folder. Our
+implementation is at `.theme/app/layout/default.vue`. For layout to be used in
+every page it needs to be added to `app.vue` as shown in `.theme/app/app.vue`.
 
 ### Public Assets
 

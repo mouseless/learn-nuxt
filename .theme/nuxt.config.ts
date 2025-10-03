@@ -1,4 +1,3 @@
-import { joinURL } from "ufo";
 import Aura from "@primeuix/themes/aura";
 import { definePreset } from "@primeuix/themes";
 
@@ -13,14 +12,8 @@ const Mouseless = definePreset(Aura, {
 
 export default defineNuxtConfig({
   app: {
-    baseURL: process.env.NUXT_PUBLIC_BASE_URL,
     head: {
       link: [
-        {
-          rel: "icon",
-          type: "image/x-icon",
-          href: joinURL(process.env.NUXT_PUBLIC_BASE_URL ?? "/", "favicon.ico")
-        },
         {
           rel: "stylesheet",
           type: "text/css",
@@ -29,22 +22,22 @@ export default defineNuxtConfig({
       ],
       meta: [
         {
-          hid: "og:description",
+          id: "og:description",
           property: "og:description",
           content: "Welcome to mouseless"
         },
         {
-          hid: "og:image",
+          id: "og:image",
           property: "og:image",
           content: "https://mouseless.github.io/learn-nuxt/favicon.ico"
         },
         {
-          hid: "og:image:width",
+          id: "og:image:width",
           property: "og:image:width",
           content: "50"
         },
         {
-          hid: "og:image:height",
+          id: "og:image:height",
           property: "og:image:height",
           content: "50"
         }
@@ -106,9 +99,6 @@ export default defineNuxtConfig({
   features: {
     inlineStyles: false
   },
-  generate: {
-    routes: ["/not-found"]
-  },
   modules: [
     "@nuxt/content",
     "@pinia/nuxt",
@@ -141,12 +131,14 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      ignore: [
-        joinURL(
-          process.env.NUXT_PUBLIC_BASE_URL ?? "/",
-          "/demo/error/non-existent-content"
-        )
-      ]
+      routes: ["/not-found"]
+    },
+    hooks: {
+      "prerender:generate"(route) {
+        if(route.route.endsWith("/demo/error/non-existent-content")) {
+          route.skip = true;
+        }
+      }
     }
   },
   runtimeConfig: {
