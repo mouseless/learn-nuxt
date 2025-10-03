@@ -1,1 +1,0 @@
-import{M as a,c as o,o as t,t as c,_,i as n,F as p}from"#entry";const m=a({__name:"ComponentWithProps",props:{message:{}},setup(r){return(s,e)=>(t(),o("div",null," Message: "+c(s.message),1))}}),i={};function l(r,s){const e=m;return t(),o(p,null,[n(e,{message:"Hello"}),n(e,{message:"World"})],64)}const d=_(i,[["render",l]]);export{d as default};

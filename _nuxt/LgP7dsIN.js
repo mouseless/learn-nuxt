@@ -1,0 +1,1 @@
+import{_ as n}from"./DlAUqK2U.js";import{c as _,o as c,k as s}from"#entry";const r={};function a(e,o){return c(),_("div",null," Basic component ")}const m=Object.assign(n(r,[["render",a]]),{__name:"BasicComponent"}),i={};function f(e,o){const t=m;return c(),s(t)}const u=n(i,[["render",f]]);export{u as default};

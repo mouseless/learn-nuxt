@@ -1,0 +1,1 @@
+import{_ as a}from"./CzIn2hDa.js";import{q as r}from"./4i4ZzLWj.js";import{p as s,k as c,b as _,o as i}from"#entry";const d={__name:"headings-anchorlinks",async setup(l){let e,n;const t=([e,n]=s(()=>r("content").path("/demo/headings-anchorlinks").first()),e=await e,n(),e);return(m,p)=>{const o=a;return i(),c(o,{value:_(t)},null,8,["value"])}}};export{d as default};

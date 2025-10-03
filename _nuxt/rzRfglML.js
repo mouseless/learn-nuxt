@@ -1,0 +1,1 @@
+import{_ as s}from"./DlAUqK2U.js";import{c,o as t}from"#entry";const e={},o={class:"basic"};function r(n,_){return t(),c("div",o," Styled with Scss ")}const f=s(e,[["render",r]]);export{f as default};

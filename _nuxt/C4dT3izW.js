@@ -1,0 +1,1 @@
+import{K as s,c as o,o as c}from"#entry";import{_ as t}from"./DlAUqK2U.js";const e=s("/logo.png"),r={},n={src:e};function _(a,i){return c(),o("img",n)}const f=t(r,[["render",_]]);export{f as default};
