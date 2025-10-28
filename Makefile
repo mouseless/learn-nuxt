@@ -1,5 +1,7 @@
 .PHONY: run build
 
+install:
+	@(cd .theme && npm i && npm ci)
 run:
 	@ \
 	echo "(1) Dev" ; \
