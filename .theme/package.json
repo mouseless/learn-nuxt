@@ -16,7 +16,6 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.28.4",
-    "@mermaid-js/mermaid-cli": "11.10.1",
     "@mouseless/prebuild": "github:mouseless/prebuild",
     "@nuxt/content": "3.7.1",
     "@nuxt/eslint": "1.9.0",
