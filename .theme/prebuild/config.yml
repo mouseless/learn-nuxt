@@ -11,44 +11,43 @@ tasks:
   - clean:
       directories:
         - ./.theme/.public
-        - ./.theme/.temp
         - ./.theme/content
   - touch:
       path: ./.theme/.env.local
 
   # process and move markdowns to content
-  - extractDiagrams:
+#   - extractDiagrams:
+#       source: ./
+#       target: ./.theme/.temp
+#       config:
+#         backgroundColor: '#061819'
+#         theme: base
+#         deviceScaleFactor: 1
+#         headless: new
+#         themeVariables:
+#           fontFamily: '"Roboto Mono", monospace'
+#           fontSize: '14px'
+#           primaryColor: '#fa465b'
+#           primaryTextColor: '#f6f6f6'
+#           primaryBorderColor': '#7c0000'
+#           lineColor: '#888888'
+#           secondaryColor: '#092122'
+#           secondaryTextColor: '#cacaca'
+#           tertiaryColor: '#163738'
+#           activationBkgColor: '#fa465b'
+  - copy:
+      extension: .md
       source: ./
-      target: ./.theme/.temp
-      config:
-        backgroundColor: '#061819'
-        theme: base
-        deviceScaleFactor: 1
-        headless: new
-        themeVariables:
-          fontFamily: '"Roboto Mono", monospace'
-          fontSize: '14px'
-          primaryColor: '#fa465b'
-          primaryTextColor: '#f6f6f6'
-          primaryBorderColor': '#7c0000'
-          lineColor: '#888888'
-          secondaryColor: '#092122'
-          secondaryTextColor: '#cacaca'
-          tertiaryColor: '#163738'
-          activationBkgColor: '#fa465b'
+      target: ./.theme/content
   - rename:
-      source: ./.theme/.temp
+      source: ./.theme/content
       find: README.md
       replace: index.md
   - replaceContent:
       extension: .md
-      source: ./.theme/.temp
+      source: ./.theme/content
       oldText: README.md
       newText: index.md
-  - move:
-      extension: .md
-      source: ./.theme/.temp
-      target: ./.theme/content
 
   # copy all assets to .public
   - copy:
@@ -57,8 +56,4 @@ tasks:
   - copy:
       extension: .png
       source: ./
-      target: ./.theme/.public
-  - move:
-      extension: .png
-      source: ./.theme/.temp
       target: ./.theme/.public

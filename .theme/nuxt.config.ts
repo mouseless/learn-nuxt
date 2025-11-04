@@ -89,7 +89,7 @@ export default defineNuxtConfig({
     }
   },
   css: ["~/assets/styles.scss"],
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   dir: {
     public: ".public"
   },
@@ -134,7 +134,7 @@ export default defineNuxtConfig({
       routes: ["/not-found"]
     },
     hooks: {
-      "prerender:generate"(route) {
+      "prerender:generate"(route: { route: string; skip: boolean; }) {
         if(route.route.endsWith("/demo/error/non-existent-content")) {
           route.skip = true;
         }

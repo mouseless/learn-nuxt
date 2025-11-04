@@ -1,6 +1,6 @@
+import { spawn } from "child_process";
 import { defineNuxtModule } from "@nuxt/kit";
-import { resolve, basename } from "path";
-import { copyFileSync } from "fs";
+import { resolve } from "path";
 
 export default defineNuxtModule({
   setup(_, nuxt) {
@@ -12,15 +12,21 @@ export default defineNuxtModule({
         configureServer(server) {
           const { watcher } = server;
           const rootPath = resolve(nuxt.options.rootDir, "../");
-          const contentPath = resolve(nuxt.options.rootDir, "content");
 
           watcher.add(rootPath);
           watcher.on("change", file => {
-            if(file.endsWith(".md")) {
-              const fileName = basename(file);
+            if(file.includes(".theme")) { return; }
+            if(!file.endsWith(".md")) { return; }
 
-              copyFileSync(file, resolve(contentPath, fileName));
-            }
+            const child = spawn("node", ["-r", "dotenv/config", "prebuild", "dotenv_config_path=.env.local"]);
+
+            child.stdout.on("data", data => {
+              console.log(`${data}`);
+            });
+
+            child.stderr.on("data", data => {
+              console.error(`${data}`);
+            });
           });
         }
       });
