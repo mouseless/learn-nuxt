@@ -17,12 +17,12 @@ export default defineNuxtModule({
     // The module runs every time it is updated.
     console.log("If you see this log, it means you have upgraded the version.");
   },
-  setup(_options, nuxt) {
+  setup(_options: any, nuxt: { options: { nitro: { externals: { inline?: any; }; }; }; hook: (arg0: string, arg1: (contentContext: any) => void) => void; }) {
     nuxt.options.nitro.externals ||= { };
     nuxt.options.nitro.externals.inline ||= [];
     nuxt.options.nitro.externals.inline.push(resolve("./app/transformers"));
 
-    nuxt.hook("content:context", contentContext => {
+    nuxt.hook("content:context", (contentContext: { transformers: string[]; }) => {
       contentContext.transformers.push(resolve("./app/transformers/optimus-prime.ts"));
     });
   }
