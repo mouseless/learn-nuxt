@@ -14,27 +14,6 @@ tasks:
         - ./.theme/content
   - touch:
       path: ./.theme/.env.local
-
-  # process and move markdowns to content
-#   - extractDiagrams:
-#       source: ./
-#       target: ./.theme/.temp
-#       config:
-#         backgroundColor: '#061819'
-#         theme: base
-#         deviceScaleFactor: 1
-#         headless: new
-#         themeVariables:
-#           fontFamily: '"Roboto Mono", monospace'
-#           fontSize: '14px'
-#           primaryColor: '#fa465b'
-#           primaryTextColor: '#f6f6f6'
-#           primaryBorderColor': '#7c0000'
-#           lineColor: '#888888'
-#           secondaryColor: '#092122'
-#           secondaryTextColor: '#cacaca'
-#           tertiaryColor: '#163738'
-#           activationBkgColor: '#fa465b'
   - copy:
       extension: .md
       source: ./
