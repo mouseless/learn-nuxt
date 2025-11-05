@@ -107,7 +107,6 @@ export default defineNuxtConfig({
     "@primevue/nuxt-module",
     "@nuxtjs/i18n"
   ],
-  plugins: ["../mermaid.client.js"],
   i18n: {
     restructureDir: "",
     defaultLocale: "en",

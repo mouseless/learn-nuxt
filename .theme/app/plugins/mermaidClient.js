@@ -1,7 +1,7 @@
 import mermaid from "mermaid";
 
 const themeVariables = {
-  fontFamily: "\"Roboto Mono\", monospace",
+  fontFamily: "system-ui",
   fontSize: "14px",
   primaryColor: "#fa465b",
   primaryTextColor: "#f6f6f6",

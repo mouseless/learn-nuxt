@@ -8,7 +8,7 @@ export default defineNuxtModule({
       if(isClient) { return; }
 
       config.plugins?.push({
-        name: "content-watch",
+        name: "prebuild",
         configureServer(server: { watcher: any; }) {
           const { watcher } = server;
           const rootPath = resolve(nuxt.options.rootDir, "../");

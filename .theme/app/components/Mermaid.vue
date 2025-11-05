@@ -8,23 +8,23 @@ import { useNuxtApp } from "nuxt/app";
 import { onMounted, ref, useSlots } from "vue";
 
 const { $mermaid } = useNuxtApp();
+const slots = useSlots();
+
 const mermaidContainer = ref(null);
-const slot = useSlots().default;
+const slot = slots.default;
 
 onMounted(async() => {
   const content = slot()[0].children;
   if(!$mermaid) { return; }
-  if(content) {
-    try {
-      mermaidContainer.value.textContent = content;
+  if(!content) { return; }
 
-      await $mermaid.run({
-        nodes: [mermaidContainer.value]
-      });
-    }
-    catch {
-      mermaidContainer.value.innerHTML = "";
-    }
+  try {
+    mermaidContainer.value.textContent = content;
+
+    await $mermaid.run({ nodes: [mermaidContainer.value] });
+  }
+  catch {
+    mermaidContainer.value.innerHTML = "";
   }
 });
 </script>
