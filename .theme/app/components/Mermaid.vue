@@ -22,8 +22,7 @@ onMounted(async() => {
     mermaidContainer.value.textContent = content;
 
     await $mermaid.run({ nodes: [mermaidContainer.value] });
-  }
-  catch {
+  } catch {
     mermaidContainer.value.innerHTML = "";
   }
 });
