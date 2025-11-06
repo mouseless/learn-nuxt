@@ -1,28 +1,22 @@
-.PHONY: run build
+.PHONY: install run build
 
+install:
+	@(cd .theme && npm i && npm ci)
 run:
-	@ \
-	echo "(1) Dev" ; \
-	echo "(2) Local" ; \
-	echo "" ; \
-	echo "Please select 1-4: " ; \
-	read srv ; \
-	if test $$srv -eq "1" ; then \
-		cd .theme ; npm run -s dev ; cd .. ; \
-	fi ; \
-	if test $$srv -eq "2" ; then \
-		cd .theme ; npm run -s local ; cd .. ; \
-	fi
+	@echo "(1) Development"
+	@echo "(2) Local"
+	@read -p "Please select 1-2: " app ; \
+	case $$app in \
+		1) (cd .theme && npm run -s dev && cd ..) ;; \
+		2) (cd .theme && npm run -s local && cd ..) ;; \
+		*) echo "Invalid option" ;; \
+	esac
 build:
-	@ \
-	echo "(1) Production" ; \
-	echo "(2) Local" ; \
-	echo "" ; \
-	echo "Please select 1-2: " ; \
-	read srv ; \
-	if test $$srv -eq "1" ; then \
-		cd .theme ; npm run -s generate:production ; cd .. ; \
-	fi ; \
-	if test $$srv -eq "2" ; then \
-		cd .theme ; npm run -s generate:local ; cd .. ; \
-	fi
+	@echo "(1) Production"
+	@echo "(2) Local"
+	@read -p "Please select 1-2: " app ; \
+	case $$app in \
+		1) (cd .theme && npm run -s generate:production && cd ..) ;; \
+		2) (cd .theme && npm run -s generate:local && cd ..) ;; \
+		*) echo "Invalid option" ;; \
+	esac

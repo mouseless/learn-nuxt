@@ -18,21 +18,6 @@ This is where we host the config settings for developer mode. The local file
 is ignored in this repository, the app automatically creates the file in
 prebuild.
 
-#### `CHROMIUM_EXECUTABLE_PATH`
-
-We use `Mermaid` to extract diagrams from markdown files. `Mermaid` comes with
-`puppeteer` as dependency and uses it to start a browser process to snapshot
-diagrams. After v19.0.0 `puppeteer` may not work properly with the downloaded
-browser and it will prompt an error like below when you run the application.
-
-```bash
-Error: Failed to launch the browser process
-```
-
-The current available solution is manually installing _Chromium_ or _Chrome_
-browser, and provide its _executablePath_ in `.env.local` file for `puppeteer`
-to use under `CHROMIUM_EXECUTABLE_PATH` key.
-
 ### `.env.production` File
 
 This is where we host the config settings for production mode. Settings in

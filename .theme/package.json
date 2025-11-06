@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.28.4",
-    "@mermaid-js/mermaid-cli": "11.10.1",
+    "@mouseless/prebuild": "mouseless/prebuild#v0.1.10",
     "@nuxt/content": "3.7.1",
     "@nuxt/eslint": "1.9.0",
     "@nuxtjs/i18n": "10.1.0",
@@ -33,6 +33,7 @@
     "@primevue/forms": "4.3.9",
     "async-mutex": "0.5.0",
     "better-sqlite3": "12.3.0",
+    "mermaid": "^11.12.1",
     "primeicons": "7.0.0"
   }
 }
