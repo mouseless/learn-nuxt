@@ -103,8 +103,13 @@ extracted. We do not want the `_payload.json` file to be created, so we set
 
 When you want to use diagrams in your markdown files, you need to set up
 install `mermaid` package in your project. Then configure diagrams in
-`.theme/app/plugins/mermaid.client.js`. You can find the mermaid usage examples in the official documentation at [mermaid.js.org](https://mermaid.js.org/intro/)
+`.theme/app/plugins/mermaid.client.js`. You can find the mermaid usage
+examples in the official documentation at [mermaid.js.org](https://mermaid.js.org/intro/)
 
 ## Prebuild Usage
 
-Prebuild is a process that runs before the build starts and editing some content files. You can use it to generate files or do some operations before build. You need to install npm package (`@mouseless/prebuild`) that you want to use in the prebuild process. If you want to use and configure it, you can look at `.theme/modules/prebuild.ts` file for an example.
+Prebuild is a process that runs before the build starts and editing some
+content files. You can use it to generate files or do some operations before
+build. You need to install npm package (`@mouseless/prebuild`) that you want to
+use in the prebuild process. If you want to use and configure it, you can look
+at `.theme/modules/prebuild.ts` file for an example.
