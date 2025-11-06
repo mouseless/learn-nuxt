@@ -27,7 +27,7 @@ onMounted(async() => {
   }
 });
 </script>
-<style>
+<style scoped>
 .mermaid:not([data-processed]) {
   color: transparent;
 }
