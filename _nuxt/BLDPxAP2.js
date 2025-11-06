@@ -1,1 +1,0 @@
-import{e as s,c as i,t as l,b as n,o as a}from"#entry";const o=s("piniaStore",{state:()=>({titles:[]}),actions:{setTitles(e){this.titles=e}}}),_={__name:"pinia",setup(e){const t=o();return t.titles.length===0&&t.setTitles(["title1","title2","title3"]),(r,c)=>(a(),i("div",null,"Titles: "+l(n(t).titles),1))}};export{_ as default};
