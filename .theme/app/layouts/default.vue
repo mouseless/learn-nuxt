@@ -1,17 +1,44 @@
 <template>
-  <header class="m-auto pt-0 px-sm text-center max-w-(--max-width-content) max-md:text-left">
-    <div class="flex justify-center gap-sm my-md mx-0 [&>a+a]:pl-sm] max-md:justify-start">
+  <header
+    class="
+      m-auto pt-0 px-sm
+      text-center max-md:text-left
+      max-w-(--max-width-content)
+    "
+  >
+    <div
+      class="
+        flex justify-center max-md:justify-start
+        gap-sm my-md mx-0 [&>a+a]:pl-sm]
+      "
+    >
       <NuxtLink to="/">
-        <img class="mouseless logo inline h-(--height-logo)! max-md:h-(--height-logo-small)!">
+        <img
+          class="
+            mouseless logo
+            h-(--height-logo)! max-md:h-(--height-logo-small)!
+          "
+        >
       </NuxtLink>
       <NuxtLink
         to="https://nuxt.com"
         target="_blank"
       >
-        <img class="nuxt logo inline h-(--height-logo) max-md:h-(--height-logo-small)">
+        <img
+          class="
+            nuxt logo
+            h-(--height-logo)! max-md:h-(--height-logo-small)!
+          "
+        >
       </NuxtLink>
     </div>
-    <nav class="max-w-(--max-width-content) m-auto text-center max-md:text-left [&>a.left+a.right]:pl-8 [&>a.left+a.right]:max-md:pl-0">
+    <nav
+      class="
+        m-auto text-center max-md:text-left
+        max-w-(--max-width-content)
+        [&>a.left+a.right]:pl-8 [&>a.left+a.right]:max-md:pl-0
+      "
+    >
       <NuxtLink
         v-for="menu in menus"
         :key="menu.title"
