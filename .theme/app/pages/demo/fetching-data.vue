@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="organization">
+  <div class="flex flex-wrap content-center justify-start items-center">
+    <div>
       <h2>Fetch Once - Server or Client</h2>
       <div>
         <strong>Organization:</strong> {{ organization.name }} <br>
@@ -16,13 +16,13 @@
     </div>
     <div>
       <h2>Fetch Twice - Server and Client</h2>
-      <div class="contributors">
+      <div class="flex flex-wrap content-center justify-start items-center">
         <div
           v-for="contributor in contributors"
           :key="contributor.author.login"
         >
-          <div class="contributor">
-            <img class="profile-image" :src="contributor.author.avatar_url">
+          <div class="p-sm text-center justify-start m-5">
+            <img class="w-24 h-24 rounded-sm mb-2" :src="contributor.author.avatar_url">
             <h3>{{ contributor.author.login }}</h3>
             <p><strong>Total commits:</strong> {{ contributor.total }}</p>
           </div>
@@ -49,34 +49,3 @@ onBeforeMount(async() => repository.value = await getRepository(repositoryFullNa
 onServerPrefetch(async() => contributors.value = await getContributorStats(repositoryFullName));
 onBeforeMount(async() => contributors.value = await getContributorStats(repositoryFullName));
 </script>
-<style lang="scss">
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.contributors {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.contributor {
-  padding: 16px;
-  text-align: center;
-  width: 200px;
-  margin: 20px;
-}
-
-.profile-image {
-  width: 100px;
-  height: 100px;
-  border-radius: var(--border-radius);
-  margin-bottom: 8px;
-}
-</style>
