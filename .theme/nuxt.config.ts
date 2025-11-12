@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "https://brand.mouseless.codes/assets/css/default.css"
+          href: `${import.meta.env.BASE_URL ?? ""}/layers.css`
         }
       ],
       meta: [
@@ -89,7 +89,7 @@ export default defineNuxtConfig({
       nativeSqlite: true
     }
   },
-  css: ["~/assets/styles.scss", "~/assets/tailwind.css"],
+  css: ["~/assets/theme.css", "~/assets/components.css"],
   devtools: { enabled: false },
   dir: {
     public: ".public"

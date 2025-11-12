@@ -1,16 +1,13 @@
 <template>
-  <div class="class-with-global-variable">
-    Styled with Scss using global variable
+  <div
+    class="
+      flex
+      justify-(--justify-content-default)
+      bg-(--theme-color-default)
+      text-(length:--font-size-default)
+      font-(--font-family-default)
+    "
+  >
+    Styled with utilities using global variable
   </div>
 </template>
-<style lang="scss">
-.class-with-global-variable {
-  display: flex;
-  justify-content: $justify-content-default;
-  background-color: $theme-color-default;
-  font: {
-    size: $font-size-default;
-    family:$font-family-dafault;
-  }
-}
-</style>

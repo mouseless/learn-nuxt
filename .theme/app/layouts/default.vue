@@ -32,23 +32,28 @@
         >
       </NuxtLink>
     </div>
-    <nav
-      class="
-        m-auto text-center max-md:text-left
-        max-w-(--max-width-content)
-        [&>a.left+a.right]:pl-8 [&>a.left+a.right]:max-md:pl-0
-      "
-    >
-      <NuxtLink
-        v-for="menu in menus"
-        :key="menu.title"
-        :to="menu.path == $route.path ? '' : menu.path"
-        :class="menu.position < 100 ? 'left' : 'right'"
-        class="text-fg-soft no-underline m-1 font-normal hover:text-logo-mark max-md:block"
-      >
-        {{ menu.title }}
-      </NuxtLink>
-    </nav>
+    <div class="flex flex-col w-full gap-sm max-md:items-start max-md:text-sm">
+      <nav class="flex flex-wrap mx-auto text-center max-md:text-left max-md:m-0">
+        <NuxtLink
+          v-for="menu in menus.filter(m => m.position < 100)"
+          :key="menu.title"
+          :to="menu.path == $route.path ? '' : menu.path"
+          class="text-fg-soft no-underline m-1 font-normal hover:text-logo-mark"
+        >
+          {{ menu.title }}
+        </NuxtLink>
+      </nav>
+      <nav class="flex flex-wrap mx-auto text-center max-md:text-left max-md:m-0">
+        <NuxtLink
+          v-for="menu in menus.filter(m => m.position >= 100)"
+          :key="menu.title"
+          :to="menu.path == $route.path ? '' : menu.path"
+          class="text-fg-soft no-underline m-1 font-normal hover:text-logo-mark"
+        >
+          {{ menu.title }}
+        </NuxtLink>
+      </nav>
+    </div>
   </header>
   <article class="m-auto pt-0 px-sm pt-sm max-w-(--width-content)">
     <slot />
@@ -60,12 +65,3 @@ const menus = await queryCollection("headers")
   .order("position", "ASC")
   .all();
 </script>
-<style scoped lang="scss">
-img.nuxt:is(.logo) {
-  content: url(https://nuxt.com/assets/design-kit/logo-green-black.svg);
-
-  @media (prefers-color-scheme: dark) {
-    content: url(https://nuxt.com/assets/design-kit/logo-green-white.svg);
-  }
-}
-</style>

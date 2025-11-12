@@ -1,6 +1,29 @@
+@import "https://brand.mouseless.codes/assets/css/default.css";
 @import "tailwindcss/theme" layer(theme);
 @import "tailwindcss/preflight" layer(base);
-@import "tailwindcss/utilities";
+@import "tailwindcss/utilities" layer(utilities);
+
+:root {
+  --color-primary: var(--color-red-500);
+  --color-primary-text: var(--color-gray-100);
+  --color-primary-border: var(--color-red-900);
+  --color-primary-line: var(--color-gray-500);
+  --color-secondary: var(--color-darkgreen-800);
+  --color-secondary-text: var(--color-gray-300);
+  --color-tertiary: var(--color-darkgreen-700);
+
+  --font-size: 16px;
+  --height-logo: 30px;
+  --height-logo-small: calc(var(--height-logo) / 2);
+
+  --max-width-content: 64rem;
+
+  /* theme variables samples */
+  --justify-content-default: center;
+  --theme-color-default: burlywood;
+  --font-size-default: 2rem;
+  --font-family-default: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 @theme {
   /* ----- */

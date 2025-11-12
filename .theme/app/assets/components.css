@@ -1,0 +1,30 @@
+@reference "./theme.css";
+
+@layer utilities {
+  li {
+    list-style-type: square;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  img.nuxt:is(.logo) {
+    content: url(https://nuxt.com/assets/design-kit/logo-green-black.svg);
+
+    @media (prefers-color-scheme: dark) {
+      content: url(https://nuxt.com/assets/design-kit/logo-green-white.svg);
+    }
+  }
+
+  .c--basic {
+    --justify-content-default: center;
+
+    display: flex;
+    justify-content: var(--justify-content-default);
+    background-color: beige;
+
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+}
