@@ -41,12 +41,12 @@ line, in order to have multiple lines of code block use "\`\`\`" instead of "\`"
 We use these boxes to give information, warning or tips when it is related to
 the context but could not be included in the paragraph.
 
-| Box Type | Markdown Name        |
-| ---      | ---                  |
-| Warning  | \[!WARNING\]         |
-| Error    | \[!CAUTION\]         |
-| Note     | \[!NOTE\]            |
-| Tip      | \[!TIP\]             |
+| Box Type | Markdown Name |
+| ---      | ---           |
+| Warning  | \[!WARNING\]  |
+| Error    | \[!CAUTION\]  |
+| Note     | \[!NOTE\]     |
+| Tip      | \[!TIP\]      |
 
 ## Links
 

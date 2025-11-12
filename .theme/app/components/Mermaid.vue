@@ -1,5 +1,8 @@
 <template>
-  <div ref="mermaidContainer" class="mermaid">
+  <div
+    ref="mermaidContainer"
+    class="not-[data-processed]:text-transparent"
+  >
     <slot />
   </div>
 </template>
@@ -27,8 +30,3 @@ onMounted(async() => {
   }
 });
 </script>
-<style scoped>
-.mermaid:not([data-processed]) {
-  color: transparent;
-}
-</style>

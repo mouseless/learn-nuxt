@@ -1,5 +1,13 @@
 <template>
-  <blockquote :class="type" class="pl-4 border-l-4 border-solid ml-4">
+  <blockquote
+    class="pl-4 border-l-4 border-solid ml-4"
+    :class="{
+      'text-blue-n1': type === 'info',
+      'text-orange-0': type === 'warning',
+      'text-green-n1': type === 'success',
+      'text-fg': type === 'default'
+    }"
+  >
     <component :is="() => body" />
   </blockquote>
 </template>
@@ -39,17 +47,3 @@ const body = computed(() => {
   return result;
 });
 </script>
-<style scoped>
-.info {
-  border-color: var(--color-blue-n1);
-}
-.warning {
-  border-color: var(--color-orange-0);
-}
-.success {
-  border-color: var(--color-green-n1);
-}
-.default {
-  border-color: var(--color-fg);
-}
-</style>

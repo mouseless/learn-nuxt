@@ -44,59 +44,94 @@ can be used in computed properties as shown in
 
 Demo is at [/demo/computed/with-ref](/demo/computed/with-ref)
 
-## Using Scss
+## Style
 
-Here you can find how to use Scss in nuxt, to learn about Css and Scss syntax
-check out our [learn-css](https://github.com/mouseless/learn-css) repository.
+Here you will find how we use CSS in Nuxt. To see our conventions and learnings
+for CSS, check out the [learn-css](https://github.com/mouseless/learn-css)
+repository.
 
-## Style with Tailwind
+### Setting Up a Theme System
 
-You must install `tailwindcss` and `@tailwindcss/vite` 
-packages in your project. Then configure Tailwind in your nuxt project by following the `nuxt.config.ts` file in `.theme/nuxt.config.ts`.
+To set up a theme system, we need TailwindCSS, brand theme and a couple of
+`.css` files.
+
+__First__, make sure you installed `tailwindcss` and `@tailwindcss/vite`
+packages in your project. Then configure Tailwind in your nuxt project as in
+`.theme/nuxt.config.ts`.
+
+__Second__, create `theme.css` and `components.css` to customize your theme.
+Place these files in `.theme/assets/` folder and add them to `css` array in
+`.theme/nuxt.config.ts`.
+
+`theme.css` sets up TailwindCSS and any other style dependencies. Use `@import`
+at-rules to import your files.
+
+```css
+@import "https://brand.mouseless.codes/assets/css/default.css";
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/preflight" layer(base);
+@import "tailwindcss/utilities" layer(utilities);
+```
+
+> [!NOTE]
+>
+> In this example our brand css already has its styles in a layer called `@layer
+> brand` so it doesn't use a layer explicitly while importing"
+
+CSS requires layer orders to be stated before any layer is declared. Otherwise
+it will process the layers in the order they are loaded. In this case brand css
+has to be loaded before tailwind's preflight, but preflight has to be ordered
+before to act as a base.
+
+__Finally__, create a `layers.css` in `.theme/public/` folder and add it in
+`.theme/nuxt.config.ts` to make sure it is loaded before any `@layer` is
+declared in css files. This file only sets the preferred order for the layers,
+e.g., `@layer base, brand, theme, utilities;`.
+
+The reason `layer.css` is in a separate file is that PostCSS processes the css
+files and moves `@import` declarations to the top most even before `@layer`
+order statements. So it becomes impossible for any remote css to get its layers
+ordered in a processed css file. To workaround this, we use a non-processed
+`layers.css` file .
+
+> [!WARNING]
+>
+> Importing preflight css before brand css won't help, because PostCSS processes
+> `.theme/assets/theme.css` and removes local `@import` at-rules. So this leaves
+> brand css import as the only real import. Since CSS requires `@import` as the
+> first statement in a CSS files it becomes impossible to place any remote css
+> import statement after preflight.
+
+### Theme Variables
+
+To add theme variables use `.theme/assets/theme.css` file. Add any theme
+variable under `:root { ... }` scope right after `@import` statements.
+
+To make your variables available in tailwind utilities use `@theme` special
+at-rule of tailwindcss. You'll need to re-assign your existing variables in
+there to make sure tailwind recognizes your custom rules. Have a look at
+`.theme/assets/theme.css` to see how we've set up variables from our brand css
+to tailwind's utilities.
+
+Demo is at [/demo/css/theme-variables](/demo/css/theme-variables)
+
+### Using Utilities
 
 To style a component using Tailwind you can refer to
-`./theme/app/pages/demo/tailwind.vue`
-And use Tailwind classes as can be seen in the file.
+`./theme/app/pages/demo/css/using-utilities.vue`. And use Tailwind classes as
+can be seen in the file.
 
-Demo is at [/demo/tailwind](/demo/tailwind)
+Demo is at [/demo/css/using-utilities](/demo/css/using-utilities)
 
-### Style With Scss
+### Using Components
 
-To style a component using Scss you can refer to
-`./theme/app/pages/demo/scss/style-with-scss.vue`
+When you need to different styles to child elements of your components, but the
+child elements are not in the components such as content tags from markdown
+files `p`, `h1` etc., place a marker class starting with `c--` prefix and then
+use `.theme/assets/components.css` to apply tailwind utility classes to the
+elements under the marker component class.
 
-Demo is at [/demo/scss/style-with-scss](/demo/scss/style-with-scss)
-
-### Adding & Using Global Variables
-
-To add global variables create an `assets` folder at the root of your project
-and add `variables.scss` file. In this file global variables can be created.
-When creating variables you can refer to `./theme/app/assets/variables.scss`.
-
-To use the global variables simply use the variables created in
-`variables.scss` without importing.
-
-> [!TIP]
->
-> We use `*` when importing the scss module to avoid the namespace requirement.
-
-> [!WARNING]
->
-> You need to use a sass-loader and configure `nuxt.config.ts` for global
-> variables to work.
-
-Demo is at [/demo/scss/global-variables](/demo/scss/global-variables)
-
-### Global Style
-
-To add a global style create `styles.scss` file in your assets folder and add
-styles as can be seen in `./theme/app/assets/styles.scss`. Global styles will
-work like a default style, only when the specific style is not given in the
-component.
-
-> [!WARNING]
->
-> You need to specify the `styles.scss` as global style in `nuxt.config.ts`
+Demo is at [/demo/css/using-components](/demo/css/using-components)
 
 ## Handling Errors
 

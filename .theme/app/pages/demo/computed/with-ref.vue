@@ -1,14 +1,20 @@
 <template>
   <div>
     <h1>No Ref</h1>
-    <button @click="changeName">
+    <button
+      class="px-xs py-1 rounded-xs bg-red-900 hover:bg-red-800 active:text-gray-300"
+      @click="changeName"
+    >
       Change Name
     </button>
     {{ fullName }}
   </div>
   <div>
     <h1>Ref</h1>
-    <button @click="changeNameRef">
+    <button
+      class="px-xs py-1 rounded-xs bg-red-900 hover:bg-red-800 active:text-gray-300"
+      @click="changeNameRef"
+    >
       Change Name
     </button>
     {{ fullNameRef }}
