@@ -2,29 +2,22 @@
 
 @layer utilities {
   li {
-    list-style-type: square;
+    @apply list-[square];
   }
 
   a {
-    text-decoration: underline;
+    @apply underline;
   }
 
   img.nuxt:is(.logo) {
-    content: url(https://nuxt.com/assets/design-kit/logo-green-black.svg);
+    @apply content-[url(https://nuxt.com/assets/design-kit/logo-green-black.svg)];
 
     @media (prefers-color-scheme: dark) {
-      content: url(https://nuxt.com/assets/design-kit/logo-green-white.svg);
+      @apply content-[url(https://nuxt.com/assets/design-kit/logo-green-white.svg)];
     }
   }
 
   .c--basic {
-    --justify-content-default: center;
-
-    display: flex;
-    justify-content: var(--justify-content-default);
-    background-color: var(--color-yellow-p2);
-
-    font-size: 2rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    @apply flex justify-center bg-yellow-p3 text-yellow-n4 text-[2rem] font-[Franklin_Gothic_Medium]
   }
 }
