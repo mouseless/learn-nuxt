@@ -1,0 +1,1 @@
+import{c as e,o as a,M as s,k as r,b as n,ab as d}from"#entry";const c={key:0},i={__name:"ProseP",setup(p){const t=d("provided-data",!1);return(o,l)=>(a(),e("p",null,[s(o.$slots,"default"),n(t)?(a(),e("span",c," (provided data injected)")):r("",!0)]))}};export{i as default};
