@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         {
           rel: "stylesheet",
           type: "text/css",
-          href: `${import.meta.env.BASE_URL ?? ""}/layers.css`
+          href: `${import.meta.env.NUXT_APP_BASE_URL ?? ""}/layers.css`
         }
       ],
       meta: [
