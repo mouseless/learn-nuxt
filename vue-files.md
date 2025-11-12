@@ -44,30 +44,17 @@ can be used in computed properties as shown in
 
 Demo is at [/demo/computed/with-ref](/demo/computed/with-ref)
 
-## Using Scss
+## Style
 
-Here you can find how to use Scss in nuxt, to learn about Css and Scss syntax
-check out our [learn-css](https://github.com/mouseless/learn-css) repository.
+Here you can find how we use CSS in Nuxt. To see our conventions and learnings
+for CSS, check out the [learn-css](https://github.com/mouseless/learn-css)
+repository.
 
-## Style with Tailwind
+### Setting Up a Theme System
 
-You must install `tailwindcss` and `@tailwindcss/vite` 
-packages in your project. Then configure Tailwind in your nuxt project by following the `nuxt.config.ts` file in `.theme/nuxt.config.ts`.
+...
 
-To style a component using Tailwind you can refer to
-`./theme/app/pages/demo/tailwind.vue`
-And use Tailwind classes as can be seen in the file.
-
-Demo is at [/demo/tailwind](/demo/tailwind)
-
-### Style With Scss
-
-To style a component using Scss you can refer to
-`./theme/app/pages/demo/scss/style-with-scss.vue`
-
-Demo is at [/demo/scss/style-with-scss](/demo/scss/style-with-scss)
-
-### Adding & Using Global Variables
+### Theme Variables
 
 To add global variables create an `assets` folder at the root of your project
 and add `variables.scss` file. In this file global variables can be created.
@@ -85,18 +72,26 @@ To use the global variables simply use the variables created in
 > You need to use a sass-loader and configure `nuxt.config.ts` for global
 > variables to work.
 
-Demo is at [/demo/scss/global-variables](/demo/scss/global-variables)
+Demo is at [/demo/css/theme-variables](/demo/css/theme-variables)
 
-### Global Style
+### Using Utilities
 
-To add a global style create `styles.scss` file in your assets folder and add
-styles as can be seen in `./theme/app/assets/styles.scss`. Global styles will
-work like a default style, only when the specific style is not given in the
-component.
+You must install `tailwindcss` and `@tailwindcss/vite` packages in your project.
+Then configure Tailwind in your nuxt project by following the `nuxt.config.ts`
+file in `.theme/nuxt.config.ts`.
 
-> [!WARNING]
->
-> You need to specify the `styles.scss` as global style in `nuxt.config.ts`
+To style a component using Tailwind you can refer to
+`./theme/app/pages/demo/css/using-utilities.vue`. And use Tailwind classes as can be
+seen in the file.
+
+Demo is at [/demo/css/using-utilities](/demo/css/using-utilities)
+
+### Using Components
+
+To style a component using Scss you can refer to
+`./theme/app/pages/demo/scss/style-with-scss.vue`
+
+Demo is at [/demo/css/using-components](/demo/css/using-components)
 
 ## Handling Errors
 
