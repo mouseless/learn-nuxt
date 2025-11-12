@@ -16,7 +16,7 @@
         <img
           class="
             mouseless logo
-            h-(--height-logo)! max-md:h-(--height-logo-small)!
+            h-(--height-logo) max-md:h-(--height-logo-small)
           "
         >
       </NuxtLink>
@@ -27,7 +27,7 @@
         <img
           class="
             nuxt logo
-            h-(--height-logo)! max-md:h-(--height-logo-small)!
+            h-(--height-logo) max-md:h-(--height-logo-small)
           "
         >
       </NuxtLink>

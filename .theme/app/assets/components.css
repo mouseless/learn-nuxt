@@ -22,7 +22,7 @@
 
     display: flex;
     justify-content: var(--justify-content-default);
-    background-color: beige;
+    background-color: var(--color-yellow-p2);
 
     font-size: 2rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
