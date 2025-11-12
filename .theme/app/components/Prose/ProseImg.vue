@@ -11,22 +11,10 @@ import { withTrailingSlash, withLeadingSlash, joinURL } from "ufo";
 import { useRuntimeConfig, computed, useRoute } from "#imports";
 
 const props = defineProps({
-  src: {
-    type: String,
-    default: ""
-  },
-  alt: {
-    type: String,
-    default: ""
-  },
-  width: {
-    type: [String, Number],
-    default: undefined
-  },
-  height: {
-    type: [String, Number],
-    default: undefined
-  }
+  src: { type: String, default: "" },
+  alt: { type: String, default: "" },
+  width: { type: [String, Number], default: undefined },
+  height: { type: [String, Number], default: undefined }
 });
 
 const route = useRoute();

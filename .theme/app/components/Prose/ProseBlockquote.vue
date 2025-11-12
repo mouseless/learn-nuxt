@@ -1,5 +1,5 @@
 <template>
-  <blockquote :class="type">
+  <blockquote :class="type" class="pl-4 border-l-4 border-solid ml-4">
     <component :is="() => body" />
   </blockquote>
 </template>
@@ -40,11 +40,6 @@ const body = computed(() => {
 });
 </script>
 <style scoped>
-blockquote {
-  padding-left: 1em;
-  border-left: solid 5px;
-  margin-left: 1em;
-}
 .info {
   border-color: var(--color-blue-n1);
 }

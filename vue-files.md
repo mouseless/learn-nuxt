@@ -49,6 +49,17 @@ Demo is at [/demo/computed/with-ref](/demo/computed/with-ref)
 Here you can find how to use Scss in nuxt, to learn about Css and Scss syntax
 check out our [learn-css](https://github.com/mouseless/learn-css) repository.
 
+## Style with Tailwind
+
+You must install `tailwindcss` and `@tailwindcss/vite` 
+packages in your project. Then configure Tailwind in your nuxt project by following the `nuxt.config.ts` file in `.theme/nuxt.config.ts`.
+
+To style a component using Tailwind you can refer to
+`./theme/app/pages/demo/tailwind.vue`
+And use Tailwind classes as can be seen in the file.
+
+Demo is at [/demo/tailwind](/demo/tailwind)
+
 ### Style With Scss
 
 To style a component using Scss you can refer to

@@ -1,5 +1,6 @@
 import Aura from "@primeuix/themes/aura";
 import { definePreset } from "@primeuix/themes";
+import tailwindcss from "@tailwindcss/vite";
 
 const Mouseless = definePreset(Aura, {
   semantic: {
@@ -88,7 +89,7 @@ export default defineNuxtConfig({
       nativeSqlite: true
     }
   },
-  css: ["~/assets/styles.scss"],
+  css: ["~/assets/styles.scss", "~/assets/tailwind.css"],
   devtools: { enabled: false },
   dir: {
     public: ".public"
@@ -102,7 +103,6 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/content",
     "@pinia/nuxt",
-    "@nuxtjs/tailwindcss",
     "@nuxt/eslint",
     "@primevue/nuxt-module",
     "@nuxtjs/i18n"
@@ -148,6 +148,9 @@ export default defineNuxtConfig({
     }
   },
   vite: {
+    plugins: [
+      tailwindcss()
+    ],
     css: {
       preprocessorOptions: {
         scss: {
@@ -155,8 +158,5 @@ export default defineNuxtConfig({
         }
       }
     }
-  },
-  tailwindcss: {
-    cssPath: ["~/assets/tailwind.css", {injectPosition: "first"}]
   }
 });

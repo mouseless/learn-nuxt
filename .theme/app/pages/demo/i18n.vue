@@ -3,7 +3,7 @@
     <button
       v-for="{ name, code } in locales"
       :key="code"
-      class="switcher"
+      class="m-4"
       @click="setLocale(code)"
     >
       {{ name }}
@@ -15,8 +15,3 @@
 <script setup>
 const { locale, locales, setLocale } = useI18n();
 </script>
-<style scoped>
-.switcher {
-  margin: 1em;
-}
-</style>

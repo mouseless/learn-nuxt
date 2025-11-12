@@ -16,4 +16,7 @@ $font-family-dafault: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-seri
 
   --font-size: 16px;
   --height-logo: 30px;
+  --height-logo-small: calc(var(--height-logo) / 2);
+
+  --max-width-content: 64rem;
 }

@@ -200,7 +200,7 @@ We use [PrimeVue][primevue] for app development. Install it using below script;
 ```bash
 npm i primevue primeicons @primevue/themes # base packages
 npm i chart.js # to enable Chart component
-npm i --save-dev @primevue/nuxt-module @nuxtjs/tailwindcss # dev dependencies
+npm i --save-dev @primevue/nuxt-module # dev dependencies
 ```
 
 To use prime icons you need to import it in `app/assets/styles.scss`.
@@ -218,7 +218,6 @@ export default defineNuxtConfig({
   ...
   modules: [
     ...
-    "@nuxtjs/tailwindcss",
     "@primevue/nuxt-module",
     ...
   ],
@@ -234,10 +233,6 @@ export default defineNuxtConfig({
 });
 ```
 
-> [!NOTE]
->
-> For demo purposes we followed [primevue-tailwind] documentation to setup
-> and properly use _primevue_ themes with _tailwind_
 
 ### Customizing Themes
 
@@ -324,6 +319,4 @@ See `nuxt.config.ts` for installation and settings.
 [pinia]: https://pinia.vuejs.org/ssr/nuxt.html
 [async-mutex]: https://www.npmjs.com/package/async-mutex
 [primevue]: https://primevue.org/nuxt/
-[tailwindcss]: https://tailwindcss.com/docs/installation
-[primevue-tailwind]: https://v3.primevue.org/csslayer/
 [nuxt/i18n]: https://i18n.nuxtjs.org/docs/getting-started/usage

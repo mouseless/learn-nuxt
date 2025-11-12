@@ -1,28 +1,56 @@
 <template>
-  <header>
-    <div class="logo">
+  <header
+    class="
+      m-auto pt-0 px-sm
+      text-center max-md:text-left
+      max-w-(--max-width-content)
+    "
+  >
+    <div
+      class="
+        flex justify-center max-md:justify-start
+        gap-sm my-md mx-0 [&>a+a]:pl-sm]
+      "
+    >
       <NuxtLink to="/">
-        <img class="mouseless logo">
+        <img
+          class="
+            mouseless logo
+            h-(--height-logo)! max-md:h-(--height-logo-small)!
+          "
+        >
       </NuxtLink>
       <NuxtLink
         to="https://nuxt.com"
         target="_blank"
       >
-        <img class="nuxt logo">
+        <img
+          class="
+            nuxt logo
+            h-(--height-logo)! max-md:h-(--height-logo-small)!
+          "
+        >
       </NuxtLink>
     </div>
-    <nav>
+    <nav
+      class="
+        m-auto text-center max-md:text-left
+        max-w-(--max-width-content)
+        [&>a.left+a.right]:pl-8 [&>a.left+a.right]:max-md:pl-0
+      "
+    >
       <NuxtLink
         v-for="menu in menus"
         :key="menu.title"
         :to="menu.path == $route.path ? '' : menu.path"
         :class="menu.position < 100 ? 'left' : 'right'"
+        class="text-fg-soft no-underline m-1 font-normal hover:text-logo-mark max-md:block"
       >
         {{ menu.title }}
       </NuxtLink>
     </nav>
   </header>
-  <article>
+  <article class="m-auto pt-0 px-sm pt-sm max-w-(--width-content)">
     <slot />
   </article>
 </template>
@@ -33,25 +61,6 @@ const menus = await queryCollection("headers")
   .all();
 </script>
 <style scoped lang="scss">
-header, article {
-  margin: auto;
-  padding: 0 1em;
-}
-
-header, nav {
-  max-width: 1000px;
-  text-align: center;
-
-  @media (max-width: 800px) {
-    text-align: left;
-  }
-}
-
-article {
-  max-width: var(--width-content);
-  padding-top: 1em;
-}
-
 img.nuxt:is(.logo) {
   content: url(https://nuxt.com/assets/design-kit/logo-green-black.svg);
 
@@ -59,59 +68,4 @@ img.nuxt:is(.logo) {
     content: url(https://nuxt.com/assets/design-kit/logo-green-white.svg);
   }
 }
-
-div.logo {
-  margin: 2em 0;
-
-  a {
-    display: inline-flex;
-  }
-  a+a {
-    padding-left: 1em;
-  }
-
-  img.logo {
-    height: var(--height-logo);
-    display: inline;
-  }
-
-  @media (max-width: 800px) {
-    img.logo {
-      height: calc(var(--height-logo) / 2);
-    }
-  }
-}
-
-nav {
-  a {
-    color: var(--color-fg-soft);
-    text-decoration: none;
-    margin: 5px;
-
-    &:not(:any-link) {
-      font-weight: bold;
-    }
-
-    &:hover:any-link {
-      color: var(--color-logo-mark);
-    }
-
-    @media (max-width: 800px) {
-      & {
-        display: block;
-      }
-    }
-  }
-
-  a.left+a.right {
-    padding-left: 1em;
-    @media (max-width: 800px) {
-      & {
-        padding-top: 1em;
-        padding-left: 0;
-      }
-    }
-  }
-}
-
 </style>
