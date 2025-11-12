@@ -1,0 +1,1 @@
+import{s as a,c as s,a as e,C as t}from"./BEeGEFML.js";import{ai as i}from"#entry";import"./DAWlyUQU.js";import"./DUzLWh9Y.js";import"./B_W-JNHB.js";var u={parser:e,get db(){return new t},renderer:s,styles:a,init:i(r=>{r.class||(r.class={}),r.class.arrowMarkerAbsolute=r.arrowMarkerAbsolute},"init")};export{u as diagram};

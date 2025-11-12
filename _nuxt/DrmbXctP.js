@@ -1,0 +1,1 @@
+import{_ as o}from"./DlAUqK2U.js";import{c as e,o as t}from"#entry";const c={},s={class:"c--basic"};function n(r,_){return t(),e("div",s," Styled with Components ")}const m=o(c,[["render",n]]);export{m as default};

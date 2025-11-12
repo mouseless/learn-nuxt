@@ -1,0 +1,1 @@
+import{_ as e}from"./DlAUqK2U.js";import{c as t,o}from"#entry";const n={},r={class:"text-center rounded-xs py-sm text-green-n2 bg-(--theme-color-default) font-(--font-family-default) text-(length:--font-size-default)"};function s(a,c){return o(),t("div",r," Styled with utilities using global variable ")}const f=e(n,[["render",s]]);export{f as default};
