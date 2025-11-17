@@ -54,6 +54,7 @@ Move this folder and components to under `/app` directory
 
 final result must be look like this
 
+```bash
 my-nuxt-app/
 ├─ app/
 │  ├─ assets/
@@ -72,6 +73,7 @@ my-nuxt-app/
 ├─ shared/
 ├─ server/
 └─ nuxt.config.ts
+```
 
 ### Editing `tsconfig.ts`
 
