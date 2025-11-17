@@ -32,11 +32,11 @@ if "%choice%"=="1" goto dev
 if "%choice%"=="2" goto local
 
 :dev
-cd ui && npm run dev && cd ..
+cd .theme && npm run dev && cd ..
 goto end
 
 :local
-cd ui && npm run local && cd ..
+cd .theme && npm run local && cd ..
 goto end
 
 :build
