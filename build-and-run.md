@@ -7,19 +7,17 @@ position: 101
 To create a static site we use `nuxi generate`, to run the project in
 development mode we use `nuxi dev`.
 
-For unix-like systems use `Makefile`;
+To build and run use below commands in a terminal window;
 
 ```bash
 make build
 make run
 ```
 
-For Windows systems use `build.bat`;
-
-```bash
-.\build.bat
-.\run.bat
-```
+> [!NOTE]
+>
+> This syntax works for all systems. It uses `Makefile` for unix-like systems
+> and `make.cmd` for Windows systems.
 
 ## Process
 
