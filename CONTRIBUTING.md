@@ -1,4 +1,5 @@
 ---
+title: Contributing
 position: 102
 ---
 
