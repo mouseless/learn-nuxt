@@ -1,0 +1,1 @@
+import{H as e,Y as t,i as n}from"./E-knF-Z8.js";function r(){t({variableName:n(`scrollbar.width`).name})}function i(){e({variableName:n(`scrollbar.width`).name})}export{i as n,r as t};

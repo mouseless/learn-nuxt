@@ -1,0 +1,1 @@
+import{J as e,On as t,b as n,mt as r,xt as i,y as a}from"./B4b-2GOK.js";var o={key:0},s={__name:`ProseP`,setup(s){let c=e(`provided-data`,!1);return(e,s)=>(r(),n(`p`,null,[i(e.$slots,`default`),t(c)?(r(),n(`span`,o,` (provided data injected)`)):a(``,!0)]))}};export{s as default};

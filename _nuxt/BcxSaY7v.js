@@ -1,0 +1,1 @@
+import{vn as e}from"./B4b-2GOK.js";function t(){let t=e(0);function n(){t.value++}return{count:t,increase:n}}export{t};

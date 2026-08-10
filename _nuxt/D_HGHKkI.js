@@ -1,0 +1,1 @@
+import{On as e,b as t,g as n,mt as r,tr as i}from"./B4b-2GOK.js";var a=`John`,o={__name:`index`,setup(o){let s=n(()=>`${a} Doe`);return(n,a)=>(r(),t(`div`,null,` Full Name: `+i(e(s)),1))}};export{o as default};

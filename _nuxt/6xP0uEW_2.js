@@ -1,0 +1,1 @@
+import e from"./3YOfM_vy2.js";var t={name:`Calendar`,extends:e,mounted:function(){console.warn(`Deprecated since v4. Use DatePicker component instead.`)}};export{t as default};

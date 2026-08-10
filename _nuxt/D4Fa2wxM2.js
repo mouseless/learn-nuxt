@@ -1,0 +1,22 @@
+import{D as e,St as t,Zn as n,b as r,bt as i,et as a,mt as o,o as s,xt as c}from"./B4b-2GOK.js";import{F as l,t as u}from"./E-knF-Z8.js";import{t as d}from"./BMDfTKQ02.js";import{n as f}from"./BlWD4UhT2.js";var p=u.extend({name:`inputotp`,style:`
+    .p-inputotp {
+        display: flex;
+        align-items: center;
+        gap: dt('inputotp.gap');
+    }
+
+    .p-inputotp-input {
+        text-align: center;
+        width: dt('inputotp.input.width');
+    }
+
+    .p-inputotp-input.p-inputtext-sm {
+        text-align: center;
+        width: dt('inputotp.input.sm.width');
+    }
+
+    .p-inputotp-input.p-inputtext-lg {
+        text-align: center;
+        width: dt('inputotp.input.lg.width');
+    }
+`,classes:{root:`p-inputotp p-component`,pcInputText:`p-inputotp-input`}}),m={name:`InputOtp`,extends:{name:`BaseInputOtp`,extends:d,props:{readonly:{type:Boolean,default:!1},tabindex:{type:Number,default:null},length:{type:Number,default:4},mask:{type:Boolean,default:!1},integerOnly:{type:Boolean,default:!1}},style:p,provide:function(){return{$pcInputOtp:this,$parentInstance:this}}},inheritAttrs:!1,emits:[`change`,`focus`,`blur`],data:function(){return{tokens:[]}},watch:{modelValue:{immediate:!0,handler:function(e){this.tokens=e?e.split(``):Array(this.length)}}},methods:{getTemplateAttrs:function(e){return{value:this.tokens[e]}},getTemplateEvents:function(e){var t=this;return{input:function(n){return t.onInput(n,e)},keydown:function(e){return t.onKeyDown(e)},focus:function(e){return t.onFocus(e)},blur:function(e){return t.onBlur(e)},paste:function(e){return t.onPaste(e)}}},onInput:function(e,t){this.tokens[t]=e.target.value,this.updateModel(e),e.inputType===`deleteContentBackward`?this.moveToPrev(e):(e.inputType===`insertText`||e.inputType===`deleteContentForward`||l()&&e instanceof CustomEvent)&&this.moveToNext(e)},updateModel:function(e){var t=this.tokens.join(``);this.writeValue(t,e),this.$emit(`change`,{originalEvent:e,value:t})},moveToPrev:function(e){var t=this.findPrevInput(e.target);t&&(t.focus(),t.select())},moveToNext:function(e){var t=this.findNextInput(e.target);t&&(t.focus(),t.select())},findNextInput:function(e){var t=e.nextElementSibling;if(t)return t.nodeName===`INPUT`?t:this.findNextInput(t)},findPrevInput:function(e){var t=e.previousElementSibling;if(t)return t.nodeName===`INPUT`?t:this.findPrevInput(t)},onFocus:function(e){e.target.select(),this.$emit(`focus`,e)},onBlur:function(e){this.$emit(`blur`,e)},onClick:function(e){setTimeout(function(){return e.target.select()},1)},onKeyDown:function(e){if(!(e.ctrlKey||e.metaKey))switch(e.code){case`ArrowLeft`:this.moveToPrev(e),e.preventDefault();break;case`ArrowUp`:case`ArrowDown`:e.preventDefault();break;case`Backspace`:e.target.value.length===0&&(this.moveToPrev(e),e.preventDefault());break;case`ArrowRight`:this.moveToNext(e),e.preventDefault();break;case`Enter`:case`NumpadEnter`:case`Tab`:break;default:(this.integerOnly&&!(e.code!==`Space`&&Number(e.key)>=0&&Number(e.key)<=9)||this.tokens.join(``).length>=this.length&&e.code!==`Delete`)&&e.preventDefault()}},onPaste:function(e){var t=e.clipboardData.getData(`text`);if(t.length){var n=t.substring(0,this.length);(!this.integerOnly||!isNaN(n))&&(this.tokens=n.split(``),this.updateModel(e))}e.preventDefault()}},computed:{inputMode:function(){return this.integerOnly?`numeric`:`text`},inputType:function(){return this.mask?`password`:`text`}},components:{OtpInputText:f}};function h(l,u,d,f,p,m){var h=t(`OtpInputText`);return o(),r(`div`,a({class:l.cx(`root`)},l.ptmi(`root`)),[(o(!0),r(s,null,i(l.length,function(t){return c(l.$slots,`default`,{key:t,events:m.getTemplateEvents(t-1),attrs:m.getTemplateAttrs(t-1),index:t},function(){return[e(h,{value:p.tokens[t-1],type:m.inputType,class:n(l.cx(`pcInputText`)),name:l.$formName,inputmode:m.inputMode,variant:l.variant,readonly:l.readonly,disabled:l.disabled,size:l.size,invalid:l.invalid,tabindex:l.tabindex,unstyled:l.unstyled,onInput:function(e){return m.onInput(e,t-1)},onFocus:u[0]||=function(e){return m.onFocus(e)},onBlur:u[1]||=function(e){return m.onBlur(e)},onPaste:u[2]||=function(e){return m.onPaste(e)},onKeydown:u[3]||=function(e){return m.onKeyDown(e)},onClick:u[4]||=function(e){return m.onClick(e)},pt:l.ptm(`pcInputText`)},null,8,[`value`,`type`,`class`,`name`,`inputmode`,`variant`,`readonly`,`disabled`,`size`,`invalid`,`tabindex`,`unstyled`,`onInput`,`pt`])]})}),128))],16)}m.render=h;export{m as default};

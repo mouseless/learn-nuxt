@@ -1,0 +1,83 @@
+import{Ct as e,D as t,St as n,Yt as r,Zn as i,_ as a,b as o,bt as s,et as c,mt as l,o as u,qt as d,v as f,w as p,wt as m,xt as h,y as g}from"./B4b-2GOK.js";import{B as _,P as v,T as y,et as b,i as x,t as S}from"./E-knF-Z8.js";import{t as C}from"./BLEQZSpC.js";import{t as w}from"./CIQ8XXnq.js";import{n as T}from"./Dl7BG8iC.js";import{t as E}from"./DXdyGMXw.js";import{t as D}from"./DUoejyo4.js";var O=`
+    .p-speeddial {
+        position: static;
+        display: flex;
+        gap: dt('speeddial.gap');
+    }
+
+    .p-speeddial-button {
+        z-index: 1;
+    }
+
+    .p-speeddial-button.p-speeddial-rotate {
+        transition:
+            transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+            background dt('speeddial.transition.duration'),
+            color dt('speeddial.transition.duration'),
+            border-color dt('speeddial.transition.duration'),
+            box-shadow dt('speeddial.transition.duration'),
+            outline-color dt('speeddial.transition.duration');
+        will-change: transform;
+    }
+
+    .p-speeddial-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: inset-block-start 0s linear dt('speeddial.transition.duration');
+        pointer-events: none;
+        outline: 0 none;
+        z-index: 2;
+        gap: dt('speeddial.gap');
+    }
+
+    .p-speeddial-item {
+        transform: scale(0);
+        opacity: 0;
+        transition:
+            transform 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+            opacity 0.8s;
+        will-change: transform;
+    }
+
+    .p-speeddial-circle .p-speeddial-item,
+    .p-speeddial-semi-circle .p-speeddial-item,
+    .p-speeddial-quarter-circle .p-speeddial-item {
+        position: absolute;
+    }
+
+    .p-speeddial-mask {
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background: dt('mask.background');
+        border-radius: 6px;
+        transition: opacity 150ms;
+    }
+
+    .p-speeddial-mask-visible {
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity 150ms;
+    }
+
+    .p-speeddial-open .p-speeddial-list {
+        pointer-events: auto;
+    }
+
+    .p-speeddial-open .p-speeddial-item {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .p-speeddial-open .p-speeddial-rotate {
+        transform: rotate(45deg);
+    }
+`;function k(e){"@babel/helpers - typeof";return k=typeof Symbol==`function`&&typeof Symbol.iterator==`symbol`?function(e){return typeof e}:function(e){return e&&typeof Symbol==`function`&&e.constructor===Symbol&&e!==Symbol.prototype?`symbol`:typeof e},k(e)}function A(e,t,n){return(t=j(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function j(e){var t=M(e,`string`);return k(t)==`symbol`?t:t+``}function M(e,t){if(k(e)!=`object`||!e)return e;var n=e[Symbol.toPrimitive];if(n!==void 0){var r=n.call(e,t);if(k(r)!=`object`)return r;throw TypeError(`@@toPrimitive must return a primitive value.`)}return(t===`string`?String:Number)(e)}var N=S.extend({name:`speeddial`,style:O,classes:{root:function(e){var t=e.instance,n=e.props;return[`p-speeddial p-component p-speeddial-${n.type}`,A(A(A({},`p-speeddial-direction-${n.direction}`,n.type!==`circle`),`p-speeddial-open`,t.d_visible),`p-disabled`,n.disabled)]},pcButton:function(e){var t=e.props;return[`p-speeddial-button`,{"p-speeddial-rotate":t.rotateAnimation&&!t.hideIcon}]},list:`p-speeddial-list`,item:`p-speeddial-item`,action:`p-speeddial-action`,actionIcon:`p-speeddial-action-icon`,mask:function(e){return[`p-speeddial-mask`,{"p-speeddial-mask-visible":e.instance.d_visible}]}},inlineStyles:{root:function(e){var t=e.props;return{alignItems:(t.direction===`up`||t.direction===`down`)&&`center`,justifyContent:(t.direction===`left`||t.direction===`right`)&&`center`,flexDirection:t.direction===`up`?`column-reverse`:t.direction===`down`?`column`:t.direction===`left`?`row-reverse`:t.direction===`right`?`row`:null}},list:function(e){var t=e.props;return{flexDirection:t.direction===`up`?`column-reverse`:t.direction===`down`?`column`:t.direction===`left`?`row-reverse`:t.direction===`right`?`row`:null}}}}),P={name:`BaseSpeedDial`,extends:C,props:{model:null,visible:{type:Boolean,default:!1},direction:{type:String,default:`up`},transitionDelay:{type:Number,default:30},type:{type:String,default:`linear`},radius:{type:Number,default:0},mask:{type:Boolean,default:!1},disabled:{type:Boolean,default:!1},hideOnClickOutside:{type:Boolean,default:!0},buttonClass:null,maskStyle:null,maskClass:null,showIcon:{type:String,default:void 0},hideIcon:{type:String,default:void 0},rotateAnimation:{type:Boolean,default:!0},tooltipOptions:null,style:null,class:null,buttonProps:{type:Object,default:function(){return{rounded:!0}}},actionButtonProps:{type:Object,default:function(){return{severity:`secondary`,rounded:!0,size:`small`}}},ariaLabelledby:{type:String,default:null},ariaLabel:{type:String,default:null}},style:N,provide:function(){return{$pcSpeedDial:this,$parentInstance:this}}};function F(e){"@babel/helpers - typeof";return F=typeof Symbol==`function`&&typeof Symbol.iterator==`symbol`?function(e){return typeof e}:function(e){return e&&typeof Symbol==`function`&&e.constructor===Symbol&&e!==Symbol.prototype?`symbol`:typeof e},F(e)}function I(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),n.push.apply(n,r)}return n}function L(e){for(var t=1;t<arguments.length;t++){var n=arguments[t]==null?{}:arguments[t];t%2?I(Object(n),!0).forEach(function(t){R(e,t,n[t])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):I(Object(n)).forEach(function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))})}return e}function R(e,t,n){return(t=z(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function z(e){var t=B(e,`string`);return F(t)==`symbol`?t:t+``}function B(e,t){if(F(e)!=`object`||!e)return e;var n=e[Symbol.toPrimitive];if(n!==void 0){var r=n.call(e,t);if(F(r)!=`object`)return r;throw TypeError(`@@toPrimitive must return a primitive value.`)}return(t===`string`?String:Number)(e)}function V(e){return G(e)||W(e)||U(e)||H()}function H(){throw TypeError(`Invalid attempt to spread non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)}function U(e,t){if(e){if(typeof e==`string`)return K(e,t);var n={}.toString.call(e).slice(8,-1);return n===`Object`&&e.constructor&&(n=e.constructor.name),n===`Map`||n===`Set`?Array.from(e):n===`Arguments`||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?K(e,t):void 0}}function W(e){if(typeof Symbol<`u`&&e[Symbol.iterator]!=null||e[`@@iterator`]!=null)return Array.from(e)}function G(e){if(Array.isArray(e))return K(e)}function K(e,t){(t==null||t>e.length)&&(t=e.length);for(var n=0,r=Array(t);n<t;n++)r[n]=e[n];return r}var q=3.14159265358979,J={name:`SpeedDial`,extends:P,inheritAttrs:!1,emits:[`click`,`show`,`hide`,`focus`,`blur`],documentClickListener:null,container:null,list:null,data:function(){return{d_visible:this.visible,isItemClicked:!1,focused:!1,focusedOptionIndex:-1}},watch:{visible:function(e){this.d_visible=e}},mounted:function(){if(this.type!==`linear`){var e=b(this.container,`[data-pc-name="pcbutton"]`),t=b(this.list,`[data-pc-section="item"]`);if(e&&t){var n=Math.abs(e.offsetWidth-t.offsetWidth),r=Math.abs(e.offsetHeight-t.offsetHeight);this.list.style.setProperty(x(`item.diff.x`).name,`${n/2}px`),this.list.style.setProperty(x(`item.diff.y`).name,`${r/2}px`)}}this.hideOnClickOutside&&this.bindDocumentClickListener()},beforeUnmount:function(){this.unbindDocumentClickListener()},methods:{getPTOptions:function(e,t){return this.ptm(t,{context:{active:this.isItemActive(e),hidden:!this.d_visible}})},onFocus:function(e){this.$emit(`focus`,e)},onBlur:function(e){this.focusedOptionIndex=-1,this.$emit(`blur`,e)},onItemClick:function(e,t){t.command&&t.command({originalEvent:e,item:t}),this.hide(),this.isItemClicked=!0,e.preventDefault()},onClick:function(e){this.d_visible?this.hide():this.show(),this.isItemClicked=!0,this.$emit(`click`,e)},show:function(){this.d_visible=!0,this.$emit(`show`)},hide:function(){this.d_visible=!1,this.$emit(`hide`)},calculateTransitionDelay:function(e){var t=this.model.length;return(this.d_visible?e:t-e-1)*this.transitionDelay},onTogglerKeydown:function(e){switch(e.code){case`ArrowDown`:case`ArrowLeft`:this.onTogglerArrowDown(e);break;case`ArrowUp`:case`ArrowRight`:this.onTogglerArrowUp(e);break;case`Escape`:this.onEscapeKey()}},onKeyDown:function(e){switch(e.code){case`ArrowDown`:this.onArrowDown(e);break;case`ArrowUp`:this.onArrowUp(e);break;case`ArrowLeft`:this.onArrowLeft(e);break;case`ArrowRight`:this.onArrowRight(e);break;case`Enter`:case`NumpadEnter`:case`Space`:this.onEnterKey(e);break;case`Escape`:this.onEscapeKey(e);break;case`Home`:this.onHomeKey(e);break;case`End`:this.onEndKey(e)}},onTogglerArrowUp:function(e){this.show(),this.navigatePrevItem(e),e.preventDefault()},onTogglerArrowDown:function(e){this.show(),this.navigateNextItem(e),e.preventDefault()},onEnterKey:function(e){var t=this,n=V(v(this.container,`[data-pc-section="item"]`)).findIndex(function(e){return e.id===t.focusedOptionIndex}),r=b(this.container,`button`);this.onItemClick(e,this.model[n]),this.onBlur(e),r&&_(r)},onEscapeKey:function(){this.hide();var e=b(this.container,`button`);e&&_(e)},onArrowUp:function(e){this.direction===`down`?this.navigatePrevItem(e):this.navigateNextItem(e)},onArrowDown:function(e){this.direction===`down`?this.navigateNextItem(e):this.navigatePrevItem(e)},onArrowLeft:function(e){[`left`,`up-right`,`down-left`].includes(this.direction)?this.navigateNextItem(e):([`right`,`up-left`,`down-right`].includes(this.direction),this.navigatePrevItem(e))},onArrowRight:function(e){[`left`,`up-right`,`down-left`].includes(this.direction)?this.navigatePrevItem(e):([`right`,`up-left`,`down-right`].includes(this.direction),this.navigateNextItem(e))},onEndKey:function(e){e.preventDefault(),this.focusedOptionIndex=-1,this.navigatePrevItem(e)},onHomeKey:function(e){e.preventDefault(),this.focusedOptionIndex=-1,this.navigateNextItem(e)},navigateNextItem:function(e){var t=this.findNextOptionIndex(this.focusedOptionIndex);this.changeFocusedOptionIndex(t),e.preventDefault()},navigatePrevItem:function(e){var t=this.findPrevOptionIndex(this.focusedOptionIndex);this.changeFocusedOptionIndex(t),e.preventDefault()},changeFocusedOptionIndex:function(e){var t=V(v(this.container,`[data-pc-section="item"]`)).filter(function(e){return!y(b(e,`a`),`p-disabled`)});if(t[e]){this.focusedOptionIndex=t[e].getAttribute(`id`);var n=b(t[e],`[type="button"]`);n&&_(n)}},findPrevOptionIndex:function(e){var t=V(v(this.container,`[data-pc-section="item"]`)).filter(function(e){return!y(b(e,`a`),`p-disabled`)}),n=e===-1?t[t.length-1].id:e,r=t.findIndex(function(e){return e.getAttribute(`id`)===n});return r=e===-1?t.length-1:r-1,r},findNextOptionIndex:function(e){var t=V(v(this.container,`[data-pc-section="item"]`)).filter(function(e){return!y(b(e,`a`),`p-disabled`)}),n=e===-1?t[0].id:e,r=t.findIndex(function(e){return e.getAttribute(`id`)===n});return r=e===-1?0:r+1,r},calculatePointStyle:function(e){var t=this.type;if(t!==`linear`){var n=this.model.length,r=this.radius||n*20;if(t===`circle`){var i=2*q/n;return{left:`calc(${r*Math.cos(i*e)}px + ${x(`item.diff.x`,`0px`).variable})`,top:`calc(${r*Math.sin(i*e)}px + ${x(`item.diff.y`,`0px`).variable})`}}if(t===`semi-circle`){var a=this.direction,o=q/(n-1),s=`calc(${r*Math.cos(o*e)}px + ${x(`item.diff.x`,`0px`).variable})`,c=`calc(${r*Math.sin(o*e)}px + ${x(`item.diff.y`,`0px`).variable})`;if(a===`up`)return{left:s,bottom:c};if(a===`down`)return{left:s,top:c};if(a===`left`)return{right:c,top:s};if(a===`right`)return{left:c,top:s}}else if(t===`quarter-circle`){var l=this.direction,u=q/(2*(n-1)),d=`calc(${r*Math.cos(u*e)}px + ${x(`item.diff.x`,`0px`).variable})`,f=`calc(${r*Math.sin(u*e)}px + ${x(`item.diff.y`,`0px`).variable})`;if(l===`up-left`)return{right:d,bottom:f};if(l===`up-right`)return{left:d,bottom:f};if(l===`down-left`)return{right:f,top:d};if(l===`down-right`)return{left:f,top:d}}}return{}},getItemStyle:function(e){var t=this.calculateTransitionDelay(e),n=this.calculatePointStyle(e);return L({transitionDelay:`${t}ms`},n)},bindDocumentClickListener:function(){var e=this;this.documentClickListener||(this.documentClickListener=function(t){e.d_visible&&e.isOutsideClicked(t)&&e.hide(),e.isItemClicked=!1},document.addEventListener(`click`,this.documentClickListener))},unbindDocumentClickListener:function(){this.documentClickListener&&=(document.removeEventListener(`click`,this.documentClickListener),null)},isOutsideClicked:function(e){return this.container&&!(this.container.isSameNode(e.target)||this.container.contains(e.target)||this.isItemClicked)},isItemVisible:function(e){return typeof e.visible==`function`?e.visible():e.visible!==!1},isItemActive:function(e){return e===this.focusedOptionId},containerRef:function(e){this.container=e},listRef:function(e){this.list=e}},computed:{containerClass:function(){return[this.cx(`root`),this.class]},focusedOptionId:function(){return this.focusedOptionIndex===-1?null:this.focusedOptionIndex}},components:{Button:T,PlusIcon:E},directives:{ripple:w,tooltip:D}},Y=[`id`],X=[`id`,`data-p-active`];function Z(_,v,y,b,x,S){var C=n(`Button`),w=e(`tooltip`);return l(),o(u,null,[a(`div`,c({ref:S.containerRef,class:S.containerClass,style:[_.style,_.sx(`root`)]},_.ptmi(`root`)),[h(_.$slots,`button`,{visible:x.d_visible,toggleCallback:S.onClick},function(){return[t(C,c({class:[_.cx(`pcButton`),_.buttonClass],disabled:_.disabled,"aria-expanded":x.d_visible,"aria-haspopup":!0,"aria-controls":_.$id+`_list`,"aria-label":_.ariaLabel,"aria-labelledby":_.ariaLabelledby,unstyled:_.unstyled,onClick:v[0]||=function(e){return S.onClick(e)},onKeydown:S.onTogglerKeydown},_.buttonProps,{pt:_.ptm(`pcButton`)}),{icon:d(function(e){return[h(_.$slots,`icon`,{visible:x.d_visible},function(){return[x.d_visible&&_.hideIcon?(l(),f(m(_.hideIcon?`span`:`PlusIcon`),c({key:0,class:[_.hideIcon,e.class]},_.ptm(`pcButton`).icon,{"data-pc-section":`icon`}),null,16,[`class`])):(l(),f(m(_.showIcon?`span`:`PlusIcon`),c({key:1,class:[x.d_visible&&_.hideIcon?_.hideIcon:_.showIcon,e.class]},_.ptm(`pcButton`).icon,{"data-pc-section":`icon`}),null,16,[`class`]))]})]}),_:3},16,[`class`,`disabled`,`aria-expanded`,`aria-controls`,`aria-label`,`aria-labelledby`,`unstyled`,`onKeydown`,`pt`])]}),a(`ul`,c({ref:S.listRef,id:_.$id+`_list`,class:_.cx(`list`),style:_.sx(`list`),role:`menu`,tabindex:`-1`,onFocus:v[1]||=function(){return S.onFocus&&S.onFocus.apply(S,arguments)},onBlur:v[2]||=function(){return S.onBlur&&S.onBlur.apply(S,arguments)},onKeydown:v[3]||=function(){return S.onKeyDown&&S.onKeyDown.apply(S,arguments)}},_.ptm(`list`)),[(l(!0),o(u,null,s(_.model,function(e,t){return l(),o(u,{key:t},[S.isItemVisible(e)?(l(),o(`li`,c({key:0,id:`${_.$id}_${t}`,class:_.cx(`item`,{id:`${_.$id}_${t}`}),style:S.getItemStyle(t),role:`none`,"data-p-active":S.isItemActive(`${_.$id}_${t}`)},{ref_for:!0},S.getPTOptions(`${_.$id}_${t}`,`item`)),[_.$slots.item?(l(),f(m(_.$slots.item),{key:1,item:e,onClick:function(t){return S.onItemClick(t,e)},toggleCallback:function(t){return S.onItemClick(t,e)}},null,8,[`item`,`onClick`,`toggleCallback`])):r((l(),f(C,c({key:0,tabindex:-1,role:`menuitem`,class:_.cx(`pcAction`,{item:e}),"aria-label":e.label,disabled:_.disabled,unstyled:_.unstyled,onClick:function(t){return S.onItemClick(t,e)}},{ref_for:!0},_.actionButtonProps,{pt:S.getPTOptions(`${_.$id}_${t}`,`pcAction`)}),p({_:2},[e.icon?{name:`icon`,fn:d(function(n){return[h(_.$slots,`itemicon`,{item:e,class:i(n.class)},function(){return[a(`span`,c({class:[e.icon,n.class]},{ref_for:!0},S.getPTOptions(`${_.$id}_${t}`,`actionIcon`)),null,16)]})]}),key:`0`}:void 0]),1040,[`class`,`aria-label`,`disabled`,`unstyled`,`onClick`,`pt`])),[[w,{value:e.label,disabled:!_.tooltipOptions},_.tooltipOptions]])],16,X)):g(``,!0)],64)}),128))],16,Y)],16),_.mask?(l(),o(`div`,c({key:0,class:[_.cx(`mask`),_.maskClass],style:_.maskStyle},_.ptm(`mask`)),null,16)):g(``,!0)],64)}J.render=Z;export{J as default};

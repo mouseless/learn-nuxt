@@ -1,0 +1,1 @@
+import{On as e,b as t,mt as n,tr as r}from"./B4b-2GOK.js";import{n as i}from"./CVRGseVM.js";var a=i(`piniaStore`,{state:()=>({titles:[]}),actions:{setTitles(e){this.titles=e}}}),o={__name:`pinia`,setup(i){let o=a();return o.titles.length===0&&o.setTitles([`title1`,`title2`,`title3`]),(i,a)=>(n(),t(`div`,null,`Titles: `+r(e(o).titles),1))}};export{o as default};

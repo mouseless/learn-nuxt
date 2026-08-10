@@ -1,0 +1,1 @@
+import{b as e,mt as t,tr as n}from"./B4b-2GOK.js";var r=`John`,i={__name:`variable`,setup(i){return(i,a)=>(t(),e(`div`,null,` Name: `+n(r)))}};export{i as default};

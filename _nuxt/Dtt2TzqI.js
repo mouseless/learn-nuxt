@@ -1,0 +1,1 @@
+import{b as e,mt as t}from"./B4b-2GOK.js";import{t as n}from"./BDNMzG2s.js";var r={},i={class:`c--basic`};function a(n,r){return t(),e(`div`,i,` Styled with Components `)}var o=n(r,[[`render`,a]]);export{o as default};

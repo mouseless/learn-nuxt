@@ -1,0 +1,1 @@
+import{b as e,mt as t}from"./B4b-2GOK.js";import{t as n}from"./BDNMzG2s.js";var r={},i={class:`text-center rounded-xs py-sm text-green-n2 bg-(--theme-color-default) font-(--font-family-default) text-(length:--font-size-default)`};function a(n,r){return t(),e(`div`,i,` Styled with utilities using global variable `)}var o=n(r,[[`render`,a]]);export{o as default};

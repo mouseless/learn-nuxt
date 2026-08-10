@@ -1,0 +1,1 @@
+import{b as e,mt as t,v as n}from"./B4b-2GOK.js";import{t as r}from"./BDNMzG2s.js";var i={};function a(n,r){return t(),e(`div`,null,` Basic component `)}var o=Object.assign(r(i,[[`render`,a]]),{__name:`BasicComponent`}),s={};function c(e,r){let i=o;return t(),n(i)}var l=r(s,[[`render`,c]]);export{l as default};

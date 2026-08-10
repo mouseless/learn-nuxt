@@ -1,0 +1,1 @@
+import{b as e,mt as t}from"./B4b-2GOK.js";import{n}from"./pYcyVb4a.js";var r={__name:`open-graph`,setup(r){let i=e=>`Open Graph - ${e}`;return n({ogTitle:i(`title`),ogDescription:i(`description`)}),(n,r)=>(t(),e(`div`,null,` This is an example of using the Open Graph `))}};export{r as default};

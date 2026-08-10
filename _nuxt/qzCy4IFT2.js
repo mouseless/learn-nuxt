@@ -1,0 +1,1 @@
+import{b as e,mt as t}from"./B4b-2GOK.js";import{r as n}from"./B-tipO63.js";import{t as r}from"./BDNMzG2s.js";var i=n(`/logo.png`),a={},o={src:i};function s(n,r){return t(),e(`img`,o)}var c=r(a,[[`render`,s]]);export{c as default};

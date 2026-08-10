@@ -1,0 +1,1 @@
+import{s as e}from"./BjjgdMMk.js";import{E as t,On as n,_ as r,b as i,mt as a,tr as o}from"./B4b-2GOK.js";import"./DNVbhyLJ.js";var s={__name:`runtime-config`,setup(s){let c=e();return(e,s)=>(a(),i(`div`,null,[s[0]||=r(`h1`,null,`Runtime Config`,-1),s[1]||=r(`code`,null,`{{ runtimeConfig.public.baseURL }}`,-1),t(` = `+o(n(c).public.baseURL),1)]))}};export{s as default};

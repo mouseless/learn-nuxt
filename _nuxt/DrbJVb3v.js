@@ -1,0 +1,1 @@
+import{Kt as e,On as t,mt as n,v as r}from"./B4b-2GOK.js";import{t as i}from"./BoHnU5MV.js";import{t as a}from"./CEM2mTyy.js";var o={__name:`headings-anchorlinks`,async setup(o){let s,c,l=([s,c]=e(()=>i(`content`).path(`/demo/headings-anchorlinks`).first()),s=await s,c(),s);return(e,i)=>{let o=a;return n(),r(o,{value:t(l)},null,8,[`value`])}}};export{o as default};

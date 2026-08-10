@@ -1,0 +1,1 @@
+import{b as e,mt as t}from"./B4b-2GOK.js";import{i as n}from"./BjX7yrfT.js";import"./DNVbhyLJ.js";var r={__name:`error-handling`,setup(r){function i(){throw n({statusCode:500,statusMessage:`Status Message`,fatal:!0})}return(n,r)=>(t(),e(`button`,{onClick:i},` Throw Error `))}};export{r as default};

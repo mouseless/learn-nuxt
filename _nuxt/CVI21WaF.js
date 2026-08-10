@@ -1,0 +1,1 @@
+import{b as e,mt as t}from"./B4b-2GOK.js";import{t as n}from"./BDNMzG2s.js";var r={};function i(n,r){return t(),e(`code`,null,`{{ "curly escaped" }}`)}var a=n(r,[[`render`,i]]);export{a as default};
