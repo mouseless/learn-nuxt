@@ -1,4 +1,5 @@
 ---
+title: SPA
 position: 7
 ---
 
